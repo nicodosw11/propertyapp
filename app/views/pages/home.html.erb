@@ -1,2 +1,19 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<% content_for :nav, render('layouts/home-nav') %>
+<!-- Different banner if login or not -->
+<% if user_signed_in? %>
+<%= render "shared/video-banner" %>
+<% else %>
+<%= render "shared/home-banner" %>
+<% end %>
+<%= render "howitworks" %>
+
+<%= content_for(:after_js) do %>
+  <%= javascript_tag do %>
+    $(document).ready(function() {
+      $("#click-to-scroll").on("click", function( e ) {
+        e.preventDefault();
+        $('html, body').animate({scrollTop: $("#").offset().top-69}, 800);
+      });
+    });
+  <% end %>
+<% end %>

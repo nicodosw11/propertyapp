@@ -1,8 +1,9 @@
 <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= deal.image_url %>');">
-  <div class="card-category"><%= deal.address %></div>
+  <div class="card-category"><%= deal.occupancy %></div>
   <div class="card-description">
-    <h2><%= deal.occupancy %></h2>
-    <p><%= deal.yield %></p>
+    <h2><%= deal.address %></h2>
+    <p><%= deal.kind %></p>
+    <p><%= deal.yield %> % </p>
   </div>
   <%= link_to "", deal_path(deal), class: "card-link" %>
 </div>
