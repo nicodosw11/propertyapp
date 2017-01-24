@@ -7,6 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Deal.destroy_all
+Property.destroy_all
+
 deals_attributes = [
   {
     description: "Occupé par un homme de 70 ans et une femme de 82 ans, avec une rente de 417 €.",
@@ -156,3 +158,117 @@ deals_attributes = [
 ]
 deals_attributes.each { |params| Deal.create!(params) }
 
+# properties = [
+properties_attributes = [
+  {
+    genre: "Appartement",
+    surface: 68,
+    nb_rooms: 3,
+    nb_bedrooms: 4,
+    city: "Vaires sur Marne",
+    district: "Quartier Ouest",
+    deal_id: 1,
+    },
+  {
+    genre: "Maison",
+    surface: 108,
+    nb_rooms: 4,
+    nb_bedrooms: 3,
+    city: "Meulan",
+    district: "Quartier Annonciades",
+    deal_id: 2,
+    },
+  {
+    genre: "Appartement",
+    surface: 44,
+    nb_rooms: 2,
+    nb_bedrooms: 1,
+    city: "Nogent sur Marne",
+    district: "Quartier Nogent Village-Centre Ville",
+    deal_id: 3,
+    },
+  {
+    genre: "Maison",
+    surface: 80,
+    nb_rooms: 4,
+    nb_bedrooms: 3,
+    city: "Verrieres le Buisson",
+    district: "Quartier Bois de Verrieres-Vaupereux",
+    deal_id: 4,
+    },
+  {
+    genre: "Appartement",
+    surface: 22,
+    nb_rooms: 2,
+    nb_bedrooms: 1,
+    city: "Paris 18ème",
+    district: "Quartier Clignancourt-Jules Joffrin",
+    deal_id: 5,
+    },
+  {
+    genre: "Appartement",
+    surface: 70,
+    nb_rooms: 3,
+    nb_bedrooms: 2,
+    city: "Montreuil",
+    district: "Quartier La Noue-Clos Français",
+    deal_id: 6,
+    },
+  {
+    genre: "Appartement",
+    surface: 45,
+    nb_rooms: 2,
+    nb_bedrooms: 1,
+    city: "Paris 12ème",
+    district: "Métro Ledru-Rollin/Gare de Lyon",
+    deal_id: 7,
+    },
+  {
+    genre: "Maison",
+    surface: 103,
+    nb_rooms: 5,
+    nb_bedrooms: 3,
+    city: "Beynes",
+    district: "Quartier Le Bourg et le Hameaux",
+    deal_id: 8,
+    },
+  {
+    genre: "Appartement",
+    surface: 75,
+    nb_rooms: 3,
+    nb_bedrooms: 2,
+    city: "Bourg la Reine",
+    district: "Quartier Le Clos du Luxembourg-Centre Ville",
+    deal_id: 9,
+    },
+  {
+    genre: "Appartement",
+    surface: 54,
+    nb_rooms: 2,
+    nb_bedrooms: 1,
+    city: "Puteaux",
+    district: "Quartier Colline",
+    deal_id: 10,
+    },
+  {
+    genre: "Appartement",
+    surface: 90,
+    nb_rooms: 3,
+    nb_bedrooms: 1,
+    city: "Paris 3ème",
+    district: "Rue Michel le Compte",
+    deal_id: 11,
+    },
+  {
+    genre: "Appartement",
+    surface: 48,
+    nb_rooms: 2,
+    nb_bedrooms: 1,
+    city: "Paris 12ème",
+    district: "Métro Ledru-Rollin/Gare de Lyon",
+    deal_id: 12,
+    }
+  ]
+
+# properties.each { |property| Property.create!(genre: property) }
+properties_attributes.each { |params| Property.create!(params) }
