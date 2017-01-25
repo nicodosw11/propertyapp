@@ -12,6 +12,7 @@
   # end
   resources :deals do
     resources :properties
+    resources :tenants, only: [:create]
   end
   # resources :properties, except: [:show]
 

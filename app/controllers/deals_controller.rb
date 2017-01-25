@@ -4,6 +4,8 @@ class DealsController < ApplicationController
     @deals = Deal.all
   end
   def show
+    @tenant = Tenant.new
+    # @tenant = @deal.tenants.build
   end
   def new
     @deal = Deal.new

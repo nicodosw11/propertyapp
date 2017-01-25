@@ -2,7 +2,7 @@
   <div class="banner-show-deal-content">
     <h1><%= @deal.address %></h1>
     <p><%= @deal.occupancy %></p>
-    <ul>
+    <ul class="list-unstyled">
     <li><%= link_to "see property", deal_property_path(@deal) %></li>
     <li><%= link_to "see properties", deal_properties_path(@deal) %></li>
     <li><%= link_to "add deal", new_deal_path %></li>
@@ -11,3 +11,17 @@
     </ul>
   </div>
 </div>
+
+<div class="container padded">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+    <%= render "simple_form", deal: @deal, tenant: @tenant %>
+    </div>
+  </div>
+</div>
+
+<ul>
+  <% @deal.tenants.each do |tenant| %>
+  <li><%= tenant.first_name%>, <%= tenant.last_name%>, <%= tenant.age%></li>
+  <% end %>
+</ul>

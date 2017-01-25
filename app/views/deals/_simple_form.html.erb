@@ -1,0 +1,6 @@
+<%= simple_form_for [@deal, @tenant] do |f| %>
+  <%= f.input :first_name, placeholder: "Votre prénom?" %>
+  <%= f.input :last_name %>
+  <%= f.input :age, collection: [1, 2, 3, 4, 5], prompt: "Votre âge?" %>
+  <%= f.submit "Add tenant", class: "btn btn-primary" %>
+<% end %>
