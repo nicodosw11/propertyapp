@@ -167,6 +167,7 @@ properties_attributes = [
     nb_bedrooms: 4,
     city: "Vaires sur Marne",
     district: "Quartier Ouest",
+    full_address: "26 Boulevard de Lorraine, 77360 Vaires-sur-Marne",
     deal_id: 1,
     },
   {
@@ -176,6 +177,7 @@ properties_attributes = [
     nb_bedrooms: 3,
     city: "Meulan",
     district: "Quartier Annonciades",
+    full_address: "10 Place Brigitte Gros, 78250 Meulan-en-Yvelines",
     deal_id: 2,
     },
   {
@@ -185,6 +187,7 @@ properties_attributes = [
     nb_bedrooms: 1,
     city: "Nogent sur Marne",
     district: "Quartier Nogent Village-Centre Ville",
+    full_address: "Place Roland Nungesser, 94130 Nogent-sur-Marne",
     deal_id: 3,
     },
   {
@@ -194,6 +197,7 @@ properties_attributes = [
     nb_bedrooms: 3,
     city: "Verrieres le Buisson",
     district: "Quartier Bois de Verrieres-Vaupereux",
+    full_address: "Place Charles de Gaulle, 91370 Verrières-le-Buisson",
     deal_id: 4,
     },
   {
@@ -203,6 +207,7 @@ properties_attributes = [
     nb_bedrooms: 1,
     city: "Paris 18ème",
     district: "Quartier Clignancourt-Jules Joffrin",
+    full_address: "1 Place Jules Joffrin, 75018 Paris",
     deal_id: 5,
     },
   {
@@ -212,6 +217,7 @@ properties_attributes = [
     nb_bedrooms: 2,
     city: "Montreuil",
     district: "Quartier La Noue-Clos Français",
+    full_address: "9 Rue Dombasle, 93100 Montreuil",
     deal_id: 6,
     },
   {
@@ -221,6 +227,7 @@ properties_attributes = [
     nb_bedrooms: 1,
     city: "Paris 12ème",
     district: "Métro Ledru-Rollin/Gare de Lyon",
+    full_address: "130 Avenue Daumesnil, 75012 Paris",
     deal_id: 7,
     },
   {
@@ -230,6 +237,7 @@ properties_attributes = [
     nb_bedrooms: 3,
     city: "Beynes",
     district: "Quartier Le Bourg et le Hameaux",
+    full_address: "Place du 8 Mai 1945, 78650 Beynes",
     deal_id: 8,
     },
   {
@@ -239,6 +247,7 @@ properties_attributes = [
     nb_bedrooms: 2,
     city: "Bourg la Reine",
     district: "Quartier Le Clos du Luxembourg-Centre Ville",
+    full_address: "6 Boulevard Carnot, 92340 Bourg-la-Reine",
     deal_id: 9,
     },
   {
@@ -248,6 +257,7 @@ properties_attributes = [
     nb_bedrooms: 1,
     city: "Puteaux",
     district: "Quartier Colline",
+    full_address: "131 Rue de la République, 92800 Puteaux",
     deal_id: 10,
     },
   {
@@ -257,6 +267,7 @@ properties_attributes = [
     nb_bedrooms: 1,
     city: "Paris 3ème",
     district: "Rue Michel le Compte",
+    full_address: "2 Rue Eugène Spuller, 75003 Paris",
     deal_id: 11,
     },
   {
@@ -266,6 +277,7 @@ properties_attributes = [
     nb_bedrooms: 1,
     city: "Paris 12ème",
     district: "Métro Ledru-Rollin/Gare de Lyon",
+    full_address: "Place de l'Hôtel de Ville, 75004 Paris",
     deal_id: 12,
     }
   ]

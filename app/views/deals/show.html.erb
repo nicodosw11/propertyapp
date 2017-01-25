@@ -2,5 +2,12 @@
   <div class="banner-show-deal-content">
     <h1><%= @deal.address %></h1>
     <p><%= @deal.occupancy %></p>
+    <ul>
+    <li><%= link_to "see property", deal_property_path(@deal) %></li>
+    <li><%= link_to "see properties", deal_properties_path(@deal) %></li>
+    <li><%= link_to "add deal", new_deal_path %></li>
+    <li><%= link_to "edit deal", edit_deal_path %></li>
+    <li><%= link_to "remove", deal_path(@deal), method: :delete, data: {confirm: "are you sure?"} %></li>
+    </ul>
   </div>
 </div>

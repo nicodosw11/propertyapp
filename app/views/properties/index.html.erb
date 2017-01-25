@@ -1,0 +1,7 @@
+<h1>Our full list of properties</h1>
+<% @properties.each do |property| %>
+  <h2><%= property.city %></h2>
+  <p><%= property.genre %> de <%= property.surface %> m²</p>
+<% end %>
+<li><%= link_to "back to deals", deals_path %> </li>
+
