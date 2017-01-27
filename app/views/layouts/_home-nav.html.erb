@@ -1,0 +1,74 @@
+<div class="navbar-container-home ">
+
+  <div class="navbar-transparent">
+    <!-- <div class="logo"> -->
+    <%= link_to "LIVSTY", "/", class: "navbar-container-brand" %>
+    <!-- </div> -->
+    <!-- Right Navigation -->
+    <div class="navbar-container-right hidden-xs hidden-sm">
+      <div class="navbar-container-item navbar-container-link">
+        <%= link_to "INVESTIR", "#" %>
+      </div>
+      <div class="navbar-container-item navbar-container-link">
+        <%= link_to "VENDRE VOTRE BIEN", "#" %>
+      </div>
+      <!-- Different navigation if login or not -->
+      <% if user_signed_in? %>
+
+      <!-- Profile picture and dropdown -->
+      <div class="navbar-container-item navbar-container-link">
+        <div class="dropdown">
+          <%= link_to "AUTRE", '#', class: "avatar dropdown-toggle", id: "navbar-container-menu", "data-toggle" => "dropdown" %>
+          <ul class="dropdown-menu dropdown-menu-right navbar-container-dropdown-menu">
+            <li>
+              <%= link_to "#" do %>
+              <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to "#" do %>
+              <i class="fa fa-home"></i>  <%= t(".profile", default: "Home") %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to destroy_user_session_path, method: :delete do %>
+              <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <% else %>
+
+      <!-- Login text link -->
+      <%= link_to t(".sign_in", default: "S'identifier"), new_user_session_path, class: "navbar-container-item navbar-container-link" %>
+
+      <% end %>
+      <!-- Button (call-to-action) -->
+      <%= link_to "Viagers", deals_path, class: "navbar-container-item navbar-container-link" %>
+    </div>
+  </div>
+
+  <!-- Dropdown list appearing on mobile only -->
+  <div class="navbar-container-item hidden-md hidden-lg">
+    <div class="dropdown">
+      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+      <ul class="dropdown-menu dropdown-menu-right navbar-container-dropdown-menu">
+        <li><a href="#">Investir</a></li>
+        <li><a href="#">Vendre votre bien</a></li>
+        <% if user_signed_in? %>
+        <li>
+        <%= link_to destroy_user_session_path, method: :delete do %><%= t(".sign_out", default: "Log out") %>
+        <% end %>
+        </li>
+        <% else %>
+        <li><%= link_to t(".sign_in", default: "S'identifier"), new_user_session_path, class: "navbar-container-item" %></li>
+        <% end %>
+        <li>
+        <%= link_to "Viagers", deals_path, class: "navbar-container-item navbar-container-link" %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

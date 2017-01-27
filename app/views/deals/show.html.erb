@@ -1,0 +1,14 @@
+<div class="banner-show-deal" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= @deal.image_url %>');">
+  <div class="banner-show-deal-content">
+    <h1><%= @deal.address %></h1>
+    <p><%= @deal.occupancy %></p>
+    <ul class="list-unstyled">
+      <li><%= link_to "add deal", new_deal_path %></li>
+      <li><%= link_to "edit deal", edit_deal_path %></li>
+      <li><%= link_to "remove deal", deal_path, method: :delete, data: {confirm: "are you sure?"} %></li>
+    </ul>
+  </div>
+</div>
+
+
+

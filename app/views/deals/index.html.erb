@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="row">
+  <% @deals.each do |d| %>
+    <div class="col-xs-12 col-sm-4">
+      <%= render "shared/card", deal: d %>
+    </div>
+  <% end %>
+  </div>
+</div>
+<li><%= link_to "add deal", new_deal_path %></li>

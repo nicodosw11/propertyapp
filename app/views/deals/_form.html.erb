@@ -1,0 +1,20 @@
+<%= form_for(@deal) do |f| %>
+  <!-- <div class="form-inputs"> -->
+    <%= f.label :description, "Enter a description" %>
+    <%= f.text_field :description %>
+    <%= f.label :address, "Enter an address" %>
+    <%= f.text_field :address %>
+    <%= f.label :kind %>
+    <%= f.text_field :kind %>
+    <%= f.label :image_url %>
+    <%= f.text_field :image_url %>
+    <%= f.label :occupancy %>
+    <%= f.text_field :occupancy %>
+    <%= f.label :yield %>
+    <%= f.number_field :yield, step: :any %>
+  <!-- </div> -->
+  <!-- <div class="form-actions"> -->
+    <%= f.submit %>
+  <!-- </div> -->
+<% end %>
+
