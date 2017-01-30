@@ -1,0 +1,22 @@
+<div id="property">
+  <header>
+    <h2>Property id #<%= @property.id %> <%= @property.full_address %></h2>
+  </header>
+  <%= simple_format(@property.genre) %>
+  <ul class="actions">
+    <li><%= link_to "Back to Deal", deal_path(@property.deal) %></li>
+    <li><%= link_to "Edit Property", [:edit, @deal, @property],
+      class: "edit" %></li>
+    <li><%= link_to "Delete Property", [@deal, @property], method: :delete,
+        data: { confirm: "Are you sure you want to delete this property?"},
+        class: "delete" %></li>
+  </ul>
+</div>
+<h3>This is the property #<%= @property.id %> of the Deal @<%= @deal.id %> - <%= @deal.address %></h3>
+
+<p>This property is located at <%= @property.full_address %></p>
+<p>Deal yield <%= @deal.yield %> %<p>
+
+<li><%= link_to "Back to the properties of the deal", deal_properties_path(@deal)%></li>
+
+

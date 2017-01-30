@@ -1,20 +1,38 @@
 <%= form_for(@deal) do |f| %>
-  <!-- <div class="form-inputs"> -->
-    <%= f.label :description, "Enter a description" %>
+  <% if @deal.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@deal.errors.count, "error") %>
+      prohibited this deal from being saved:</h2>
+        <ul>
+          <% @deal.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+          <% end %>
+        </ul>
+    </div>
+  <% end %>
+  <p>
+    <%= f.label :description %><br>
     <%= f.text_field :description %>
-    <%= f.label :address, "Enter an address" %>
+  </p>
+  <p>
+    <%= f.label :address %><br>
     <%= f.text_field :address %>
-    <%= f.label :kind %>
+  </p>
+  <p>
+    <%= f.label :kind %><br>
     <%= f.text_field :kind %>
-    <%= f.label :image_url %>
+  </p>
+  <p>
+    <%= f.label :image_url %><br>
     <%= f.text_field :image_url %>
-    <%= f.label :occupancy %>
+  </p>
+  <p>
+    <%= f.label :occupancy %><br>
     <%= f.text_field :occupancy %>
-    <%= f.label :yield %>
+  </p>
+  <p>
+    <%= f.label :yield %><br>
     <%= f.number_field :yield, step: :any %>
-  <!-- </div> -->
-  <!-- <div class="form-actions"> -->
-    <%= f.submit %>
-  <!-- </div> -->
+  </p>
+  <%= f.submit %>
 <% end %>
-

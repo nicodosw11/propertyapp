@@ -1,5 +1,5 @@
 class Deal < ApplicationRecord
-  has_many :properties
+  has_many :properties, dependent: :destroy
   has_one :financial
   has_many :tenants, dependent: :destroy
   has_many :investments, dependent: :nullify

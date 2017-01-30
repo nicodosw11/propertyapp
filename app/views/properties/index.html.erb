@@ -1,0 +1,19 @@
+<header>
+  <h2>Properties of the specific deal</h2>
+  <ul id="properties of the specific deal">
+  <% @deal.properties.each do |property| %>
+  <li>Property id #<%= property.id %> - <%= link_to property.full_address, [@deal, property] %></li>
+  <li><%= link_to "Back to Deal", deal_path(property.deal) %></li>
+  <li><%= link_to "Edit Property", edit_deal_property_path(property.deal, property) %></li>
+  <li><%= link_to "Delete Property", deal_property_path(property.deal, property), method: :delete, data: { confirm: "Are you sure you want to delete this property?"} %></li>
+  <br>
+  <% end %>
+  </ul>
+  <ul class="actions">
+    <li><%= link_to "Add Property", new_deal_property_path(@deal),
+      class: "new" %></li>
+    <li><%= link_to "Back to deals", deals_path%></li>
+  </ul>
+</header>
+
+

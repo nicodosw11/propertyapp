@@ -1,21 +1,23 @@
   Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
+  get 'properties', to: "properties#all"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   # resources :deals, only: [:index, :show] do
   #   resources :properties, only: [:show]
   # end
 
   # get "deals",                                      to: "deals#index"
-  # get "deals/new",                                  to: "deals#new", as: :new_deal
-  # post "deals",                                     to: "deals#create", as: :deals
-  # get "deals/:id",                                  to: "deals#show", as: :deal
-  # get "deals/:id/edit",                             to: "deals#edit", as: :edit_deal
-  # patch "deals/:id",                                to: "deals#update", as: :deal
-  # delete "deals/:id",                               to: "deals#destroy", as: :deal
+  # get "deals/new",                                  to: "deals#new"
+  # post "deals",                                     to: "deals#create"
+  # get "deals/:id",                                  to: "deals#show"
+  # get "deals/:id/edit",                             to: "deals#edit"
+  # patch "deals/:id",                                to: "deals#update"
+  # delete "deals/:id",                               to: "deals#destroy"
 
   resources :deals do
-    # resources :properties
+    # resources :properties, only: [:index, :show]
+    resources :properties
   end
 
   # get "deals/:deal_id/properties"                   to: "properties#index" as: :properties

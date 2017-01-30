@@ -1,0 +1,10 @@
+<%= simple_form_for([deal, property]) do |f| %>
+  <%= f.input :genre %>
+  <%= f.input :surface %>
+  <%= f.input :nb_rooms %>
+  <%= f.input :nb_bedrooms %>
+  <%= f.input :city %>
+  <%= f.input :district %>
+  <%= f.input :full_address %>
+  <%= f.submit "add a property", class: "btn btn-primary" %>
+<% end %>
