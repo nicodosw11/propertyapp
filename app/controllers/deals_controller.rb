@@ -6,6 +6,11 @@ class DealsController < ApplicationController
   def show
     @tenant = Tenant.new
     # @tenant = @deal.tenants.build
+    # @property = @deal.properties
+    # @property = @deal.properties.find(params[:property_id])
+    # @property = @deal.properties.find(params[:id])
+    # auction = Auction.find(params[:auction_id])
+    # bid = auction.bids.find(params[:id])
   end
   def new
     @deal = Deal.new
@@ -22,8 +27,9 @@ class DealsController < ApplicationController
   end
   def update
     if @deal.update(deal_params)
-      redirect_to deal_path(@deal), notice: 'Deal was successfully updated'
+      redirect_to @deal, notice: 'Deal was successfully updated'
     else
+      flash.now[:alert] = "Deal has not been updated."
       render :edit
     end
   end
@@ -38,6 +44,9 @@ class DealsController < ApplicationController
   end
   def set_deal
     @deal = Deal.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    flash[:alert] = "The deal you were looking for could not be found."
+    redirect_to deals_path
   end
 end
 

@@ -2,11 +2,20 @@
   <div class="banner-show-deal-content">
     <h1><%= @deal.address %></h1>
     <p><%= @deal.occupancy %></p>
-    <ul class="list-unstyled">
-      <li><%= link_to "add deal", new_deal_path %></li>
-      <li><%= link_to "edit deal", edit_deal_path %></li>
-      <li><%= link_to "remove deal", deal_path, method: :delete, data: {confirm: "are you sure?"} %></li>
+    <ul class="list-unstyled text-justify">
+    <li><%= link_to "edit deal", edit_deal_path(@deal) %></li>
+    <li><%= link_to "add property", new_deal_property_path(@deal) %></li>
+    <li><%= link_to "remove deal", deal_path(@deal), method: :delete, data: {confirm: "are you sure?"} %></li>
     </ul>
+    <h2>Properties in this deal:</h2>
+    <ul class="list-unstyled text-justify">
+      <% @deal.properties.each do |prop| %>
+      <li>Property id #<%= prop.id %> - <%= link_to prop.full_address, deal_property_path(@deal, prop)  %></li>
+      <%end%>
+      <li><%= link_to "see all properties of the deal in detail", deal_properties_path(@deal) %></li>
+    </ul>
+    <br>
+    <li><%= link_to "add deal", new_deal_path %></li>
   </div>
 </div>
 

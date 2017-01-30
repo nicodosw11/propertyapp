@@ -1,0 +1,12 @@
+<h1>Our full list of properties</h1>
+<% @properties.each do |property| %>
+<ul class="list-unstyled">
+<li>Property id #<%= property.id %></li>
+<li><%= property.genre %></li>
+<li><%= property.full_address %></li>
+<li><%= link_to "Edit Property", edit_deal_property_path(property.deal, property) %></li>
+<li><%= link_to "Delete Property", deal_property_path(property.deal, property), method: :delete, data: { confirm: "Are you sure you want to delete this property?"} %></li>
+<br>
+</ul>
+<% end %>
+<li><%= link_to "back to deals", deals_path %> </li>
