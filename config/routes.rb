@@ -3,9 +3,7 @@
   root to: 'pages#home'
   get 'properties', to: "properties#all"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  # resources :deals, only: [:index, :show] do
-  #   resources :properties, only: [:show]
-  # end
+
 
   # get "deals",                                      to: "deals#index"
   # get "deals/new",                                  to: "deals#new"
@@ -15,10 +13,18 @@
   # patch "deals/:id",                                to: "deals#update"
   # delete "deals/:id",                               to: "deals#destroy"
 
-  resources :deals do
-    # resources :properties, only: [:index, :show]
-    resources :properties
+  resources :deals, only: [:index, :show] do
+    scope '/admin' do
+      resources :properties
+    end
+    # resources :properties, path: '/admin'
   end
+
+  scope '/admin' do
+    resources :deals, except: [:index, :show]
+  end
+  #same as
+  # resources :deals, except: [:index, :show], path: '/admin/deals'
 
   # get "deals/:deal_id/properties"                   to: "properties#index" as: :properties
   # get "deals/:deal_id/properties/new",              to: "properties#new" as: :new_property
