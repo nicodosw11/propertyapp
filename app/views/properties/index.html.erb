@@ -4,14 +4,20 @@
   <% @deal.properties.each do |property| %>
   <li>Property id #<%= property.id %> - <%= link_to property.full_address, [@deal, property] %></li>
   <li><%= link_to "Back to Deal", deal_path(property.deal) %></li>
+  <% if policy(property).edit? %>
   <li><%= link_to "Edit Property", edit_deal_property_path(property.deal, property) %></li>
+  <% end %>
+  <% if policy(property).destroy? %>
   <li><%= link_to "Delete Property", deal_property_path(property.deal, property), method: :delete, data: { confirm: "Are you sure you want to delete this property?"} %></li>
+  <% end %>
   <br>
   <% end %>
   </ul>
   <ul class="actions">
+    <% if policy(@property).destroy? %>
     <li><%= link_to "Add Property", new_deal_property_path(@deal),
       class: "new" %></li>
+    <% end %>
     <li><%= link_to "Back to deals", deals_path%></li>
   </ul>
 </header>

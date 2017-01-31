@@ -295,31 +295,36 @@ users = [
     first_name: 'Sam',
     last_name: 'Appleseed',
     password: 'apple1',
-    email: 'sam.appleseed@gmail.com'
+    email: 'sam.appleseed@gmail.com',
+    country_of_residence: 'United Kingdom'
     },
   {
     first_name: 'Mike',
     last_name: 'Julien',
     password: 'tomato',
-    email: 'mike.julien@gmail.com'
+    email: 'mike.julien@gmail.com',
+    country_of_residence: 'France'
     },
   {
     first_name: 'Alex',
     last_name: 'Patterson',
     password: 'chicken',
-    email: 'alex.patterson@gmail.com'
+    email: 'alex.patterson@gmail.com',
+    country_of_residence: 'France'
     },
   {
     first_name: 'Olivier',
     last_name: 'Smith',
     password: 'carotte',
-    email: 'olivier.smith@gmail.com'
+    email: 'olivier.smith@gmail.com',
+    country_of_residence: 'France'
     },
   {
     first_name: 'Samantha',
     last_name: 'Jones',
     password: 'courgette',
-    email: 'samantha.jones@gmail.com'
+    email: 'samantha.jones@gmail.com',
+    country_of_residence: 'France'
     }
 ]
 

@@ -1,4 +1,17 @@
-<h1>Deals</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-4">
+    <h1>Deals</h1>
+    <ul class="list-unstyled">
+    <% if policy(Deal).new? %>
+    <li><%= link_to "add deal", new_deal_path %></li>
+    <% end %>
+    <li><%= link_to "see all properties in the db", admin_properties_path %></li>
+    </ul>
+    </div>
+  </div>
+</div>
+
 <div class="container">
   <div class="row">
   <% @deals.each do |d| %>
@@ -8,4 +21,4 @@
   <% end %>
   </div>
 </div>
-<li><%= link_to "add deal", new_deal_path %></li>
+
