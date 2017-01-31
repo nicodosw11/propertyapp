@@ -1,28 +1,25 @@
 class PropertyPolicy < ApplicationPolicy
   class Scope < Scope
-    def resolve
-      scope.all # anyone can see the full list of property
-      # scope.where(user: user) # only the creator can see the full list of properties
-    end
     # def resolve
-    #   if user.admin?
-    #     scope.all
-    #   else
-    #     scope.where(user: user)
-    #   end
+      # scope.all # anyone can see the full list of property
+      # scope.where(user: user) # only the creator can see the full list of properties
+      # scope.none if user.nil?
+      # scope.all if user.admin?
     # end
+    def resolve
+      if user.admin?
+        scope.all
+      else
+        scope.none
+      end
+    end
   end
   # user is the current user
   # record is the argument passed to 'authorize' in Controller => @deal
 
-  # def all
-  #   user_is_admin?
+  # def index?
+  #   record.all
   # end
-
-  def index?
-    # asking if all subscriptions have the current_user id as the user_id
-    record.all
-  end
 
   def show?
     user_is_admin? # anyone can see a property
@@ -70,7 +67,8 @@ class PropertyPolicy < ApplicationPolicy
     record.user == user
   end
   def user_is_admin?
-    user.admin
+    # user.admin
+    user.try(:admin?)
   end
   def user_is_owner_or_admin?
     record.user == user || user.admin
