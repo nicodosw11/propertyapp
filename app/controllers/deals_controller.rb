@@ -2,7 +2,9 @@ class DealsController < ApplicationController
   # skip_before_action :authenticate_user!, only: [ :index, :show ]
   before_action :set_deal, only: [:show, :edit, :update, :destroy]
   def index
-    @deals = Deal.all
+    # @deals = Deal.all
+    # @deals = policy_scope(Deal)
+    @deals = policy_scope(Deal).order(created_at: :asc)
   end
   def show
     @tenant = Tenant.new
@@ -15,9 +17,19 @@ class DealsController < ApplicationController
   end
   def new
     @deal = Deal.new
+    # pundit ######
+    authorize @deal
+    ###############
   end
   def create
+    # @deal = Deal.new(deal_params)
+    # @deal.user = current_user
+    # same as
+    # @deal = current_user.deals.build(deal_params)
     @deal = Deal.new(deal_params)
+    # pundit ######
+    authorize @deal
+    ###############
     if @deal.save
       redirect_to deals_path, notice: 'Deal was successfully created'
     else
@@ -45,6 +57,9 @@ class DealsController < ApplicationController
   end
   def set_deal
     @deal = Deal.find(params[:id])
+    # pundit ######
+    authorize @deal
+    ###############
   rescue ActiveRecord::RecordNotFound
     flash[:alert] = "The deal you were looking for could not be found."
     redirect_to deals_path

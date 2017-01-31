@@ -1,10 +1,16 @@
-<h1>New Deal</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-4">
+    <h1>New Deal</h1>
+    <%= render "form", deal: @deal %>
 
-<%= render "form", deal: @deal %>
+    <!-- @deal.errors -->
 
-<!-- @deal.errors -->
+    <%= link_to "back", deals_path %>
+    </div>
+  </div>
+</div>
 
-<%= link_to "back", deals_path %>
 
 
 

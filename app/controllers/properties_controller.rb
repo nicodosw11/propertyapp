@@ -3,6 +3,7 @@ class PropertiesController < ApplicationController
   before_action :set_deal, except: [:all]
   before_action :set_property, only: [:destroy]
   # before_action :set_property, only: [:show]
+  skip_after_action :verify_authorized, only: [:all]
   def index
     @properties = @deal.properties
     # @property = @deal.properties
@@ -22,9 +23,11 @@ class PropertiesController < ApplicationController
   end
   def new
     @property = @deal.properties.build
+    authorize @property
   end
   def create
     @property = @deal.properties.build(property_params)
+    authorize @property
     if @property.save
       flash[:notice] = "Property has been created."
       redirect_to [@deal, @property]
@@ -57,11 +60,13 @@ class PropertiesController < ApplicationController
   end
   def set_property
     @property = @deal.properties.find(params[:id])
+    authorize @property
   end
   # def set_property
   #   @property = Property.find(params[:id])
   # end
   def set_deal
     @deal = Deal.find(params[:deal_id])
+    authorize @deal
   end
 end

@@ -3,19 +3,29 @@
     <h1><%= @deal.address %></h1>
     <p><%= @deal.occupancy %></p>
     <ul class="list-unstyled text-justify">
+    <% if policy(@deal).edit? %>
     <li><%= link_to "edit deal", edit_deal_path(@deal) %></li>
+    <% end %>
+    <% if policy(@deal.properties).new? %>
     <li><%= link_to "add property", new_deal_property_path(@deal) %></li>
+    <% end %>
+    <% if policy(@deal).destroy? %>
     <li><%= link_to "remove deal", deal_path(@deal), method: :delete, data: {confirm: "are you sure?"} %></li>
+    <% end %>
     </ul>
+    <% if policy(@deal.properties).show? %>
     <h2>Properties in this deal:</h2>
     <ul class="list-unstyled text-justify">
       <% @deal.properties.each do |prop| %>
       <li>Property id #<%= prop.id %> - <%= link_to prop.full_address, deal_property_path(@deal, prop)  %></li>
-      <%end%>
+      <% end %>
       <li><%= link_to "see all properties of the deal in detail", deal_properties_path(@deal) %></li>
     </ul>
+    <% end %>
     <br>
+    <% if policy(Deal).new? %>
     <%= link_to "add deal", new_deal_path, {class: "btn btn-primary"} %>
+    <% end %>
   </div>
 </div>
 

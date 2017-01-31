@@ -1,7 +1,7 @@
   Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-  get 'properties', to: "properties#all"
+  get 'admin/properties', to: "properties#all"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 
@@ -13,7 +13,7 @@
   # patch "deals/:id",                                to: "deals#update"
   # delete "deals/:id",                               to: "deals#destroy"
 
-  resources :deals, only: [:index, :show] do
+  resources :deals, only: [:index, :show, :create, :update, :destroy] do
     scope '/admin' do
       resources :properties
     end

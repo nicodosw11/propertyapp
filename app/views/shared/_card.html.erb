@@ -4,9 +4,15 @@
     <h2><%= deal.address %></h2>
     <p><%= deal.kind %></p>
     <p><%= deal.yield %> % </p>
+    <% if policy(deal).edit? %>
     <li><%= link_to "edit deal", edit_deal_path(deal) %></li>
+    <% end %>
+    <% if policy(deal).destroy? %>
     <li><%= link_to "remove deal", deal_path(deal), method: :delete, data: {confirm: "are you sure?"} %></li>
+    <% end %>
   </div>
+  <% if policy(deal).show? %>
   <%= link_to "", deal_path(deal), class: "card-link" %>
+  <% end %>
 </div>
 
