@@ -10,6 +10,7 @@ gem 'devise'
 gem 'pundit'
 gem 'redis'
 gem 'cloudinary'
+gem 'country_select'
 
 gem 'sass-rails'
 gem 'jquery-rails'
