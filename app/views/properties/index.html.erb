@@ -14,7 +14,7 @@
   <% end %>
   </ul>
   <ul class="actions">
-    <% if policy(@property).destroy? %>
+    <% if policy(@property).new? %>
     <li><%= link_to "Add Property", new_deal_property_path(@deal),
       class: "new" %></li>
     <% end %>

@@ -9,7 +9,8 @@ class PropertiesController < ApplicationController
     # @property = @deal.properties
   end
   def all
-    @properties = Property.all
+    # @properties = Property.all
+    @properties = policy_scope(Property)
   end
   def show
     # @property = @deal.properties.find(params[:property_id])
