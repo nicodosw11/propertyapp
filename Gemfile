@@ -11,6 +11,8 @@ gem 'pundit'
 gem 'redis'
 gem 'cloudinary'
 gem 'country_select'
+gem 'activeadmin', github: 'activeadmin/activeadmin'
+gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 
 gem 'sass-rails'
 gem 'jquery-rails'

@@ -5,4 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :investments, dependent: :nullify
   has_many :deals, through: :investments
+
+  #for Active Admin
+  def name
+    "#{id} - #{first_name} #{last_name}"
+  end
 end
