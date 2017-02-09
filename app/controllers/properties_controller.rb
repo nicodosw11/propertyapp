@@ -15,8 +15,8 @@ class PropertiesController < ApplicationController
     # @properties = policy_scope(Deal)
 
     #try
-    @properties = policy_scope(Property).order(id: :asc)
-    # # authorize :index
+    @properties = policy_scope(Property.all)
+    authorize @properties, :index?
 
     # @properties = Property.all
     # # authorize :index

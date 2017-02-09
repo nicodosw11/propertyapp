@@ -12,9 +12,9 @@ class TenantPolicy < ApplicationPolicy
     user_is_admin?
   end
 
-  # def index?
-  #   user_is_admin?
-  # end
+  def index?
+    user_is_admin?
+  end
 
   def show?
     user_is_admin? # anyone can see a tenant

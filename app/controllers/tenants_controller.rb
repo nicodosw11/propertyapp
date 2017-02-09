@@ -16,7 +16,7 @@ class TenantsController < ApplicationController
 
     #try
     @tenants = policy_scope(@deal.tenants)
-    # # authorize :index
+    authorize @tenants, :index?
 
     # @tenants = @deal.tenants
     # # authorize :index
