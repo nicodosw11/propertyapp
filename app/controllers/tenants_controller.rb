@@ -27,7 +27,7 @@ class TenantsController < ApplicationController
   ########################################
 
   def show
-    @deal = Deal.find(params[:deal_id])
+    # @deal = Deal.find(params[:deal_id])
     @tenant = Tenant.find(params[:id])
     # @tenant = @deal.tenants.find(params[:tenant_id])
     # @tenant = @deal.tenants

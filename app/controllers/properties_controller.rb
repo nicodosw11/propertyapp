@@ -9,11 +9,12 @@ class PropertiesController < ApplicationController
   end
 
   def index
-    @deal = Deal.find(params[:deal_id])
-    # @properties = policy_scope(Deal)
-    @properties = policy_scope(@deal.properties)
-    # authorize :index
-    # authorize @deal
+    @properties = policy_scope(Property).order(id: :asc)
+  # @deal = Deal.find(params[:deal_id])
+  # # @properties = policy_scope(Deal)
+  # @properties = policy_scope(@deal.properties)
+  # # authorize :index
+  # # authorize @deal
   end
 
   ########################################
@@ -27,17 +28,20 @@ class PropertiesController < ApplicationController
   ########################################
 
   def show
-    @deal = Deal.find(params[:deal_id])
-    @property = Property.find(params[:id])
+    # @deal = Deal.find(params[:deal_id])
+    # @property = Property.find(params[:id])
+
     # @property = @deal.properties.find(params[:property_id])
     # @property = @deal.properties
   end
   def new
-    @property = @deal.properties.build
+    # @property = @deal.properties.build
+    @property = @deal.build_property
     authorize @property
   end
   def create
-    @property = @deal.properties.build(property_params)
+    # @property = @deal.properties.build(property_params)
+    @property = @deal.build_property(property_params)
     authorize @property
     if @property.save
       flash[:notice] = "Property has been created."
@@ -48,10 +52,10 @@ class PropertiesController < ApplicationController
     end
   end
   def edit
-    @property = Property.find(params[:id])
+    # @property = Property.find(params[:id])
   end
   def update
-    @property = Property.find(params[:id])
+    # @property = Property.find(params[:id])
     if @property.update(property_params)
       flash[:notice] = "Property has been updated."
       redirect_to [@deal, @property]
@@ -69,13 +73,17 @@ class PropertiesController < ApplicationController
   def property_params
     params.require(:property).permit(:genre, :surface, :nb_rooms, :nb_bedrooms, :city, :district, :full_address)
   end
-  def set_property
-    @property = @deal.properties.find(params[:id])
-    authorize @property
-  end
+  # def set_property
+  #   @property = @deal.properties.find(params[:id])
+  #   authorize @property
+  # end
   # def set_property
   #   @property = Property.find(params[:id])
+  #   authorize @property
   # end
+  def set_property
+      @property = @deal.property #.find(params[:id]) # you don't need to find it because there is only 1
+  end
   def set_deal
     @deal = Deal.find(params[:deal_id])
     authorize @deal
