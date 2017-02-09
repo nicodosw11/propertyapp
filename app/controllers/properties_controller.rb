@@ -27,14 +27,10 @@ class PropertiesController < ApplicationController
   ########################################
 
   def show
-    # @property = @deal.properties.find(params[:property_id])
-    # @property = @deal.properties
-    # auction = Auction.find(params[:auction_id])
-    # bid = auction.bids.find(params[:id])
-    # @author = Author.find(params[:author_id])
-    # @book = Book.find(params[:id])
     @deal = Deal.find(params[:deal_id])
     @property = Property.find(params[:id])
+    # @property = @deal.properties.find(params[:property_id])
+    # @property = @deal.properties
   end
   def new
     @property = @deal.properties.build

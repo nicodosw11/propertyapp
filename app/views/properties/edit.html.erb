@@ -4,8 +4,9 @@
     <header>
       <h1>
       Edit Property
-        <small><%= @deal.address %></small>
+      <small>#id <%= @deal.id %></small>
       </h1>
+      <p><%= @deal.address %></p>
     </header>
     <%= render "form", deal: @deal, property: @property %>
     </div>

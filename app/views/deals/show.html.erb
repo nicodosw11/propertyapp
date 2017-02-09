@@ -9,20 +9,32 @@
     <% if policy(@deal.properties).new? %>
     <li><%= link_to "add property", new_deal_property_path(@deal) %></li>
     <% end %>
+    <% if policy(@deal.tenants).new? %>
+    <li><%= link_to "add tenant", new_deal_tenant_path(@deal) %></li>
+    <% end %>
     <% if policy(@deal).destroy? %>
     <li><%= link_to "remove deal", deal_path(@deal), method: :delete, data: {confirm: "are you sure?"} %></li>
     <% end %>
     </ul>
     <% if policy(@deal.properties).show? %>
-    <h2>Properties in this deal:</h2>
-    <ul class="list-unstyled text-justify">
-      <% @deal.properties.each do |prop| %>
-      <li>Property id #<%= prop.id %> - <%= link_to prop.full_address, deal_property_path(@deal, prop)  %></li>
-      <% end %>
-      <li><%= link_to "see all properties of the deal in detail", deal_properties_path(@deal) %></li>
-    </ul>
+      <h2>Properties in this deal:</h2>
+      <ul class="list-unstyled text-justify">
+        <% @deal.properties.each do |prop| %>
+        <li>Property id #<%= prop.id %> - <%= link_to prop.full_address, deal_property_path(@deal, prop)  %></li>
+        <% end %>
+        <li><%= link_to "see all properties of the deal in detail", deal_properties_path(@deal) %></li>
+      </ul>
     <% end %>
     <br>
+    <% if policy(@deal.tenants).show? %>
+      <h2>Tenants in this deal:</h2>
+      <ul class="list-unstyled text-justify">
+        <% @deal.tenants.each do |guy| %>
+        <li>Tenant id #<%= guy.id %> - <%= link_to guy.last_name, deal_tenant_path(@deal, guy)  %> <%= link_to "delete", deal_tenant_path(@deal, guy), method: :delete, data: { confirm: "Are you sure you want to delete this tenant?"} %></li>
+        <% end %>
+        <li><%= link_to "see all properties of the deal in detail", deal_properties_path(@deal) %></li>
+      </ul>
+    <% end %>
     <% if policy(Deal).new? %>
     <%= link_to "add deal", new_deal_path, {class: "btn btn-primary"} %>
     <% end %>

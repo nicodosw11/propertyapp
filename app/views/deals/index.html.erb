@@ -9,6 +9,9 @@
     <% if policy(Property).all? %>
     <li><%= link_to "see all properties in the db",siteadmin_properties_path %></li>
     <% end %>
+    <% if policy(Tenant).all? %>
+    <li><%= link_to "see all tenants in the db", siteadmin_tenants_path %></li>
+    <% end %>
     </ul>
     </div>
   </div>
