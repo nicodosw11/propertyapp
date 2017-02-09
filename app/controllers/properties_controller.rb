@@ -1,17 +1,31 @@
 class PropertiesController < ApplicationController
-  # before_action :set_deal, only: [:show, :edit, :update, :destroy]
-  before_action :set_deal, except: [:all]
-  before_action :set_property, only: [:destroy]
-  # before_action :set_property, only: [:show]
-  skip_after_action :verify_authorized, only: [:all]
-  def index
-    @properties = @deal.properties
-    # @property = @deal.properties
-  end
+  # skip_after_action :verify_authorized, only: [:all]
+  before_action :set_deal, except: [:index, :all]
+  before_action :set_property, only: [:show, :edit, :update, :destroy]
+
   def all
-    # @properties = Property.all
-    @properties = policy_scope(Property)
+    @properties = Property.all
+    authorize @properties
   end
+
+  def index
+    @deal = Deal.find(params[:deal_id])
+    # @properties = policy_scope(Deal)
+    @properties = policy_scope(@deal.properties)
+    # authorize :index
+    # authorize @deal
+  end
+
+  ########################################
+  # def index
+  #   @properties = @deal.properties
+  # end
+  # def all
+  #   # @properties = Property.all
+  #   @properties = policy_scope(Property)
+  # end
+  ########################################
+
   def show
     # @property = @deal.properties.find(params[:property_id])
     # @property = @deal.properties

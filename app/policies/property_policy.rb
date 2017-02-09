@@ -7,19 +7,20 @@ class PropertyPolicy < ApplicationPolicy
       # scope.all if user.admin?
     # end
     def resolve
-      if user.admin?
-        scope.all
-      else
-        scope.none
-      end
+      # if user.admin?
+      #   scope.all
+      # else
+      #   scope.none
+      # end
+      user.admin? ? scope.all : scope.none
     end
   end
   # user is the current user
   # record is the argument passed to 'authorize' in Controller => @deal
 
-  # def index?
-  #   record.all
-  # end
+  def all?
+    user_is_admin?
+  end
 
   def show?
     user_is_admin? # anyone can see a property

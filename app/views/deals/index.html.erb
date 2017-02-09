@@ -6,8 +6,8 @@
     <% if policy(Deal).new? %>
     <li><%= link_to "add deal", new_deal_path %></li>
     <% end %>
-    <% if policy(Property).show? %>
-    <li><%= link_to "see all properties in the db", admin_properties_path %></li>
+    <% if policy(Property).all? %>
+    <li><%= link_to "see all properties in the db",siteadmin_properties_path %></li>
     <% end %>
     </ul>
     </div>
