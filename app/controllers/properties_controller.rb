@@ -9,6 +9,7 @@ class PropertiesController < ApplicationController
   end
 
   def index
+    @deal = Deal.find(params[:deal_id])
     @properties = policy_scope(Property).order(id: :asc)
   # @deal = Deal.find(params[:deal_id])
   # # @properties = policy_scope(Deal)

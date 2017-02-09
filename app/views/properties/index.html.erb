@@ -3,7 +3,7 @@
   <ul id="properties of the specific deal">
   <% @properties.each do |property| %>
   <li>Property id #<%= property.id %> - <%= link_to property.full_address, deal_property_path(property.deal, property) %></li>
-  <li><%= link_to "Back to Deal", deal_path(property.deal) %></li>
+  <li><%= link_to "Back to Deal #{property.deal.id}", deal_path(property.deal) %></li>
   <% if policy(property).edit? %>
   <li><%= link_to "Edit Property", edit_deal_property_path(property.deal, property) %></li>
   <% end %>
@@ -15,8 +15,7 @@
   </ul>
   <ul class="actions">
     <% if policy(@properties).new? %>
-    <li><%= link_to "Add Property", new_deal_property_path(property.deal) %></li>),
-      class: "new" %></li>
+    <li><%= link_to "Override Property of this Deal", new_deal_property_path(@deal), class: "new" %></li>
     <% end %>
     <li><%= link_to "Back to deals", deals_path%></li>
   </ul>
