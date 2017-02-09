@@ -1,19 +1,18 @@
 class PropertyPolicy < ApplicationPolicy
   class Scope < Scope
-    # def resolve
+    def resolve
       # scope.all # anyone can see the full list of properties
       # scope.where(user: user) # only the creator can see the full list of properties
       # scope.none if user.nil?
       # scope.all if user.admin?
-    # end
-    def resolve
+      # scope.properties if user.admin?
       # if user.admin?
       #   scope.all
       # else
       #   scope.none
       # end
       # scope.all if user.admin?
-      # user.admin? ? scope.all : scope.none
+      user.admin? ? scope.all : scope.none
     end
   end
   # user is the current_user

@@ -12,10 +12,10 @@ class PropertiesController < ApplicationController
     @deal = Deal.find(params[:deal_id])
 
     #solution1
-    @properties = policy_scope(Deal)
+    # @properties = policy_scope(Deal)
 
     #try
-    # @properties = policy_scope(Property).order(id: :asc)
+    @properties = policy_scope(Property).order(id: :asc)
     # # authorize :index
 
     # @properties = Property.all
