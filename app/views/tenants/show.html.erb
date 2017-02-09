@@ -1,0 +1,30 @@
+<div id="tenant">
+  <header>
+    <h2>Tenant id #<%= @tenant.id %></h2>
+  </header>
+  <ul>
+  <li>Age : <%= @tenant.age %></li>
+  <li>Surname : <%= @tenant.last_name %></li>
+  <br>
+  <ul class="actions">
+    <li><%= link_to "Back to Deal", deal_path(@tenant.deal) %></li>
+    <% if policy(@tenant).edit? %>
+    <li><%= link_to "Edit Tenant", [:edit, @deal, @tenant],
+      class: "edit" %></li>
+    <% end %>
+    <% if policy(@tenant).destroy? %>
+    <li><%= link_to "Delete Tenant", [@deal, @tenant], method: :delete,
+        data: { confirm: "Are you sure you want to delete this tenant?"},
+        class: "delete" %></li>
+    <% end %>
+  </ul>
+</div>
+<h3>This is the tenant #<%= @tenant.id %> of the Deal @<%= @deal.id %> - <%= @deal.address %></h3>
+
+<p>This tenant is <%= @tenant.first_name %> <%= @tenant.last_name %></p>
+<p>Deal yield <%= @deal.yield %> %<p>
+
+<li><%= link_to "Back to the tenants of the deal", deal_tenants_path(@deal)%></li>
+
+
+

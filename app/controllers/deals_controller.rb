@@ -7,7 +7,8 @@ class DealsController < ApplicationController
     @deals = policy_scope(Deal).order(created_at: :asc)
   end
   def show
-    @tenant = Tenant.new
+    @property = @deal.property
+    # @tenant = Tenant.new
     # @tenant = @deal.tenants.build
     # @property = @deal.properties
     # @property = @deal.properties.find(params[:property_id])

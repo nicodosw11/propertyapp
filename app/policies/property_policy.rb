@@ -1,7 +1,7 @@
 class PropertyPolicy < ApplicationPolicy
   class Scope < Scope
     # def resolve
-      # scope.all # anyone can see the full list of property
+      # scope.all # anyone can see the full list of properties
       # scope.where(user: user) # only the creator can see the full list of properties
       # scope.none if user.nil?
       # scope.all if user.admin?
@@ -15,8 +15,8 @@ class PropertyPolicy < ApplicationPolicy
       user.admin? ? scope.all : scope.none
     end
   end
-  # user is the current user
-  # record is the argument passed to 'authorize' in Controller => @deal
+  # user is the current_user
+  # record is the argument passed to 'authorize' in Controller => @property
 
   def all?
     user_is_admin?

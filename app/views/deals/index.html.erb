@@ -6,8 +6,14 @@
     <% if policy(Deal).new? %>
     <li><%= link_to "add deal", new_deal_path %></li>
     <% end %>
+    <% if policy(Deal).new? %>
+    <li><%= link_to "admin", admin_root_path, {class: "btn btn-danger"} %></li>
+    <% end %>
     <% if policy(Property).all? %>
     <li><%= link_to "see all properties in the db",siteadmin_properties_path %></li>
+    <% end %>
+    <% if policy(Tenant).all? %>
+    <li><%= link_to "see all tenants in the db", siteadmin_tenants_path %></li>
     <% end %>
     </ul>
     </div>

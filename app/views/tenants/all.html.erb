@@ -1,0 +1,13 @@
+<h1>Our full list of tenants</h1>
+<% @tenants.each do |tenant| %>
+<ul class="list-unstyled">
+<li>Tenant id # <%= link_to tenant.id, deal_tenant_path(tenant.deal, tenant)  %></li>
+<li><%= tenant.id %></li>
+<li><%= tenant.first_name %></li>
+<li><%= tenant.last_name %></li>
+<li><%= link_to "Edit Tenant", edit_deal_tenant_path(tenant.deal, tenant) %></li>
+<li><%= link_to "Delete Tenant", deal_tenant_path(tenant.deal, tenant), method: :delete, data: { confirm: "Are you sure you want to delete this tenant?"} %></li>
+<br>
+</ul>
+<% end %>
+<li><%= link_to "back to deals", deals_path %> </li>

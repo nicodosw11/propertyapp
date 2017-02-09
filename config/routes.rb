@@ -3,6 +3,7 @@
   devise_for :users
   root to: 'pages#home'
   get 'siteadmin/properties', to: "properties#all"
+  get 'siteadmin/tenants', to: "tenants#all"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 
@@ -17,6 +18,7 @@
   resources :deals, only: [:index, :show, :create, :update, :destroy] do
     scope '/siteadmin' do
       resources :properties
+      resources :tenants
     end
     # resources :properties, path: '/admin'
   end

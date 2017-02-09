@@ -4,7 +4,7 @@
   </header>
   <%= simple_format(@property.genre) %>
   <ul class="actions">
-    <li><%= link_to "Back to Deal", deal_path(@property.deal) %></li>
+    <li><%= link_to "Back to Deal #{@property.deal.id}", deal_path(@property.deal) %></li>
     <% if policy(@property).edit? %>
     <li><%= link_to "Edit Property", [:edit, @deal, @property],
       class: "edit" %></li>
@@ -21,6 +21,6 @@
 <p>This property is located at <%= @property.full_address %></p>
 <p>Deal yield <%= @deal.yield %> %<p>
 
-<li><%= link_to "Back to the properties of the deal", deal_properties_path(@deal)%></li>
+<li><%= link_to "See all our properties", deal_properties_path(@deal)%></li>
 
 
