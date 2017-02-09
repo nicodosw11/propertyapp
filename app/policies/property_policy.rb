@@ -12,7 +12,8 @@ class PropertyPolicy < ApplicationPolicy
       # else
       #   scope.none
       # end
-      user.admin? ? scope.all : scope.none
+      # scope.all if user.admin?
+      # user.admin? ? scope.all : scope.none
     end
   end
   # user is the current_user
@@ -21,6 +22,10 @@ class PropertyPolicy < ApplicationPolicy
   def all?
     user_is_admin?
   end
+
+  # def index?
+  #   user_is_admin?
+  # end
 
   def show?
     user_is_admin? # anyone can see a property

@@ -10,12 +10,16 @@ class PropertiesController < ApplicationController
 
   def index
     @deal = Deal.find(params[:deal_id])
-    @properties = policy_scope(Property).order(id: :asc)
-  # @deal = Deal.find(params[:deal_id])
-  # # @properties = policy_scope(Deal)
-  # @properties = policy_scope(@deal.properties)
-  # # authorize :index
-  # # authorize @deal
+
+    #solution1
+    @properties = policy_scope(Deal)
+
+    #try
+    # @properties = policy_scope(Property).order(id: :asc)
+    # # authorize :index
+
+    # @properties = Property.all
+    # # authorize :index
   end
 
   ########################################
@@ -83,7 +87,8 @@ class PropertiesController < ApplicationController
   #   authorize @property
   # end
   def set_property
-      @property = @deal.property #.find(params[:id]) # you don't need to find it because there is only 1
+    @property = @deal.property #.find(params[:id]) # you don't need to find it because there is only 1
+    authorize @property
   end
   def set_deal
     @deal = Deal.find(params[:deal_id])
