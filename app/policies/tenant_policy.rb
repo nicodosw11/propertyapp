@@ -2,11 +2,17 @@ class TenantPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       user.admin? ? scope.all : scope.none
+      # scope.all if user.admin?
       # scope.all => Tenant.all
+      # scope.tenants if user.admin?
     end
   end
 
   def all?
+    user_is_admin?
+  end
+
+  def index?
     user_is_admin?
   end
 

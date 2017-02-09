@@ -10,10 +10,16 @@ class TenantsController < ApplicationController
 
   def index
     @deal = Deal.find(params[:deal_id])
+
+    #solution1
     # @tenants = policy_scope(Deal)
+
+    #try
     @tenants = policy_scope(@deal.tenants)
-    # authorize :index
-    # authorize @deal
+    authorize @tenants, :index?
+
+    # @tenants = @deal.tenants
+    # # authorize :index
   end
 
   ########################################
