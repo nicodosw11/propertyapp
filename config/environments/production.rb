@@ -1,6 +1,5 @@
 Rails.application.configure do
   # config.action_mailer.default_url_options = { host: "http://TODO_PUT_YOUR_DOMAIN_HERE" }
-  config.action_mailer.default_url_options = { host: "http://livsty.herokuapp.com"}
   # Settings specified here will take precedence over those in config/application.rb.
 
   # config.action_mailer.delivery_method = :smtp
@@ -19,6 +18,9 @@ Rails.application.configure do
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
+
+  config.action_mailer.default_url_options = { host: "http://livsty.herokuapp.com"}
+  config.action_mailer.delivery_method = :smtp
 
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
