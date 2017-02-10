@@ -36,11 +36,11 @@ ActiveRecord::Schema.define(version: 20170201133544) do
     t.string   "occupancy"
     t.float    "valuation"
     t.float    "funded"
-    t.integer  "current_investors"
+    t.integer  "nb_shares"
     t.float    "yield"
     t.float    "timeline"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.string   "kind"
   end
 
@@ -55,7 +55,8 @@ ActiveRecord::Schema.define(version: 20170201133544) do
 
   create_table "investments", force: :cascade do |t|
     t.string   "description"
-    t.float    "amount"
+    t.float    "price"
+    t.integer  "shares"
     t.integer  "deal_id"
     t.integer  "user_id"
     t.datetime "created_at",  null: false

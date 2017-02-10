@@ -1,5 +1,5 @@
 class Investment < ApplicationRecord
   belongs_to :deal
   belongs_to :user
-  validates :deal_id, :user_id, :description, :amount, presence: true
+  validates :deal, :user, :description, :price, :shares, presence: true
 end

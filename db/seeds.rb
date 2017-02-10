@@ -18,7 +18,7 @@ deals_attributes = [
     occupancy: "Viager occupé (F 82 ans- H 70 ans)",
     valuation: 1,
     funded: 0,
-    current_investors: 0,
+    nb_shares: 0,
     yield: 1.97,
     timeline: 3
 
@@ -31,7 +31,7 @@ deals_attributes = [
     occupancy: "Viager occupé (H 70 ans).",
     valuation: 1,
     funded: 0,
-    current_investors: 0,
+    nb_shares: 0,
     yield: 1.97,
     timeline: 3
   },
@@ -43,7 +43,7 @@ deals_attributes = [
     occupancy: "Viager occupé (F 74 ans).",
     valuation: 1,
     funded: 0,
-    current_investors: 0,
+    nb_shares: 0,
     yield: 1.97,
     timeline: 3
   },
@@ -55,7 +55,7 @@ deals_attributes = [
     occupancy: "Viager occupé (F 84 ans- H 83 ans).",
     valuation: 1,
     funded: 0,
-    current_investors: 0,
+    nb_shares: 0,
     yield: 1.97,
     timeline: 3
   },
@@ -67,7 +67,7 @@ deals_attributes = [
     occupancy: "Viager libre (H 70 ans).",
     valuation: 1,
     funded: 0,
-    current_investors: 0,
+    nb_shares: 0,
     yield: 1.97,
     timeline: 3
   },
@@ -79,7 +79,7 @@ deals_attributes = [
     occupancy: "Viager occupé (F 81 ans).",
     valuation: 1,
     funded: 0,
-    current_investors: 0,
+    nb_shares: 0,
     yield: 1.97,
     timeline: 3
   },
@@ -91,7 +91,7 @@ deals_attributes = [
     occupancy: "Viager occupé (F 79 ans - H 90 ans).",
     valuation: 1,
     funded: 0,
-    current_investors: 0,
+    nb_shares: 0,
     yield: 1.97,
     timeline: 3
   },
@@ -103,7 +103,7 @@ deals_attributes = [
     occupancy: "Viager occupé (F 79 ans- H 92 ans).",
     valuation: 1,
     funded: 0,
-    current_investors: 0,
+    nb_shares: 0,
     yield: 1.97,
     timeline: 3
   },
@@ -115,7 +115,7 @@ deals_attributes = [
     occupancy: "Viager occupé (F 85 ans).",
     valuation: 1,
     funded: 0,
-    current_investors: 0,
+    nb_shares: 0,
     yield: 1.97,
     timeline: 3
   },
@@ -127,7 +127,7 @@ deals_attributes = [
     occupancy: "Viager occupé (F 78 ans).",
     valuation: 1,
     funded: 0,
-    current_investors: 0,
+    nb_shares: 0,
     yield: 1.97,
     timeline: 3
   },
@@ -139,7 +139,7 @@ deals_attributes = [
     occupancy: "Viager occupé (H 79 ans).",
     valuation: 1,
     funded: 0,
-    current_investors: 0,
+    nb_shares: 0,
     yield: 1.97,
     timeline: 3
   },
@@ -151,7 +151,7 @@ deals_attributes = [
     occupancy: "Viager occupé (F 84 ans).",
     valuation: 1,
     funded: 0,
-    current_investors: 0,
+    nb_shares: 0,
     yield: 1.97,
     timeline: 3
   }
@@ -331,36 +331,41 @@ users = [
 users.each { |user| User.create!(user) }
 
 # investments = %w(10 50 150 250 2500 5000 7500 10000 15000 30000)
-# investments.each { |investment| Investment.create!(amount: investment) }
+# investments.each { |investment| Investment.create!(price: investment) }
 
 investments = [
   {
     description: 'initial deposit',
-    amount: 10,
+    price: 10,
+    shares: 2,
     deal_id: 1,
     user_id: 1
     },
   {
     description: 'first instalment',
-    amount: 50,
+    price: 50,
+    shares: 5,
     deal_id: 3,
     user_id: 4
     },
   {
     description: 'initial deposit',
-    amount: 150,
+    price: 150,
+    shares: 4,
     deal_id: 6,
     user_id: 2
     },
   {
     description: 'adjustment',
-    amount: 250,
+    price: 250,
+    shares: 3,
     deal_id: 4,
     user_id: 3
     },
   {
     description: 'second instalment',
-    amount: 500,
+    price: 500,
+    shares: 2,
     deal_id: 4,
     user_id: 2
     }
