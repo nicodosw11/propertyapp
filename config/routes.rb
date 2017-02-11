@@ -19,6 +19,7 @@
     scope '/siteadmin' do
       resources :properties
       resources :tenants
+      resources :investments, only: [:new, :create]
     end
     # resources :properties, path: '/admin'
   end

@@ -8,7 +8,7 @@ class DealsController < ApplicationController
   end
   def show
     @property = @deal.property
-    # @tenant = Tenant.new
+    @investment = Investment.new
     # @tenant = @deal.tenants.build
     # @property = @deal.properties
     # @property = @deal.properties.find(params[:property_id])
