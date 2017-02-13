@@ -1,0 +1,13 @@
+<h1>Details about Investment ref<%= @investment.id %></h1>
+
+<ul>
+  <% @investment.users.each do |user| %>
+    <li>User e-mail<%= user.email %></li>
+  <% end %>
+</ul>
+
+<%= link_to "show_index_of_users", users_path %>
+
+<ul>
+  <h1>Details about the deal of this investment ref</h1>
+</ul>

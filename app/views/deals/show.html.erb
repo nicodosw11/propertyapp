@@ -6,7 +6,7 @@
     <% if policy(@deal).edit? %>
     <li><%= link_to "edit deal", edit_deal_path(@deal) %></li>
     <% end %>
-    <% if policy(@deal.property).new? %>
+    <% if policy(@deal.build_property).new? %>
     <li><%= link_to "add property", new_deal_property_path(@deal) %></li>
     <% end %>
     <% if policy(@deal.tenants).new? %>
@@ -16,7 +16,7 @@
     <li><%= link_to "remove deal", deal_path(@deal), method: :delete, data: {confirm: "are you sure?"} %></li>
     <% end %>
     </ul>
-    <% if policy(@deal.property).show? %>
+    <% if policy(@deal.build_property).create? %>
       <h2>Property in this deal:</h2>
       <ul class="list-unstyled text-justify">
         <li>Property id #<%= @deal.property.try(:id) %> - <%= link_to @deal.property.try(:full_address), [@deal, @property] %></li>
@@ -39,7 +39,22 @@
   </div>
 </div>
 
-
+<div class="container padded">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+    <%= simple_form_for [@deal, @investment] do |f| %>
+      <% if @investment.errors.any? %>
+        <% @investment.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      <% end %>
+      <%= f.input :shares, label: "Nombre de parts" %>
+      <%= f.input :price, label: "Prix d'une part", input_html: {:value => @deal.valuation.to_f/@deal.nb_investors.to_f || 1, :readonly => true}  %>
+      <%= f.submit "Investir" %>
+    <% end %>
+    </div>
+  </div>
+</div>
 
 <style type="text/css">
     table {
@@ -63,41 +78,14 @@
                 text-align: right;}
               </style>
 
-<table class="deal" summary="Information du Deal">
-  <tr>
-    <td class="main">
-      <h1>
-
-      </h1>
-      <table class="deal detail" summary="Details du deal">
-        <tr>
-          <td>Adresse du bien</td>
-          <td><%= @deal.address %></td>
-        </tr>
-        <tr>
-          <td>Prix du bien</td>
-          <td><%= @deal.valuation %></td>
-        </tr>
-        <tr>
-          <td>Nombre de Parts</td>
-          <td><%= @deal.nb_shares %></td>
-        </tr>
-      </table>
-    </td>
-    <td class="sidebar round">
-      <strong>Nom</strong> <%= current_user.first_name %><br />
-      <strong>Deals</strong> <%= current_user.investments.count %>
-    </td>
-  </tr>
-</table>
 <h1>Deal #id<%= @deal.id %></h1>
 <table>
-  <tr>
+ <!--  <tr>
     <th>Title1</th>
     <th>Title2</th>
     <th class="money">Title3</th>
     <th class="money">Title4</th>
-  </tr>
+  </tr> -->
   <tr>
     <td>Adresse du bien</td>
     <td><%= @deal.address %></td>
@@ -111,46 +99,30 @@
     <td class="money"></td>
   </tr>
   <tr>
-    <td>Nombre de Parts</td>
-    <td><%= @deal.nb_shares %></td>
+    <td>Nombre actuel d'investisseurs</td>
+    <td><%= @deal.nb_investors %></td>
     <td class="money"></td>
     <td class="money"></td>
   </tr>
 
 </table>
-<h1>First Edition Auctions</h1>
-<table>
-  <tr>
-    <th>Author</th>
-    <th>Title</th>
-    <th class="money">Reserve Price</th>
-    <th class="money">Current Bid</th>
-  </tr>
-  <tr>
-    <td>E.E. Cummings</td>
-    <td>Tulips & Chimneys</td>
-    <td class="money">$2,000.00</td>
-    <td class="money">$2,642.50</td>
-  </tr>
-  <tr class="even">
-    <td>Charles d'Orleans</td>
-    <td>Poemes</td>
-    <td class="money"></td>
-    <td class="money">$5,866.00</td>
-  </tr>
-  <tr>
-    <td>T.S. Eliot</td>
-    <td>Poems 1909 - 1925</td>
-    <td class="money">$1,250.00</td>
-    <td class="money">$8,499.35</td>
-  </tr>
-  <tr class="even">
-    <td>Sylvia Plath</td>
-    <td>The Colossus</td>
-    <td class="money"></td>
-    <td class="money">$1031.72</td>
-  </tr>
-</table>
+
+<strong>You are connected as </strong> <%= current_user.first_name %> <%= current_user.last_name %><br />
+<strong>You are currently shareholding </strong> <%= current_user.investments.count %> <strong> deals </strong>
+<%= link_to "my account", current_user %>
 
 
-
+<ul class="list-unstyled">
+  <% @deal.investments.each do |investment| %>
+    <li>
+      <%= investment.shares %> invested by <%= link_to investment.user.email, user_path(investment.user) %>
+      (<%= link_to "delete", deal_investment_path(@deal, investment), method: :delete %>)
+    </li>
+    <li>
+      <%= investment.price %> €
+    </li>
+    <li>
+      See Deal#<%= investment.deal.id %>
+    </li>
+  <% end %>
+</ul>

@@ -54,7 +54,7 @@ class DealsController < ApplicationController
 
   private
   def deal_params
-    params.require(:deal).permit(:description, :kind, :address, :image_url, :occupancy, :yield)
+    params.require(:deal).permit(:description, :kind, :address, :image_url, :occupancy, :valuation, :nb_investors, :yield)
   end
   def set_deal
     @deal = Deal.find(params[:id])

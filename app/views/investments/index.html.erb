@@ -1,0 +1,4 @@
+<% @investments.each do |investment| %>
+<%= link_to investment.shares, investment %>
+<%= investment.price %>
+<% end %>

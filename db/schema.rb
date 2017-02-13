@@ -36,11 +36,11 @@ ActiveRecord::Schema.define(version: 20170201133544) do
     t.string   "occupancy"
     t.float    "valuation"
     t.float    "funded"
-    t.integer  "nb_shares"
+    t.integer  "nb_investors"
     t.float    "yield"
     t.float    "timeline"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.string   "kind"
   end
 
