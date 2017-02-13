@@ -1,11 +1,14 @@
 <h1>Details about <%= @user.email %></h1>
 
-<p>Here are the deals you have invested in</p>:
+<p>Here are the details of your investments:<p>
 
 <ul>
-  <% @user.deals.each do |deal| %>
-    <li>Deal#<%= deal.id %></li>
+  <% @user.investments.each do |investment| %>
+    <li>Deal#<%= investment.deal.id %></li>
+    <li>Shares#<%= investment.shares %></li>
+    <li>Price#<%= investment.price %></li>
+    <br>
   <% end %>
 </ul>
 
-<%= link_to "show_index_of_users", users_path %>
+

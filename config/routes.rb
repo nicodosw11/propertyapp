@@ -1,8 +1,7 @@
   Rails.application.routes.draw do
   ActiveAdmin.routes(self)
-  devise_for :users, :path_prefix => '&'
+  devise_for :users, :path_prefix => 'devise'
   resources :users, :only => [:index, :show]
-    resources :investments, :only => [:index, :show]
   root to: 'pages#home'
   get 'siteadmin/properties', to: "properties#all"
   get 'siteadmin/tenants', to: "tenants#all"
@@ -20,6 +19,7 @@
   resources :deals, only: [:index, :show, :create, :update, :destroy] do
     resources :investments, only: [:create, :destroy]
     scope '/siteadmin' do
+      resources :investments, only: [:index, :show]
       resources :properties
       resources :tenants
     end
@@ -29,7 +29,6 @@
   scope '/siteadmin' do
     resources :deals, only: [:new, :edit]
     # resources :deals, except: [:index, :show]
-    resources :investments, only: [:index, :show]
   end
   #same as
   # resources :deals, except: [:index, :show], path: '/admin/deals'

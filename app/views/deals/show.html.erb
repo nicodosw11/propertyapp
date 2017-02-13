@@ -36,6 +36,46 @@
     <% if policy(Deal).new? %>
     <%= link_to "add deal", new_deal_path, {class: "btn btn-primary"} %>
     <% end %>
+    <br>
+    <br>
+    <strong>You are connected as </strong> <%= current_user.first_name %> <%= current_user.last_name %><br />
+    <strong>You are currently shareholding </strong> <%= current_user.investments.count %> <strong> deals </strong>
+    <%= link_to "see my account", current_user %>
+  </div>
+</div>
+
+<div class="container padded">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <h1>Deal #id<%= @deal.id %></h1>
+      <table>
+       <!--  <tr>
+          <th>Title1</th>
+          <th>Title2</th>
+          <th class="money">Title3</th>
+          <th class="money">Title4</th>
+        </tr> -->
+        <tr>
+          <td>Adresse du bien</td>
+          <td><%= @deal.address %></td>
+          <td class="money"></td>
+          <td class="money"></td>
+        </tr>
+        <tr class="even">
+          <td>Prix du bien</td>
+          <td><%= @deal.valuation %></td>
+          <td class="money"></td>
+          <td class="money"></td>
+        </tr>
+        <tr>
+          <td>Nombre actuel d'investisseurs</td>
+          <td><%= @deal.nb_investors %></td>
+          <td class="money"></td>
+          <td class="money"></td>
+        </tr>
+
+      </table>
+    </div>
   </div>
 </div>
 
@@ -78,51 +118,35 @@
                 text-align: right;}
               </style>
 
-<h1>Deal #id<%= @deal.id %></h1>
-<table>
- <!--  <tr>
-    <th>Title1</th>
-    <th>Title2</th>
-    <th class="money">Title3</th>
-    <th class="money">Title4</th>
-  </tr> -->
-  <tr>
-    <td>Adresse du bien</td>
-    <td><%= @deal.address %></td>
-    <td class="money"></td>
-    <td class="money"></td>
-  </tr>
-  <tr class="even">
-    <td>Prix du bien</td>
-    <td><%= @deal.valuation %></td>
-    <td class="money"></td>
-    <td class="money"></td>
-  </tr>
-  <tr>
-    <td>Nombre actuel d'investisseurs</td>
-    <td><%= @deal.nb_investors %></td>
-    <td class="money"></td>
-    <td class="money"></td>
-  </tr>
-
-</table>
-
-<strong>You are connected as </strong> <%= current_user.first_name %> <%= current_user.last_name %><br />
-<strong>You are currently shareholding </strong> <%= current_user.investments.count %> <strong> deals </strong>
-<%= link_to "my account", current_user %>
 
 
-<ul class="list-unstyled">
-  <% @deal.investments.each do |investment| %>
-    <li>
-      <%= investment.shares %> invested by <%= link_to investment.user.email, user_path(investment.user) %>
-      (<%= link_to "delete", deal_investment_path(@deal, investment), method: :delete %>)
-    </li>
-    <li>
-      <%= investment.price %> €
-    </li>
-    <li>
-      See Deal#<%= investment.deal.id %>
-    </li>
-  <% end %>
-</ul>
+
+
+<div class="container padded">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+    <h1>My investments on this deal</h1>
+    <br>
+      <ul class="list-unstyled">
+        <% @deal.investments.each do |investment| %>
+          <li>
+            <%= investment.shares %> shares invested by <%= link_to investment.user.email, user_path(investment.user) %>
+          </li>
+          <li> Share price:
+            <%= investment.price %> €
+          </li>
+          <li><%= link_to "delete this investment", deal_investment_path(@deal, investment), method: :delete %>
+          </li>
+          <li><%= link_to "see this investment", deal_investment_path(@deal, investment) %>
+          </li>
+          <li>
+            => Deal#<%= investment.deal.id %>
+          </li>
+          <br>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<%= link_to "show_index_of_users", users_path %>
