@@ -3,6 +3,8 @@
   devise_for :users, :path_prefix => 'devise'
   resources :users, :only => [:index, :show]
   root to: 'pages#home'
+  get 'seller', to: 'pages#seller'
+  get 'siteadmin/tenants', to: "tenants#all"
   get 'siteadmin/properties', to: "properties#all"
   get 'siteadmin/tenants', to: "tenants#all"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

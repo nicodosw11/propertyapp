@@ -1,37 +1,9 @@
 <!-- <div class="container"> -->
   <!-- <a name="top"></a>
   <div class="row" id="Home"> -->
-<div class="banner-home img-responsive" alt="Responsive image" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= image_path "Paris1.jpg" %>');">
+<div class="banner img-responsive" alt="Responsive image" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= image_path "Paris1.jpg" %>');">
   <!-- <div class="banner-home-content"> -->
-  <div class="text-overlay">
-    <div class="col-md-12" style="text-align: justify">
-      <h1>L'Investissement <span class="ess-ess">Immobilier </span>Autrement !</h1>
-      <!-- <h3>Capabilities</h3> -->
-      <p>Rejoignez Livsty, la plateforme qui révolutionne l'investissment immobilier. Quand l'investissement se veut solidaire: Livsty repense la façon d'investir dans un bien occupé et d'accompagner les générations des séniors dans leurs besoins.</p>
-      <p style="text-align: left">Notre mission: rendre accessible à tous une stratégie d'épargne d'avenir qui allie respect des personnes, gestion du patrimoine et optimisation des revenus.</p>
-      <p>Basé à Paris, Livsty est une plateforme en ligne d'investissmeent dans l'immobilier. </p>
-    </div>
-    <div class="col-md-12 text-center bottom">
-      <div class="col-md-4">
-        <img src="../logo/lightbulbEuro128.png" alt="Investir" >
-        <div class="greyback">
-          <h3 >Une nouvelle façon d'investir</h3>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <img src="../logo/line-up128.png" alt="Investir" >
-        <div class="greyback">
-          <h3 >Je fais fructifier mon épargne</h3>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <img src="../logo/security128.png" alt="Investir" >
-        <div class="greyback">
-          <h3>La pierre-papier robuste</h3>
-        </div>
-      </div>
-    </div>
-  </div>
+  <%= render 'components/text-overlay' %>
   <!-- </div> -->
   <%= link_to "", id: "click-to-scroll" do %>
     <i class="fa fa-angle-down floating"></i>
