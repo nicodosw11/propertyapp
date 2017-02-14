@@ -4,7 +4,7 @@ ActiveAdmin.register Deal do
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
 # permit_params :list, :of, :attributes, :on, :model
-permit_params :description, :kind, :address, :image_url, :occupancy, :yield
+permit_params :description, :kind, :address, :image_url, :occupancy, :valuation, :nb_investors, :yield
 # or
 #
 # permit_params do

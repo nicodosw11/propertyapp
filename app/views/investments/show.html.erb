@@ -1,0 +1,11 @@
+<h1>Details about Investment reference#<%= @investment.id %></h1>
+
+<ul>
+  <li>Price: <%= @investment.price %></li>
+  <li>Shares: <%= @investment.shares %></li>
+  <li>User e-mail: <%= @investment.user.email %></li>
+  <li>Deal#<%= @investment.deal.id %></li>
+</ul>
+<%= link_to "show_index_of_users", users_path %>
+
+
