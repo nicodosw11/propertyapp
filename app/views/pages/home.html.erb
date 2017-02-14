@@ -1,11 +1,11 @@
-<% content_for :nav, render('layouts/home-nav') %>
+<% content_for :nav, render('shared/navbar2') %>
 <!-- Different banner if login or not -->
 <% if user_signed_in? %>
 <%= render "shared/video-banner" %>
 <% else %>
-<%= render "shared/home-banner" %>
+<%= render "shared/home-banner2" %>
 <% end %>
-<%= render "howitworks" %>
+<%= render "home-details" %>
 
 <%= content_for(:after_js) do %>
   <%= javascript_tag do %>

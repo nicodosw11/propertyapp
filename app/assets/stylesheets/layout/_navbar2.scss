@@ -1,0 +1,90 @@
+.navbar-livsty{
+  background-color: #D3D3D3;
+  color: #777777;
+  width: 100%;
+  height: 76px;
+  display: flex;
+  padding: 0px 30px;
+  align-items: center;
+  justify-content: space-between;
+
+  /* Navbar Livsty logo */
+  .navbar-livsty-brand img {
+  // width: 50px;
+  }
+
+  .inner-navbar-bootstrap {
+
+    .dropdown{
+      padding-right: 15px;
+      margin-right: 15px;
+     }
+
+    .main-menu li a {
+      padding-top: 10px;
+      padding-bottom: 7px;
+      color: #777777;
+      font-weight: 500;
+      font-size:14px;
+    }
+    .main-menu li a:hover {
+      background-color: #D3D3D3;
+    }
+
+    .dropdown-menu{
+    background-color: #D3D3D3;
+    color: #777777;
+    text-align: center;
+    font-size:12px;
+    }
+    .dropdown-menu li a{
+    font-size:12px;
+    color:#F5F5F5;
+    padding : Opx;
+    margin: 0px;
+       &:hover {
+       color: #777777;
+      }
+    }
+
+    .active {
+    border-bottom: 2px solid #33CCCC;
+    }
+   }
+
+  /* Navbar Livsty link */
+    .navbar-livsty-link a {
+      color: #777777;
+      font-weight: 500;
+      font-size:14px;
+    }
+    .navbar-livsty-link:hover a {
+      // color: #da552f;
+      background-color: #D3D3D3;
+      text-decoration: none;
+    }
+    /* Navbar button */
+    .navbar-livsty-button {
+      margin-left: 10px;
+      padding: 0 20px;
+      // border-radius: 20em;
+      border-radius: 5px;
+      border: none;
+      line-height: 40px;
+      // background-color: #D23333;
+      // color: white;
+      background-color: #33CCCC;
+      color:#F5F5F5;
+      font-size: 14px;
+      // border: 2px solid #D23333;
+    }
+
+    .navbar-livsty-button:hover {
+    // color: white;
+    color:#F5F5F5;
+    // background: #D23333;
+    background-color: #C1EFEF;
+    // border-color: #ac2626;
+    }
+
+}
