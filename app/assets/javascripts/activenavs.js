@@ -1,7 +1,7 @@
-// $(".borderline a").on("click", function(){
-//    $(".borderline").find(".active").removeClass("active");
-//    $(this).parent().addClass("active");
-// });
+$(".borderline a").on("click", function(){
+   $(".borderline").find(".active").removeClass("active");
+   $(this).parent().addClass("active");
+});
 
 
 // $('.borderline > li > a').click( function() {
