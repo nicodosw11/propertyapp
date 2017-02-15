@@ -3,4 +3,10 @@ class PagesController < ApplicationController
   skip_after_action :verify_authorized
   def home
   end
+  def seller
+  end
+  def legal
+  end
+  def risks
+  end
 end

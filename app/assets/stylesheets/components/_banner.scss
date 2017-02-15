@@ -1,3 +1,29 @@
+#click-to-scroll {
+  color: white;
+  font-size: 35px;
+
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%)
+}
+
+#click-to-scroll:hover {
+}
+
+.banner {
+  color: white;
+  // text-align: center;
+  // height: 100vh;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  height: calc(100vh - 70px);
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-position: 50% 50%;
+}
+
 .banner-home {
   color: white;
   // text-align: center;
@@ -23,19 +49,6 @@
   // border: 2px solid #000;
   // border-right:none;
   // border-left: none;
-
-  #click-to-scroll{
-    color: white;
-    font-size: 35px;
-
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%)
-  }
-
-  #click-to-scroll:hover {
-  }
 }
 
 .video-container {
