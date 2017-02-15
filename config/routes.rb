@@ -4,6 +4,8 @@
   resources :users, :only => [:index, :show]
   root to: 'pages#home'
   get 'seller', to: 'pages#seller'
+  get 'risks', to: 'pages#risks'
+  get 'legal', to: 'pages#legal'
   get 'siteadmin/tenants', to: "tenants#all"
   get 'siteadmin/properties', to: "properties#all"
   get 'siteadmin/tenants', to: "tenants#all"

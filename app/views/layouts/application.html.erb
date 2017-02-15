@@ -9,6 +9,7 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
   </head>
   <body>
+    <!-- data-spy="scroll" data-target="#navbar" data-offset="100" -->
     <%= render 'shared/flashes' %>
     <% if content_for? :nav %>
       <%= content_for :nav %>
@@ -16,6 +17,7 @@
       <%= render 'shared/navbar-flex-bootstrap' %>
     <% end %>
     <%= yield %>
+    <%= render 'layouts/footer' %>
     <%= javascript_include_tag 'application' %>
   </body>
 </html>

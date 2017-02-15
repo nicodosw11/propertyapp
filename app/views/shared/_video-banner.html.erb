@@ -5,9 +5,9 @@
     </video>
   </div>
   <div class="banner-home-content">
-    <h1 class= "slideDown">Bienvenue <%= current_user.email %></h1>
-    <p class= "slideDown">Vendez votre bien en Viager avec Livsty</p>
-    <p class= "slideDown">et épargnez vous les lourdeurs d'annonces, visites, négociations et mois d'incertitudes</p>
+    <h1 class= "slideDown">Bienvenue <%= current_user.first_name %></h1>
+    <p class= "slideDown">You are currently connected as <%= current_user.email %> </p>
+    <p class= "slideDown">Profitez de nos offres d'investissements, en parcourant le site à la recherche de viagers</p>
     <%= link_to "", id: "click-to-scroll" do %>
     <i class="fa fa-angle-down floating"></i>
     <% end %>

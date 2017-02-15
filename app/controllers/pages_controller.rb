@@ -5,4 +5,8 @@ class PagesController < ApplicationController
   end
   def seller
   end
+  def legal
+  end
+  def risks
+  end
 end

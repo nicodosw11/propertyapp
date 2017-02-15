@@ -1,3 +1,16 @@
+#click-to-scroll {
+  color: white;
+  font-size: 35px;
+
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%)
+}
+
+#click-to-scroll:hover {
+}
+
 .banner {
   color: white;
   // text-align: center;
@@ -36,19 +49,6 @@
   // border: 2px solid #000;
   // border-right:none;
   // border-left: none;
-
-  #click-to-scroll{
-    color: white;
-    font-size: 35px;
-
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%)
-  }
-
-  #click-to-scroll:hover {
-  }
 }
 
 .video-container {
