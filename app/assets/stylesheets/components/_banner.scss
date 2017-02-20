@@ -1,3 +1,18 @@
+// .greyback{
+//   padding-left: 25%;
+//   padding-right: 25%;
+//   padding-radius: 20px;
+//   background: rgba(105, 105, 105, 0.7);
+//   background-clip: content-box;
+// }
+
+// .bottom {
+//   top:100px;
+//   margin-bottom:5px;
+//   padding-bottom:5px;
+//   color: #C1EFEF;
+// }
+
 #click-to-scroll {
   color: white;
   font-size: 35px;
@@ -18,12 +33,16 @@
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   height: calc(100vh - 70px);
   background-size: cover !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-position: 50% 50%;
+
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+  // background-position: 50% 50%;
 }
 
+.banner img {
+  max-width: 80%;
+}
 .banner-home {
   color: white;
   // text-align: center;

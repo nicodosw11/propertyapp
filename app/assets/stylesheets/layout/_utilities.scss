@@ -30,3 +30,25 @@ body{
   padding-top: 70px;
   background-color: #F5F5F5;
 }
+
+.row#Home {
+  /* background: url(img/img1.jpg) top center no-repeat; */
+  position: relative;
+  color: #777777;
+
+}
+
+.row {
+  min-height: 500px;
+}
+.row{
+  margin-bottom: 1em;
+}
+
+.col-md-12{
+  padding-bottom:1.5em;
+}
+
+iframe {
+  max-width: 100%;
+}

@@ -1,18 +1,22 @@
-<% content_for :nav, render('shared/navbar-flex-bootstrap') %>
+<% content_for :nav, render('shared/navbar-flex-bootstrap-modal') %>
 <!-- Different banner if login or not -->
 <% if user_signed_in? %>
 <%= render "shared/video-banner" %>
 <% else %>
 <%= render "components/banner-investor" %>
 <% end %>
-<%= render "sections/home/overview" %>
-<%= render "sections/home/services" %>
-<%= render "sections/home/expertise" %>
-<%= render "sections/home/about" %>
-<%= render "sections/home/transaction" %>
 
-<%= render "shared/contact" %>
-<%= render "shared/legals" %>
+<div class="container">
+<a name="top"></a>
+  <%= render "sections/home/overview" %>
+  <%= render "sections/home/services" %>
+  <%= render "sections/home/expertise" %>
+  <%= render "sections/home/about" %>
+  <%= render "sections/home/transaction" %>
+
+  <%= render "shared/contact" %>
+  <%= render "shared/legals" %>
+</div>
 
 <%= content_for(:after_js) do %>
   <%= javascript_tag do %>
