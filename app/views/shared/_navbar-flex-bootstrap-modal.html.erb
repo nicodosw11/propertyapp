@@ -48,17 +48,8 @@
       <ul class="dropdown-menu dropdown-menu-right navbar-container-dropdown-menu">
         <li><a href="#">Investir</a></li>
         <li><a href="#">Vendre votre bien</a></li>
-        <% if user_signed_in? %>
-        <li>
-        <%= link_to destroy_user_session_path, method: :delete do %><%= t(".sign_out", default: "Log out") %>
-        <% end %>
-        </li>
-        <% else %>
-        <li><%= link_to t(".sign_in", default: "S'identifier"), new_user_session_path, class: "navbar-container-item" %></li>
-        <% end %>
-        <li>
-        <%= link_to t(".sign_up", default: "Inscription"), new_user_registration_path, class: "navbar-container-item" %>
-        </li>
+        <li><a href="#" type="Sign-in" data-toggle="modal" data-target="#myModal">S'Identifier</a></li>
+        <li><a href="#" type="Sign-up" data-toggle="modal" data-target="#myModal">Inscription</a></li>
       </ul>
     </div>
   </div>
