@@ -10,6 +10,7 @@ h4{
 /*CSS pour dréer des cercles*/
 .circle {
   border-radius: 50%;
+  max-width:40vw;
 }
 
 .circle-border {
@@ -35,6 +36,7 @@ h4{
   right: 0;
   text-align: center;
 }
+
 .score-text {
   margin: 20% 0% 80% 0%;
   position: absolute;
@@ -52,6 +54,8 @@ h4{
   line-height: 1em;
   padding-left: 10%;
   padding-right: 10%;
+
+  text-align:center;
 
 }
 

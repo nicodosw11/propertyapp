@@ -12,6 +12,12 @@
   padding-bottom: 3em;
 }
 
+.margined-b-1 {
+  // padding-top: 5em;
+  // padding-bottom: 5em;
+  margin-bottom: 1em;
+}
+
 // Backgrounds
 .bg-black {
   background: #4a4a4a;
@@ -28,26 +34,32 @@
 
 body{
   padding-top: 70px;
-  background-color: #F5F5F5;
+  // padding-top: 90px;
+  // background-color: #F5F5F5;
+  // font-family: "Raleway", Georgia;
+  // color: #696969;
+  // position: relative;
+  // height:100%;
+  // font-size:16px;
 }
 
-.row#Home {
-  /* background: url(img/img1.jpg) top center no-repeat; */
-  position: relative;
-  color: #777777;
+// .row#Home {
+//   /* background: url(img/img1.jpg) top center no-repeat; */
+//   position: relative;
+//   color: #777777;
 
-}
+// }
 
-.row {
-  min-height: 500px;
-}
-.row{
-  margin-bottom: 1em;
-}
+// .row {
+//   min-height: 500px;
+// }
+// .row{
+//   margin-bottom: 1em;
+// }
 
-.col-md-12{
-  padding-bottom:1.5em;
-}
+// .col-md-12{
+//   padding-bottom:1.5em;
+// }
 
 iframe {
   max-width: 100%;

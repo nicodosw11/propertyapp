@@ -1,30 +1,8 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm-4 col-sm-offset-4">
-    <h1>Deals</h1>
-    <ul class="list-unstyled">
-    <% if policy(Deal).new? %>
-    <li><%= link_to "add deal", new_deal_path %></li>
-    <% end %>
-    <% if policy(Deal).new? %>
-    <li><%= link_to "admin", admin_root_path, {class: "btn btn-danger"} %></li>
-    <% end %>
-    <% if policy(Property).all? %>
-    <li><%= link_to "see all properties in the db",siteadmin_properties_path %></li>
-    <% end %>
-    <% if policy(Tenant).all? %>
-    <li><%= link_to "see all tenants in the db", siteadmin_tenants_path %></li>
-    <% end %>
-    </ul>
-    </div>
-  </div>
-</div>
-
-<div class="container">
-  <div class="row">
   <% @deals.each do |d| %>
     <div class="col-xs-12 col-sm-4">
-      <%= render "shared/card", deal: d %>
+      <%= render "shared/card-livsty", deal: d %>
     </div>
   <% end %>
   </div>
