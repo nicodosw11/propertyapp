@@ -1,26 +1,26 @@
 /* small screens Police size */
 /* xs */
-// @media screen and (max-width: 620px) {
+@media screen and (max-width: 620px) {
 
-//   body {
-//     font-size: 11px;
-//   }
-//   .text-overlay h1{
-//     font-size: 2.5em;
-//   }
-//   h1{
-//     font-size: 2em;
-//   }
-//   h2{
-//     font-size: 1.5em;
-//   }
-//   h3{
-//     font-size: 1.4em;
-//   }
-//   h4{
-//     font-size: 1.4em;
-//   }
-// }
+  body {
+    font-size: 11px;
+  }
+  .text-overlay h1{
+    font-size: 2.5em;
+  }
+  h1{
+    font-size: 2em;
+  }
+  h2{
+    font-size: 1.5em;
+  }
+  h3{
+    font-size: 1.4em;
+  }
+  h4{
+    font-size: 1.4em;
+  }
+}
 
 /* sm */
 // @media screen and (min-width: 621px) {
@@ -113,4 +113,8 @@
   // padding-radius: 20px;
   // background: rgba(105, 105, 105, 0.7);
   // background-clip: content-box;
+}
+
+.logo-up {
+  max-width:7vw;
 }
