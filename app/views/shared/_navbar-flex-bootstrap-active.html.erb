@@ -17,8 +17,11 @@
   <div class="navbar-container-right hidden-xs hidden-sm">
     <div class="inner-navbar-bootstrap">
       <ul class="nav navbar-nav borderline main-menu collapse navbar-collapse pull-right" id="top-menu">
-        <li><a href="/" class="active" data-id="">INVESTIR</a></li>
-        <li><a href="/seller" class="" data-id="">VENDRE VOTRE BIEN</a></li>
+        <li><%= nav_link_to "INVESTIR", deals_path%></li>
+        <li><%= nav_link_to "VENDRE VOTRE BIEN", seller_path%></li>
+        <% admins_only do %>
+          <li> <%= link_to "Admin", admin_root_path %> </li>
+        <% end %>
         <!-- <div class="navbar-container-item navbar-livsty-link"> -->
         <li role="presentation" class="dropdown">
         <!-- <div class="dropdown"> -->
