@@ -1,0 +1,109 @@
+.opportunity-body *{
+
+  font-variant-numeric: lining-nums;
+  -moz-font-feature-settings: "lnum" 1;
+  -moz-font-feature-settings: "lnum=1";
+  -ms-font-feature-settings: "lnum" 1;
+  -o-font-feature-settings: "lnum" 1;
+  -webkit-font-feature-settings: "lnum" 1;
+  font-feature-settings: "lnum" 1;
+
+}
+
+.opportunity-body{
+
+  .table>tbody>tr.success>td, .table>tbody>tr.success>th, .table>tbody>tr>td.success, .table>tbody>tr>th.success, .table>tfoot>tr.success>td, .table>tfoot>tr.success>th, .table>tfoot>tr>td.success, .table>tfoot>tr>th.success, .table>thead>tr.success>td, .table>thead>tr.success>th, .table>thead>tr>td.success, .table>thead>tr>th.success {
+    background-color: #C1EFEF;
+    border: 2px solid #33CCCC;
+  }
+
+  .table>tbody>tr>th{
+    vertical-align:middle;
+  }
+
+
+  input[type=range]{
+      -webkit-appearance: none;
+  }
+
+  input[type=range]::-webkit-slider-runnable-track {
+      width: 300px;
+      height: 5px;
+      background: #ddd;
+      border: none;
+      border-radius: 3px;
+  }
+
+  input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      border: none;
+      height: 16px;
+      width: 16px;
+      border-radius: 50%;
+      background: #33cccc;
+      margin-top: -4px;
+  }
+
+  input[type=range]:focus {
+      outline: none;
+  }
+
+  input[type=range]:focus::-webkit-slider-runnable-track {
+      background: #ccc;
+  }
+  input[type=range]::-moz-range-track {
+      width: 100%;
+      height: 5px;
+      background: #ddd;
+      border: none;
+      border-radius: 3px;
+  }
+
+  input[type=range]::-moz-range-thumb {
+      border: none;
+      height: 16px;
+      width: 16px;
+      border-radius: 50%;
+      background: #33cccc;
+  }
+
+  /*hide the outline behind the border*/
+  input[type=range]:-moz-focusring{
+      outline: 1px solid white;
+      outline-offset: -1px;
+  }
+
+  input[type=range]:focus::-moz-range-track {
+      background: #ccc;
+  }
+
+
+  input[type=range]::-ms-track {
+      width: 100%;
+      height: 7px;
+      background: #ddd;
+      border: none;
+      border-radius: 3px;
+  }
+
+  input[type=range]::-ms-fill-lower{
+      height: 7px;
+      background: #ddd;
+      border: none;
+      border-radius: 3px;
+  }
+
+  input[type=range]::-ms-fill-upper{
+      height: 7px;
+      background: #ddd;
+      border: none;
+      border-radius: 3px;
+  }
+  input[type=range]::-ms-thumb {
+      border: none;
+      height: 16px;
+      width: 16px;
+      border-radius: 50%;
+      background: #33cccc;
+  }
+}

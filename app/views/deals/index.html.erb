@@ -1,10 +1,17 @@
+<!-- <div class="container">
+  <div class="row">
+  <-% @deals.each do |d| %> -->
+<!--     <div class="col-xs-12 col-sm-4">
+      <-%= render "shared/card-livsty", deal: d %>
+    </div> -->
+<!--   <-% end %>
+  </div>
+</div> -->
+
 <div class="container">
   <div class="row">
-  <% @deals.each do |d| %>
-    <div class="col-xs-12 col-sm-4">
-      <%= render "shared/card-livsty", deal: d %>
-    </div>
-  <% end %>
+    <% @deals.each do |d| %>
+      <%= render "shared/card-properties", deal: d %>
+    <% end %>
   </div>
 </div>
-

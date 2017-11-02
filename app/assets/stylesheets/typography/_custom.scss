@@ -1,0 +1,128 @@
+/* small screens Police size */
+/* xs */
+@media screen and (max-width: 620px) {
+
+  body {
+    font-size: 11px;
+  }
+  .text-overlay h1{
+    font-size: 2.5em;
+  }
+  h1{
+    font-size: 2em;
+  }
+  h2{
+    font-size: 1.5em;
+  }
+  h3{
+    font-size: 1.4em;
+  }
+  h4{
+    font-size: 1.4em;
+  }
+}
+
+/* xs */
+// @media screen and (max-width: 575px) {
+//   body {
+//     font-size: 11px;
+//   }
+//   h1 {
+//     font-size: 2.5em;
+//   }
+//   h2 {
+//     font-size: 2em;
+//   }
+//   h3 {
+//     font-size: 1.75em;
+//   }
+//   h4 {
+//     font-size: 1.5em;
+//   }
+// }
+
+/* sm */
+@media screen and (min-width: 621px) {
+  body {
+    font-size: 14px;
+  }
+  .text-overlay h1{
+    font-size: 3em;
+  }
+}
+
+/* sm */
+// @media screen and (min-width: 576px) {
+//   body {
+//     font-size: 12px;
+//   }
+//   h1 {
+//     font-size: 3em;
+//   }
+//   h2 {
+//     font-size: 2.5em;
+//   }
+//   h3 {
+//     font-size: 2em;
+//   }
+//   h4 {
+//     font-size: 1.75em;
+//   }
+// }
+
+/* medium */
+// @media screen and (min-width: 768px) {
+//   body {
+//     font-size: 14px;
+//   }
+//   h1 {
+//     font-size: 3.5em;
+//   }
+//   h2 {
+//     font-size: 3em;
+//   }
+//   h3 {
+//     font-size: 2.5em;
+//   }
+//   h4 {
+//     font-size: 2em;
+//   }
+// }
+
+/* normal */
+@media screen and (min-width: 950px) {
+  body {
+    font-size: 16px;
+  }
+  .text-overlay h1{
+    font-size: 4em;
+  }
+}
+
+/* large */
+// @media screen and (min-width: 992px) {
+//   body {
+//     font-size:16px;
+//   }
+//   h1 {
+//     font-size: 4em;
+//   }
+//   h2 {
+//     font-size: 3.5em;
+//   }
+//   h3 {
+//     font-size: 3em;
+//   }
+//   h4 {
+//     font-size: 2.5em;
+//   }
+// }
+
+
+
+
+
+
+
+
+

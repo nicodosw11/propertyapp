@@ -1,0 +1,85 @@
+html {
+  font-size: 16px;
+  line-height: 1.3;
+  h1 { font-size: 50px }
+  h2 { font-size: 37px }
+  h3 { font-size: 28px }
+  h1 { font-size: 3.125em; } // 50 ÷ 16 = 3.125
+  h2 { font-size: 2.3125em;} // 37 ÷ 16 = 2.3125
+  h3 { font-size: 1.75em; } // 28 ÷ 16 = 1.75
+// ...
+@media (min-width: 800px) {
+    font-size: 18px;
+  }
+@media (min-width: 1200px) {
+    font-size: 20px;
+    line-height: 1.4;
+  }
+}
+
+h1 {
+  font-size: 50px;
+  @media (min-width: 800px) {
+    font-size: 56px;
+  }
+  @media (min-width: 1200px) {
+    font-size: 63px;
+  }
+}
+h2 {
+  font-size: 37px;
+  @media (min-width: 800px) {
+    font-size: 42px;
+  }
+  @media (min-width: 1200px) {
+    font-size: 47px;
+  }
+}
+h2 {
+  font-size: 28px;
+  @media (min-width: 800px) {
+    font-size: 32px;
+  }
+  @media (min-width: 1200px) {
+    font-size: 35px;
+  }
+}
+// ...
+h1 {
+  font-size: 3.129em; // 50px
+  line-height: 1.2;
+@media (min-width: 1200px) {
+    font-size: 2.3353em; // 37px
+    line-height: 1.3;
+  }
+}
+h2 {
+  font-size: 2.3353em; // 37px
+  @media (min-width: 1200px) {
+    font-size: 1.769em; // 28px
+  }
+}
+h3 {
+  font-size: 1.769em; // 28px
+  @media (min-width: 1200px) {
+    font-size: 1.33em; // 21px
+  }
+}
+// ...
+
+html {
+  font-size: 100%; /* This means 16px */
+  line-height: 1.3;
+}
+@media all and (min-width: 800px) {
+  html {
+    font-size: 112.5%; /* This means 18px */
+  }
+}
+@media all and (min-width: 1200px) {
+  html {
+    font-size: 125%; /* This means 20px */
+    line-height: 1.4;
+  }
+}
+

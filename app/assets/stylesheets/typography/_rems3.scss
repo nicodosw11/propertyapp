@@ -1,0 +1,23 @@
+html {
+  font-size: 16px; /* base font size */
+  // font-size: 1rem;
+}
+h1 { font-size: 1.5rem; // 16 * 1.5 = 24px}
+h2 { font-size: 1.2rem; // 16 * 1.2 = 20px}
+
+//Later in media queries, you can adjust all fonts sizes by changing base font size:
+@media screen and (max-width: 767px) {
+  html {
+    /* reducing base font size will reduce all rem sizes */
+    font-size: 13px;
+  }
+// /* you can reduce font sizes manually as well*/
+//     h1 { font-size: 1.2rem; }
+//     h2 { font-size: 1.0rem; }
+}
+//To make this work in IE7-8 you will have to add a fallback with px units:
+// h1 {
+//     font-size: 18px;
+//     font-size: 1.125rem;
+// }
+

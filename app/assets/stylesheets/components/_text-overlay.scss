@@ -1,58 +1,61 @@
-/* small screens Police size */
-/* xs */
-@media screen and (max-width: 620px) {
+.banner-homepage {
+  position: relative;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  // background-attachment: scroll;
+  /* if you have a 76px navbar => height: calc(100vh - 76px); */
+  height: calc(100vh - 76px);
+  color: white;
 
-  body {
-    font-size: 11px;
-  }
-  .text-overlay h1{
-    font-size: 2.5em;
-  }
-  h1{
-    font-size: 2em;
-  }
-  h2{
-    font-size: 1.5em;
-  }
-  h3{
-    font-size: 1.4em;
-  }
-  h4{
-    font-size: 1.4em;
-  }
+  // flexbox
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+  // text-align: center;
+
 }
 
-/* sm */
-// @media screen and (min-width: 621px) {
-//   body {
-//     font-size: 14px;
-//   }
-//   .text-overlay h1{
-//     font-size: 3em;
-//   }
-// }
-/* normal */
-// @media screen and (min-width: 950px) {
-//   body {
-//     font-size: 16px;
-//   }
-//   .text-overlay h1{
-//     font-size: 4em;
-//   }
-// }
-
+.banner-homepage img {
+  max-width: 100%;
+}
 
 .text-overlay {
-  padding: 15px;
+  // padding: 15px;
 
-  // position: absolute;
-  // z-index: 1;
-  // top: 3%;
+// transform-translate
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+
+  //or
+
+  // position: relative;
+  // float: left;
+  // top: 50%;
+  // left: 50%;
+  // transform: translate(-50%, -50%);
+
+
+// position: absolute with top or margins;
+  // top: 0;
   // left: 0;
-  }
+  // bottom: 0;
+  // right: 0;
+
+  // top: 50%;
+  // left: 0;
+  // right: 0;
+  // margin-top: 3%;
+  // margin-top: -3%;
+
+}
+
 
 .text-overlay h1 {
-  font-size: 4em;
+  // font-size: 4em;
   // color: #33CCCC;
   // color: #777777;
 
@@ -66,16 +69,17 @@
   // margin-bottom: 20px;
 }
 
-@media screen and (max-width: 768px) {
+span.nowwrap {
+  white-space: nowrap;
+}
 
-  .text-overlay h1 {
-    font-size: 1em /* 24px / 16px */
+@media screen and (max-width: 768px) {
+  .container.no-padding {
+    width: 80%;
+    padding: 0px !important;
   }
-  .text-overlay p {
-    font-size: 0.46875em /* 7.5px / 16px */
-  }
-  .text-overlay h3 {
-    font-size: 0.5625em /* 9px / 16px */
+  span.nowwrap {
+    white-space: normal;
   }
 }
 
@@ -85,36 +89,17 @@
   // margin: 0 auto;
 }
 
-.ess{
+.greyed{
   color:#D3D3D3;
 }
-.ess-ess{
+.greened{
   color:#33CCCC;
 }
 
-.bottom {
-  // top:20px;
-  // margin-bottom:5px;
-  // padding-bottom:5px;
+.turquoise {
   color: #C1EFEF;
 }
 
-.blueback {
-  margin: 10px;
-  padding: 10px;
-  border-radius: 5px;
-  background: rgba(51, 51, 51, 0.3);
-  color: #C1EFEF;
-  font-weight: 500;
-}
-.greyback{
-  // padding-left: 25%;
-  // padding-right: 25%;
-  // padding-radius: 20px;
-  // background: rgba(105, 105, 105, 0.7);
-  // background-clip: content-box;
-}
 
-.logo-up {
-  max-width:7vw;
-}
+
+

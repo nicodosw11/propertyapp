@@ -4,6 +4,14 @@
  * Feel free to change them and create your own
  * ------------------------------------- */
 
+.clickable {
+  cursor: pointer;
+}
+.vcenter {
+  vertical-align: middle;
+}
+
+
 // Paddings
 .padded {
   // padding-top: 5em;
@@ -33,8 +41,8 @@
 }
 
 body{
-  // padding-top: 70px;
   // padding-top: 90px;
+  padding-top: 76px;
   // background-color: #F5F5F5;
   // font-family: "Raleway", Georgia;
   // color: #696969;
@@ -43,20 +51,20 @@ body{
   // font-size:16px;
 }
 
-// .row#Home {
-//   /* background: url(img/img1.jpg) top center no-repeat; */
-//   position: relative;
-//   color: #777777;
+body.pages.seller, body.pages.home {
+  padding-top: 76px;
+}
 
-// }
+body.pages.seller .navbar-livsty {
+  z-index: 2;
+}
 
 // .row {
 //   min-height: 500px;
 // }
-// .row{
-//   margin-bottom: 1em;
-// }
-
+.margin-bottom {
+  margin-bottom: 1em;
+}
 // .col-md-12{
 //   padding-bottom:1.5em;
 // }
@@ -64,3 +72,6 @@ body{
 iframe {
   max-width: 100%;
 }
+
+
+
