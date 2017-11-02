@@ -15,6 +15,10 @@ class DealsController < ApplicationController
     # @property = @deal.properties.find(params[:id])
     # auction = Auction.find(params[:auction_id])
     # bid = auction.bids.find(params[:id])
+    deal_valuation = @deal.valuation
+    deal_nb_investors = @deal.nb_investors
+    @unit_price = deal_valuation / deal_nb_investors
+    @raw_unit_price = (@deal.valuation) / (@deal.nb_investors)
   end
   def new
     @deal = Deal.new

@@ -1,0 +1,368 @@
+<div class="container opportunity-body">
+  <div class="row" id="property-card">
+    <!-- Carousel here 8col-->
+    <div class="col-sm-12 col-md-8 ">
+      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+        </ol>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+          <div class="item active">
+            <%= image_tag "fakedeal/Balcon.jpg", class: "img-responsive", alt: "Balcon" %>
+            <div class="carousel-caption">Balcon</div>
+          </div>
+          <div class="item">
+            <%= image_tag "fakedeal/Chambre.jpg", class: "img-responsive", alt: "Chambre" %>
+            <div class="carousel-caption">Chambre 1</div>
+          </div>
+          <div class="item">
+            <%= image_tag "fakedeal/Salon.jpg", class: "img-responsive", alt: "Salon" %>
+            <div class="carousel-caption">Salon</div>
+          </div>
+          <div class="item">
+            <%= image_tag "fakedeal/Cuisine.jpg", class: "img-responsive", alt: "Cuisine" %>
+            <div class="carousel-caption">Cuisine</div>
+          </div>
+          <div class="item">
+            <%= image_tag "fakedeal/Jardin.jpg", class: "img-responsive", alt: "Jardin" %>
+            <div class="carousel-caption">Jardin</div>
+          </div>
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+    <!-- Deal right snapshot here 4col -->
+    <div class="col-sm-12 col-md-4">
+      <div class="deal-overview-asset">
+        <!-- deal overview upper address -->
+        <div class="row deal-overview-asset-header">
+          <div class="col-xs-12 deal-property-address">
+            <span class="value deal-address-city">
+              <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Chatou 78400
+            </span>
+            <span class="value deal-address-street"></span>
+            <span class="value deal-type">Appartement | Viager Occupé</span>
+          </div>
+        </div>
+        <!-- deal overview middle amenities-->
+        <div class="row deal-overview-asset-details">
+          <div class="col-xs-5 deal-property-size">
+            <span class="value"><i class="fa fa-arrows-alt fa-2x" aria-hidden="true"></i><span class="number-room">105 m²</span>
+            </span>
+          </div>
+          <div class="col-xs-4 deal-property-bedroom">
+            <span class="value"><i class="fa fa-bed fa-2x" aria-hidden="true"></i><span class="number-room">2</span>
+            </span>
+          </div>
+          <div class="col-xs-3 deal-property-bathroom">
+            <span class="value"><i class="fa fa-bath fa-2x" aria-hidden="true"></i><span class="number-room">1</span>
+            </span>
+          </div>
+        </div>
+        <!-- deal overview chunk financials-->
+        <div class="caption overview-asset-data">
+          <div class="row deal-data-progress" style="display:flex">
+            <div class="col-xs-4 ">
+              <%= image_tag "fakedeal/DUH.png", class: "img-responsive pull-right", alt: "DUH" %>
+            </div>
+            <div class="col-xs-7" style="padding-left:0px" >
+              <span class="vcenter">Décote à l'Achat pour Droit d'Usage et d'Habitation*</span>
+            </div>
+          </div>
+          <div class="row deal-data-rendement">
+            <h3 class="deal-data-rendement-title">Performance estimée</h3>
+            <div class="col-xs-6" id="deal-expected-return">
+              <dd class="deal-expected-return-number">5.94%</dd>
+              <dt class="deal-expected-return">Rendement Annualisé</dt>
+            </div>
+            <div class="col-xs-6" id="deal-expected-maturity">
+              <dd class="deal-expected-maturity-number">14 Ans</dd>
+              <dt class="deal-expected-maturity">Durée Estimée</dt>
+            </div>
+          </div>
+          <div class="row deal-invest">
+            <div class="col-sm-12 btn-deal-invest"><a class="btn btn-invest btn-default" type="Sign-in" data-toggle="modal" data-target="#myModal2">INVESTIR</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Deal full details 12col -->
+    <div class="col-sm-12 col-md-12 deal-details">
+      <!-- Row1 : deal metrics + map + description 12col -->
+      <div class="row">
+        <div class="col-md-8">
+          <h3>Paramètres du Projet</h3>
+          <table class="text-center opportunity-table-parameters" style="width:100%">
+            <tr>
+              <td style="width:50%"><u>Occupant:</u> Homme, 71 ans</td>
+              <td style="width:50%"><u>Horizon d'investissement:</u> 15 ans</td>
+            </tr>
+            <tr>
+              <td><u>Valeur Estimée du Bien:</u> 255 000€</td>
+              <td><u>Investissement total:</u> 140 000€</td>
+            </tr>
+            <tr>
+              <td><u>Nombre de Parts Disponibles:</u> 140</td>
+              <td><u>Prix Unitaire de Souscription par Part:</u> 1 000€</td>
+            </tr>
+          </table>
+          <h3>Présentation du Projet</h3>
+          <p>Au sein d'une résidence sécurisée, Bel appartement 3 pièces comprenant: Hall d'entrée avec rangements, cuisine aménagée équipée, balcon, deux chambres, salle de bains, dressing, vestibule, WC. Un Parking intérieur agrémente ce bien équipé de double vitrage.
+          </p>
+          <p>Bus au pied de l'immeuble, RER A à 10min. La situation en limite du Vésinet et de Montesson
+          assure la proximité immédiate des commerces.
+          </p>
+        </div>
+        <div class="col-md-4">
+          <h4><u>Situation Géographique:</u> Chatou, Yvelines.</h4>
+          <%= image_tag "fakedeal/map-projet.png", class: "img-responsive", alt: "Chambre" %>
+        </div>
+      </div>
+      <!-- Row2: deal project performance 12col -->
+      <div class="row">
+        <div class="col-md-12">
+          <!-- Scenario metrics 12 col -->
+          <h3>Performance du Projet</h3>
+          <h4><u>Scénario Standard</u></h4>
+          <p>Libération du bien après une période de 14 ans avec variation annuelle moyenne de l'immobilier de +1.50% par an.</p>
+          <table class="table">
+            <tr>
+              <td style="border:0px">
+                <u>Prix de Revente du bien:</u> 314 000€
+              </td>
+              <td style="border:0px">
+                <u>Plus-Value Brute:</u> 174 000€
+              </td>
+
+              <td style="border:0px">
+                <u>Rendement annualisé brut:</u> 5.94%
+              </td>
+            </tr>
+            <tr>
+              <td style="border:0px">
+                <u>Prix de Remboursement par Part:</u> 2 242€
+              </td>
+
+              <td style="border:0px">
+                <u>Plus-Value Brute par Part:</u> 1 242€
+              </td>
+
+              <td style="border:0px">
+                <u>Rendement Brut:</u> 128%
+              </td>
+            </tr>
+          </table>
+          <!-- Sensitivity Analysis 12 col -->
+          <h4><u>Analyse de Sensibilité</u></h4>
+          <table class="table text-center opportunity-sensitivityanalysis">
+            <caption class="text-center">
+              <strong>Prix de Revente du Bien - Plus-Value Brute - Rendement Annualisé Brut (€)</strong>
+              <br>Durée d'Investissement / Performance Annuelle du Marché Immobilier
+            </caption>
+            <thead>
+              <tr >
+                <td></td>
+                <td class="text-center">-0.75%</td>
+                <td class="text-center">0.00%</td>
+                <td class="text-center">0.75%</td>
+                <td class="text-center">1.50%</td>
+                <td class="text-center">2.25%</td>
+                <td class="text-center">3.00%</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>12</th>
+                <td>233k - 93k - 4.34%</td>
+                <td>255k - 115k - 5.12%</td>
+                <td>279k - 139k - 5.91%</td>
+                <td>305k - 165k - 6.70%</td>
+                <td>333k - 193k - 7.49%</td>
+                <td>364k - 224k - 8.28%</td>
+              </tr>
+              <tr>
+                <th>13</th>
+                <td>231k - 91k - 3.94%</td>
+                <td>255k - 115k - 4.72%</td>
+                <td>281k - 141k - 5.51%</td>
+                <td>309k - 169k - 6.29%</td>
+                <td>341k - 201k - 7.08%</td>
+                <td>374k - 234k - 7.86%</td>
+              </tr>
+              <tr>
+                <th>14</th>
+                <td>229k - 89k - 3.59%</td>
+                <td>255k - 115k - 4.38%</td>
+                <td>283k - 143k - 5.16%</td>
+                <td class="success">314k - 174k - 5.94%</td>
+                <td>348k - 208k - 6.72%</td>
+                <td>386k - 246k - 7.51%</td>
+              </tr>
+              <tr>
+                <th>15</th>
+                <td>228k - 88k - 3.30%</td>
+                <td>255k - 115k - 4.08%</td>
+                <td>285k - 145k - 4.86%</td>
+                <td>319k - 179k - 5.64%</td>
+                <td>356k - 216k - 6.42%</td>
+                <td>397k - 257k - 7.20%</td>
+              </tr>
+              <tr>
+                <th>16</th>
+                <td>226k - 85k - 3.01%</td>
+                <td>255k - 114k - 3.79%</td>
+                <td>287k - 146k - 4.58%</td>
+                <td>324k - 183k - 5.36%</td>
+                <td>364k - 223k - 6.14%</td>
+                <td>409k - 268k - 6.92%</td>
+              </tr>
+              <tr>
+                <th>17</th>
+                <td>224k - 82k - 2.76%</td>
+                <td>255k - 113k - 3.54%</td>
+                <td>290k - 148k - 4.33%</td>
+                <td>328k - 186k - 5.11%</td>
+                <td>372k - 230k - 5.89%</td>
+                <td>421k - 280k - 6.67%</td>
+              </tr>
+            </tbody>
+          </table>
+
+         <!-- Slider simulation 12 col -->
+          <h4><u>Simulation</u></h4>
+
+          <div class="col-md-12">
+          <form class="form">
+            <div class="form-group col-md-4">
+              <label for="slider1">Montant à Investir</label>
+                <div class="slidercontrol">
+                  <input id="slider1" for="amount" oninput="amount.value=rangeInput.value,amountShares.value=rangeInput.value/1000" type="range" min="1000" max="140000" step="1000" name="rangeInput" value="5000"/>
+                </div>
+            </div>
+            <div class="form-group col-md-4">
+              <label for="box">Montant Investi</label>
+              <div class="input-group">
+                <div class="input-group-addon">€</div>
+                <input class="form-control" readonly  oninput="rangeInput.value=amount.value" id="box" type="text" value="5000" name="amount" for="rangeInput" />
+              </div>
+            </div>
+            <div class="form-group col-md-4">
+              <label for="box2">Nombre de Parts Souscrites</label>
+              <input class="form-control" readonly oninput="rangeInput.value=amountShares.value*1000,amount.value=amountShares.value*1000" id="box2" type="text" value="5" name="amountShares" for="rangeInput" />
+            </div>
+          </form>
+          </div>
+
+          <table class="table text-center opportunity-sensitivityanalysis">
+            <caption class="text-center">
+              <strong>Montant Brut Remboursé <br><em>Performance brute*</em></strong>
+              <br>Durée d'Investissement / Performance Annuelle du Marché Immobilier
+            </caption>
+            <thead>
+              <tr >
+                <td></td>
+                <td class="text-center">-0.75%</td>
+                <td class="text-center">0.00%</td>
+                <td class="text-center">0.75%</td>
+                <td class="text-center">1.50%</td>
+                <td class="text-center">2.25%</td>
+                <td class="text-center">3.00%</td>
+              </tr>
+            </thead>
+            <tfoot>
+              <tr><td colspan="7" style="text-align:right"><small><em>*Données brutes hors fiscalités</small></em></td></tr>
+            </tfoot>
+            <tbody>
+              <tr>
+                <th>12</th>
+                <td><span id="TableSimulation11"></span>&euro;<br><em>+66%</em></td>
+                <td><span id="TableSimulation12"></span>&euro;<br><em>+82%</em></td>
+                <td><span id="TableSimulation13"></span>&euro;<br><em>+99%</em></td>
+                <td><span id="TableSimulation14"></span>&euro;<br><em>+118%</em></td>
+                <td><span id="TableSimulation15"></span>&euro;<br><em>+138%</em></td>
+                <td><span id="TableSimulation16"></span>&euro;<br><em>+160%</em></td>
+              </tr>
+              <tr>
+                <th>13</th>
+                <td><span id="TableSimulation21"></span></span>&euro;<br><em>+65%</em></td>
+                <td><span id="TableSimulation22"></span></span>&euro;<br><em>+82%</em></td>
+                <td><span id="TableSimulation23"></span></span>&euro;<br><em>+101%</em></td>
+                <td><span id="TableSimulation24"></span></span>&euro;<br><em>+121%</em></td>
+                <td><span id="TableSimulation25"></span></span>&euro;<br><em>+143%</em></td>
+                <td><span id="TableSimulation26"></span></span>&euro;<br><em>+166%</em></td>
+              </tr>
+              <tr>
+                <th>14</th>
+                <td><span id="TableSimulation31"></span></span>&euro;<br><em>+64%</em></td>
+                <td><span id="TableSimulation32"></span></span>&euro;<br><em>+82%</em></td>
+                <td><span id="TableSimulation33"></span></span>&euro;<br><em>+102%</em></td>
+                <td class="success"><span id="TableSimulation34"></span>&euro;<br><em>+124%</em></span></td>
+                <td><span id="TableSimulation35"></span></span>&euro;<br><em>+149%</em></td>
+                <td><span id="TableSimulation36"></span></span>&euro;<br><em>+176%</em></td>
+              </tr>
+              <tr>
+                <th>15</th>
+                <td><span id="TableSimulation41"></span></span>&euro;<br><em>+62%</em></td>
+                <td><span id="TableSimulation42"></span></span>&euro;<br><em>+81%</em></td>
+                <td><span id="TableSimulation43"></span></span>&euro;<br><em>+103%</em></td>
+                <td><span id="TableSimulation44"></span></span>&euro;<br><em>+127%</em></td>
+                <td><span id="TableSimulation45"></span></span>&euro;<br><em>+154%</em></td>
+                <td><span id="TableSimulation46"></span></span>&euro;<br><em>+183%</em></td>
+              </tr>
+              <tr>
+                <th>16</th>
+                <td><span id="TableSimulation51"></span></span>&euro;<br><em>+60%</em></td>
+                <td><span id="TableSimulation52"></span></span>&euro;<br><em>+81%</em></td>
+                <td><span id="TableSimulation53"></span></span>&euro;<br><em>+104%</em></td>
+                <td><span id="TableSimulation54"></span></span>&euro;<br><em>+130%</em></td>
+                <td><span id="TableSimulation55"></span></span>&euro;<br><em>+159%</em></td>
+                <td><span id="TableSimulation56"></span></span>&euro;<br><em>+191%</em></td>
+              </tr>
+              <tr>
+                <th>17</th>
+                <td><span id="TableSimulation61"></span></span>&euro;<br><em>+58%</em></td>
+                <td><span id="TableSimulation62"></span></span>&euro;<br><em>+80%</em></td>
+                <td><span id="TableSimulation63"></span></span>&euro;<br><em>+105%</em></td>
+                <td><span id="TableSimulation64"></span></span>&euro;<br><em>+133%</em></td>
+                <td><span id="TableSimulation65"></span></span>&euro;<br><em>+164%</em></td>
+                <td><span id="TableSimulation66"></span></span>&euro;<br><em>+199%</em> </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!-- Row3: investement ca 12col -->
+      <div class="row">
+        <div class="col-md-12">
+          <h3>Participer au Projet</h3>
+          <p>Ce projet vous intéresse et vous souhaitez y participer? Vous choisissez le nombre de parts qui vous intéresse. Prix de souscription d'une part: 1000€</p>
+          <div class="row deal-invest">
+            <div class="col-sm-6 col-sm-offset-3 btn-deal-invest"><a class="btn btn-invest btn-default" type="Sign-in" data-toggle="modal" data-target="#myModal2">INVESTIR</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--  -->
+    <div class="col-sm-12 col-md-12 ">
+      <%= render "shared/contact" %>
+    </div>
+    <!--  -->
+  </div>
+</div>
+
+

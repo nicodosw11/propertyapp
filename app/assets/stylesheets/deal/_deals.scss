@@ -1,0 +1,115 @@
+.overview-asset {
+  font-size:0.9em;
+
+}
+.overview-asset *{
+  color: #696969;
+  font-variant-numeric: lining-nums;
+  -moz-font-feature-settings: "lnum" 1;
+  -moz-font-feature-settings: "lnum=1";
+  -ms-font-feature-settings: "lnum" 1;
+  -o-font-feature-settings: "lnum" 1;
+  -webkit-font-feature-settings: "lnum" 1;
+  font-feature-settings: "lnum" 1;
+
+}
+a.overview-asset:hover, a.overview-asset:focus, a.overview-asset.active {
+  text-decoration:none;
+  border-color: #33CCCC;
+}
+
+.overview-asset .glyphicon{
+  color: #C1EFEF;
+  -webkit-transition: color .2s ease-in-out;
+  -o-transition: color .2s ease-in-out;
+  transition: color .2s ease-in-out;
+}
+
+a.overview-asset:hover .glyphicon, a.overview-asset:focus .glyphicon, a.overview-asset.active .glyphicon {
+  color: #33CCCC;
+}
+
+.deal-property-type, .deal-investors, .deal-progress-deadline{
+  text-align:right;
+}
+
+span.value {
+  max-width: 100%;
+  display:block;
+}
+
+/* overview-asset-header */
+.overview-asset-header {
+  padding: 10px 7px;
+  margin-bottom: 0;
+}
+
+.deal-property-address{
+  padding-right: 0px;
+}
+
+/* overview-asset-image */
+.overview-asset-image{
+  position: relative;
+  background: #DEDEDE;
+}
+
+.overview-asset-image::before{
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: 66.666%;
+  content: '';
+}
+
+.overview-asset-image-pic {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+/* overview-asset-caption */
+.overview-asset-data-investisseurs{
+  margin-bottom: 0;
+}
+
+.deal-size-funded, .deal-investors-number,.deal-expected-return-number, .deal-expected-maturity-number{
+  font-size:1.4em;
+  font-weight:500;
+}
+
+.deal-size-target, .deal-investors,.deal-expected-return, .deal-expected-maturity{
+  font-weight:400;
+}
+
+.overview-asset-data-progress{
+  border-bottom: 1px solid #DEDEDE;
+}
+
+.progress{
+  height:0.7em;
+  // height:7px;
+  margin-bottom: 0px;
+}
+.progress-bar{
+  // background-color: #C1EFEF;
+  background-color: #33CCCC;
+  -webkit-transition: background-color .2s ease-in-out;
+  -o-transition: background-color .2s ease-in-out;
+  transition: background-color .2s ease-in-out;
+}
+.overview-asset:hover .progress-bar {
+  background-color: #33CCCC;
+}
+
+.overview-asset-data-rendement{
+  text-align:center;
+}
+.overview-asset-data-rendement-title{
+  margin-top:0.7em;
+  margin-bottom:0.7em;
+  font-size: 1.5em;
+}

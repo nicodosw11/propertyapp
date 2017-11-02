@@ -7,56 +7,6 @@ h4{
   font-weight: 300;
 }
 
-/*CSS pour dréer des cercles*/
-.circle {
-  border-radius: 50%;
-}
-
-.circle-border {
-  border: 1px solid #33cccc;
-}
-
-
-.circle-solid{
-  background-color: whitesmoke;
-}
-
-.circle:before {
-  content: "";
-  display: block;
-  padding-top: 100%;
-}
-
-.circle-inner {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  text-align: center;
-}
-.score-text {
-  margin: 20% 0% 80% 0%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  height: 1em;
-  line-height: 2em;
-  font-size: 1em;
-  color: #33cccc;
-
-}
-.definition{
-  line-height: 1em;
-  padding-left: 10%;
-  padding-right: 10%;
-
-}
-
-// separate sections
-
 hr {
   border-style: solid;
   border-top-width: 3px;
@@ -69,13 +19,13 @@ hr {
   border-width: 1px;
 }
 
-.team_hr_right{
+.team_hr_right {
   margin-bottom:3em;
 }
 
 // Expertise
 
-.bubble{
+.bubble {
   margin-top: 3em;
 }
 
@@ -88,7 +38,7 @@ hr {
 
 #footer{
   height: 180px;
-  width:100%;
+  width: 100%;
   font-size: 0.8em;
   margin: 0;
   padding-top: 0px;

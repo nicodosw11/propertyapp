@@ -1,0 +1,68 @@
+<!--  -->
+<!-- <nav class="navbar navbar-fixed-top" role="navigation" id="nav">
+  <div class="container" id="menu"> -->
+<!--  -->
+<div class="navbar-livsty navbar-container-fixed">
+  <!-- <div class="navbar-header"> -->
+  <!-- Logo -->
+    <!-- <a class="navbar-brand" href="#top">
+      <img alt="Logo Livsty" class="img-responsive" src="app/assets/images/Logo.png">
+    </a> -->
+  <%= link_to root_path, class: "navbar-livsty-brand" do %>
+    <%= image_tag "Logo.png" %>
+  <% end %>
+  <!-- Logo -->
+  <!-- </div> -->
+  <!-- Right Navigation -->
+  <div class="navbar-container-right hidden-xs hidden-sm">
+    <div class="inner-navbar-bootstrap">
+      <ul class="nav navbar-nav borderline main-menu collapse navbar-collapse pull-right" id="top-menu">
+        <li><%= nav_link_to "INVESTIR", deals_path%></li>
+        <li><%= nav_link_to "VENDRE VOTRE BIEN", seller_path%></li>
+        <% admins_only do %>
+          <li> <%= link_to "Admin", admin_root_path %> </li>
+        <% end %>
+        <!-- <div class="navbar-container-item navbar-livsty-link"> -->
+        <li role="presentation" class="dropdown">
+        <!-- <div class="dropdown"> -->
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-id="">AUTRE <span class="caret"></span> </a>
+          <ul class="dropdown-menu">
+            <li><a href="" data-id="">NOUS CONNAÎTRE</a></li>
+            <li><a href=""  data-id="">FAQ</a></li>
+            <li><a href="#Contact" data-id="">CONTACT</a></li>
+          </ul>
+        <!-- </div> -->
+        </li>
+      </ul>
+    </div>
+  <!-- Different navigation if login or not -->
+  <!-- <ul class="nav navbar-nav"> -->
+    <%= render 'components/signinup-buttons' %>
+  </div>
+  <!--Right Navigation /.nav-collapse -->
+ <!-- Dropdown list appearing on mobile only -->
+  <div class="navbar-container-item hidden-md hidden-lg">
+    <div class="dropdown">
+      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+      <ul class="dropdown-menu dropdown-menu-right navbar-container-dropdown-menu">
+        <li><a href="#">Investir</a></li>
+        <li><a href="#">Vendre votre bien</a></li>
+        <% if user_signed_in? %>
+        <li>
+        <%= link_to destroy_user_session_path, method: :delete do %><%= t(".sign_out", default: "Log out") %>
+        <% end %>
+        </li>
+        <% else %>
+        <li><%= link_to t(".sign_in", default: "S'identifier"), new_user_session_path, class: "navbar-container-item" %></li>
+        <% end %>
+        <li>
+        <%= link_to t(".sign_up", default: "Inscription"), new_user_registration_path, class: "navbar-container-item" %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!--   </div>
+</nav> -->
+
+

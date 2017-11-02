@@ -1,33 +1,85 @@
+.banner-homepage {
+  position: relative;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  // background-attachment: scroll;
+  /* if you have a 76px navbar => height: calc(100vh - 76px); */
+  height: calc(100vh - 76px);
+  color: white;
+
+  // flexbox
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+  // text-align: center;
+
+}
+
+.banner-homepage img {
+  max-width: 100%;
+}
+
 .text-overlay {
-  padding: 15px;
-  // position: absolute;
-  // z-index: 1;
-  // top: 7%;
+  // padding: 15px;
+
+// transform-translate
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+
+  //or
+
+  // position: relative;
+  // float: left;
+  // top: 50%;
+  // left: 50%;
+  // transform: translate(-50%, -50%);
+
+
+// position: absolute with top or margins;
+  // top: 0;
   // left: 0;
-  }
+  // bottom: 0;
+  // right: 0;
+
+  // top: 50%;
+  // left: 0;
+  // right: 0;
+  // margin-top: 3%;
+  // margin-top: -3%;
+
+}
+
 
 .text-overlay h1 {
-  font-size: 4em;
+  // font-size: 4em;
   // color: #33CCCC;
   // color: #777777;
-  // padding-top:0.5em;
-  // padding-bottom:0.5em;
+
   font-weight: 300;
 
+  // padding-top:0.5em;
+  // padding-bottom:0.5em;
+  // padding-top:3%;
+  // padding-bottom:3%;
 
-  margin-bottom: 20px;
+  // margin-bottom: 20px;
+}
+
+span.nowwrap {
+  white-space: nowrap;
 }
 
 @media screen and (max-width: 768px) {
-
-  .text-overlay h1 {
-    font-size: 1em /* 24px / 16px */
+  .container.no-padding {
+    width: 80%;
+    padding: 0px !important;
   }
-  .text-overlay p {
-    font-size: 0.46875em /* 7.5px / 16px */
-  }
-  .text-overlay h3 {
-    font-size: 0.5625em /* 9px / 16px */
+  span.nowwrap {
+    white-space: normal;
   }
 }
 
@@ -35,25 +87,19 @@
   opacity: 0.7;
   // max-width: 80%;
   // margin: 0 auto;
-  }
+}
 
-.ess{
+.greyed{
   color:#D3D3D3;
 }
-.ess-ess{
+.greened{
   color:#33CCCC;
 }
 
-.bottom {
-  // top:100px;
-  // margin-bottom:5px;
-  // padding-bottom:5px;
+.turquoise {
   color: #C1EFEF;
 }
-.greyback{
-  // padding-left: 25%;
-  // padding-right: 25%;
-  // padding-radius: 20px;
-  // background: rgba(105, 105, 105, 0.7);
-  // background-clip: content-box;
-}
+
+
+
+

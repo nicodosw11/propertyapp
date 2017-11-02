@@ -1,0 +1,150 @@
+/*CSS pour créer des cercles*/
+.circle {
+  border-radius: 50%;
+  // max-width:40vw;
+}
+
+.circle-border {
+  border: 1px solid #33cccc;
+}
+
+.circle-solid{
+  background-color: whitesmoke;
+}
+
+.circle:before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+
+/*CSS pour créer des cercles - fin*/
+
+.circle-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  text-align: center;
+}
+
+// .circle-inner {
+//     position: relative;
+//     text-align: center;
+// }
+
+// 1
+.circle-inner > .score-text {
+    position: absolute;
+    // top: 50%;
+    top: 15%;
+    left: 0;
+    right: 0;
+    // margin-top: -9px;
+}
+
+// 2
+// .circle-inner > .score-text {
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translateX(-50%) translateY(-50%);
+// }
+
+// 3
+// .circle-inner > .score-text {
+//   position: relative;
+//   float: left;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+// }
+
+// 4
+// .circle-inner > .score-text {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+//   text-align: center;
+// }
+
+//2
+// .container {
+// position: absolute;
+// top: 50%;
+// left: 50%;
+// transform: translateX(-50%) translateY(-50%);
+// }
+
+//3
+// .container {
+// position: relative;
+// float: left;
+// top: 50%;
+// left: 50%;
+// transform: translate(-50%, -50%);
+// }
+
+//4 flexbox
+// .container {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+//   text-align: center;
+// }
+
+.score-text {
+//   margin: 20% 0% 80% 0%;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   bottom: 0;
+//   right: 0;
+//   height: 1em;
+//   line-height: 2em;
+//   font-size: 1em;
+//   font-size: 1vw;
+     color: #33cccc;
+  // @media screen and (max-width: 620px) {
+  //   h4{
+  //     font-size: 0.625em;
+  //   }
+  //   small {
+  //     font-size: 10px !important;
+  //   }
+  // }
+
+
+  // @media screen and (min-width: 621px) {
+  //   h4{
+  //     font-size: 0.75em;
+  //   }
+  //   small {
+  //     font-size: 12px !important;
+  //   }
+  // }
+
+  // @media screen and (min-width: 992px) {
+  //   h4{
+  //     font-size: 1em;
+  //   }
+  //   small {
+  //     font-size: 14px !important;
+  //   }
+  // }
+}
+
+
+
+.definition{
+//   line-height: 1em;
+  padding-left: 10%;
+  padding-right: 10%;
+
+//   text-align:center;
+
+
+}

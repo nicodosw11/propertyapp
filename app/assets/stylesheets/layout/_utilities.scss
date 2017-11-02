@@ -4,12 +4,26 @@
  * Feel free to change them and create your own
  * ------------------------------------- */
 
+.clickable {
+  cursor: pointer;
+}
+.vcenter {
+  vertical-align: middle;
+}
+
+
 // Paddings
 .padded {
   // padding-top: 5em;
   // padding-bottom: 5em;
   padding-top: 3em;
   padding-bottom: 3em;
+}
+
+.margined-b-1 {
+  // padding-top: 5em;
+  // padding-bottom: 5em;
+  margin-bottom: 1em;
 }
 
 // Backgrounds
@@ -27,28 +41,37 @@
 }
 
 body{
-  padding-top: 70px;
-  background-color: #F5F5F5;
+  // padding-top: 90px;
+  padding-top: 76px;
+  // background-color: #F5F5F5;
+  // font-family: "Raleway", Georgia;
+  // color: #696969;
+  // position: relative;
+  // height:100%;
+  // font-size:16px;
 }
 
-.row#Home {
-  /* background: url(img/img1.jpg) top center no-repeat; */
-  position: relative;
-  color: #777777;
-
+body.pages.seller, body.pages.home {
+  padding-top: 76px;
 }
 
-.row {
-  min-height: 500px;
+body.pages.seller .navbar-livsty {
+  z-index: 2;
 }
-.row{
+
+// .row {
+//   min-height: 500px;
+// }
+.margin-bottom {
   margin-bottom: 1em;
 }
-
-.col-md-12{
-  padding-bottom:1.5em;
-}
+// .col-md-12{
+//   padding-bottom:1.5em;
+// }
 
 iframe {
   max-width: 100%;
 }
+
+
+

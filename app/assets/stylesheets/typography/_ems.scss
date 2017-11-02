@@ -1,0 +1,52 @@
+body {
+    font-size:100%; /* flexible baseline */
+}
+p {
+    font-size: 0.875em; /* If the baseline is 16px, this will scale the font to 14px */
+    line-height: 1em;  /* This keeps the line height proportional to the font size */
+
+    font-size: 1.25em; /* 1.25em relative to a 16px baseline on the body will result in a 20px font size */
+    line-height: 1.4em;
+}
+
+/* and if we have headings with defined styles we'd also add */
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.2em;
+}
+
+@media screen and (max-width: 60em) { // 960px
+    body {
+        font-size:95%;
+    }
+}
+
+@media screen and (max-width: 50em) { // 800px
+    body {
+        font-size:90%;
+    }
+}
+
+@media screen and (max-width: 40em) { // 640px
+    body {
+        font-size:85%;
+    }
+}
+@media screen and (max-width: 30em) { // 480px
+    body {
+        font-size:80%;
+    }
+}
+@media screen and (max-width: 20em) { // 320px
+    body {
+        font-size: 75%;
+    }
+}
+
+
+
+
+
+
+
+
+
