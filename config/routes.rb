@@ -20,6 +20,7 @@
   # patch "deals/:id",                                to: "deals#update"
   # delete "deals/:id",                               to: "deals#destroy"
 
+  resources :deals, only: [:new, :edit]
   resources :deals, only: [:index, :show, :create, :update, :destroy] do
     resources :investments, only: [:create, :destroy]
     scope '/siteadmin' do
@@ -30,10 +31,10 @@
     # resources :properties, path: '/admin'
   end
 
-  scope '/siteadmin' do
-    resources :deals, only: [:new, :edit]
-    # resources :deals, except: [:index, :show]
-  end
+  # scope '/siteadmin' do
+  #   resources :deals, only: [:new, :edit]
+  #   # resources :deals, except: [:index, :show]
+  # end
   #same as
   # resources :deals, except: [:index, :show], path: '/admin/deals'
 

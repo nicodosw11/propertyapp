@@ -30,27 +30,24 @@ ActiveRecord::Schema.define(version: 20170213154218) do
   end
 
   create_table "deals", force: :cascade do |t|
-    t.text     "description"
-    t.string   "address"
-    t.string   "image_url"
+    t.string   "street"
+    t.string   "city"
+    t.string   "district"
+    t.string   "postcode"
+    t.string   "property_type"
     t.string   "occupancy"
-    t.float    "valuation"
-    t.float    "funded"
-    t.integer  "nb_investors"
-    t.float    "yield"
-    t.float    "timeline"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.string   "kind"
-  end
-
-  create_table "financials", force: :cascade do |t|
-    t.float    "estimated"
-    t.float    "ppsm"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "deal_id"
-    t.index ["deal_id"], name: "index_financials_on_deal_id", using: :btree
+    t.text     "amenities_description"
+    t.text     "location_transport_description"
+    t.integer  "surface"
+    t.integer  "nb_rooms"
+    t.integer  "nb_bedrooms"
+    t.integer  "nb_bathrooms"
+    t.boolean  "active"
+    t.integer  "funding_goal"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
   end
 
   create_table "investments", force: :cascade do |t|
@@ -67,21 +64,26 @@ ActiveRecord::Schema.define(version: 20170213154218) do
 
   create_table "properties", force: :cascade do |t|
     t.integer  "deal_id"
-    t.string   "genre"
+    t.string   "city"
+    t.string   "district"
+    t.string   "postcode"
+    t.string   "property_type"
+    t.string   "occupancy"
+    t.text     "amenities_description"
+    t.text     "location_transport_description"
     t.integer  "surface"
     t.integer  "nb_rooms"
     t.integer  "nb_bedrooms"
-    t.string   "city"
-    t.string   "district"
-    t.string   "full_address"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.integer  "nb_bathrooms"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
     t.index ["deal_id"], name: "index_properties_on_deal_id", using: :btree
   end
 
   create_table "tenants", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
+    t.string   "gender"
     t.integer  "age"
     t.integer  "deal_id"
     t.datetime "created_at", null: false
@@ -114,7 +116,6 @@ ActiveRecord::Schema.define(version: 20170213154218) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
-  add_foreign_key "financials", "deals"
   add_foreign_key "investments", "deals"
   add_foreign_key "investments", "users"
   add_foreign_key "properties", "deals"

@@ -11,28 +11,52 @@
     </div>
   <% end %>
   <p>
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
+    <%= f.label :street %><br>
+    <%= f.text_field :street %>
   </p>
   <p>
-    <%= f.label :address %><br>
-    <%= f.text_field :address %>
+    <%= f.label :city %><br>
+    <%= f.text_field :city %>
   </p>
   <p>
-    <%= f.label :kind %><br>
-    <%= f.text_field :kind %>
+    <%= f.label :district %><br>
+    <%= f.text_field :district %>
   </p>
   <p>
-    <%= f.label :image_url %><br>
-    <%= f.text_field :image_url %>
+    <%= f.label :postcode %><br>
+    <%= f.text_field :postcode %>
+  </p>
+  <p>
+    <%= f.label :property_type, "Type" %><br>
+    <%= f.text_field :property_type %>
   </p>
   <p>
     <%= f.label :occupancy %><br>
     <%= f.text_field :occupancy %>
   </p>
   <p>
-    <%= f.label :yield %><br>
-    <%= f.number_field :yield, step: :any %>
+    <%= f.label :amenities_description, "Description (amenities)" %><br>
+    <%= f.text_area :amenities_description %>
+  </p>
+  <p>
+    <%= f.label :location_transport_description, "Description (location)" %><br>
+    <%= f.text_area :location_transport_description %>
+  </p>
+  <p>
+    <%= f.label :surface %><br>
+    <%= f.number_field :surface %>
+  </p>
+  <p>
+    <%= f.label :nb_bedrooms, "How many bedrooms?" %><br>
+    <%= f.number_field :nb_bedrooms %>
+  </p>
+  <p>
+    <%= f.label :nb_bedrooms, "How many bathrooms?"  %><br>
+    <%= f.number_field :nb_bathrooms %>
   </p>
   <%= f.submit %>
 <% end %>
+
+
+
+
