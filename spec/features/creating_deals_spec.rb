@@ -27,8 +27,8 @@ RSpec.feature "Users can create new deals" do
     # expect(page.current_url).to eq deal_url(deal)
     expect(page.current_url).to eq deals_url
 
-    # title = "Chatou - Deals - Livsty"
-    # expect(page).to have_title title
+    title = "Chatou - Deals - Livsty"
+    expect(page).to have_title title
   end
   scenario "when providing invalid attributes" do
     click_button "Create Deal"
