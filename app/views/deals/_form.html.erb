@@ -1,10 +1,10 @@
-<%= form_for(@deal) do |f| %>
-  <% if @deal.errors.any? %>
+<%= form_for(deal) do |f| %>
+  <% if deal.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@deal.errors.count, "error") %>
+      <h2><%= pluralize(deal.errors.count, "error") %>
       prohibited this deal from being saved:</h2>
         <ul>
-          <% @deal.errors.full_messages.each do |msg| %>
+          <% deal.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
           <% end %>
         </ul>

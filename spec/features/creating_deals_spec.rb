@@ -1,7 +1,7 @@
 require "rails_helper"
 RSpec.feature "Users can create new deals" do
   before do
-    visit "/"
+    visit "/deals"
 
     click_link "New Deal"
   end
@@ -27,13 +27,13 @@ RSpec.feature "Users can create new deals" do
     # expect(page.current_url).to eq deal_url(deal)
     expect(page.current_url).to eq deals_url
 
-    title = "Chatou - Deals - Livsty"
-    expect(page).to have_title title
+    # title = "Chatou - Deals - Livsty"
+    # expect(page).to have_title title
   end
   scenario "when providing invalid attributes" do
     click_button "Create Deal"
 
-    expect(page).to have_content "Deal has not been created."
+    expect(page).to have_content "Deal has not been created"
     expect(page).to have_content "Street can't be blank"
   end
 end

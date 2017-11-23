@@ -25,7 +25,7 @@ class DealsController < ApplicationController
     if @deal.save
       redirect_to deals_path, notice: 'Deal was successfully created'
     else
-      flash.now[:alert] = "Deal has not been created."
+      flash.now[:alert] = "Deal has not been created"
       render "new"
     end
   end
@@ -35,7 +35,7 @@ class DealsController < ApplicationController
     if @deal.update(deal_params)
       redirect_to @deal, notice: 'Deal was successfully updated'
     else
-      flash.now[:alert] = "Deal has not been updated."
+      flash.now[:alert] = "Deal has not been updated"
       render :edit
     end
   end

@@ -50,32 +50,32 @@
     <div class="col-sm-12 col-md-4">
       <div class="deal-overview-asset">
         <!-- deal overview upper address -->
-        <div class="row deal-overview-asset-header">
+        <div class="row deal-overview-asset-header margin-bottom">
           <div class="col-xs-12 deal-property-address">
             <span class="value deal-address-city">
-              <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Chatou 78400
+              <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> <%= deal.city %> <%= deal.postcode %>
             </span>
             <span class="value deal-address-street"></span>
-            <span class="value deal-type">Appartement | Viager Occupé</span>
+            <span class="value deal-type"><%= deal.property_type %> | <%= deal.occupancy %> </span>
           </div>
         </div>
         <!-- deal overview middle amenities-->
-        <div class="row deal-overview-asset-details">
+        <div class="row deal-overview-asset-details margin-bottom">
           <div class="col-xs-5 deal-property-size">
-            <span class="value"><i class="fa fa-arrows-alt fa-2x" aria-hidden="true"></i><span class="number-room">105 m²</span>
+            <span class="value"><i class="fa fa-arrows-alt fa-2x" aria-hidden="true"></i><span class="number-room"><%= deal.surface %> m²</span>
             </span>
           </div>
           <div class="col-xs-4 deal-property-bedroom">
-            <span class="value"><i class="fa fa-bed fa-2x" aria-hidden="true"></i><span class="number-room">2</span>
+            <span class="value"><i class="fa fa-bed fa-2x" aria-hidden="true"></i><span class="number-room"><%= deal.nb_bedrooms %></span>
             </span>
           </div>
           <div class="col-xs-3 deal-property-bathroom">
-            <span class="value"><i class="fa fa-bath fa-2x" aria-hidden="true"></i><span class="number-room">1</span>
+            <span class="value"><i class="fa fa-bath fa-2x" aria-hidden="true"></i><span class="number-room"><%= deal.nb_bathrooms %></span>
             </span>
           </div>
         </div>
         <!-- deal overview chunk financials-->
-        <div class="caption overview-asset-data">
+        <div class="caption overview-asset-data margin-bottom">
           <div class="row deal-data-progress" style="display:flex">
             <div class="col-xs-4 ">
               <%= image_tag "fakedeal/DUH.png", class: "img-responsive pull-right", alt: "DUH" %>

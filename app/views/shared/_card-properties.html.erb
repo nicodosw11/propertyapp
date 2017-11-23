@@ -9,13 +9,13 @@
         <div class="row overview-asset-header">
           <div class="col-xs-6 deal-property-address">
             <span class="value address-city">
-              <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Ville. 78400 Chatou
+              <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Ville. <%= deal.postcode %> <%= deal.city %>
             </span>
             <span class="value address-street"></span>
           </div>
           <div class="col-xs-6 deal-property-type">
-            <span class="value property-type">Appartement</span>
-            <span class="value occupation-type">Viager Occupé</span>
+            <span class="value property-type"><%= deal.property_type %></span>
+            <span class="value occupation-type"><%= deal.occupancy %></span>
           </div>
         </div>
         <!-- overview-asset-picture -->
@@ -67,7 +67,9 @@
         </div>
       <% end %>
       <!-- </a> -->
-
+      <!-- /////////////////////// for test only-->
+      <%=link_to "Edit Deal", edit_deal_path(deal) %>
+      <!-- /////////////////////// -->
     </div>
 
 <!--   </div>

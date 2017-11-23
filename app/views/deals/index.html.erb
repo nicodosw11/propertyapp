@@ -12,6 +12,13 @@
   <div class="row">
     <% @deals.each do |d| %>
       <%= render "shared/card-properties", deal: d %>
+      <!-- /////////////////////// for test only-->
+      <!-- link_to "Edit Deal", edit_deal_path(id: d.id) %> -->
+      <!-- /////////////////////// -->
     <% end %>
   </div>
 </div>
+
+<!-- /////////////////////// for test only-->
+<%= link_to "New Deal", new_deal_path %>
+<!-- /////////////////////// -->
