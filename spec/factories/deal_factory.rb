@@ -1,10 +1,10 @@
 FactoryGirl.define do
   factory :deal do
-    street "3 rue des peupliers"
-    city "Chatou"
-    district "Yvelines"
-    postcode "78400"
-    property_type "Appartement"
+    street "3 rue des cocotiers"
+    city "Timbuktu"
+    district "Africa"
+    postcode "01000"
+    property_type "Caravan"
     occupancy "Viager occupé"
     surface 105
     nb_bedrooms 2
