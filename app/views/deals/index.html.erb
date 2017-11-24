@@ -8,6 +8,14 @@
   </div>
 </div> -->
 
+<div class="page-header">
+  <h1>Our current opportunities</h1>
+</div>
+<ul class="actions">
+  <li><%= link_to "New Deal", new_deal_path, class: "new" %></li>
+</ul>
+
+
 <div class="container">
   <div class="row">
     <% @deals.each do |d| %>
@@ -19,6 +27,8 @@
   </div>
 </div>
 
+
+
 <!-- /////////////////////// for test only-->
-<%= link_to "New Deal", new_deal_path %>
+<%= render "tests/deals" %>
 <!-- /////////////////////// -->

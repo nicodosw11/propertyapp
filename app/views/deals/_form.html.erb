@@ -44,7 +44,7 @@
   </p>
   <p>
     <%= f.label :surface %><br>
-    <%= f.number_field :surface %>
+    <%= f.number_field :surface, in: 50..300, step: 1 %>
   </p>
   <p>
     <%= f.label :nb_bedrooms, "How many bedrooms?" %><br>

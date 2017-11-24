@@ -13,9 +13,11 @@ RSpec.feature "Users can create new deals" do
     fill_in "Postcode", with: "78400"
     fill_in "Type", with: "Appartement"
     fill_in "Occupancy", with: "Viager occupé"
-    fill_in "Surface", with: "105"
-    fill_in "deal_nb_bedrooms", with: "2"
-    fill_in "deal[nb_bathrooms]", with: "1"
+    fill_in "Surface", with: 105
+    select(2, :from => "deal_nb_bedrooms").select_option
+    select(1, :from => "deal_nb_bathrooms").select_option
+    # fill_in "deal_nb_bedrooms", with: 2
+    # fill_in "deal[nb_bathrooms]", with: 1
     fill_in "Description (amenities)", with: "Lorem ipsum1"
     fill_in "Description (location)", with: "Lorem ipsum2"
 

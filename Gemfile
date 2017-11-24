@@ -25,6 +25,8 @@ gem 'autoprefixer-rails'
 
 gem 'coffee-rails'
 
+gem "font-awesome-rails"
+
 group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'

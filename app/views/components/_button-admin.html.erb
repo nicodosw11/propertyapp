@@ -1,0 +1,12 @@
+<div class="page-header">
+  <ul class="actions">
+    <li><%= link_to fa_icon("plus") + " New Deal", new_deal_path, class: "btn btn-success" %></li>
+    <li><%= link_to fa_icon("pencil") + " Edit Deal",
+    edit_deal_path(@deal), class: "btn btn-primary" %></li>
+    <li><%= link_to fa_icon("trash") + " Delete Deal",
+    deal_path(@deal),
+    method: :delete,
+    data: { confirm: "Are you sure you want to delete this deal?" },
+    class: "btn btn-danger" %></li>
+  </ul>
+</div>

@@ -1,12 +1,14 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm-4 col-sm-offset-4">
-    <h1>New Deal</h1>
-    <%= render "form", deal: @deal %>
+    <div class="col-sm-4 col-sm-offset-4 col-md-8 col-md-offset-2">
+      <div class="page-header">
+        <h1>New Deal</h1>
+      </div>
+      <%= render "simple_form", deal: @deal %>
 
-    <!-- @deal.errors -->
+      <!-- @deal.errors -->
 
-    <%= link_to "back", deals_path %>
+      <%= link_to "back", deals_path %>
     </div>
   </div>
 </div>
