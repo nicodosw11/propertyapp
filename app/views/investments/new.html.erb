@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-4">
+      <div class="page-header">
+        <h1>
+          New Investment
+          <small><%= @deal.city %></small>
+          <small><%= @deal.district %></small>
+          <small><%= @deal.property_type %></small>
+          <small><%= @deal.occupancy %></small>
+        </h1>
+      </div>
+
+      <%= render "simple-form", deal: @deal, investment: @investment %>
+    </div>
+  </div>
+</div>

@@ -76,7 +76,7 @@
         </div>
         <!-- deal overview chunk financials-->
         <div class="caption overview-asset-data margin-bottom">
-          <div class="row deal-data-progress" style="display:flex">
+          <div class="row deal-data-progress margin-bottom" style="display:flex">
             <div class="col-xs-4 ">
               <%= image_tag "fakedeal/DUH.png", class: "img-responsive pull-right", alt: "DUH" %>
             </div>
@@ -84,7 +84,7 @@
               <span class="vcenter">Décote à l'Achat pour Droit d'Usage et d'Habitation*</span>
             </div>
           </div>
-          <div class="row deal-data-rendement">
+          <div class="row deal-data-rendement margin-bottom">
             <h3 class="deal-data-rendement-title">Performance estimée</h3>
             <div class="col-xs-6" id="deal-expected-return">
               <dd class="deal-expected-return-number">5.94%</dd>
@@ -96,7 +96,7 @@
             </div>
           </div>
           <div class="row deal-invest">
-            <div class="col-sm-12 btn-deal-invest"><a class="btn btn-invest btn-default" type="Sign-in" data-toggle="modal" data-target="#myModal2">INVESTIR</a></div>
+            <%= render "buttons/invest-show" %>
           </div>
         </div>
       </div>

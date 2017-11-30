@@ -11,25 +11,26 @@
   get 'siteadmin/tenants', to: "tenants#all"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-
-  # get "deals",                                      to: "deals#index"
-  # get "deals/new",                                  to: "deals#new"
-  # post "deals",                                     to: "deals#create"
-  # get "deals/:id",                                  to: "deals#show"
-  # get "deals/:id/edit",                             to: "deals#edit"
-  # patch "deals/:id",                                to: "deals#update"
-  # delete "deals/:id",                               to: "deals#destroy"
-
-  resources :deals, only: [:new, :edit]
-  resources :deals, only: [:index, :show, :create, :update, :destroy] do
-    resources :investments, only: [:create, :destroy]
+  resources :deals do
+    # resources :investments, only: [:new, :create, :destroy]
+    resources :investments
     scope '/siteadmin' do
-      resources :investments, only: [:index, :show]
+      # resources :investments, only: [:index, :show]
       resources :properties
       resources :tenants
     end
     # resources :properties, path: '/admin'
   end
+
+  # resources :deals
+  # get "deals",                                      to: "deals#index"
+  # get "deals/new",                                  to: "deals#new", as: "new_deal"
+  # post "deals",                                     to: "deals#create"
+  # get "deals/:id",                                  to: "deals#show", as: "deal"
+  # get "deals/:id/edit",                             to: "deals#edit", as: "edit_deal"
+  # patch "deals/:id",                                to: "deals#update"
+  # delete "deals/:id",                               to: "deals#destroy"
+
 
   # scope '/siteadmin' do
   #   resources :deals, only: [:new, :edit]

@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-4">
+      <div class="page-header">
+        <h1>Edit Investment
+          <small><%= @deal.city %></small>
+          <small><%= @deal.district %></small>
+          <small><%= @deal.property_type %></small>
+          <small><%= @deal.occupancy %></small>
+        </h1>
+      </div>
+      <%= render "simple-form", deal: @deal, investment: @investment %>
+
+      <!-- @deal.errors -->
+
+      <%= link_to "back to deals", deals_path %>
+    </div>
+  </div>
+</div>

@@ -17,6 +17,7 @@ class Deal < ApplicationRecord
   # accepts_nested_attributes_for :property
   has_many :tenants, dependent: :destroy
   has_many :investments, dependent: :nullify
+  # has_many :investments, dependent: :delete_all
   has_many :users, through: :investments
 
   def set_part_value

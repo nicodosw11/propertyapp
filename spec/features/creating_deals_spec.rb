@@ -1,6 +1,12 @@
 require "rails_helper"
 RSpec.feature "Users can create new deals" do
+  ## TODO login refacto ##
+  let(:user) { FactoryGirl.create(:user) }
+  ##
   before do
+    ## TODO login refacto ##
+    login_as(user)
+    ##
     visit "/deals"
 
     click_link "New Deal"

@@ -1,4 +1,10 @@
-<% @investments.each do |investment| %>
-<%= link_to investment.shares, investment %>
-<%= investment.price %>
-<% end %>
+<ul class="actions" id="investments">
+  <% @deal.investments.each do |investment| %>
+    <li>
+      Transaction n°<%= investment.id %> -
+      <%= link_to "#{investment.shares} shares for #{investment.price} each", [@deal, investment] %>
+    </li>
+    <li><%= link_to "edit transaction", [:edit, @deal, investment] %></li>
+    <li><%= link_to "delete transaction", [@deal, investment], method: :delete, data: { confirm: "Are you sure you want to delete this transaction?"}%></li>
+  <% end %>
+</ul>

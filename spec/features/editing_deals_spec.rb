@@ -1,8 +1,14 @@
 require "rails_helper"
 
 RSpec.feature "Users can edit existing deals" do
+  ## TODO refactor login ##
+  let(:user) { FactoryGirl.create(:user) }
+  ##
 
   before do
+    ## TODO refactor login ##
+    login_as(user)
+    ##
     FactoryGirl.create(:deal, street: "3 rue des cocotiers")
 
     visit "/deals"

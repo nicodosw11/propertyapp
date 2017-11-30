@@ -40,9 +40,8 @@ class PropertiesController < ApplicationController
     # @property = @deal.properties
   end
   def new
-    # @property = @deal.properties.build
     @property = @deal.build_property
-    authorize @property
+    # authorize @property
   end
   def create
     # @property = @deal.properties.build(property_params)

@@ -1,0 +1,8 @@
+<!--  -->
+<!-- <-%=@investment.errors.messages%-> -->
+<% if @investment.errors.any? %>
+  <% @investment.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+<% end %>
+<!--  -->

@@ -4,7 +4,7 @@ class CreateInvestments < ActiveRecord::Migration[5.0]
       t.string :description
       t.float :price
       t.integer :shares
-      t.references :deal, foreign_key: true
+      t.references :deal, index: true, foreign_key: true
       t.references :user, foreign_key: true
 
       t.timestamps

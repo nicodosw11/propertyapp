@@ -49,7 +49,7 @@
         <li><a href="#">Vendre votre bien</a></li>
         <% if user_signed_in? %>
         <li>
-        <%= link_to destroy_user_session_path, method: :delete do %><%= t(".sign_out", default: "Log out") %>
+        <%= link_to destroy_user_session_path, method: :delete do %><%= t(".sign_out", default: "Se déconnecter") %>
         <% end %>
         </li>
         <% else %>
