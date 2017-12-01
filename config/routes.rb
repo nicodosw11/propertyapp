@@ -2,6 +2,7 @@
   namespace :admin do
     # get 'application/index'
     root "application#index"
+    resources :deals, only: [:new, :create, :destroy]
   end
   # Use own admin instead of activeadmin
   # ActiveAdmin.routes(self)
@@ -22,7 +23,7 @@
   get 'siteadmin/tenants', to: "tenants#all"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  resources :deals do
+  resources :deals, only: [:index, :show, :edit, :update] do
     # resources :investments, only: [:new, :create, :destroy]
     resources :investments
     scope '/siteadmin' do
@@ -32,6 +33,8 @@
     end
     # resources :properties, path: '/admin'
   end
+
+
 
   # resources :deals
   # get "deals",                                      to: "deals#index"

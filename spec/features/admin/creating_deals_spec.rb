@@ -1,12 +1,6 @@
 require "rails_helper"
 RSpec.feature "Users can create new deals" do
-  # ## TODO login refacto ##
-  # let(:user) { FactoryGirl.create(:user) }
-  # ##
   before do
-    # ## TODO login refacto ##
-    # login_as(user)
-    # ##
     login_as(FactoryGirl.create(:user, :admin))
     visit "/deals"
 
@@ -33,8 +27,8 @@ RSpec.feature "Users can create new deals" do
     expect(page).to have_content "Deal was successfully created"
 
     deal = Deal.find_by(street: "3 rue des peupliers")
-    # expect(page.current_url).to eq deal_url(deal)
-    expect(page.current_url).to eq deals_url
+    expect(page.current_url).to eq deal_url(deal)
+    # expect(page.current_url).to eq deals_url
 
     # title = "Chatou - Deals - Livsty"
     # expect(page).to have_title title

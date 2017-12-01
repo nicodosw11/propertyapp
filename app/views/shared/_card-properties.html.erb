@@ -67,10 +67,10 @@
         </div>
       <% end %>
       <!-- </a> -->
-      <!-- /////////////////////// for test only-->
-      <%=link_to "Edit Deal", edit_deal_path(deal) %>
-      <%= link_to "Delete Deal", deal_path(deal), method: :delete, data: { confirm: "Are you sure you want to delete this deal?" } %>
-      <!-- /////////////////////// -->
+      <% admins_only do %>
+        <%=link_to "Edit Deal", edit_deal_path(deal) %>
+        <%= link_to "Delete Deal", admin_deal_path(deal), method: :delete, data: { confirm: "Are you sure you want to delete this deal?" } %>
+      <% end %>
     </div>
 
 <!--   </div>
