@@ -1,6 +1,17 @@
   Rails.application.routes.draw do
-  ActiveAdmin.routes(self)
-  devise_for :users, :path_prefix => 'devise'
+  namespace :admin do
+    # get 'application/index'
+    root "application#index"
+  end
+  # Use own admin instead of activeadmin
+  # ActiveAdmin.routes(self)
+
+  # devise_for :users # => "/users/sign_in"
+  # devise_for :users, :path_prefix => 'devise' # => "/devise/users/sign_in"
+  devise_for :users,
+             path: '',
+             path_names: {sign_in: 'login', sign_out: 'logout', edit: 'profile', sign_up: 'register'}
+
   resources :users, :only => [:index, :show]
   root to: 'pages#home'
   get 'seller', to: 'pages#seller'
