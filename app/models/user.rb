@@ -6,6 +6,10 @@ class User < ApplicationRecord
   has_many :investments, dependent: :nullify
   has_many :deals, through: :investments
 
+  def to_s
+    "#{email} (#{admin? ? "Admin" : "User"})"
+  end
+
   private
 
   def send_welcome_email
