@@ -2,7 +2,11 @@
   namespace :admin do
     root "application#index"
     resources :deals, only: [:new, :create, :destroy]
-    resources :users
+    resources :users do
+      member do
+        patch :archive
+      end
+    end
   end
 
   # Use own admin instead of activeadmin

@@ -6,9 +6,24 @@ class User < ApplicationRecord
   has_many :investments, dependent: :nullify
   has_many :deals, through: :investments
 
+  scope :excluding_archived, lambda { where(archived_at: nil) }
+
   def to_s
     "#{email} (#{admin? ? "Admin" : "User"})"
   end
+
+  def archive
+    self.update(archived_at: Time.now)
+  end
+
+  def active_for_authentication?
+    super && archived_at.nil?
+  end
+
+  def inactive_message
+    archived_at.nil? ? super : :archived
+  end
+
 
   private
 
