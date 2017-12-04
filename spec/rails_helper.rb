@@ -9,6 +9,7 @@ require 'rspec/rails'
 ##Testing “Account Confirmation” with rails/rspec/capybara/devise
 # require 'devise'
 ##
+require "pundit/rspec"
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are

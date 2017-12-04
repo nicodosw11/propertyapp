@@ -2,16 +2,18 @@ class DealsController < ApplicationController
   # skip_before_action :authenticate_user!, only: [ :index, :show ]
   ############### for test only neutralizing devise/pundit #######
   # skip_before_action :authenticate_user!
-  skip_after_action :verify_policy_scoped, :only => :index
-  skip_after_action :verify_authorized, except: :index
+  # skip_after_action :verify_policy_scoped, :only => :index
+  # skip_after_action :verify_authorized, except: :index
   ################################################################
   before_action :set_deal, only: [:show, :edit, :update]
 
   def index
-    @deals = Deal.all
+    # @deals = Deal.all
+    @deals = policy_scope(Deal)
   end
 
   def show
+    authorize @deal, :show?
   end
 
   def edit

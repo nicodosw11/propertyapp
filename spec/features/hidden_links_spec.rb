@@ -16,7 +16,12 @@ RSpec.feature "Users can only see the appropriate links" do
     end
   end
 
-  context "regular users" do
+  context "non-admin users (deal viewers)" do
+    before do
+      login_as(user)
+      assign_role!(user, :viewer, deal)
+    end
+
     scenario "cannot see the New Deal link" do
       visit "/deals"
       expect(page).not_to have_link "New Deal"

@@ -5,6 +5,7 @@ RSpec.feature "Users can view investments" do
     user = FactoryGirl.create(:user)
 
     cocotiers = FactoryGirl.create(:deal, street: "3 rue des cocotiers")
+    assign_role!(user, :viewer, cocotiers)
     FactoryGirl.create(:investment, deal: cocotiers,
       user: user,
       price: 1000.0, shares: 4,
@@ -12,6 +13,7 @@ RSpec.feature "Users can view investments" do
       )
 
     amandiers = FactoryGirl.create(:deal, street: "5 rue des amandiers")
+    assign_role!(user, :viewer, amandiers)
     FactoryGirl.create(:investment, deal: amandiers,
       user: user,
       price: 1000.0, shares: 2,

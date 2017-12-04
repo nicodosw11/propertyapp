@@ -1,15 +1,27 @@
 class DealPolicy < ApplicationPolicy
-  class Scope < Scope
-    def resolve
-      scope.all # anyone can see the full list of deal
-      # scope.where(user: user) # only the creator can see the full list of deals
-    end
-  end
   # user is the current user
   # record is the argument passed to 'authorize' in Controller => @deal
+  class Scope < Scope
+
+    def resolve
+      # scope.all # anyone can see the full list of deals
+      # scope.where(user: user) # only the creator can see the full list of deals
+
+      return scope.none if user.nil?
+      return scope.all if user.admin?
+
+      scope.joins(:roles).where(roles: {user_id: user})
+
+    end
+
+  end
 
   def show?
-    true # anyone can see a deal
+    # true # anyone can see a deal
+
+    user.try(:admin?) || record.roles.exists?(user_id: user)
+    # record.roles.exists?(user_id: user)
+
   end
 
   # def new

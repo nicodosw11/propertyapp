@@ -19,6 +19,7 @@ class Deal < ApplicationRecord
   has_many :investments, dependent: :nullify
   # has_many :investments, dependent: :delete_all
   has_many :users, through: :investments
+  has_many :roles, dependent: :delete_all
 
   def set_part_value
     if self.nb_investors > 0
