@@ -6,8 +6,11 @@
   <p><%= @deal.occupancy %></p>
 
   <ul class="actions">
-    <li><%= link_to "Edit Deal",
-      edit_deal_path(@deal), class: "edit" %></li>
+    <% if policy(@deal).update? %>
+      <li><%= link_to "Edit Deal",
+        edit_deal_path(@deal), class: "edit" %>
+      </li>
+    <% end %>
     <% admins_only do %>
       <li><%= link_to "Delete Deal",
           admin_deal_path(@deal),

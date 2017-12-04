@@ -4,13 +4,13 @@ class DealPolicy < ApplicationPolicy
   class Scope < Scope
 
     def resolve
-      # scope.all # anyone can see the full list of deals
+      scope.all # anyone can see the full list of deals
       # scope.where(user: user) # only the creator can see the full list of deals
 
-      return scope.none if user.nil?
-      return scope.all if user.admin?
+      # return scope.none if user.nil?
+      # return scope.all if user.admin?
 
-      scope.joins(:roles).where(roles: {user_id: user})
+      # scope.joins(:roles).where(roles: {user_id: user})
 
     end
 
@@ -28,10 +28,10 @@ class DealPolicy < ApplicationPolicy
   #   false # none can create a deal
   # end
 
-  def create?
-    # true # anyone can create a deal
-    user_is_admin?
-  end
+  # def create?
+  #   # true # anyone can create a deal
+  #   user_is_admin?
+  # end
   # def new?
   #   return true
   # end
@@ -40,8 +40,11 @@ class DealPolicy < ApplicationPolicy
     # record.user == user # only the creator can update a deal
     # user_is_owner?
     # user_is_owner_or_admin?
-    user_is_admin?
+    # user_is_admin?
+
+    user.try(:admin?) || record.roles.exists?(user_id: user, role: 'manager')
   end
+
   # def edit?
     # if record.user == user
     #   true
@@ -54,12 +57,12 @@ class DealPolicy < ApplicationPolicy
     # record.user == user
   # end
 
-  def destroy?
-    # record.user == user # only the creator can delete a deal
-    # user_is_owner?
-    # user_is_owner_or_admin?
-    user_is_admin?
-  end
+  # def destroy?
+  #   # record.user == user # only the creator can delete a deal
+  #   # user_is_owner?
+  #   # user_is_owner_or_admin?
+  #   user_is_admin?
+  # end
 
   private
   def user_is_owner?
