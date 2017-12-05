@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :user do
-    # after(:build)   { |u| u.skip_confirmation_notification! }
+    after(:build)   { |u| u.skip_confirmation_notification! }
     # after(:create)  { |u| u.confirm }
     sequence(:email) { |n| "test#{n}@example.com" }
     # email            {|n| "email#{n}@email.com" }

@@ -9,7 +9,7 @@ RSpec.feature "Users can delete investments" do
 
   before do
     login_as(user)
-    assign_role!(user, :viewer, deal)
+    assign_role!(user, :manager, deal)
     visit deal_investment_path(deal, investment)
   end
 

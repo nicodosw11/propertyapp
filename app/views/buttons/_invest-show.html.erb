@@ -2,8 +2,10 @@
   <h2>Transactions</h2>
  -->
   <ul class="actions">
-    <li>
-    <%= link_to "New Investment", new_deal_investment_path(@deal), class: "new" %>
-    </li>
+    <% if policy(Investment.new(deal: @deal)).create? %>
+      <li>
+      <%= link_to "New Investment", new_deal_investment_path(@deal), class: "new" %>
+      </li>
+    <% end %>
   </ul>
 <!-- </header> -->

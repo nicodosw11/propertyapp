@@ -4,19 +4,21 @@ class InvestmentsController < ApplicationController
   # for test only
   # skip_before_action :authenticate_user!
   # skip_after_action :verify_authorized
-  skip_after_action :verify_policy_scoped, :only => :index
-  skip_after_action :verify_authorized, except: :index
+  # skip_after_action :verify_policy_scoped, :only => :index
+  # skip_after_action :verify_authorized, except: :index
 
   def new
 
     # we need @deal in our 'simple_form_for'
     # @deal = Deal.find(params[:deal_id])
-    @investment = Investment.new
+    # @investment = Investment.new
 
-    # @investment = @deal.investments.build
+    @investment = @deal.investments.build
     # same as
     # @investment = Investment.new
     # @investment.deal = @deal
+
+    authorize @investment, :create?
 
   end
 
@@ -28,6 +30,7 @@ class InvestmentsController < ApplicationController
     @investment.user = current_user
     # using build in 1 line => @investment = @deal.investments.build(investment_params.merge(user: current_user))
     # or => @investment = current_user.investments.build(investment_params.merge(deal: @deal))
+    authorize @investment, :create?
     if @investment.save
       flash[:notice] = "Investment has been created"
       redirect_to [@deal, @investment] # redirect to deal_investment_path(@deal, @investment)
@@ -38,6 +41,7 @@ class InvestmentsController < ApplicationController
   end
 
   def update
+    authorize @investment, :update?
     if @investment.update(investment_params)
       flash[:notice] = "Investment has been updated"
       redirect_to [@deal, @investment]
@@ -47,12 +51,16 @@ class InvestmentsController < ApplicationController
   end
 
   def show
+    authorize @investment, :show?
   end
 
   def edit
+    authorize @investment, :update?
   end
 
   def destroy
+    authorize @investment, :destroy?
+
     @investment.destroy
     flash[:notice] = "Investment has been deleted"
     redirect_to @deal

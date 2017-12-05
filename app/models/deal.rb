@@ -21,6 +21,16 @@ class Deal < ApplicationRecord
   has_many :users, through: :investments
   has_many :roles, dependent: :delete_all
 
+  def has_member?(user)
+    roles.exists?(user_id: user)
+  end
+
+  [:manager, :editor, :viewer].each do |role|
+    define_method "has_#{role}?" do |user|
+      roles.exists?(user_id: user, role: role)
+    end
+  end
+
   def set_part_value
     if self.nb_investors > 0
       self.valuation.to_f / self.nb_investors.to_f

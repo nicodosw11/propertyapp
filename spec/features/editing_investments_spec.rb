@@ -8,9 +8,9 @@ RSpec.feature "Users can edit existing investments" do
   end
 
   before do
-    ## TODO refactor login ##
+    assign_role!(user, :editor, deal)
     login_as(user)
-    ##
+
     visit deal_investment_path(deal, investment)
     click_link "Edit Investment"
   end

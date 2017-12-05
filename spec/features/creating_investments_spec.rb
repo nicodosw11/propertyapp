@@ -6,7 +6,7 @@ RSpec.feature "Users can create new investments" do
   before do
     login_as(user)
     deal = FactoryGirl.create(:deal, street: "3 rue des cocotiers")
-    assign_role!(user, :viewer, deal)
+    assign_role!(user, :editor, deal)
 
     visit deal_path(deal)
     click_link "New Investment"

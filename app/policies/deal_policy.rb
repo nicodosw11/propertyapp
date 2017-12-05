@@ -4,13 +4,13 @@ class DealPolicy < ApplicationPolicy
   class Scope < Scope
 
     def resolve
-      scope.all # anyone can see the full list of deals
+      # scope.all # anyone can see the full list of deals
       # scope.where(user: user) # only the creator can see the full list of deals
 
-      # return scope.none if user.nil?
-      # return scope.all if user.admin?
+      return scope.none if user.nil?
+      return scope.all if user.admin?
 
-      # scope.joins(:roles).where(roles: {user_id: user})
+      scope.joins(:roles).where(roles: {user_id: user})
 
     end
 
@@ -19,7 +19,8 @@ class DealPolicy < ApplicationPolicy
   def show?
     # true # anyone can see a deal
 
-    user.try(:admin?) || record.roles.exists?(user_id: user)
+    user.try(:admin?) || record.has_member?(user)
+    # user.try(:admin?) || record.roles.exists?(user_id: user)
     # record.roles.exists?(user_id: user)
 
   end
@@ -42,7 +43,8 @@ class DealPolicy < ApplicationPolicy
     # user_is_owner_or_admin?
     # user_is_admin?
 
-    user.try(:admin?) || record.roles.exists?(user_id: user, role: 'manager')
+    user.try(:admin?) || record.has_manager?(user)
+    # user.try(:admin?) || record.roles.exists?(user_id: user, role: 'manager')
   end
 
   # def edit?

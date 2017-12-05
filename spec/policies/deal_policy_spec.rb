@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe DealPolicy do
+RSpec.describe DealPolicy do
 
   subject { DealPolicy }
 
@@ -29,76 +29,130 @@ describe DealPolicy do
     end
   end
 
-  permissions :show? do
+  context "permissions" do
+    subject { DealPolicy.new(user, deal) }
 
-    let(:user) { FactoryGirl.create :user }
-    let(:deal) { FactoryGirl.create :deal }
+    let(:user) { FactoryGirl.create(:user) }
+    let(:deal) { FactoryGirl.create(:deal) }
 
-    it "blocks anonymous users" do
-      expect(subject).not_to permit(nil, deal)
+    context "for anonymous users" do
+      let(:user) { nil }
+
+      it { should_not permit_action :show }
+      it { should_not permit_action :update }
     end
 
-    it "allows viewers of the deal" do
-      assign_role!(user, :viewer, deal)
-      expect(subject).to permit(user, deal)
+    context "for viewers of the deal" do
+      before { assign_role!(user, :viewer, deal) }
+
+      it { should permit_action :show }
+      it { should_not permit_action :update }
     end
 
-    it "allows editors of the deal" do
-      assign_role!(user, :editor, deal)
-      expect(subject).to permit(user, deal)
+    context "for editors of the deal" do
+      before { assign_role!(user, :editor, deal) }
+
+      it { should permit_action :show }
+      it { should_not permit_action :update }
     end
 
-    it "allows managers of the deal" do
-      assign_role!(user, :manager, deal)
-      expect(subject).to permit(user, deal)
+    context "for managers of the deal" do
+      before { assign_role!(user, :manager, deal) }
+
+      it { should permit_action :show }
+      it { should permit_action :update }
     end
 
-    it "allows administrators" do
-      admin = FactoryGirl.create :user, :admin
-      expect(subject).to permit(admin, deal)
+    context "for managers of other deals" do
+      before do
+        assign_role!(user, :manager, FactoryGirl.create(:deal))
+      end
+
+      it { should_not permit_action :show }
+      it { should_not permit_action :update }
     end
 
-    it "doesn't allow users assigned to other deals" do
-      other_deal = FactoryGirl.create :deal
-      assign_role!(user, :manager, other_deal)
-      expect(subject).not_to permit(user, deal)
-    end
+    context "for administrators" do
+      let(:user) { FactoryGirl.create :user, :admin }
 
+      it { should permit_action :show }
+      it { should permit_action :update }
+    end
   end
 
-  permissions :update? do
-    let(:user) { FactoryGirl.create :user }
-    let(:deal) { FactoryGirl.create :deal }
+  # Refacto as DRY
 
-    it "blocks anonymous users" do
-      expect(subject).not_to permit(nil, deal)
-    end
+  # permissions :show? do
 
-    it "doesn't allow viewers of the deal" do
-      assign_role!(user, :viewer, deal)
-      expect(subject).not_to permit(user, deal)
-    end
+  #   let(:user) { FactoryGirl.create :user }
+  #   let(:deal) { FactoryGirl.create :deal }
 
-    it "doesn't allows editors of the deal" do
-      assign_role!(user, :editor, deal)
-      expect(subject).not_to permit(user, deal)
-    end
+  #   it "blocks anonymous users" do
+  #     expect(subject).not_to permit(nil, deal)
+  #   end
 
-    it "allows managers of the deal" do
-      assign_role!(user, :manager, deal)
-      expect(subject).to permit(user, deal)
-    end
+  #   it "allows viewers of the deal" do
+  #     assign_role!(user, :viewer, deal)
+  #     expect(subject).to permit(user, deal)
+  #   end
 
-    it "allows administrators" do
-      admin = FactoryGirl.create :user, :admin
-      expect(subject).to permit(admin, deal)
-    end
+  #   it "allows editors of the deal" do
+  #     assign_role!(user, :editor, deal)
+  #     expect(subject).to permit(user, deal)
+  #   end
 
-    it "doesn't allow users assigned to other deals" do
-      other_deal = FactoryGirl.create :deal
-      assign_role!(user, :manager, other_deal)
-      expect(subject).not_to permit(user, deal)
-    end
+  #   it "allows managers of the deal" do
+  #     assign_role!(user, :manager, deal)
+  #     expect(subject).to permit(user, deal)
+  #   end
 
-  end
+  #   it "allows administrators" do
+  #     admin = FactoryGirl.create :user, :admin
+  #     expect(subject).to permit(admin, deal)
+  #   end
+
+  #   it "doesn't allow users assigned to other deals" do
+  #     other_deal = FactoryGirl.create :deal
+  #     assign_role!(user, :manager, other_deal)
+  #     expect(subject).not_to permit(user, deal)
+  #   end
+
+  # end
+
+  # Refacto as DRY
+  # permissions :update? do
+  #   let(:user) { FactoryGirl.create :user }
+  #   let(:deal) { FactoryGirl.create :deal }
+
+  #   it "blocks anonymous users" do
+  #     expect(subject).not_to permit(nil, deal)
+  #   end
+
+  #   it "doesn't allow viewers of the deal" do
+  #     assign_role!(user, :viewer, deal)
+  #     expect(subject).not_to permit(user, deal)
+  #   end
+
+  #   it "doesn't allows editors of the deal" do
+  #     assign_role!(user, :editor, deal)
+  #     expect(subject).not_to permit(user, deal)
+  #   end
+
+  #   it "allows managers of the deal" do
+  #     assign_role!(user, :manager, deal)
+  #     expect(subject).to permit(user, deal)
+  #   end
+
+  #   it "allows administrators" do
+  #     admin = FactoryGirl.create :user, :admin
+  #     expect(subject).to permit(admin, deal)
+  #   end
+
+  #   it "doesn't allow users assigned to other deals" do
+  #     other_deal = FactoryGirl.create :deal
+  #     assign_role!(user, :manager, other_deal)
+  #     expect(subject).not_to permit(user, deal)
+  #   end
+
+  # end
 end
