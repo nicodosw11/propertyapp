@@ -117,6 +117,7 @@ GEM
       countries (~> 2.0)
       sort_alphabetical (~> 1.0)
     crass (1.0.2)
+    database_cleaner (1.6.2)
     debug_inspector (0.0.3)
     devise (4.3.0)
       bcrypt (~> 3.0)
@@ -342,6 +343,7 @@ DEPENDENCIES
   cloudinary
   coffee-rails
   country_select
+  database_cleaner
   devise
   factory_girl_rails
   figaro

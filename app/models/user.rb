@@ -5,6 +5,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :confirmable, :recoverable, :rememberable, :trackable, :validatable
   has_many :investments, dependent: :nullify
   has_many :deals, through: :investments
+  has_many :roles
 
   scope :excluding_archived, lambda { where(archived_at: nil) }
 
@@ -22,6 +23,10 @@ class User < ApplicationRecord
 
   def inactive_message
     archived_at.nil? ? super : :archived
+  end
+
+  def role_on(deal)
+    roles.find_by(deal_id: deal).try(:name)
   end
 
 

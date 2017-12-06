@@ -14,6 +14,10 @@ class ApplicationController < ActionController::Base
   end
 
   include Pundit
+  # after_action :verify_authorized, except: [:index],
+  #   unless: :devise_controller?
+  # after_action :verify_policy_scoped, only: [:index],
+  #   unless: :devise_controller?
   ## for ui => redirecting not allowed actions
   rescue_from Pundit::NotAuthorizedError, with: :not_authorized
   # rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
@@ -28,7 +32,7 @@ class ApplicationController < ActionController::Base
 
   private
 
-  ## for ui => redirecting not allowed actions
+  ## for ui => redirecting for not allowed actions
   def not_authorized
     redirect_to root_path, alert: "You aren't allowed to do that."
   end
