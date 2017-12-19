@@ -17,8 +17,9 @@
   <div class="navbar-container-right hidden-xs hidden-sm">
     <div class="inner-navbar-bootstrap">
       <ul class="nav navbar-nav borderline main-menu collapse navbar-collapse pull-right" id="top-menu">
-        <li><%= nav_link_to "INVESTIR", deals_path%></li>
+        <li><%= nav_link_to "INVESTIR", root_path%></li>
         <li><%= nav_link_to "VENDRE VOTRE BIEN", seller_path%></li>
+        <li><%= nav_link_to "OPPORTUNIT&EacuteS".html_safe, deals_path%></li>
         <% admins_only do %>
           <li> <%= link_to "Admin", admin_root_path %> </li>
         <% end %>
@@ -37,7 +38,13 @@
     </div>
   <!-- Different navigation if login or not -->
   <!-- <ul class="nav navbar-nav"> -->
-    <%= render 'components/signinup-buttons' %>
+    <% if (!user_signed_in?) %>
+      <%= link_to t(".sign_in", default: "S'identifier"), new_user_session_path, class: "navbar-container-item navbar-livsty-button btn" %>
+      <%= link_to t(".sign_up", default: "Inscription"), new_user_registration_path, class: "navbar-container-item navbar-livsty-button btn" %>
+      <!-- <-%= render 'components/signinup-buttons' %-> -->
+    <% else %>
+      <%= render 'components/account-avatar' %>
+    <% end %>
   </div>
   <!--Right Navigation /.nav-collapse -->
  <!-- Dropdown list appearing on mobile only -->

@@ -1,0 +1,18 @@
+<ul style="margin: 0">
+  <li class="dropdown" style="list-style-type: none;">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+    role="button" aria-haspopup="true" aria-expanded="false">
+    <%= image_tag('user.jpg', class: "img-circle avatar-small")%>&nbsp;
+    <%= current_user.full_name %> <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu" style="left: -10px">
+      <li><%= link_to "Mon dashboard", root_path %></li>
+      <li><%= link_to "Mon compte", root_path %></li>
+      <li><%= link_to "Contact", root_path %></li>
+      <li><%= link_to "Nous connaître", root_path %></li>
+      <li role="separator" class="divider"></li>
+      <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
+      <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+    </ul>
+  </li>
+</ul>

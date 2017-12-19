@@ -8,6 +8,15 @@
   align-items: center;
   justify-content: space-between;
 
+  a {
+    color: #33CCCC;
+  }
+
+  a:hover, a:focus {
+    cursor: pointer;
+    text-decoration: none;
+  }
+
   /* Navbar Livsty logo */
   .navbar-livsty-brand img {
   // width: 50px;

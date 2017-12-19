@@ -5,7 +5,7 @@
     </video>
   </div>
   <div class="banner-home-content">
-    <h1 class= "slideDown">Bienvenue <%= current_user.first_name %></h1>
+    <h1 class= "slideDown">Bienvenue <%= current_user.full_name %></h1>
     <p class= "slideDown">You are currently connected as <%= current_user.email %> </p>
     <p class= "slideDown">Profitez de nos offres d'investissements, en parcourant le site à la recherche de viagers</p>
     <%= link_to "", id: "click-to-scroll" do %>

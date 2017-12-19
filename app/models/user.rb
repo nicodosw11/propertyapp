@@ -29,6 +29,10 @@ class User < ApplicationRecord
     roles.find_by(deal_id: deal).try(:name)
   end
 
+  def full_name
+    "#{first_name} #{last_name}"
+  end
+
 
   private
 
