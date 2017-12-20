@@ -6,17 +6,17 @@
   padding-left: 15px;
 }
 
-.user-info {
-  .panel {
-    border: 0;
-  }
-  .panel-default .panel-heading {
-    color: #ffffff;
-    background-color: #00A699;
-    font-size: 18px;
-    font-weight: 400;
-  }
+.panel {
+  border: 0;
+}
+.panel-default .panel-heading {
+  color: #ffffff;
+  background-color: #00A699;
+  font-size: 18px;
+  font-weight: 400;
+}
 
+.user-info {
   .row-space-1 {
     margin-top: 6px;
     margin-bottom: 6px;
@@ -38,4 +38,8 @@
     font-weight: 500;
     line-height: 25px;
   }
+}
+
+.text-check-green, .icon-check-green {
+  color: #00A699;
 }

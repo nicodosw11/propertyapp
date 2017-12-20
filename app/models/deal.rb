@@ -3,10 +3,10 @@ class Deal < ApplicationRecord
   validates :street, presence: true
   validates :city, presence: true
   validates :district, presence: true
-  validates :postcode, presence: true
+  # validates :postcode, presence: true
   validates :property_type, presence: true
   validates :occupancy, presence: true
-  validates :surface, presence: true
+  validates :nb_rooms, presence: true
   validates :nb_bedrooms, presence: true
   validates :nb_bathrooms, presence: true
 

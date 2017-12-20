@@ -2,6 +2,15 @@
   namespace :admin do
     root "application#index"
     resources :deals, only: [:new, :create, :destroy]
+    resources :deals, only: [ ] do
+      member do
+        get 'description'
+        get 'listing'
+        get 'location'
+        get 'photo_upload'
+        get 'pricing'
+      end
+    end
     resources :users do
       member do
         patch :archive

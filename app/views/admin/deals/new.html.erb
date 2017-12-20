@@ -1,18 +1,12 @@
-<div class="container">
-  <div class="row">
-    <div class="col-sm-4 col-sm-offset-4 col-md-8 col-md-offset-2">
-      <div class="page-header">
-        <h1>New Deal</h1>
-      </div>
-      <%= render "simple_form", deal: @deal %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    Ajouter une opportunité d'investissement
+  </div>
+  <div class="panel-body">
+    <div class="container">
 
-      <!-- @deal.errors -->
+      <%= render "form", deal: @deal %>
 
-      <%= link_to "back", deals_path %>
     </div>
   </div>
 </div>
-
-
-
-
