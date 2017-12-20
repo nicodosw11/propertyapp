@@ -6,7 +6,8 @@
       </div>
 
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-        <%= f.error_notification %>
+        <!-- <-%= f.error_notification %-> -->
+        <%= render "devise/shared/message" %>
 
         <div class="form-inputs">
           <%= f.input :email, required: true, autofocus: true %>

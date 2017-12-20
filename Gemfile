@@ -28,6 +28,8 @@ gem 'coffee-rails'
 
 gem "font-awesome-rails"
 
+gem 'toastr-rails'
+
 group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'

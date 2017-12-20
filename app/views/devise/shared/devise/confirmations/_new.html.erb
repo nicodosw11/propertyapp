@@ -6,7 +6,8 @@
       </div>
 
       <%= simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
-        <%= f.error_notification %>
+        <!-- <-%= f.error_notification %-> -->
+        <%= render "devise/shared/message" %>
         <%= f.full_error :confirmation_token %>
 
         <div class="form-inputs">
