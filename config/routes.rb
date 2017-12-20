@@ -9,9 +9,6 @@
     end
   end
 
-  # Use own admin instead of activeadmin
-  # ActiveAdmin.routes(self)
-
   # devise_for :users # => "/users/sign_in"
   # devise_for :users, :path_prefix => 'devise' # => "/devise/users/sign_in"
   devise_for :users,
