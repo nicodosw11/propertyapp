@@ -2,8 +2,8 @@ class Deal < ApplicationRecord
 
   validates :street, presence: true
   validates :city, presence: true
-  validates :district, presence: true
-  # validates :postcode, presence: true
+  # validates :district, presence: true
+  validates :postcode, presence: true
   validates :property_type, presence: true
   validates :occupancy, presence: true
   validates :nb_rooms, presence: true
@@ -20,6 +20,7 @@ class Deal < ApplicationRecord
   # has_many :investments, dependent: :delete_all
   has_many :users, through: :investments
   has_many :roles, dependent: :delete_all
+  has_many :photos, dependent: :destroy
 
   def has_member?(user)
     roles.exists?(user_id: user)

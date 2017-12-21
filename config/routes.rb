@@ -10,6 +10,7 @@
         get 'photo_upload'
         get 'pricing'
       end
+      resources :photos, only: [:create, :destroy]
     end
     resources :users do
       member do

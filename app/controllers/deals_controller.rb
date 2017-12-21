@@ -23,7 +23,8 @@ class DealsController < ApplicationController
   def update
     authorize @deal, :update?
     if @deal.update(deal_params)
-      redirect_to @deal, notice: 'Deal was successfully updated'
+      # redirect_to @deal, notice: 'Deal was successfully updated'
+      redirect_back(fallback_location: request.referer)
     else
       flash.now[:alert] = "Deal has not been updated"
       render :edit

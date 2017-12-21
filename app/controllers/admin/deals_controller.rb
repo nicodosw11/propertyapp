@@ -31,6 +31,7 @@ class Admin::DealsController < Admin::ApplicationController
   end
 
   def photo_upload
+    @photos = @deal.photos
   end
 
   def pricing

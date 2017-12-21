@@ -11,8 +11,6 @@ gem 'pundit'
 gem 'redis'
 gem 'cloudinary'
 gem 'country_select'
-gem 'activeadmin', github: 'activeadmin/activeadmin'
-gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 
 # gem "letter_opener", group: :development
 gem "letter_opener", :group => [:development, :test]
@@ -29,6 +27,7 @@ gem 'coffee-rails'
 gem "font-awesome-rails"
 
 gem 'toastr-rails'
+gem 'paperclip'
 
 group :development, :test do
   gem 'binding_of_caller'

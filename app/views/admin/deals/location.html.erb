@@ -1,35 +1,58 @@
-<div class="row">
-  <div class="col-md-3">
-    <%= render 'deal_menu' %>
-  </div>
-  <div class="col-md-9">
-    <div class="panel panel-default">
+<div class="container" style="width: 80%;">
+  <div class="row">
+    <div class="col-md-3">
+      <%= render 'deal_menu' %>
+    </div>
+    <div class="col-md-9">
+      <div class="panel panel-default">
 
-      <div class="panel-heading">
-        Location
-      </div>
-
-      <div class="panel-body">
-        <div class="container">
-
-           <%= form_for @deal do |f| %>
-
-            <div class="row">
-              <div class="form-group">
-                <label>Address</label>
-                <%= f.text_field :street, placeholder: "Quelle est l'adresse du bien?", class: "form-control"%>
-              </div>
-            </div>
-
-            <div class="text-center">
-              <%= f.submit "Save", class: "btn btn-form" %>
-            </div>
-
-          <% end %>
-
+        <div class="panel-heading">
+          Location
         </div>
-      </div>
 
+        <div class="panel-body">
+          <div class="container" style="width: 80%;">
+
+             <%= form_for @deal do |f| %>
+
+              <div class="row">
+                <div class="form-group">
+                  <label>Address</label>
+                  <%= f.text_field :street, placeholder: "Quelle est l'adresse du bien?", class: "form-control"%>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="form-group">
+                  <label>Code Postal</label>
+                  <%= f.text_field :postcode, placeholder: "Quel est le code postal?", class: "form-control"%>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="form-group">
+                  <label>City</label>
+                  <%= f.text_field :city, placeholder: "Quelle est la ville?", class: "form-control"%>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="form-group">
+                  <label>Département</label>
+                  <%= f.text_field :district, placeholder: "Quel est le département?", class: "form-control"%>
+                </div>
+              </div>
+
+              <div class="text-center">
+                <%= f.submit "Save", class: "btn btn-form" %>
+              </div>
+
+            <% end %>
+
+          </div>
+        </div>
+
+      </div>
     </div>
   </div>
 </div>
