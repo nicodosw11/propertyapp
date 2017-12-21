@@ -20,6 +20,6 @@ class Admin::PhotosController < Admin::ApplicationController
     @photo.destroy
     @photos = Photo.where(deal_id: @deal.id)
 
-  #   respond_to :js
+    respond_to :js
   end
 end

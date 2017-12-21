@@ -20,7 +20,7 @@
                     <div class="form-group">
                       <span class="btn btn-default btn-file text-check-green">
                         <i class="fa fa-cloud-upload" aria-hidden="true"></i> Select Photos
-                        <%= file_field_tag "images[]", type: :file, multiple: true %>
+                        <%= file_field_tag "images[]", type: :file, multiple: true, id: "pictureInput" %>
                       </span>
                     </div>
                   </div>
@@ -30,6 +30,11 @@
                   </div>
 
                 <% end %>
+
+                <br>
+
+                <div id="target">
+                </div>
 
               </div>
             </div>
