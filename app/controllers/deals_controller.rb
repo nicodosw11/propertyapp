@@ -21,8 +21,12 @@ class DealsController < ApplicationController
   end
 
   def update
+
+    new_params = deal_params
+    new_params = deal_params.merge(active: true) if is_deal_ready
+
     authorize @deal, :update?
-    if @deal.update(deal_params)
+    if @deal.update(new_params)
       # redirect_to @deal, notice: 'Deal was successfully updated'
       redirect_back(fallback_location: request.referer)
     else
@@ -39,6 +43,11 @@ class DealsController < ApplicationController
     flash[:alert] = "The deal you were looking for could not be found."
     redirect_to deals_path
   end
+
+  def is_deal_ready
+    !@deal.active && !@deal.funding_goal.blank? && !@deal.amenities_description.blank? && !@deal.location_transport_description.blank? && !@deal.photos.blank? && !@deal.street.blank?
+  end
+
   def deal_params
     params.require(:deal).permit(:street, :city, :district, :postcode, :property_type, :occupancy, :amenities_description, :location_transport_description, :surface, :nb_rooms, :nb_bedrooms, :nb_bathrooms, :active, :funding_goal, :start_date, :end_date)
   end

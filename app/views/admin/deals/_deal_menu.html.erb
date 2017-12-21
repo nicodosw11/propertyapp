@@ -11,13 +11,13 @@
   </li>
   <li class="sidebar-item">
     <%= link_to "Description", description_admin_deal_path, class: "sidebar-link active" %>
-    <% if !@deal.amenities_description.blank? %>
+    <% if !@deal.amenities_description.blank? && !@deal.location_transport_description.blank?%>
       <span class="pull-right text-check-green"><i class="fa fa-check"></i></span>
     <% end %>
   </li>
   <li class="sidebar-item">
     <%= link_to "Photos", photo_upload_admin_deal_path, class: "sidebar-link active" %>
-    <% if !@deal.amenities_description.blank? %>
+    <% if !@deal.photos.blank? %>
       <span id="photo_check" class="pull-right text-check-green"><i class="fa fa-check"></i></span>
     <% end %>
   </li>
@@ -28,3 +28,10 @@
     <% end %>
   </li>
 </ul>
+
+<% is_ready = !@deal.active && !@deal.funding_goal.blank? && !@deal.amenities_description.blank? && !@deal.location_transport_description.blank? && !@deal.photos.blank? && !@deal.street.blank? %>
+
+<%= form_for @deal do |f| %>
+  <%= f.hidden_field :active, value: true %>
+  <%= f.submit "Publish", id: "publish_button", class: "btn btn-normal btn-block", disabled: !is_ready %>
+<% end %>
