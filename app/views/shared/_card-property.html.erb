@@ -2,37 +2,22 @@
   <div class="row" id="property-card">
     <!-- Carousel here 8col-->
     <div class="col-sm-12 col-md-8 ">
+      <% if @photos.length > 0 %>
       <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
-          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-          <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-          <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-          <li data-target="#carousel-example-generic" data-slide-to="3"></li>
-          <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+          <% @photos.each do |photo| %>
+          <li data-target="#carousel-example-generic" data-slide-to="<%= photo.id %>"></li>
+          <% end %>
         </ol>
         <!-- Wrapper for slides -->
-        <div class="carousel-inner" role="listbox">
-          <div class="item active">
-            <%= image_tag "fakedeal/Balcon.jpg", class: "img-responsive", alt: "Balcon" %>
-            <div class="carousel-caption">Balcon</div>
+        <div class="carousel-inner">
+          <% @photos.each do |photo| %>
+          <div class="item <%= 'active' if photo.id == @photos[0].id %>">
+            <%= image_tag photo.image.url() %>
+            <div class="carousel-caption"><%= photo.title_from_image_file_name%></div>
           </div>
-          <div class="item">
-            <%= image_tag "fakedeal/Chambre.jpg", class: "img-responsive", alt: "Chambre" %>
-            <div class="carousel-caption">Chambre 1</div>
-          </div>
-          <div class="item">
-            <%= image_tag "fakedeal/Salon.jpg", class: "img-responsive", alt: "Salon" %>
-            <div class="carousel-caption">Salon</div>
-          </div>
-          <div class="item">
-            <%= image_tag "fakedeal/Cuisine.jpg", class: "img-responsive", alt: "Cuisine" %>
-            <div class="carousel-caption">Cuisine</div>
-          </div>
-          <div class="item">
-            <%= image_tag "fakedeal/Jardin.jpg", class: "img-responsive", alt: "Jardin" %>
-            <div class="carousel-caption">Jardin</div>
-          </div>
+          <% end %>
         </div>
 
         <!-- Controls -->
@@ -45,6 +30,9 @@
           <span class="sr-only">Next</span>
         </a>
       </div>
+      <% else %>
+      <%= render "components/carousel-generic" %>
+      <% end %>
     </div>
     <!-- Deal right snapshot here 4col -->
     <div class="col-sm-12 col-md-4">

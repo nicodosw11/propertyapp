@@ -6,6 +6,10 @@
     <%= current_user.full_name %> <span class="caret"></span>
     </a>
     <ul class="dropdown-menu" style="left: -10px">
+      <% admins_only do %>
+      <li><%= link_to "Manage Listing", admin_deals_path %></li>
+      <li> <%= link_to "Manage Users", admin_root_path %> </li>
+      <% end %>
       <li><%= link_to "Mon dashboard", root_path %></li>
       <li><%= link_to "Mon compte", edit_user_registration_path %></li>
       <li><%= link_to "Contact", root_path %></li>

@@ -1,5 +1,8 @@
 class Admin::DealsController < Admin::ApplicationController
-  before_action :set_deal, except: [:new, :create, :destroy]
+  before_action :set_deal, except: [:index, :new, :create, :destroy]
+  def index
+    @deals = Deal.all
+  end
   def new
   @deal = Deal.new
   end

@@ -1,0 +1,35 @@
+<div class="container" style="width: 80%;">
+  <div class="row">
+    <div class="col-md-3">
+      <ul class="sidebar-list">
+        <li class="sidebar-item"><%= link_to "My deals", admin_deals_path, class: "sidebar-link active" %></li>
+        <li class="sidebar-item"><%= link_to "My transactions", admin_deals_path, class: "sidebar-link" %></li>
+      </ul>
+    </div>
+    <div class="col-md-9">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          Listings
+        </div>
+        <div class="panel-body">
+
+          <% @deals.each do |deal| %>
+            <div class="row">
+              <div class="col-md-2">
+                <!-- <-%= image_tag deal.photos[0].image.url(:thumb) if deal.photos.length > 0 %-> -->
+                <%= image_tag deal.cover_photo(:thumb) %>
+              </div>
+              <div class="col-md-7">
+                <h4><%="#{deal.street} #{deal.postcode} #{deal.city}" %></h4>
+              </div>
+              <div class="col-md-3 right">
+                <%= link_to "Update", listing_admin_deal_path(deal), class: "btn btn-form" %>
+              </div>
+            </div>
+            <hr/>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -7,10 +7,15 @@ class DealPolicy < ApplicationPolicy
       # scope.all # anyone can see the full list of deals
       # scope.where(user: user) # only the creator can see the full list of deals
 
-      return scope.none if user.nil?
-      return scope.all if user.admin?
+      # admin only
+      # return scope.none if user.nil?
+      # return scope.all if user.admin?
 
-      scope.joins(:roles).where(roles: {user_id: user})
+      # scope.joins(:roles).where(roles: {user_id: user})
+
+      # all but not-signed in
+      return scope.none if user.nil?
+      return scope.all
 
     end
 
@@ -19,7 +24,11 @@ class DealPolicy < ApplicationPolicy
   def show?
     # true # anyone can see a deal
 
-    user.try(:admin?) || record.has_member?(user)
+    # user
+    !user.nil?
+
+    # only admin and deal creator
+    # user.try(:admin?) || record.has_member?(user)
     # user.try(:admin?) || record.roles.exists?(user_id: user)
     # record.roles.exists?(user_id: user)
 

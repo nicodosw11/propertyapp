@@ -1,7 +1,7 @@
   Rails.application.routes.draw do
   namespace :admin do
     root "application#index"
-    resources :deals, only: [:new, :create, :destroy]
+    resources :deals, only: [:index, :new, :create, :destroy]
     resources :deals, only: [ ] do
       member do
         get 'description'

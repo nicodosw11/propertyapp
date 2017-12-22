@@ -32,6 +32,14 @@ class Deal < ApplicationRecord
     end
   end
 
+  def cover_photo(size)
+    if self.photos.length > 0
+      self.photos[0].image.url(size)
+    else
+      "photo.jpg"
+    end
+  end
+
   def set_part_value
     if self.nb_investors > 0
       self.valuation.to_f / self.nb_investors.to_f

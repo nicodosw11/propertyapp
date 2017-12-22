@@ -14,6 +14,7 @@ class DealsController < ApplicationController
 
   def show
     authorize @deal, :show?
+    @photos = @deal.photos
   end
 
   def edit
