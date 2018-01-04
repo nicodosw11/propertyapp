@@ -49,6 +49,18 @@
         <p>This user has no roles.</p>
       <% end %>
 
+      <p>Here are the details of <%= @user.last_name %>'s investments:<p>
+
+      <ul>
+        <% @user.investments.each do |investment| %>
+        <li>Deal#<%= investment.deal.id %></li>
+        <li>Shares#<%= investment.shares %></li>
+        <li>Price#<%= investment.price %></li>
+        <br>
+        <% end %>
+      </ul>
+
+
       <%= link_to "Back to Users", admin_users_path %>
 
     </div>

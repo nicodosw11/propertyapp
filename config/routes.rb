@@ -25,7 +25,7 @@
              path: '',
              path_names: {sign_in: 'login', sign_out: 'logout', edit: 'profile', sign_up: 'register'}
 
-  resources :users, :only => [:index, :show]
+  get 'dashboard' => 'dashboards#index'
   root to: 'pages#home'
   get 'seller', to: 'pages#seller'
   get 'risks', to: 'pages#risks'

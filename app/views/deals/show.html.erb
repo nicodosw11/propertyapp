@@ -1,37 +1,7 @@
 <% title(@deal.city, "Deals") %>
 
-
-<div class="page-header">
-  <h1><%= "#{@deal.city}, #{@deal.district}" %></h1>
-  <p><%= @deal.occupancy %></p>
-
-  <ul class="actions">
-    <% if policy(@deal).update? %>
-      <li><%= link_to "Edit Deal",
-        edit_deal_path(@deal), class: "edit" %>
-      </li>
-    <% end %>
-    <% admins_only do %>
-      <li><%= link_to "Delete Deal",
-          admin_deal_path(@deal),
-          method: :delete,
-          data: { confirm: "Are you sure you want to delete this deal?" },
-          class: "delete" %>
-      </li>
-    <% end %>
-  </ul>
-</div>
-
 <%= render "shared/card-property", deal: @deal %>
 <%= render 'components/modal-registration2-invest' %>
 
-<ul id="investments">
-  <% @deal.investments.each do |investment| %>
-    <li>
-      Transaction n°<%= investment.id %> -
-      <%= link_to "#{investment.shares} shares for #{investment.price} each", [@deal, investment] %><br>
-      <%= link_to "edit transaction", [:edit, @deal, investment] %><br>
-      <%= link_to "delete transaction", [@deal, investment], method: :delete, data: { confirm: "Are you sure you want to delete this transaction?"}%></li>
-  <% end %>
-</ul>
+
 

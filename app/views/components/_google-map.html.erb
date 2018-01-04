@@ -1,0 +1,108 @@
+<div class="row">
+
+  <div id="map" style="width: 100%; height: 300px"></div>
+
+  <!-- <script src="https://maps.googleapis.com/maps/api/js"></script> -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=<%="#{ENV['GOOGLE_API_BROWSER_KEY']}"%>"></script>
+  <script>
+    function initialize() {
+      var location = {lat: <%= @deal.latitude %>, lng: <%= @deal.longitude %>};
+
+
+      var styles = [
+      {
+        "featureType": "landscape.natural",
+        "elementType": "geometry.fill",
+        "stylers": [
+        {
+          "visibility": "on"
+        },
+        {
+          "color": "#e0efef"
+        }
+        ]
+      },
+      {
+        "featureType": "poi",
+        "elementType": "geometry.fill",
+        "stylers": [
+        {
+          "visibility": "on"
+        },
+        {
+          "hue": "#1900ff"
+        },
+        {
+          "color": "#8EF1DD"
+        }
+        ]
+      },
+      {
+        "featureType": "landscape.man_made",
+        "elementType": "geometry.fill"
+      },
+      {
+        "featureType": "road",
+        "elementType": "geometry",
+        "stylers": [
+        {
+          "lightness": 100
+        },
+        {
+          "visibility": "simplified"
+        }
+        ]
+      },
+      {
+        "featureType": "road",
+        "elementType": "labels",
+        "stylers": [
+        {
+          "visibility": "off"
+        }
+        ]
+      },
+      {
+        "featureType": "water",
+        "stylers": [
+        {
+          "color": "#73D4C0"
+        }
+        ]
+      },
+      {
+        "featureType": "transit.line",
+        "elementType": "geometry",
+        "stylers": [
+        {
+          "visibility": "on"
+        },
+        {
+          "lightness": 700
+        }
+        ]
+      }
+      ]
+
+      var map = new google.maps.Map(document.getElementById('map'), {
+        center: location,
+        zoom: 9,
+        styles: styles
+      });
+
+      var marker = new google.maps.Marker({
+        position: location,
+        map: map
+      });
+
+      var infoWindow = new google.maps.InfoWindow({
+        content: '<div id="content"><%= image_tag @deal.cover_photo(:thumb) %></div>'
+      });
+
+      infoWindow.open(map, marker);
+    }
+
+    google.maps.event.addDomListener(window, 'load', initialize);
+  </script>
+
+</div>

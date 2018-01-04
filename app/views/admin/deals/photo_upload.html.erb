@@ -18,7 +18,7 @@
                 <%= form_for @deal, url: admin_deal_photos_path(@deal), method: 'post', html: {multipart: true} do |f| %>
                   <div class="row">
                     <div class="form-group">
-                      <span class="btn btn-default btn-file text-check-green">
+                      <span class="btn btn-default-upload btn-file text-check-green">
                         <i class="fa fa-cloud-upload" aria-hidden="true"></i> Select Photos
                         <%= file_field_tag "images[]", type: :file, multiple: true, id: "pictureInput" %>
                       </span>

@@ -28,6 +28,7 @@ gem "font-awesome-rails"
 
 gem 'toastr-rails'
 gem 'paperclip'
+gem 'geocoder'
 
 group :development, :test do
   gem 'binding_of_caller'

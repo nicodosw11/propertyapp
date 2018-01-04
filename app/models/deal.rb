@@ -22,6 +22,9 @@ class Deal < ApplicationRecord
   has_many :roles, dependent: :delete_all
   has_many :photos, dependent: :destroy
 
+  geocoded_by :full_address
+  after_validation :geocode, if: :street_changed?
+
   def has_member?(user)
     roles.exists?(user_id: user)
   end
@@ -38,6 +41,10 @@ class Deal < ApplicationRecord
     else
       "photo.jpg"
     end
+  end
+
+  def full_address
+    "#{street} #{postcode} #{city}"
   end
 
   def set_part_value

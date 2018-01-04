@@ -1,4 +1,11 @@
-.btn.btn-default {
+.btn {
+  color: #fff;
+  border-radius: 5px;
+  font-weight: bold;
+  padding: 9px 27px;
+}
+
+.btn.btn-default-upload {
   width: 100%;
   border-color: #c4c4c4;
   background: white;
@@ -18,3 +25,5 @@
   border-color: #066165;
   background-color: #066165;
 }
+
+

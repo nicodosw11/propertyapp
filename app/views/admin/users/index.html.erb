@@ -10,3 +10,7 @@
     <li><%= link_to user, [:admin, user] %></li>
   <% end %>
 </ul>
+
+<% @users.each do |user| %>
+<%= link_to user.email, user %>
+<% end %>

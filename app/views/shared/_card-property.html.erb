@@ -66,7 +66,7 @@
         <div class="caption overview-asset-data margin-bottom">
           <div class="row deal-data-progress margin-bottom" style="display:flex">
             <div class="col-xs-4 ">
-              <%= image_tag "fakedeal/DUH.png", class: "img-responsive pull-right", alt: "DUH" %>
+              <%= render 'components/donut' %>
             </div>
             <div class="col-xs-7" style="padding-left:0px" >
               <span class="vcenter">Décote à l'Achat pour Droit d'Usage et d'Habitation*</span>
@@ -84,7 +84,9 @@
             </div>
           </div>
           <div class="row deal-invest">
-            <%= render "buttons/invest-show" %>
+            <div class="col-sm-12 btn-deal-invest">
+              <%= link_to "INVESTIR", new_deal_investment_path(@deal), class: "btn btn-invest btn-default" %>
+            </div>
           </div>
         </div>
       </div>
@@ -110,15 +112,17 @@
             </tr>
           </table>
           <h3>Présentation du Projet</h3>
-          <p>Au sein d'une résidence sécurisée, Bel appartement 3 pièces comprenant: Hall d'entrée avec rangements, cuisine aménagée équipée, balcon, deux chambres, salle de bains, dressing, vestibule, WC. Un Parking intérieur agrémente ce bien équipé de double vitrage.
-          </p>
-          <p>Bus au pied de l'immeuble, RER A à 10min. La situation en limite du Vésinet et de Montesson
+          <!-- <p>Au sein d'une résidence sécurisée, Bel appartement 3 pièces comprenant: Hall d'entrée avec rangements, cuisine aménagée équipée, balcon, deux chambres, salle de bains, dressing, vestibule, WC. Un Parking intérieur agrémente ce bien équipé de double vitrage.
+          </p> -->
+          <p><%= deal.amenities_description %></p>
+          <!-- <p>Bus au pied de l'immeuble, RER A à 10min. La situation en limite du Vésinet et de Montesson
           assure la proximité immédiate des commerces.
-          </p>
+          </p> -->
+          <p><%= deal.location_transport_description %></p>
         </div>
         <div class="col-md-4">
-          <h4><u>Situation Géographique:</u> Chatou, Yvelines.</h4>
-          <%= image_tag "fakedeal/map-projet.png", class: "img-responsive", alt: "Chambre" %>
+          <h4><u>Situation Géographique:</u> <%= "#{@deal.city}, #{@deal.district}." %></h4>
+            <%= render 'components/google-map.html.erb' %>
         </div>
       </div>
       <!-- Row2: deal project performance 12col -->
@@ -353,4 +357,37 @@
   </div>
 </div>
 
+<!-- <script type="text/javascript">
+   function updateDonutChart (el, percent, donut) {
+    percent = Math.round(percent);
+    if (percent > 100) {
+        percent = 100;
+    } else if (percent < 0) {
+        percent = 0;
+    }
+    var deg = Math.round(360 * (percent / 100));
+
+    if (percent > 50) {
+        $(el + ' .pie').css('clip', 'rect(auto, auto, auto, auto)');
+        $(el + ' .right-side').css('transform', 'rotate(180deg)');
+    } else {
+        $(el + ' .pie').css('clip', 'rect(0, 1em, 1em, 0.5em)');
+        $(el + ' .right-side').css('transform', 'rotate(0deg)');
+    }
+    if (donut) {
+        $(el + ' .right-side').css('border-width', '0.1em');
+        $(el + ' .left-side').css('border-width', '0.1em');
+        $(el + ' .shadow').css('border-width', '0.1em');
+    } else {
+        $(el + ' .right-side').css('border-width', '0.5em');
+        $(el + ' .left-side').css('border-width', '0.5em');
+        $(el + ' .shadow').css('border-width', '0.5em');
+    }
+    $(el + ' .num').text(percent);
+    $(el + ' .left-side').css('transform', 'rotate(' + deg + 'deg)');
+}
+
+// Pass in a number for the percent
+updateDonutChart('#specificChart', <%= @deal.surface %>, true);
+</script> -->
 

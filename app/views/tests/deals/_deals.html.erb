@@ -1,0 +1,8 @@
+<% admins_only do %>
+  <div id="deals">
+    <% @deals.each do |deal| %>
+    <h2><%= link_to "#{deal.city}, #{deal.district}" + ":", deal %></h2>
+    <p><%= deal.occupancy %></p>
+    <% end %>
+  </div>
+<% end %>

@@ -33,5 +33,5 @@
 
 <%= form_for @deal do |f| %>
   <%= f.hidden_field :active, value: true %>
-  <%= f.submit "Publish", id: "publish_button", class: "btn btn-normal btn-block", disabled: !is_ready %>
+  <%= f.submit "Publish", id: "publish_button", class: "btn btn-form btn-block", disabled: !is_ready %>
 <% end %>

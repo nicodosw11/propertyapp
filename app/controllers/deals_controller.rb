@@ -1,5 +1,5 @@
 class DealsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :index, :show ]
+  # skip_before_action :authenticate_user!, only: [ :index, :show ] #user can't see deal/deals unless signed in
   ############### for test only neutralizing devise/pundit #######
   # skip_before_action :authenticate_user!
   # skip_after_action :verify_policy_scoped, :only => :index
