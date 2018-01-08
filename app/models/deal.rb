@@ -16,8 +16,9 @@ class Deal < ApplicationRecord
   has_one :property, dependent: :destroy
   # accepts_nested_attributes_for :property
   has_many :tenants, dependent: :destroy
-  has_many :investments, dependent: :nullify
+  # has_many :investments, dependent: :nullify
   # has_many :investments, dependent: :delete_all
+  has_many :investments, dependent: :destroy
   has_many :users, through: :investments
   has_many :roles, dependent: :delete_all
   has_many :photos, dependent: :destroy
@@ -35,9 +36,9 @@ class Deal < ApplicationRecord
     end
   end
 
-  def cover_photo(size)
+  def cover_photo(size, cl)
     if self.photos.length > 0
-      self.photos[0].image.url(size)
+      self.photos[0].image.url(size, cl)
     else
       "photo.jpg"
     end

@@ -96,7 +96,7 @@
       });
 
       var infoWindow = new google.maps.InfoWindow({
-        content: '<div id="content"><%= image_tag @deal.cover_photo(:thumb) %></div>'
+        content: '<div id="content"><%= image_tag @deal.cover_photo(:mini, cloudinary: {:width => 48, :height => 48, :crop => 'fill'}) %></div>'
       });
 
       infoWindow.open(map, marker);

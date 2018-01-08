@@ -14,7 +14,7 @@
         <div class="carousel-inner">
           <% @photos.each do |photo| %>
           <div class="item <%= 'active' if photo.id == @photos[0].id %>">
-            <%= image_tag photo.image.url() %>
+            <%= image_tag photo.image.url(:carousel, cloudinary: {:width => 800, :height => 535, :crop => 'fill'}) %>
             <div class="carousel-caption"><%= photo.title_from_image_file_name%></div>
           </div>
           <% end %>
