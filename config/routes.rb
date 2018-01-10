@@ -23,7 +23,8 @@
   # devise_for :users, :path_prefix => 'devise' # => "/devise/users/sign_in"
   devise_for :users,
              path: '',
-             path_names: {sign_in: 'login', sign_out: 'logout', edit: 'profile', sign_up: 'register'}
+             path_names: {sign_in: 'login', sign_out: 'logout', edit: 'profile', sign_up: 'register'},
+             controllers: {registrations: 'registrations'}
 
   get 'dashboard' => 'dashboards#index'
   root to: 'pages#home'

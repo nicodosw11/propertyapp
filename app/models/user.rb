@@ -3,6 +3,8 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :confirmable, :recoverable, :rememberable, :trackable, :validatable
+
+  validate :password_complexity
   has_many :investments, dependent: :nullify
   has_many :deals, through: :investments
   has_many :roles
@@ -42,5 +44,12 @@ class User < ApplicationRecord
   #for Active Admin
   def name
     "#{id} - #{first_name} #{last_name}"
+  end
+  def password_complexity
+    if password.present?
+       if !password.match(/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/)
+         errors.add :password, "Password must include at least one lowercase letter, one uppercase letter, and one digit"
+       end
+    end
   end
 end
