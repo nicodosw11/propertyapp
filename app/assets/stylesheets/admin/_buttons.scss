@@ -27,3 +27,20 @@
 }
 
 
+.btn-block {
+  display: block;
+  white-space: normal;
+  width: 100%;
+}
+
+.btn.btn-normal {
+  border: 1px solid #33CCCC;
+  background-color: #33CCCC;
+}
+
+.btn.btn-normal:hover {
+  outline: none;
+  color: #F5F5F5;
+  border-color: #C1EFEF;
+  background-color: #C1EFEF;
+}

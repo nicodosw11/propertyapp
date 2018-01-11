@@ -25,26 +25,27 @@
              path: '',
              path_names: {sign_in: 'login', sign_out: 'logout', edit: 'profile', sign_up: 'register'},
              controllers: {registrations: 'registrations'}
+  scope '(:locale)', locale: /fr|en/ do
+    get 'dashboard' => 'dashboards#index'
+    root to: 'pages#home'
+    get 'seller', to: 'pages#seller'
+    get 'risks', to: 'pages#risks'
+    get 'legal', to: 'pages#legal'
+    get 'siteadmin/tenants', to: "tenants#all"
+    get 'siteadmin/properties', to: "properties#all"
+    get 'siteadmin/tenants', to: "tenants#all"
+    # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  get 'dashboard' => 'dashboards#index'
-  root to: 'pages#home'
-  get 'seller', to: 'pages#seller'
-  get 'risks', to: 'pages#risks'
-  get 'legal', to: 'pages#legal'
-  get 'siteadmin/tenants', to: "tenants#all"
-  get 'siteadmin/properties', to: "properties#all"
-  get 'siteadmin/tenants', to: "tenants#all"
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
-  resources :deals, only: [:index, :show, :edit, :update] do
-    # resources :investments, only: [:new, :create, :destroy]
-    resources :investments
-    scope '/siteadmin' do
-      # resources :investments, only: [:index, :show]
-      resources :properties
-      resources :tenants
+    resources :deals, only: [:index, :show, :edit, :update] do
+      # resources :investments, only: [:new, :create, :destroy]
+      resources :investments
+      scope '/siteadmin' do
+        # resources :investments, only: [:index, :show]
+        resources :properties
+        resources :tenants
+      end
+      # resources :properties, path: '/admin'
     end
-    # resources :properties, path: '/admin'
   end
 
 

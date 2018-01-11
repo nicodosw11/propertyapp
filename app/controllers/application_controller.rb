@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  before_action :set_i18n_locale_from_params
   protect_from_forgery with: :exception
   before_action :authenticate_user!
 
@@ -43,5 +44,14 @@ class ApplicationController < ActionController::Base
 
   def skip_pundit?
     devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
+  end
+
+  def set_i18n_locale_from_params
+    I18n.locale = params[:locale] || I18n.default_locale
+  end
+
+  def default_url_options(options={})
+    { :locale => ((I18n.locale == I18n.default_locale) ? nil : I18n.locale) }
+    # (I18n.locale.to_sym.eql?(I18n.default_locale.to_sym) ? {} : {locale: I18n.locale}).merge options
   end
 end
