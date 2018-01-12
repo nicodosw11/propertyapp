@@ -1,0 +1,7 @@
+fr:
+  user_mailer:
+    welcome:
+      subject: "%{user}, bienvenue chez Livsty!"
+      welcome_html: "<b>Livsty</b> vous souhaite la bienvenue %{name}"
+      browse: "Vous pourrez dans quelques instant parcourir nos offres d'investissements!"
+      rdv: "Rendez-vous sur livsty.com"

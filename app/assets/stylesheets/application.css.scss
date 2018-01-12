@@ -36,9 +36,15 @@
 
 #toast-container {
   // top: 12px;
+  // position: static !important;
+  margin: 0 !important;
+  text-align: center !important;
   top: 76px;
-  right: 12px;
+  left: 2px;
 }
 
+#toast-container > div {
+  // width: 100% !important;
+}
 
 

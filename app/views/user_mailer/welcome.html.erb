@@ -1,8 +1,10 @@
-<b>Livsty</b> vous souhaite la bienvenue <%= @user. first_name %>
+<%= t('.welcome_html', name: @user.first_name) %>
 <!-- <br> -->
-<p>Vous pourrez dans quelques instant parcourir nos offres d'investissements!</p>
+<p><%= t('.browse') %></p>
 <!-- <br> -->
-<%= link_to "Rendez-vous sur livsty.com", root_url  %>
+<%= link_to t('.rdv'), root_url %>
+
+
 
 
 

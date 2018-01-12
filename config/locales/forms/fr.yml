@@ -1,0 +1,9 @@
+fr:
+  helpers:
+    placeholder:
+      user:
+        first_name: "Prénom"
+        last_name: "Nom"
+        email: "Email"
+        password: "Mot de passe"
+        password_confirmation: "Confirmation du mot de passe"

@@ -2,14 +2,14 @@
   <div class="row">
     <div class="col-md-3">
       <ul class="sidebar-list">
-        <li class="sidebar-item"><%= link_to "Edit Profile", edit_user_registration_path, class: "sidebar-link active" %></li>
-        <li class="sidebar-item"><%= link_to "View My Dashboard", dashboard_path, class: "sidebar-link" %>
+        <li class="sidebar-item"><%= link_to t('.go-to-edit-profile'), edit_user_registration_path, class: "sidebar-link active" %></li>
+        <li class="sidebar-item"><%= link_to t('.go-to-dashboard'), dashboard_path, class: "sidebar-link" %>
       </ul>
       <br/>
     </div>
     <div class="col-md-9 text-center">
       <div class="panel panel-default">
-        <div class="panel-heading">Your Profile</div>
+        <div class="panel-heading"><%= t('.your-infos')%></div>
         <div class="panel-body">
           <div class="container" style="width: 80%;">
             <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -24,7 +24,7 @@
             </div>
 
             <div class="form-group">
-              <%= f.country_select :country_of_residence, only: ["FR", "GB"], include_blank: 'Country of residence', autofocus: true, class: "form-control" %>
+              <%= f.country_select :country_of_residence, only: ["FR", "GB"], include_blank: "#{t('.country_of_residence')}", autofocus: true, class: "form-control" %>
             </div>
 
             <div class="form-group">
@@ -36,22 +36,21 @@
             <% end %>
 
             <div class="form-group">
-              <%= f.password_field :password, autocomplete: "off", placeholder: "New Password (leave blank if you don't want to change it)", class: "form-control" %>
-              <em><%= ("#{@minimum_password_length} characters minimum and at least one lowercase letter, one uppercase letter, and one digit" if @minimum_password_length) %></em>
+              <%= f.password_field :password, autocomplete: "off", placeholder: "#{t('.leave_blank')}", class: "form-control" %>
+              <em>(<%= t'.password_complexity', minimum_password_length: @minimum_password_length %>)</em>
             </div>
 
             <div class="form-group">
-              <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Confirm Password", class: "form-control" %>
+              <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: true, class: "form-control" %>
             </div>
 
             <div class="actions">
-              <%= f.button "Save", class: "btn btn-normal btn-block", data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Saving changes..."} %>
+              <%= f.button t('.update'), class: "btn btn-normal btn-block", data: {disable_with: t('.saving_html')} %>
             </div>
             <% end %>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </div>

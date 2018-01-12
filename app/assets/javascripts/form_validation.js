@@ -65,7 +65,7 @@ function activateButton() {
       return;
     }
   }
-  button.attr('disabled', 'disabled').html('Please fill all fields');
+  button.attr('disabled', 'disabled').html(I18n['please-fill-all-fields']);
 }
 
 function onReady() {

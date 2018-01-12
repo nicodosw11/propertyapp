@@ -10,8 +10,11 @@ class UserMailer < ApplicationMailer
     @user = user  # Instance variable => available in view
 
     # mail to: "to@example.org"
-    mail(to: @user.email, subject: "Welcome to Livsty #{@user.first_name}!")
+    mail(to: @user.email, subject: default_i18n_subject(user: @user.first_name))
     # This will render a view in `app/views/user_mailer`!
 
   end
 end
+
+
+

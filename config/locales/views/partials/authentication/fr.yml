@@ -1,0 +1,52 @@
+fr:
+  please-fill-all-fields: "Merci de remplir tous les champs"
+  partials:
+    authentication:
+      links:
+        back: "Retour"
+        didn_t_receive_confirmation_instructions: "Vous n'avez pas reçu le courriel de confirmation ?"
+        didn_t_receive_unlock_instructions: "Vous n'avez pas reçu le courriel de déblocage ?"
+        forgot_your_password: "Mot de passe oublié ?"
+        sign_in: "Connexion"
+        sign_in_with_provider: "Connexion avec %{provider}"
+        sign_up: "Inscription"
+      formfor:
+        confirmations:
+          new:
+            resend_confirmation_instructions: "Renvoyer les instructions de confirmation"
+            resending_instructions_html: "<i class='fa fa-spinner fa-spin'></i> Réenvoi..."
+        passwords:
+          new:
+            forgot_your_password: "Mot de passe oublié ?"
+            send_me_reset_password_instructions: "Envoyez-moi des instructions pour réinitialiser mon mot de passe"
+            sending_instructions_html: "<i class='fa fa-spinner fa-spin'></i> En cours d'envoi..."
+          edit:
+            change_my_password: "Changer mon mot de passe"
+            change_your_password: "Changer votre mot de passe"
+            confirm_new_password: "Confirmez votre nouveau mot de passe"
+            new_password: "Nouveau mot de passe"
+            password_complexity: "%{minimum_password_length} caractères minimum et au moins une lettre minuscule, une lettre majuscule, et un chiffre"
+            changing_password_html: "<i class='fa fa-spinner fa-spin'></i> Enregistrement du nouveau mot de passe..."
+        registrations:
+          new:
+            sign_up: "S'inscrire"
+            signing_up_html: "<i class='fa fa-spinner fa-spin'></i> Enregistrement..."
+            country_of_residence: "Pays de résidence"
+            password_complexity: "%{minimum_password_length} caractères minimum et au moins une lettre minuscule, une lettre majuscule, et un chiffre"
+          edit:
+            your-infos: "Mes informations"
+            go-to-edit-profile: "Modifier mes informations"
+            go-to-dashboard: "Voir mon tableau de bord"
+            password_complexity: "%{minimum_password_length} caractères minimum et au moins une lettre minuscule, une lettre majuscule, et un chiffre"
+            leave_blank: "Nouveau mot de passe (ne pas remplir si vous ne voulez pas le modifier)"
+            leave_blank_if_you_don_t_want_to_change_it: "laissez ce champ vide pour le laisser inchangé"
+            country_of_residence: "Pays de résidence"
+            update: "Modifier"
+            saving_html: "<i class='fa fa-spinner fa-spin'></i> Enregistrement des modifications..."
+        sessions:
+          new:
+            sign_in: "S'identifier"
+            sign_in_button: "Connexion"
+            signing_in_html: "<i class='fa fa-spinner fa-spin'></i> Vérification..."
+            forgot_your_password: "Mot de passe oublié ?"
+            resend_confirmation_instructions: "Renvoyer le mail de confirmation ?"

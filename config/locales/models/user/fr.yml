@@ -1,0 +1,11 @@
+fr:
+  activerecord:
+    attributes:
+      user:
+        remember_me: Se souvenir de moi?
+    errors:
+      models:
+        user:
+          attributes:
+            password:
+              password_complexity: "Le mot de passe doit contenir au moins une lettre minuscule, une lettre majuscule et un chiffre"

@@ -1,0 +1,52 @@
+en:
+  please-fill-all-fields: "Please fill all fields"
+  partials:
+    authentication:
+      links:
+        back: "Back"
+        didn_t_receive_confirmation_instructions: "Didn't receive confirmation instructions?"
+        didn_t_receive_unlock_instructions: "Didn't receive unlock instructions?"
+        forgot_your_password: "Forgot your password?"
+        sign_in: "Sign in"
+        sign_in_with_provider: "Sign in with %{provider}"
+        sign_up: "Sign up"
+      formfor:
+        confirmations:
+          new:
+            resend_confirmation_instructions: "Resend confirmation instructions"
+            resending_instructions_html: "<i class='fa fa-spinner fa-spin'></i> Resending..."
+        passwords:
+          new:
+            forgot_your_password: "Forgot your password?"
+            send_me_reset_password_instructions: "Send me reset password instructions"
+            sending_instructions_html: "<i class='fa fa-spinner fa-spin'></i> Sending..."
+          edit:
+            change_my_password: "Change my password"
+            change_your_password: "Change your password"
+            confirm_new_password: "Confirm new password"
+            new_password: "New password"
+            password_complexity: "%{minimum_password_length} characters minimum and at least one lowercase letter, one uppercase letter, and one digit"
+            changing_password_html: "<i class='fa fa-spinner fa-spin'></i> Processing..."
+        registrations:
+          new:
+            sign_up: "Sign up"
+            signing_up_html: "<i class='fa fa-spinner fa-spin'></i> Signing up..."
+            country_of_residence: "Pays de résidence"
+            password_complexity: "%{minimum_password_length} characters minimum and at least one lowercase letter, one uppercase letter, and one digit"
+          edit:
+            your-infos: "Your details"
+            go-to-edit-profile: "Edit Profile"
+            go-to-dashboard: "View My Dashboard"
+            password_complexity: "%{minimum_password_length} characters minimum and at least one lowercase letter, one uppercase letter, and one digit"
+            leave_blank: "New Password (leave blank if you don't want to change it)"
+            leave_blank_if_you_don_t_want_to_change_it: "leave blank if you don't want to change it"
+            country_of_residence: "Country of residence"
+            update: "Update"
+            saving_html: "<i class='fa fa-spinner fa-spin'></i> Saving changes..."
+        sessions:
+          new:
+            sign_in: "Sign in"
+            sign_in_button: "Sign in"
+            signing_in_html: "<i class='fa fa-spinner fa-spin'></i> Signing in..."
+            forgot_your_password: "Forgot your password?"
+            resend_confirmation_instructions: "Resend confirmation instructions?"

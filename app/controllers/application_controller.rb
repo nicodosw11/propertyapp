@@ -1,21 +1,22 @@
 class ApplicationController < ActionController::Base
   before_action :set_i18n_locale_from_params
   protect_from_forgery with: :exception
+  before_action :store_user_location!, if: :storable_location?
   before_action :authenticate_user!
 
   #adding attributes to user
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def after_sign_in_path_for(resource_or_scope)
-    dashboard_path
+    stored_location_for(resource_or_scope) || super
   end
 
   def configure_permitted_parameters
     # For additional fields in app/views/devise/registrations/new.html.erb
     devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :country_of_residence])
-
+    update_attrs = [:password, :password_confirmation, :current_password]
     # For additional in app/views/devise/registrations/edit.html.erb
-    devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :country_of_residence])
+    devise_parameter_sanitizer.permit(:account_update, keys: [update_attrs, :first_name, :last_name, :country_of_residence])
   end
 
   include Pundit
@@ -47,11 +48,24 @@ class ApplicationController < ActionController::Base
   end
 
   def set_i18n_locale_from_params
-    I18n.locale = params[:locale] || I18n.default_locale
+    # I18n.locale = params[:locale] || I18n.default_locale
+    # for authenticate_user! redirection
+    I18n.locale = params[:locale] || session[:locale] || I18n.default_locale
+    session[:locale] = I18n.locale
   end
 
   def default_url_options(options={})
     { :locale => ((I18n.locale == I18n.default_locale) ? nil : I18n.locale) }
+    # for authenticate_user! redirection
     # (I18n.locale.to_sym.eql?(I18n.default_locale.to_sym) ? {} : {locale: I18n.locale}).merge options
+  end
+
+  def storable_location?
+    request.get? && is_navigational_format? && !devise_controller? && !request.xhr?
+  end
+
+  def store_user_location!
+    # :user is the scope we are authenticating
+    store_location_for(:user, request.fullpath)
   end
 end

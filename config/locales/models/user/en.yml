@@ -1,0 +1,11 @@
+en:
+  activerecord:
+    attributes:
+      user:
+        remember_me: Remember me
+    errors:
+      models:
+        user:
+          attributes:
+            password:
+              password_complexity: "Password must include at least one lowercase letter, one uppercase letter, and one digit"

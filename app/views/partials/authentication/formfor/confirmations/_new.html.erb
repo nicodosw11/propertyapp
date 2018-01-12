@@ -2,25 +2,26 @@
   <div class="row">
     <div class="col-md-4 col-md-offset-4">
 
-      <h2 class="text-center">Resend confirmation instructions</h2>
+      <h2 class="text-center"><%= t('.resend_confirmation_instructions') %></h2>
       <br/>
 
       <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
-        <%= devise_error_messages! %>
+        <!-- devise_error_messages! -->
+        <%= render 'partials/authentication/message' %>
 
-        <div class="field">
-          <%= f.label :email %><br />
-          <%= f.email_field :email, autofocus: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+        <div class="form-group">
+          <%= f.email_field :email, autofocus: true, placeholder: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), class: "form-control" %>
         </div>
 
         <div class="actions">
-          <%= f.button "Resend confirmation instructions", class: "btn btn-normal btn-block", data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Resending..."} %>
+          <%= f.button t('.resend_confirmation_instructions'), class: "btn btn-normal btn-block", data: {disable_with: t('.resending_instructions_html')} %>
         </div>
       <% end %>
 
-      <%= render "devise/shared/links" %>
+      <%= render "partials/authentication/links" %>
 
       <hr/>
     </div>
   </div>
 </div>
+
