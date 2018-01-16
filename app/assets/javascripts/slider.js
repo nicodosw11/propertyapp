@@ -1,10 +1,14 @@
-window.onload = sliderChange();
-var slider = document.getElementById('slider1');
-slider.addEventListener('input', sliderChange);
+// window.onload = sliderChange();
+$(window).load(function(){
+  if (!(page.controller() === 'deals' && page.action() === 'show')) { return; }
+  return sliderChange();
+})
 function numberWithSpace(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 }
 function sliderChange() {
+var slider = document.getElementById('slider1');
+slider.addEventListener('input', sliderChange);
 var amountShares =document.getElementById('box2').value;
 document.getElementById('TableSimulation11').innerHTML = numberWithSpace(amountShares*1664);
 document.getElementById('TableSimulation12').innerHTML = numberWithSpace(amountShares*1821);

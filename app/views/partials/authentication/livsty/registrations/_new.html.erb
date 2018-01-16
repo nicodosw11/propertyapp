@@ -1,0 +1,67 @@
+<div class="container" style="width: 80%;">
+  <div class="row">
+    <div class="hidden-xs hidden-sm col-md-4 ">
+      <div class="left-bar">
+        <div class="left-bar-content text-center">
+          <%= image_tag("growth64.png", alt: "Investir", class:"visible-xs") %>
+          <%= image_tag("growth128.png", alt: "Investir", class:"hidden-xs img-rounded") %>
+          <h4><%= t('.signup-title') %></h4>
+        </div>
+      </div>
+    </div>
+    <div class="hidden-xs hidden-sm  col-md-1">
+    </div>
+    <div class="col-sm-12 col-sm-10 col-md-6">
+      <h1 class="display-1 text-center"><%= t('.let-me-signup') %></h1>
+      <h4 class="display-4 text-muted text-center"><%= t('.new-user') %></h4>
+
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= render 'partials/authentication/message' %>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <%= f.text_field :first_name,:class => "form-control livsty", :placeholder=>true %>
+          </div>
+          <div class="form-group col-md-6">
+            <%= f.text_field :last_name, :class => "form-control livsty", :placeholder=>true %>
+          </div>
+        </div>
+        <div class="form-group col-md-12">
+          <%= f.email_field :email,:class => "form-control livsty", :placeholder=>true %>
+        </div>
+        <div class="form-group col-md-12">
+          <%= f.country_select :country_of_residence, :class => "form-control livsty", selected: "FR", only: ["FR", "GB"], include_blank: "#{t('.country_of_residence')}" %>
+        </div>
+        <div class="form-group col-md-12">
+          <%= f.password_field :password,:class => "form-control livsty", :placeholder=>true %>
+        </div>
+        <div class="form-group col-md-12">
+          <%= f.password_field :password_confirmation,:class => "form-control livsty", :placeholder=>true %>
+          <small id="passwordHelpBlock" class="form-text text-muted">
+            <%= t('.password_complexity_html') %>
+          </small>
+        </div>
+        <div class="form-group col-md-12">
+          <div class="form-check">
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" value="1">
+              <small><%= t('.read-and-agree') %> <%= link_to t('.tos'), legal_path%>*</small>
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" value="1">
+              <small><%= t('.aware-and-accept') %>. <%= link_to t('.risks'), risks_path%>*</small>
+            </label>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <%= f.button t('.sign_up'), class: "btn btn-standard", data: {disable_with: t('.signing_up_html')} %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  window.I18n = <%= current_translations.to_json.html_safe %>
+</script>

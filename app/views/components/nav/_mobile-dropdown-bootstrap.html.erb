@@ -1,0 +1,36 @@
+<div class="navbar-container-item hidden-md hidden-lg">
+  <div class="dropdown">
+    <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+    <ul class="dropdown-menu dropdown-menu-right navbar-container-dropdown-menu">
+      <li><a href="#"><%= t(".invest") %></a></li>
+      <li><a href="#"><%=t(".sell") %></a></li>
+      <li><a href="#"><%= t(".opportunities_html") %></a></li>
+      <% if current_page?('/fr') || current_page?('/en') || current_page?('/') %>
+      <li><%= link_to t(".translate"), locale: :fr unless I18n.locale == :fr || nil %></li>
+      <li><%= link_to t(".translate"), locale: :en unless I18n.locale == :en %></li>
+      <% end %>
+      <% if user_signed_in? %>
+      <li>
+        <%= link_to t(".dashboard", default: "Mon tableau de bord"), dashboard_path %>
+      </li>
+      <li>
+        <%= link_to t(".profile", default: "Mon compte"), edit_user_registration_path %>
+      </li>
+      <li>
+        <%= link_to t(".home", default: "Accueil"), root_path %>
+      </li>
+      <li role="separator" class="divider"></li>
+      <li>
+      <%= link_to t(".sign_out", default: "Se déconnecter"), destroy_user_session_path, method: :delete %>
+      </li>
+      <% else %>
+      <li><%= link_to t(".sign_in", default: "S'identifier"), new_user_session_path, class: "navbar-container-item" %></li>
+      <li>
+      <%= link_to t(".sign_up", default: "Inscription"), new_user_registration_path, class: "navbar-container-item" %>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+

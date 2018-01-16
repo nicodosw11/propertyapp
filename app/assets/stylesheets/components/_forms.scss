@@ -1,0 +1,75 @@
+.password_compliant{
+  color:#33CCCC;
+}
+
+.left-bar {
+  padding-bottom: 70%;
+  // margin-bottom: -70%;
+  background: #33CCCC;
+}
+.left-bar-content{
+  color:white;
+  padding-top:40%;
+
+}
+
+.btn-standard{
+  width:100%;
+  font-weight:500;
+  padding: 0.5em;
+  background-color: #33CCCC;
+  color: #F5F5F5;
+  -webkit-transition: background-color .2s ease-in-out;
+  -o-transition: background-color .2s ease-in-out;
+  transition: background-color .2s ease-in-out;
+  font-size: 14px;
+}
+.btn-standard:hover{
+  background-color: #C1EFEF;
+  // color: #F5F5F5;
+  color:#33CCCC;
+  border-color: #C1EFEF;
+}
+
+.form-control.livsty{
+  border-radius: 2px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.form-control.livsty:focus {
+  border-color: $navbar-color-darkblue;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+::-webkit-input-placeholder {
+ font-size: 14px;
+ // color: #d0cdfa;
+ // text-transform: uppercase;
+ // text-transform: uppercase;
+ // text-align: center;
+ // font-weight: bold;
+}
+:-moz-placeholder { /* older Firefox*/
+ font-size:14px;
+ // color: #d0cdfa;
+ // text-transform: uppercase;
+ // text-align: center;
+ // font-weight: bold;
+}
+::-moz-placeholder { /* Firefox 19+ */
+ font-size: 14px;
+ // color: #d0cdfa;
+ // text-transform: uppercase;
+ // text-align: center;
+ // font-weight: bold;
+}
+:-ms-input-placeholder {
+ font-size: 14px;
+ // color: #d0cdfa;
+ // text-transform: uppercase;
+ // text-align: center;
+ // font-weight: bold;
+}

@@ -46,8 +46,8 @@
       end
       # resources :properties, path: '/admin'
     end
-  # get '*path', to: redirect("/#{I18n.default_locale}/%{path}")
-  # get '', to: redirect("/#{I18n.default_locale}")
+  get '*path', to: redirect("/#{I18n.default_locale}/%{path}")
+  get '', to: redirect("/#{I18n.default_locale}")
 
   end
 

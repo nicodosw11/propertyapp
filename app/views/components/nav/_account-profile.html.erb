@@ -1,0 +1,43 @@
+ <div class="navbar-avatar-item">
+  <div class="dropdown">
+    <a href="#" class="dropdown-toggle" id= "navbar-avatar-menu" data-toggle="dropdown" style="text-decoration: none;">
+      <%= image_tag('user.jpg', class: "img-circle avatar-small")%>&nbsp;
+      <%= current_user.full_name %> <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-right navbar-avatar-dropdown-menu">
+      <% admins_only do %>
+        <li>
+          <%= link_to admin_deals_path do %>
+          <i class="fa fa-lock"></i> <%= t(".manage-deals", default: "Manage Listing") %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to admin_root_path do %>
+          <i class="fa fa-lock"></i> <%= t(".manage-users", default: "Manage Users") %>
+          <% end %>
+        </li>
+      <% end %>
+      <li>
+        <%= link_to dashboard_path do %>
+        <i class="fa fa-tachometer"></i> <%= t(".dashboard", default: "My Dashboard") %>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to edit_user_registration_path do %>
+        <i class="fa fa-user"></i> <%= t(".profile", default: "My settings") %>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to root_path do %>
+        <i class="fa fa-home"></i>  <%= t(".home", default: "Home") %>
+        <% end %>
+      </li>
+      <li role="separator" class="divider"></li>
+      <li>
+        <%= link_to destroy_user_session_path, method: :delete do %>
+        <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+</div>

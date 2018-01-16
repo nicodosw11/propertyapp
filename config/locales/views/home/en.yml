@@ -1,5 +1,17 @@
 en:
   home:
+    banner-investor:
+      think-differently_html: "<span class='nowwrap'> Think <span class='greened'> Property </span> Investment <span class='greened'> Differently ! </span> </span>"
+      livsty-think-differently_html: "<span class='nowwrap'> <span class='greened'>LIVSTY, </span> Think <span class='greened'> Property </span> Investment <span class='greened'> Differently! </span> </span>"
+      livsty-join: "Rejoignez Livsty, la plateforme qui révolutionne l'investissement immobilier. Quand l'investissement se veut solidaire: Livsty repense la façon d'investir dans un bien occupé et d'accompagner les séniors dans leurs besoins"
+      livsty-mission: "Our project: Making accessible to everyone a forward-looking saving scheme both responding to societal challenges and maximising income"
+      livsty-online: "Livsty is the online platform reshaping the way we invest in occupied properties while supporting senior citizens with their needs"
+      livsty-Paris: "Based in Paris, Livsty is an online investment platform that enables everyone to invest in occupied properties via the french \"Viager\" scheme"
+      see-deals: "See current opportunities >>>"
+      the-deals: "Opportunities >>>"
+      bubble-1: "A new way of investing"
+      bubble-2_html: "Making my savings grow"
+      bubble-3: "Bricks & mortar investment"
     expertise:
       concept-title: "How it works"
       concept-bubble-1: "Investing together is sharing risks."

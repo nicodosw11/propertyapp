@@ -1,0 +1,35 @@
+en:
+  shared:
+    navbar-flex-bootstrap-active:
+      invest: "INVEST"
+      sell: "SELL YOUR PROPERTY"
+      opportunities_html: "OPPORTUNITIES"
+      sign_in: "Sign in"
+      sign_up: "Sign up"
+    video-banner:
+      welcome: "Welcome"
+      currently-connected: "You are currently connected as"
+      enjoy-offers: "Enjoy our newly advertised properties when browsing the website and looking for the best \"Viager\" opportunities"
+  components:
+    nav:
+      info-dropdown-flex:
+        who-we-are: "Who We Are"
+        faq: "Q&A"
+        contact: "Contact"
+      account-profile:
+        dashboard: "My dashboard"
+        profile: "My account"
+        home: "Home"
+        sign_out: "Log out"
+      mobile-dropdown-bootstrap:
+        invest: "Invest"
+        sell: "Sell your property"
+        opportunities_html: "Opportunities"
+        translate: "Switch to French"
+        dashboard: "My dashboard"
+        profile: "My account"
+        home: "Home"
+        sign_out: "Log out"
+        sign_in: "Sign in"
+        sign_up: "Sign up"
+

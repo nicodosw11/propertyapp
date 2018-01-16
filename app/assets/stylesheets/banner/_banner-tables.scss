@@ -23,7 +23,8 @@ section.fs-section-table {
   //   z-index: 2;
   // }
   .container, .container-fluid {
-    z-index: 2;
+    // z-index: 2;
+    z-index: 1;
   }
   .fs-table-cell {
     width: 100%;

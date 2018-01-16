@@ -14,12 +14,19 @@
 @import "banner/banner";
 @import "banner/banner-tables";
 @import "deal/index";
+@import "footer/index";
 @import "investment/index";
 @import "layout/index";
+@import "nav/index";
 @import "components/index";
 @import "pages/index";
 @import "typography/index";
 @import "vendor/index";
+
+body {
+  background-color: $navbar-color-lightgray;
+  color: $body-color-darkgray;
+}
 
 @mixin box_sizing {
   -moz-box-sizing:    border-box;

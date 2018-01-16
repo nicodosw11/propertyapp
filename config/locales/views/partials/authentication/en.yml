@@ -50,3 +50,54 @@ en:
             signing_in_html: "<i class='fa fa-spinner fa-spin'></i> Signing in..."
             forgot_your_password: "Forgot your password?"
             resend_confirmation_instructions: "Resend confirmation instructions?"
+      livsty:
+        passwords:
+          new:
+            no-password: "Lost password?"
+            password-recover: "No worries we'll find a way"
+            password-recover-title: "HAVE YOU LOST YOUR PASSWORD ?"
+            password-recover-plain-instructions: "Type your e-mail address and we'll send straight away an email with instructions to reset your password"
+            linked-email: "Email address linked to your account"
+            reset: "Reset"
+            sending_instructions_html: "<i class='fa fa-spinner fa-spin'></i> Sending..."
+            instructions-given: "Please reset your password within 2 hours upon email reception in your mailbox"
+          edit:
+            choose-your-password: "Choose your new password"
+            connexion: "Connexion"
+            existing-user: "Existing User"
+            forgot_your_password: "Forgot your password?"
+            new_password: "New password"
+            confirm_new_password: "Confirm new password"
+            password_complexity_html: "At least <strong id='password_length'>8 characters</strong>, including at least <strong id='password_capletter'>one uppercase letter</strong>, <strong id='password_smallcapletter'>one lowercase letter</strong> and <strong id='password_digit'>one digit</strong>."
+            validate_new_password: "Validate new password"
+            changing_password_html: "<i class='fa fa-spinner fa-spin'></i> Processing..."
+        registrations:
+          new:
+            signup-title: "Making sense of your savings - Making it grow."
+            let-me-signup: "Let me sign up!"
+            new-user: "New User"
+            country_of_residence: "Country of residence"
+            password_complexity_html: "At least <strong id='password_length'>8 characters</strong>, including at least <strong id='password_capletter'>one uppercase letter</strong>, <strong id='password_smallcapletter'>one lowercase letter</strong> and <strong id='password_digit'>one digit</strong>."
+            read-and-agree: "I have read and I agree with the"
+            tos: "terms and conditions."
+            aware-and-accept: "I am fully aware and I accept that I can lose the whole invested amount and that liquidity of my investments cannot be guaranteed"
+            risks: "See risks in details."
+            sign_up: "Create my account >>>"
+            signing_up_html: "<i class='fa fa-spinner fa-spin'></i> Signing up..."
+          edit:
+            my-infos: "My details"
+            save-changes: "Update modifications"
+            saving_html: "<i class='fa fa-spinner fa-spin'></i> Saving changes..."
+        sessions:
+          new:
+            connexion-title: "My real estate investments in a few clicks !"
+            my-livsty-account: "Log now into my Livsty account"
+            welcome-back: "Welcome back to Livsty! So great to see you again."
+            existing-user: "Existing User"
+            new-user: "New User"
+            connexion-button: "Sign in"
+            signing_in_html: "<i class='fa fa-spinner fa-spin'></i> Signing in..."
+            forgot_your_password: "Forgot your password?"
+            resend_confirmation_instructions: "Resend confirmation instructions?"
+            sign_up: "Sign up for an account!"
+

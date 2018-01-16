@@ -16,19 +16,19 @@
             <%= render 'partials/authentication/message' %>
 
             <div class="form-group">
-              <%= f.text_field :first_name, autofocus: true, placeholder: "Full Name", class: "form-control" %>
+              <%= f.text_field :first_name, autofocus: true, placeholder: "Full Name", class: "form-control livsty margin-bottom" %>
             </div>
 
             <div class="form-group">
-              <%= f.text_field :last_name, autofocus: true, placeholder: "Last Name", class: "form-control" %>
+              <%= f.text_field :last_name, autofocus: true, placeholder: "Last Name", class: "form-control livsty margin-bottom" %>
             </div>
 
             <div class="form-group">
-              <%= f.country_select :country_of_residence, only: ["FR", "GB"], include_blank: "#{t('.country_of_residence')}", autofocus: true, class: "form-control" %>
+              <%= f.country_select :country_of_residence, only: ["FR", "GB"], include_blank: "#{t('.country_of_residence')}", autofocus: true, class: "form-control livsty margin-bottom" %>
             </div>
 
             <div class="form-group">
-              <%= f.email_field :email, autofocus: true, placeholder: "Email", class: "form-control" %>
+              <%= f.email_field :email, autofocus: true, placeholder: "Email", class: "form-control livsty margin-bottom" %>
             </div>
 
             <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -36,12 +36,12 @@
             <% end %>
 
             <div class="form-group">
-              <%= f.password_field :password, autocomplete: "off", placeholder: "#{t('.leave_blank')}", class: "form-control" %>
+              <%= f.password_field :password, autocomplete: "off", placeholder: "#{t('.leave_blank')}", class: "form-control livsty margin-bottom" %>
               <em>(<%= t'.password_complexity', minimum_password_length: @minimum_password_length %>)</em>
             </div>
 
             <div class="form-group">
-              <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: true, class: "form-control" %>
+              <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: true, class: "form-control livsty margin-bottom" %>
             </div>
 
             <div class="actions">

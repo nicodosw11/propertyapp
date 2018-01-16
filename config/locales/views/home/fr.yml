@@ -1,5 +1,17 @@
 fr:
   home:
+    banner-investor:
+      think-differently_html: "<span class='nowwrap'> L'Investissement <span class='greened'> Immobilier </span> Autrement ! </span>"
+      livsty-think-differently_html: "<span class='nowwrap'><span class='greened'> LIVSTY, </span> pensez <span class='greened'> Immobilier </span> Autrement! </span>"
+      livsty-join: "Rejoignez Livsty, la plateforme qui révolutionne l'investissement immobilier. Quand l'investissement se veut solidaire: Livsty repense la façon d'investir dans un bien occupé et d'accompagner les séniors dans leurs besoins"
+      livsty-mission: "Notre mission: rendre accessible à tous une stratégie d'épargne d'avenir qui allie enjeux sociétaux, gestion du patrimoine et optimisation des revenus"
+      livsty-online: "Livsty est la plateforme en ligne qui repense la façon d'investir dans un bien occupé et d'accompagner les séniors dans leurs besoins"
+      livsty-Paris: "Basée à Paris, Livsty est une plateforme en ligne d'investissement dans l'Immobilier en Viager"
+      see-deals: "Voir les Projets >>>"
+      the-deals: "Les Projets >>>"
+      bubble-1: "Une nouvelle façon d'investir"
+      bubble-2_html: "Je&nbsp;fais&nbsp;fructifier mon&nbsp;épargne"
+      bubble-3: "La pierre-papier robuste"
     expertise:
       concept-title: "Le Concept"
       concept-bubble-1: "Investir ensemble c'est mutualiser le risque."

@@ -18,7 +18,17 @@ ul.actions {
   text-align: right;
 }
 
-a.new, a.edit, a.delete {
+ul.actions-left {
+  @extend .list-unstyled;
+  @extend .list-inline;
+  position: absolute;
+  bottom: -2px;
+  left: 2px;
+  max-width: 45%;
+  text-align: right;
+}
+
+a.new, a.edit, a.delete, a.back {
   @extend .btn;
   &:before {
     font-family: "FontAwesome";
@@ -41,5 +51,11 @@ a.delete {
   @extend .btn-danger;
   &:before {
     @extend .fa-trash;
+  }
+}
+a.back {
+  @extend .btn-info;
+  &:before {
+    @extend .fa-arrow-left;
   }
 }

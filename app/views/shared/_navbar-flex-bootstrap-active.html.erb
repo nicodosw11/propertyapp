@@ -17,55 +17,29 @@
   <div class="navbar-container-right hidden-xs hidden-sm">
     <div class="inner-navbar-bootstrap">
       <ul class="nav navbar-nav borderline main-menu collapse navbar-collapse pull-right" id="top-menu">
-        <li><%= nav_link_to "INVESTIR", root_path%></li>
-        <li><%= nav_link_to "VENDRE VOTRE BIEN", seller_path%></li>
-        <li><%= nav_link_to "OPPORTUNIT&EacuteS".html_safe, deals_path%></li>
+        <li><%= nav_link_to t(".invest"), root_path%></li>
+        <li><%= nav_link_to t(".sell"), seller_path%></li>
+        <li><%= nav_link_to t(".opportunities_html"), deals_path%></li>
         <!-- <div class="navbar-container-item navbar-livsty-link"> -->
-        <li role="presentation" class="dropdown">
-        <!-- <div class="dropdown"> -->
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-id="">AUTRE <span class="caret"></span> </a>
-          <ul class="dropdown-menu">
-            <li><a href="" data-id="">NOUS CONNAÎTRE</a></li>
-            <li><a href=""  data-id="">FAQ</a></li>
-            <li><a href="#Contact" data-id="">CONTACT</a></li>
-          </ul>
-        <!-- </div> -->
+        <li>
+          <%= render 'components/nav/info-dropdown-flex' %>
         </li>
       </ul>
     </div>
-    <%= render 'nav/flags' %>
+    <%= render 'components/nav/flags' if current_page?('/fr') || current_page?('/en') || current_page?('/') %>
   <!-- Different navigation if login or not -->
   <!-- <ul class="nav navbar-nav"> -->
     <% if (!user_signed_in?) %>
-      <%= link_to t(".sign_in", default: "S'identifier"), new_user_session_path, class: "navbar-container-item navbar-livsty-button btn" %>
-      <%= link_to t(".sign_up", default: "Inscription"), new_user_registration_path, class: "navbar-container-item navbar-livsty-button btn" %>
+      <%= link_to t(".sign_in", default: "Sign in"), new_user_session_path, class: "navbar-container-item navbar-livsty-button btn" %>
+      <%= link_to t(".sign_up", default: "Sign up"), new_user_registration_path, class: "navbar-container-item navbar-livsty-button btn" %>
       <!-- <-%= render 'components/signinup-buttons' %-> -->
     <% else %>
-      <%= render 'components/account-avatar' %>
+      <%= render 'components/nav/account-profile' %>
     <% end %>
   </div>
   <!--Right Navigation /.nav-collapse -->
  <!-- Dropdown list appearing on mobile only -->
-  <div class="navbar-container-item hidden-md hidden-lg">
-    <div class="dropdown">
-      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-      <ul class="dropdown-menu dropdown-menu-right navbar-container-dropdown-menu">
-        <li><a href="#">Investir</a></li>
-        <li><a href="#">Vendre votre bien</a></li>
-        <% if user_signed_in? %>
-        <li>
-        <%= link_to destroy_user_session_path, method: :delete do %><%= t(".sign_out", default: "Se déconnecter") %>
-        <% end %>
-        </li>
-        <% else %>
-        <li><%= link_to t(".sign_in", default: "S'identifier"), new_user_session_path, class: "navbar-container-item" %></li>
-        <% end %>
-        <li>
-        <%= link_to t(".sign_up", default: "Inscription"), new_user_registration_path, class: "navbar-container-item" %>
-        </li>
-      </ul>
-    </div>
-  </div>
+  <%= render 'components/nav/mobile-dropdown-bootstrap' %>
 </div>
 <!--   </div>
 </nav> -->

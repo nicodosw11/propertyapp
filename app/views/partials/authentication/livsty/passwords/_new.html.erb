@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="hidden-xs hidden-sm col-md-4 ">
+      <div class="left-bar">
+        <div class="left-bar-content text-center">
+          <%= image_tag("send-mail64.png", alt: "Investir", class:"visible-xs") %>
+          <%= image_tag("send-mail128.png", alt: "Investir", class:"hidden-xs img-rounded") %>
+          <h4><%= t('.no-password') %></h4> <h4><%= t('.password-recover') %></h4>
+        </div>
+      </div>
+    </div>
+    <div class="hidden-xs hidden-sm  col-md-1">
+    </div>
+    <div class="col-sm-12 col-sm-10 col-md-6">
+      <h3 class="text-center"><%= t('.password-recover-title') %></h3>
+      <p> <%= t('.password-recover-plain-instructions') %> :</p>
+      <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+        <%= render 'partials/authentication/message' %>
+        <div class="col-md-12">
+          <%= f.email_field :email, class: 'form-control livsty margin-bottom', placeholder: "#{t('.linked-email')}" %>
+          <%= f.button t('.reset'), class: "btn btn-standard", data: {disable_with: t('.sending_instructions_html')} %>
+          <% end %>
+        </div>
+        <p class="text-center"> <small style="font-size: 85%;"> <%= t('.instructions-given') %> </small></p>
+    </div>
+  </div>
+</div>
+
+
+

@@ -1,0 +1,34 @@
+fr:
+  shared:
+    navbar-flex-bootstrap-active:
+      invest: "INVESTIR"
+      sell: "VENDRE VOTRE BIEN"
+      opportunities_html: "OPPORTUNIT&EacuteS"
+      sign_in: "S'identifier"
+      sign_up: "Inscription"
+    video-banner:
+      welcome: "Bienvenue"
+      currently-connected: "Vous êtes actuellement connecté avec l'email"
+      enjoy-offers: "Profitez de nos offres d'investissements, en parcourant le site à la recherche de viagers"
+  components:
+    nav:
+      info-dropdown-flex:
+        who-we-are: "Nous connaître"
+        faq: "FAQ"
+        contact: "Contact"
+      account-profile:
+        dashboard: "Mon tableau de bord"
+        profile: "Mon compte"
+        home: "Accueil"
+        sign_out: "Déconnexion"
+      mobile-dropdown-bootstrap:
+        invest: "Investir"
+        sell: "Vendre votre bien"
+        opportunities_html: "Opportunit&eacutes"
+        translate: "English version"
+        dashboard: "Mon tableau de bord"
+        profile: "Mon compte"
+        home: "Accueil"
+        sign_out: "Déconnexion"
+        sign_in: "S'identifier"
+        sign_up: "Inscription"

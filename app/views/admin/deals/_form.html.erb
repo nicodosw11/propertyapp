@@ -3,28 +3,28 @@
   <div class="row">
 
     <div class="col-md-4">
-      <div class="form-group">
+      <div class="form-group niagara">
         <label>Address</label>
         <%= f.text_field :street, placeholder: "Street name", class: "form-control"%>
       </div>
     </div>
 
     <div class="col-md-4">
-      <div class="form-group">
+      <div class="form-group niagara">
         <label>Postcode</label>
         <%= f.text_field :postcode, placeholder: "78000", class: "form-control"%>
       </div>
     </div>
 
     <div class="col-md-4">
-      <div class="form-group">
+      <div class="form-group niagara">
         <label>City</label>
         <%= f.text_field :city, placeholder: "Versailles", class: "form-control"%>
       </div>
     </div>
 
     <div class="col-md-4 select">
-      <div class="form-group">
+      <div class="form-group niagara">
         <label>Property Type</label>
         <%= f.select :property_type, [["Apartment", "Apartment"], ["Maison", "Maison"], ["Autre", "Autre"]],
                       id: "property_type", prompt: "Select...", class: "form-control" %>
@@ -32,7 +32,7 @@
     </div>
 
     <div class="col-md-4 select">
-      <div class="form-group">
+      <div class="form-group niagara">
         <label>Occupancy</label>
         <%= f.select :occupancy, [["Viager occupé", "Viager occupé"], ["Viager non occupé", "Viager non occupé"], ["Viager semi-occupé", "Viager semi-occupé"]],
                       id: "occupancy", prompt: "Select...", class: "form-control" %>
@@ -40,7 +40,7 @@
     </div>
 
     <div class="col-md-4 select">
-      <div class="form-group">
+      <div class="form-group niagara">
         <label>How many rooms?</label>
         <%= f.select :nb_rooms, [["3", 3], ["4", 4], ["5", 5], ["6+", 6]],
                       id: "nb_rooms", prompt: "Select...", class: "form-control" %>
@@ -48,7 +48,7 @@
     </div>
 
     <div class="col-md-4 select">
-      <div class="form-group">
+      <div class="form-group niagara">
         <label>Bedrooms</label>
         <%= f.select :nb_bedrooms, [["1", 1], ["2", 2], ["3", 3], ["4+", 4]],
                       id: "nb_bedrooms", prompt: "Select...", class: "form-control" %>
@@ -56,7 +56,7 @@
     </div>
 
     <div class="col-md-4 select">
-      <div class="form-group">
+      <div class="form-group niagara">
         <label>Bathrooms</label>
         <%= f.select :nb_bathrooms, [["1", 1], ["2", 2], ["3", 3], ["4+", 4]],
                       id: "nb_bathrooms", prompt: "Select...", class: "form-control" %>

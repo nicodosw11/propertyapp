@@ -50,3 +50,52 @@ fr:
             signing_in_html: "<i class='fa fa-spinner fa-spin'></i> Vérification..."
             forgot_your_password: "Mot de passe oublié ?"
             resend_confirmation_instructions: "Renvoyer le mail de confirmation ?"
+      livsty:
+        passwords:
+          new:
+            no-password: "Plus de Mot de Passe?"
+            password-recover: "Pas de soucis on va arranger ça"
+            password-recover-title: "VOUS AVEZ OUBLIÉ VOTRE MOT DE PASSE ?"
+            password-recover-plain-instructions: "Saisissez votre adresse e-mail et nous vous enverrons immédiatement un e-mail avec les instructions pour réinitialiser votre mot de passe"
+            linked-email: "Adresse email associée à votre compte"
+            reset: "Réinitialiser"
+            sending_instructions_html: "<i class='fa fa-spinner fa-spin'></i> En cours d'envoi..."
+            instructions-given: "Veuillez réinitialiser votre mot de passe dans les 2 heures suivant la réception de l'email"
+          edit:
+            choose-your-password: "Choisissez votre nouveau Mot de Passe"
+            connexion: "Connexion"
+            existing-user: "Utilisateur Existant"
+            forgot_your_password: "Mot de passe oublié ?"
+            new_password: "Nouveau mot de passe"
+            confirm_new_password: "Confirmation"
+            password_complexity_html: "Au moins <strong id='password_length'>8 caractères</strong>, inclure au moins <strong id='password_capletter'>une lettre majuscule</strong>, <strong id='password_smallcapletter'>une lettre minuscule</strong> et <strong id='password_digit'>un chiffre</strong>."
+            validate_new_password: "Valider Nouveau Mot de Passe"
+            changing_password_html: "<i class='fa fa-spinner fa-spin'></i> Enregistrement du nouveau mot de passe..."
+        registrations:
+          new:
+            signup-title: "Donner du Sens à son épargne - Faire croître son épargne"
+            let-me-signup: Je m'inscris !
+            new-user: "Nouvel Utilisateur"
+            country_of_residence: "Pays de résidence"
+            password_complexity_html: "Au moins <strong id='password_length'>8 caractères</strong>, inclure au moins <strong id='password_capletter'>une lettre majuscule</strong>, <strong id='password_smallcapletter'>une lettre minuscule</strong> et <strong id='password_digit'>un chiffre</strong>."
+            read-and-agree: "J'ai lu et j'accepte les"
+            tos: "conditions générales d'utilisation."
+            aware-and-accept: "J'ai conscience et j’accepte que je peux perdre la totalité des sommes investies et que la revente de mes investissements peut être difficile"
+            risks: "Détail des risques."
+            sign_up: "Créer Mon Compte >>>"
+            signing_up_html: "<i class='fa fa-spinner fa-spin'></i> Signing up..."
+          edit:
+            my-infos: "Mes Informations"
+            save-changes: "Sauvegarder les changements"
+            saving_html: "<i class='fa fa-spinner fa-spin'></i> Enregistrement des modifications..."
+        sessions:
+          new:
+            connexion-title: "Mes investissements Immobiliers en quelques clics !"
+            my-livsty-account: "J'accède à mon compte Livsty"
+            welcome-back: "Bon retour parmi nous! C'est un plaisir de vous revoir."
+            existing-user: "Utilisateur Existant"
+            new-user: "Nouvel Utilisateur"
+            connexion-button: "Se Connecter"
+            signing_in_html: "<i class='fa fa-spinner fa-spin'></i> Vérification..."
+            forgot_your_password: "Mot de passe oublié ?"
+            sign_up: "Inscrivez-vous!"

@@ -15,6 +15,7 @@
   a:hover, a:focus {
     cursor: pointer;
     text-decoration: none;
+    background: transparent !important;
   }
 
   /* Navbar Livsty logo */
@@ -47,25 +48,25 @@
       background-color: #D3D3D3;
     }
 
-    .dropdown-menu{
-    background-color: #D3D3D3;
-    color: #777777;
-    text-align: center;
-    font-size:12px;
-    }
-    .dropdown-menu li a{
-    font-size:12px;
-    color:#F5F5F5;
-    padding : 0px;
-    margin: 0px;
-       &:hover {
-       color: #777777;
-      }
-    }
+    // .dropdown-menu{
+    // background-color: #D3D3D3;
+    // color: #777777;
+    // text-align: center;
+    // font-size:12px;
+    // }
+    // .dropdown-menu li a{
+    // font-size:12px;
+    // color:#F5F5F5;
+    // padding : 0px;
+    // margin: 0px;
+    //    &:hover {
+    //    color: #777777;
+    //   }
+    // }
 
-    .active {
-    border-bottom: 2px solid #33CCCC;
-    }
+    // .active {
+    // border-bottom: 2px solid #33CCCC;
+    // }
    }
 
   /* Navbar Livsty link */
@@ -99,7 +100,7 @@
     // color: white;
     color:#F5F5F5;
     // background: #D23333;
-    background-color: #C1EFEF;
+    background-color: #C1EFEF !important;
     // border-color: #ac2626;
     }
 
