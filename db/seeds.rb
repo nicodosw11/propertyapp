@@ -1,7 +1,7 @@
 User.create!(first_name:  "Admin",
              last_name:  "User",
              email: "admin@propertyapp.org",
-             password:              "foobar",
-             password_confirmation: "foobar",
+             password:              "Foobar123",
+             password_confirmation: "Foobar123",
              admin:     true,
              confirmed_at: Time.zone.now)
