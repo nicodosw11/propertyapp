@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180102171442) do
+ActiveRecord::Schema.define(version: 20180117153239) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,10 +46,14 @@ ActiveRecord::Schema.define(version: 20180102171442) do
     t.integer  "funding_goal"
     t.datetime "start_date"
     t.datetime "end_date"
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+    t.datetime "created_at",                                                             null: false
+    t.datetime "updated_at",                                                             null: false
     t.float    "latitude"
     t.float    "longitude"
+    t.integer  "current_funding",                                        default: 0
+    t.integer  "duration"
+    t.integer  "property_value"
+    t.decimal  "interest_rate",                  precision: 5, scale: 2, default: "1.5"
   end
 
   create_table "investments", force: :cascade do |t|

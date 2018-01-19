@@ -10,6 +10,18 @@
     <% end %>
   </li>
   <li class="sidebar-item">
+    <%= link_to "Timeline", period_admin_deal_path, class: "sidebar-link active" %>
+    <% if !@deal.start_date.blank? && !@deal.end_date.blank?%>
+      <span class="pull-right text-check-green"><i class="fa fa-check"></i></span>
+    <% end %>
+  </li>
+  <li class="sidebar-item">
+    <%= link_to "Tenancy", tenancy_admin_deal_path, class: "sidebar-link active" %>
+    <% if !@deal.tenants.blank?%>
+    <span class="pull-right text-check-green"><i class="fa fa-check"></i></span>
+    <% end %>
+  </li>
+  <li class="sidebar-item">
     <%= link_to "Description", description_admin_deal_path, class: "sidebar-link active" %>
     <% if !@deal.amenities_description.blank? && !@deal.location_transport_description.blank?%>
       <span class="pull-right text-check-green"><i class="fa fa-check"></i></span>
@@ -29,7 +41,7 @@
   </li>
 </ul>
 
-<% is_ready = !@deal.active && !@deal.funding_goal.blank? && !@deal.amenities_description.blank? && !@deal.location_transport_description.blank? && !@deal.photos.blank? && !@deal.street.blank? %>
+<% is_ready = !@deal.active && !@deal.funding_goal.blank? && !@deal.property_value.blank? && !@deal.duration.blank? && !@deal.interest_rate.blank? && !@deal.amenities_description.blank? && !@deal.location_transport_description.blank? && !@deal.photos.blank? && !@deal.street.blank? && !@deal.start_date.blank? && !@deal.end_date.blank? && !@deal.tenants.blank? %>
 
 <%= form_for @deal do |f| %>
   <%= f.hidden_field :active, value: true %>

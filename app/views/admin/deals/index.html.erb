@@ -20,7 +20,7 @@
             <div class="row">
               <div class="col-md-2">
                 <!-- <-%= image_tag deal.photos[0].image.url(:thumb) if deal.photos.length > 0 %-> -->
-                <%= image_tag deal.cover_photo(:thumb, cloudinary: {:width => 100, :height => 100, :crop => 'fill'}) %>
+                <%= image_tag deal.cover_photo(:thumb, cloudinary: {:width => 100, :height => 68, :crop => 'fill'}) %>
               </div>
               <div class="col-md-7">
                 <h4><%="#{deal.street} #{deal.postcode} #{deal.city}" %></h4>

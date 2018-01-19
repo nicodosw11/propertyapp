@@ -1,0 +1,14 @@
+fr:
+  shared:
+    card-properties:
+      investors:
+        # zero: "0 Investisseur"
+        # one: "1 Investisseur"
+        # other: "%{count} Investisseurs"
+        zero: "Investisseur"
+        one: "Investisseur"
+        other: "Investisseurs"
+      remaining_days:
+        zero: "0 jour restant"
+        one: "1 jour restant"
+        other: "%{count} jours restants"

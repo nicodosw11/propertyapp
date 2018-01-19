@@ -3,7 +3,7 @@ $('#photos').html("<%= j render 'photos_list' %>")
   $('#photo_check').hide();
 <% end %>
 
-<% if !@deal.active && !@deal.funding_goal.blank? && !@deal.amenities_description.blank? && !@deal.location_transport_description.blank? && !@deal.photos.blank? && !@deal.street.blank? %>
+<% if !@deal.active && !@deal.funding_goal.blank? && !@deal.property_value.blank? && !@deal.duration.blank? && !@deal.interest_rate.blank? && !@deal.amenities_description.blank? && !@deal.location_transport_description.blank? && !@deal.photos.blank? && !@deal.street.blank? && !@deal.start_date.blank? && !@deal.end_date.blank? && !@deal.tenants.blank? %>
     $('#publish_button').attr('disabled', false);
 <% else %>
     $('#publish_button').attr('disabled', true);

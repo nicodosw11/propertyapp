@@ -1,0 +1,100 @@
+<div class="container" style="width: 80%;">
+  <div class="row">
+    <div class="col-md-3">
+      <%= render 'deal_menu' %>
+    </div>
+    <div class="col-md-9">
+      <div class="panel panel-default">
+
+        <div class="panel-heading">
+          Timeline
+          <span class="pull-right"><%= @deal.full_address if @deal.full_address %></span>
+        </div>
+
+        <div class="panel-body">
+          <div class="container" style="width: 80%;">
+
+            <%= form_for(@deal) do |f| %>
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Fundraising start </label>
+                  <%= f.text_field :start_date, readonly: true, placeholder: "Start Date", class: "form-control datepicker", :value => (f.object.start_date.strftime('%d-%m-%Y') if f.object.start_date) %>
+                </div>
+                <div class="col-md-6">
+                  <label>Fundraising cutoff</label>
+                  <%= f.text_field :end_date, readonly: true, placeholder: "End Date", class: "form-control datepicker", disabled: true, :value => (f.object.end_date.strftime('%d-%m-%Y') if f.object.end_date) %>
+                </div>
+              </div>
+
+              <h4 class="message-alert text-center"><span id="message"></span></h4>
+              <div id="preview" style="display: none">
+                <table class="fundraising-table">
+                  <tbody>
+                    <tr>
+                      <td class="total">Total (days)</td>
+                      <td class="text-right"><span id="scheduled_days"></span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <br/>
+
+              <%= f.submit "Save", id: "btn_schedule", class: "btn btn-normal btn-block", disabled: true %>
+            <% end %>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+
+
+  $(function() {
+
+    $('#deal_start_date').datepicker({
+      dateFormat: 'dd-mm-yy',
+      minDate: 0,
+      maxDate: '36m',
+      onSelect: function(selected) {
+        $('#deal_end_date').datepicker("option", "minDate", selected);
+        $('#deal_end_date').attr("disabled", false);
+
+        var start_date = $('#deal_start_date').datepicker('getDate');
+        var end_date = $('#deal_end_date').datepicker('getDate');
+        var period = Math.floor((end_date - start_date)/1000/60/60/24 + 1);
+
+        $('#message').text("The fundraising period is as follows:");
+        $('#preview').show();
+        $('#btn_schedule').attr('disabled', false);
+        $('#scheduled_days').text(period);
+
+      }
+    });
+
+    $('#deal_end_date').datepicker({
+      dateFormat: 'dd-mm-yy',
+      minDate: 0,
+      maxDate: '36m',
+      onSelect: function(selected) {
+        $('#deal_start_date').datepicker("option", "maxDate", selected);
+
+        var start_date = $('#deal_start_date').datepicker('getDate');
+        var end_date = $('#deal_end_date').datepicker('getDate');
+        var period = Math.floor((end_date - start_date)/1000/60/60/24 + 1);
+
+        $('#message').text("The fundraising period is as follows:");
+        $('#preview').show();
+        $('#btn_schedule').attr('disabled', false);
+        $('#scheduled_days').text(period);
+
+      }
+    });
+  });
+
+</script>

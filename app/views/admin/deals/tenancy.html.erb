@@ -1,0 +1,54 @@
+<div class="container" style="width: 80%;">
+  <div class="row">
+    <div class="col-md-3">
+      <%= render 'deal_menu' %>
+    </div>
+    <div class="col-md-9">
+      <div class="panel panel-default">
+
+        <div class="panel-heading">
+          Tenants
+          <span class="pull-right"><%= @deal.full_address if @deal.full_address %></span>
+        </div>
+
+        <div class="panel-body">
+          <div class="container" style="width: 80%;">
+
+            <%= simple_form_for(@deal) do |f| %>
+            <%= f.error_notification %>
+            <div class="form-inputs">
+              <%= f.input :occupancy %>
+            </div>
+
+            <table class='table'>
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>Age</th>
+                  <th>Gender</th>
+                </tr>
+              </thead>
+              <tbody class='fields'>
+                <%= f.simple_fields_for :tenants do |builder| %>
+                <%= render 'tenant', f: builder %>
+                <% end %>
+              </tbody>
+            </table>
+
+            <div class="form-actions">
+              <%= f.button :submit, "Save", class: "btn btn-form" %>
+              <%= link_to_add_row('Add Tenant', f, :tenants, class: 'btn btn-form') %>
+            </div>
+            <% end %>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+

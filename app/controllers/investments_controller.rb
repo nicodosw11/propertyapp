@@ -69,7 +69,9 @@ class InvestmentsController < ApplicationController
 
   def index
     @deal = Deal.find(params[:deal_id])
-    @investments = @deal.investments
+    # @investments = @deal.investments
+    @investments = policy_scope(@deal.investments)
+    authorize @investments, :index?
   end
 
   private

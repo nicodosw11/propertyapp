@@ -8,6 +8,7 @@
 
         <div class="panel-heading">
           Pricing
+          <span class="pull-right"><%= @deal.full_address if @deal.full_address %></span>
         </div>
 
         <div class="panel-body">
@@ -17,8 +18,29 @@
 
               <div class="row">
                 <div class="form-group niagara">
-                  <label>Pricing</label>
-                  <%= f.number_field :funding_goal, placeholder: "What is the funding goal?", class: "form-control", min: 10000, :step => 1000 %>
+                  <label>Funding goal</label>
+                  <%= f.text_field :funding_goal, placeholder: "eg: 100 000€", class: "form-control" %>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="form-group niagara">
+                  <label>Property Value (estimated) </label>
+                  <%= f.text_field :property_value, placeholder: "eg: 200 000€", class: "form-control" %>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="form-group niagara">
+                  <label>Duration</label>
+                  <%= f.text_field :duration, placeholder: "eg: 14", class: "form-control" %>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="form-group niagara">
+                  <label>Interest rate (assumption in %)</label>
+                  <%= f.text_field :interest_rate, placeholder: "eg: 1.5%", class: "form-control", :value => number_to_percentage(f.object.interest_rate, precision: 2) %>
                 </div>
               </div>
 
@@ -35,3 +57,5 @@
     </div>
   </div>
 </div>
+
+

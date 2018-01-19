@@ -1,5 +1,9 @@
+---
 fr:
   hello: "Hello world"
+  Male: "Homme"
+  Female: "Femme"
+  yo: "ans"
   activerecord:
     errors:
       messages:
@@ -158,7 +162,8 @@ fr:
       format:
         delimiter: " "
         format: "%n %u"
-        precision: 2
+        # precision: 2
+        precision: 0
         separator: ","
         significant: false
         strip_insignificant_zeros: false

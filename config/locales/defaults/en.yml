@@ -1,6 +1,9 @@
 ---
 en:
   hello: "Hello world"
+  Male: "Male"
+  Female: "Female"
+  yo: "yo"
   activerecord:
     errors:
       messages:

@@ -30,6 +30,7 @@ gem 'toastr-rails'
 gem 'paperclip'
 gem 'geocoder'
 gem 'paperclip-cloudinary'
+gem 'jquery-ui-rails', '~> 5.0'
 
 group :development, :test do
   gem 'binding_of_caller'

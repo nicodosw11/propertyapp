@@ -5,6 +5,7 @@ class Admin::DealsController < Admin::ApplicationController
   end
   def new
   @deal = Deal.new
+  @deal.tenants.build
   end
   def create
     @deal = Deal.new(deal_params)
@@ -40,9 +41,42 @@ class Admin::DealsController < Admin::ApplicationController
   def pricing
   end
 
+  def period
+    # unless params[:start_date].blank? && params[:end_date].blank?
+    #  start_date = Date.parse(params[:start_date])
+    #  end_date = Date.parse(params[:end_date])
+    #  @days = (end_date - start_date).to_i + 1
+    # end
+ end
+
+  def tenancy
+  end
+
   private
   def deal_params
-    params.require(:deal).permit(:street, :city, :district, :postcode, :property_type, :occupancy, :amenities_description, :location_transport_description, :surface, :nb_rooms, :nb_bedrooms, :nb_bathrooms, :active, :funding_goal, :start_date, :end_date)
+    params.require(:deal).permit(
+      :street,
+      :city,
+      :district,
+      :postcode,
+      :property_type,
+      :occupancy,
+      :amenities_description,
+      :location_transport_description,
+      :surface,
+      :nb_rooms,
+      :nb_bedrooms,
+      :nb_bathrooms,
+      :active,
+      :funding_goal,
+      :start_date,
+      :end_date,
+      :current_funding,
+      :property_value,
+      :duration,
+      :interest_rate,
+      tenants_attributes: Tenant.attribute_names.map(&:to_sym).push(:_destroy)
+    )
   end
 
   def set_deal

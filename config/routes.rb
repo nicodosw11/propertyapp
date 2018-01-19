@@ -9,6 +9,8 @@
         get 'location'
         get 'photo_upload'
         get 'pricing'
+        get 'period'
+        get 'tenancy'
       end
       resources :photos, only: [:create, :destroy]
     end

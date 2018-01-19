@@ -79,7 +79,7 @@
               <dt class="deal-expected-return">Rendement Annualisé</dt>
             </div>
             <div class="col-xs-6" id="deal-expected-maturity">
-              <dd class="deal-expected-maturity-number">14 Ans</dd>
+              <dd class="deal-expected-maturity-number"><%="#{deal.duration} #{t('yo')}" %></dd>
               <dt class="deal-expected-maturity">Durée Estimée</dt>
             </div>
           </div>
@@ -99,15 +99,21 @@
           <h3>Paramètres du Projet</h3>
           <table class="text-center opportunity-table-parameters" style="width:100%">
             <tr>
-              <td style="width:50%"><u>Occupant:</u> Homme, 71 ans</td>
-              <td style="width:50%"><u>Horizon d'investissement:</u> 15 ans</td>
+              <td style="width:50%"><u>Occupant(s):</u>
+                <% if deal.tenants.length > 0 %>
+                  <% deal.tenants.each do |tenant| %>
+                  <span>&bull;<%="#{t tenant.gender}, #{tenant.age} #{t('yo')}" %></span>
+                  <% end %>
+                <% end %>
+              </td>
+              <td style="width:50%"><u>Horizon d'investissement:</u> <%="#{deal.duration} #{t('yo')}" %></td>
             </tr>
             <tr>
-              <td><u>Valeur Estimée du Bien:</u> 255 000€</td>
-              <td><u>Investissement total:</u> 140 000€</td>
+              <td><u>Valeur Estimée du Bien:</u> <%= number_to_currency(deal.property_value)%></td>
+              <td><u>Investissement total:</u> <%= number_to_currency(deal.funding_goal)%></td>
             </tr>
             <tr>
-              <td><u>Nombre de Parts Disponibles:</u> 140</td>
+              <td><u>Nombre de Parts Disponibles:</u> <%= deal.max_shares %></td>
               <td><u>Prix Unitaire de Souscription par Part:</u> 1 000€</td>
             </tr>
           </table>
@@ -135,27 +141,27 @@
           <table class="table">
             <tr>
               <td style="border:0px">
-                <u>Prix de Revente du bien:</u> 314 000€
+                <u>Prix de Revente du bien:</u> <%= number_to_currency deal.resale_value %>
               </td>
               <td style="border:0px">
-                <u>Plus-Value Brute:</u> 174 000€
+                <u>Plus-Value Brute:</u> <%= number_to_currency deal.gross_margin %>
               </td>
 
               <td style="border:0px">
-                <u>Rendement annualisé brut:</u> 5.94%
+                <u>Rendement annualisé brut:</u> <%= number_to_percentage(deal.expected_yearly_return, precision: 2) %>
               </td>
             </tr>
             <tr>
               <td style="border:0px">
-                <u>Prix de Remboursement par Part:</u> 2 242€
+                <u>Prix de Remboursement par Part:</u> <%= number_to_currency deal.resale_value_per_unit %>
               </td>
 
               <td style="border:0px">
-                <u>Plus-Value Brute par Part:</u> 1 242€
+                <u>Plus-Value Brute par Part:</u> <%= number_to_currency deal.gross_margin_per_unit %>
               </td>
 
               <td style="border:0px">
-                <u>Rendement Brut:</u> 128%
+                <u>Rendement Brut:</u> <%= number_to_percentage(deal.percentage_margin, precision: 0) %>
               </td>
             </tr>
           </table>

@@ -10,13 +10,14 @@
       <% end %>
     </title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <%= favicon_link_tag 'Livsty' %>
+    <%= favicon_link_tag asset_path('Livsty.png') %>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/overcast/jquery-ui.css">
   </head>
   <%= content_tag :body, class: "#{controller.controller_name} #{controller.action_name}", data: { action: action_name, controller: controller_name } do %>
   <!-- <body class="<%= controller.controller_name %> <%= controller.action_name %>"> -->

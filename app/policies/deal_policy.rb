@@ -15,7 +15,8 @@ class DealPolicy < ApplicationPolicy
 
       # all but not-signed in
       return scope.none if user.nil?
-      return scope.all
+      # return scope.all
+      return scope.where(active: true)
 
     end
 

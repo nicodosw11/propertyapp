@@ -1,0 +1,11 @@
+<tr>
+  <td>
+    <%= f.input_field :_destroy, as: :hidden %>
+    <%= link_to 'Delete', '#', class: 'remove_record' %>
+  </td>
+  <td><%= f.input :first_name, label: false %></td>
+  <td><%= f.input :last_name, label: false %></td>
+  <td><%= f.input :age, label: false, collection: 50..100, prompt: "Age" %></td>
+  <td><%= f.input :gender, label: false, as: :radio_buttons,
+    collection: ['Male', 'Female'] %></td>
+</tr>
