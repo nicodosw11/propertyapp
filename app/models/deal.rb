@@ -64,7 +64,7 @@ class Deal < ApplicationRecord
 
   def money_raised
     # self.investments.sum(:price)
-    investments.sum(:price)
+    investments.blank? ? 0 : investments.sum(:price)
   end
 
   def number_of_supporters
@@ -82,31 +82,31 @@ class Deal < ApplicationRecord
   end
 
   def duration_in_months
-    duration / 12
+    duration / 12 if duration.present?
   end
 
   def resale_value
-    property_value * ((1 + (interest_rate / 100)) ** duration)
+    property_value * ((1 + (interest_rate / 100)) ** duration) if property_value.present? && duration.present?
   end
 
   def resale_value_per_unit
-    resale_value / max_shares
+    resale_value / max_shares if !resale_value.blank? && !max_shares.blank?
   end
 
   def expected_yearly_return
-    100 * ((resale_value / funding_goal) ** (1 / duration.to_f) - 1)
+    100 * ((resale_value / funding_goal) ** (1 / duration.to_f) - 1) if !resale_value.blank? && !funding_goal.blank? && !duration.blank?
   end
 
   def gross_margin
-    resale_value - funding_goal
+    resale_value - funding_goal if !resale_value.blank? && !funding_goal.blank?
   end
 
   def gross_margin_per_unit
-    gross_margin / max_shares
+    gross_margin / max_shares if !gross_margin.blank? && !max_shares.blank?
   end
 
   def percentage_margin
-    100 * (resale_value / funding_goal - 1)
+    100 * (resale_value / funding_goal - 1) if !resale_value.blank? && !funding_goal.blank?
   end
 
   def days_left
@@ -116,14 +116,14 @@ class Deal < ApplicationRecord
   #percentage funded
   def pct_funded
     # self.pct_funded = (100 * self.money_raised.to_f / self.funding_goal).round(1)
-    (100 * self.money_raised.to_f / self.funding_goal).round(1)
+    (100 * self.money_raised.to_f / self.funding_goal).round(1) if !money_raised.blank? && !funding_goal.blank?
   end
   def set_pct_funded!
     self.pct_funded = (100 * self.money_raised.to_f / self.funding_goal).round(1)
   end
 
   def max_shares
-    funding_goal / 1000
+    funding_goal / 1000 if funding_goal.present?
   end
 
   # #virtual attributes
