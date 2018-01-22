@@ -1,0 +1,100 @@
+<h4><u>Simulation</u></h4>
+
+<div class="col-md-12">
+  <form class="form">
+    <div class="form-group col-md-4">
+      <label for="slider1">Montant à Investir</label>
+      <div class="slidercontrol">
+        <input id="slider1" for="amount" oninput="amount.value=rangeInput.value,amountShares.value=rangeInput.value/1000" type="range" min="1000" max="140000" step="1000" name="rangeInput" value="5000"/>
+      </div>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="box">Montant Investi</label>
+      <div class="input-group">
+        <div class="input-group-addon">€</div>
+        <input class="form-control" readonly  oninput="rangeInput.value=amount.value" id="box" type="text" value="5000" name="amount" for="rangeInput" />
+      </div>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="box2">Nombre de Parts Souscrites</label>
+      <input class="form-control" readonly oninput="rangeInput.value=amountShares.value*1000,amount.value=amountShares.value*1000" id="box2" type="text" value="5" name="amountShares" for="rangeInput" />
+    </div>
+  </form>
+</div>
+
+<table class="table text-center opportunity-sensitivityanalysis">
+  <caption class="text-center">
+    <strong>Montant Brut Remboursé <br><em>Performance brute*</em></strong>
+    <br>Durée d'Investissement / Performance Annuelle du Marché Immobilier
+  </caption>
+  <thead>
+    <tr >
+      <td></td>
+      <td class="text-center">-0.75%</td>
+      <td class="text-center">0.00%</td>
+      <td class="text-center">0.75%</td>
+      <td class="text-center">1.50%</td>
+      <td class="text-center">2.25%</td>
+      <td class="text-center">3.00%</td>
+    </tr>
+  </thead>
+  <tfoot>
+    <tr><td colspan="7" style="text-align:right"><small><em>*Données brutes hors fiscalités</small></em></td></tr>
+  </tfoot>
+  <tbody>
+    <tr>
+      <th>12</th>
+      <td><span id="TableSimulation11"></span>&euro;<br><em>+66%</em></td>
+      <td><span id="TableSimulation12"></span>&euro;<br><em>+82%</em></td>
+      <td><span id="TableSimulation13"></span>&euro;<br><em>+99%</em></td>
+      <td><span id="TableSimulation14"></span>&euro;<br><em>+118%</em></td>
+      <td><span id="TableSimulation15"></span>&euro;<br><em>+138%</em></td>
+      <td><span id="TableSimulation16"></span>&euro;<br><em>+160%</em></td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td><span id="TableSimulation21"></span></span>&euro;<br><em>+65%</em></td>
+      <td><span id="TableSimulation22"></span></span>&euro;<br><em>+82%</em></td>
+      <td><span id="TableSimulation23"></span></span>&euro;<br><em>+101%</em></td>
+      <td><span id="TableSimulation24"></span></span>&euro;<br><em>+121%</em></td>
+      <td><span id="TableSimulation25"></span></span>&euro;<br><em>+143%</em></td>
+      <td><span id="TableSimulation26"></span></span>&euro;<br><em>+166%</em></td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td><span id="TableSimulation31"></span></span>&euro;<br><em>+64%</em></td>
+      <td><span id="TableSimulation32"></span></span>&euro;<br><em>+82%</em></td>
+      <td><span id="TableSimulation33"></span></span>&euro;<br><em>+102%</em></td>
+      <td class="success"><span id="TableSimulation34"></span>&euro;<br><em>+124%</em></span></td>
+      <td><span id="TableSimulation35"></span></span>&euro;<br><em>+149%</em></td>
+      <td><span id="TableSimulation36"></span></span>&euro;<br><em>+176%</em></td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td><span id="TableSimulation41"></span></span>&euro;<br><em>+62%</em></td>
+      <td><span id="TableSimulation42"></span></span>&euro;<br><em>+81%</em></td>
+      <td><span id="TableSimulation43"></span></span>&euro;<br><em>+103%</em></td>
+      <td><span id="TableSimulation44"></span></span>&euro;<br><em>+127%</em></td>
+      <td><span id="TableSimulation45"></span></span>&euro;<br><em>+154%</em></td>
+      <td><span id="TableSimulation46"></span></span>&euro;<br><em>+183%</em></td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td><span id="TableSimulation51"></span></span>&euro;<br><em>+60%</em></td>
+      <td><span id="TableSimulation52"></span></span>&euro;<br><em>+81%</em></td>
+      <td><span id="TableSimulation53"></span></span>&euro;<br><em>+104%</em></td>
+      <td><span id="TableSimulation54"></span></span>&euro;<br><em>+130%</em></td>
+      <td><span id="TableSimulation55"></span></span>&euro;<br><em>+159%</em></td>
+      <td><span id="TableSimulation56"></span></span>&euro;<br><em>+191%</em></td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td><span id="TableSimulation61"></span></span>&euro;<br><em>+58%</em></td>
+      <td><span id="TableSimulation62"></span></span>&euro;<br><em>+80%</em></td>
+      <td><span id="TableSimulation63"></span></span>&euro;<br><em>+105%</em></td>
+      <td><span id="TableSimulation64"></span></span>&euro;<br><em>+133%</em></td>
+      <td><span id="TableSimulation65"></span></span>&euro;<br><em>+164%</em></td>
+      <td><span id="TableSimulation66"></span></span>&euro;<br><em>+199%</em> </td>
+    </tr>
+  </tbody>
+</table>

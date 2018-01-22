@@ -15,7 +15,7 @@ class Deal < ApplicationRecord
   validates :nb_rooms, presence: true
   validates :nb_bedrooms, presence: true
   validates :nb_bathrooms, presence: true
-
+  validates :surface, presence: true
 
   # has_many :properties, dependent: :destroy
   ###########################################
@@ -82,7 +82,7 @@ class Deal < ApplicationRecord
   end
 
   def duration_in_months
-    duration / 12 if duration.present?
+    duration * 12 if duration.present?
   end
 
   def resale_value
@@ -148,6 +148,23 @@ class Deal < ApplicationRecord
   # def pct_funded
   #   #return true/false
   # end
+
+  def increased_valuation(i,d)
+    (property_value * ((1 + (i / 100)) ** d)) / 1000
+  end
+
+  def increased_valuation_margin(i,d)
+    increased_valuation(i,d) - (funding_goal / 1000)
+  end
+
+  def valuation_yield(i,d)
+    # 100 * (((deal.property_value * ((1 + (-0.75 / 100)) ** 12)) / deal.funding_goal) ** (1 / 12.to_f) - 1)
+    100 * (((increased_valuation(i,d) * 1000) / funding_goal) ** (1 / d.to_f) - 1)
+  end
+
+  def growth_rate(i,d)
+    100 * ((property_value * ((1 + (i / 100)) ** d)) / funding_goal - 1)
+  end
 
 end
 

@@ -75,7 +75,7 @@
           <div class="row deal-data-rendement margin-bottom">
             <h3 class="deal-data-rendement-title">Performance estimée</h3>
             <div class="col-xs-6" id="deal-expected-return">
-              <dd class="deal-expected-return-number">5.94%</dd>
+              <dd class="deal-expected-return-number" id="gain" data-gain="<%= number_to_percentage(deal.expected_yearly_return, precision: 2) %>"><%= number_to_percentage(deal.expected_yearly_return, precision: 2) %></dd>
               <dt class="deal-expected-return">Rendement Annualisé</dt>
             </div>
             <div class="col-xs-6" id="deal-expected-maturity">
@@ -109,11 +109,11 @@
               <td style="width:50%"><u>Horizon d'investissement:</u> <%="#{deal.duration} #{t('yo')}" %></td>
             </tr>
             <tr>
-              <td><u>Valeur Estimée du Bien:</u> <%= number_to_currency(deal.property_value)%></td>
-              <td><u>Investissement total:</u> <%= number_to_currency(deal.funding_goal)%></td>
+              <td id="valuation" data-valuation="<%= deal.property_value%>"><u>Valeur Estimée du Bien:</u> <%= number_to_currency(deal.property_value)%></td>
+              <td id="investment" data-investment="<%= deal.funding_goal %>"><u>Investissement total:</u> <%= number_to_currency(deal.funding_goal)%></td>
             </tr>
             <tr>
-              <td><u>Nombre de Parts Disponibles:</u> <%= deal.max_shares %></td>
+              <td id="shares" data-shares="<%= deal.max_shares%>"><u>Nombre de Parts Disponibles:</u> <%= deal.max_shares %></td>
               <td><u>Prix Unitaire de Souscription par Part:</u> 1 000€</td>
             </tr>
           </table>
@@ -137,10 +137,10 @@
           <!-- Scenario metrics 12 col -->
           <h3>Performance du Projet</h3>
           <h4><u>Scénario Standard</u></h4>
-          <p>Libération du bien après une période de 14 ans avec variation annuelle moyenne de l'immobilier de +1.50% par an.</p>
+          <p>Libération du bien après une période de <%="#{deal.duration} #{t('yo')}" %> avec variation annuelle moyenne de l'immobilier de +<%= number_to_percentage(deal.interest_rate, precision: 2) %> par an.</p>
           <table class="table">
             <tr>
-              <td style="border:0px">
+              <td style="border:0px" id="resale" data-resale="<%= deal.resale_value %>">
                 <u>Prix de Revente du bien:</u> <%= number_to_currency deal.resale_value %>
               </td>
               <td style="border:0px">
@@ -167,76 +167,76 @@
           </table>
           <!-- Sensitivity Analysis 12 col -->
           <h4><u>Analyse de Sensibilité</u></h4>
-          <table class="table text-center opportunity-sensitivityanalysis">
+          <table class="table text-center opportunity-sensitivityanalysis" id="sensitivity-analysis">
             <caption class="text-center">
               <strong>Prix de Revente du Bien - Plus-Value Brute - Rendement Annualisé Brut (€)</strong>
-              <br>Durée d'Investissement / Performance Annuelle du Marché Immobilier
+              <br><span class="greened">Durée d'Investissement</span> / <span class="greened" style="font-weight: bold;">Performance Annuelle du Marché Immobilier</span>
             </caption>
             <thead>
               <tr >
                 <td></td>
-                <td class="text-center">-0.75%</td>
-                <td class="text-center">0.00%</td>
-                <td class="text-center">0.75%</td>
-                <td class="text-center">1.50%</td>
-                <td class="text-center">2.25%</td>
-                <td class="text-center">3.00%</td>
+                <td class="text-center greened" style="font-weight: bold;">-0.75%</td>
+                <td class="text-center greened" style="font-weight: bold;">0.00%</td>
+                <td class="text-center greened" style="font-weight: bold;">0.75%</td>
+                <td class="text-center greened" style="font-weight: bold;">1.50%</td>
+                <td class="text-center greened" style="font-weight: bold;">2.25%</td>
+                <td class="text-center greened" style="font-weight: bold;">3.00%</td>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <th>12</th>
-                <td>233k - 93k - 4.34%</td>
-                <td>255k - 115k - 5.12%</td>
-                <td>279k - 139k - 5.91%</td>
-                <td>305k - 165k - 6.70%</td>
-                <td>333k - 193k - 7.49%</td>
-                <td>364k - 224k - 8.28%</td>
+                <th class="greened" style="font-weight: normal;">12</th>
+                <td><%= number_with_precision(deal.increased_valuation(-0.75, 12), precision: 0) %>k - <%= number_with_precision(deal.increased_valuation_margin(-0.75, 12), precision: 0) %>k - <%= number_to_percentage(deal.valuation_yield(-0.75, 12), precision: 2) %></td>
+                <td><%= number_with_precision(deal.increased_valuation(0.00, 12), precision: 0) %>k - <%= number_with_precision(deal.increased_valuation_margin(0.00, 12), precision: 0) %>k - <%= number_to_percentage(deal.valuation_yield(0.00, 12), precision: 2) %></td>
+                <td><%= number_with_precision(deal.increased_valuation(0.75, 12), precision: 0) %>k - <%= number_with_precision(deal.increased_valuation_margin(0.75, 12), precision: 0) %>k - <%= number_to_percentage(deal.valuation_yield(0.75, 12), precision: 2) %></td>
+                <td><%= number_with_precision(deal.increased_valuation(1.5, 12), precision: 0) %>k - <%= number_with_precision(deal.increased_valuation_margin(1.5, 12), precision: 0) %>k - <%= number_to_percentage(deal.valuation_yield(1.5, 12), precision: 2) %></td>
+                <td><%= number_with_precision(deal.increased_valuation(2.25, 12), precision: 0) %>k - <%= number_with_precision(deal.increased_valuation_margin(2.25, 12), precision: 0) %>k - <%= number_to_percentage(deal.valuation_yield(2.25, 12), precision: 2) %></td>
+                <td><%= number_with_precision(deal.increased_valuation(3.00, 12), precision: 0) %>k - <%= number_with_precision(deal.increased_valuation_margin(3.00, 12), precision: 0) %>k - <%= number_to_percentage(deal.valuation_yield(3.00, 12), precision: 2) %></td>
               </tr>
               <tr>
-                <th>13</th>
-                <td>231k - 91k - 3.94%</td>
-                <td>255k - 115k - 4.72%</td>
-                <td>281k - 141k - 5.51%</td>
-                <td>309k - 169k - 6.29%</td>
-                <td>341k - 201k - 7.08%</td>
-                <td>374k - 234k - 7.86%</td>
+                <th class="greened" style="font-weight: normal;">13</th>
+                <td><%= number_with_precision(deal.increased_valuation(-0.75, 13), precision: 0) %>k - <%= number_with_precision(deal.increased_valuation_margin(-0.75, 13), precision: 0) %>k - <%= number_to_percentage(deal.valuation_yield(-0.75, 13), precision: 2) %></td>
+                <td><%= number_with_precision(deal.increased_valuation(0.00, 13), precision: 0) %>k - <%= number_with_precision(deal.increased_valuation_margin(0.00, 13), precision: 0) %>k - <%= number_to_percentage(deal.valuation_yield(0.00, 13), precision: 2) %></td>
+                <td><%= number_with_precision(deal.increased_valuation(0.75, 13), precision: 0) %>k - <%= number_with_precision(deal.increased_valuation_margin(0.75, 13), precision: 0) %>k - <%= number_to_percentage(deal.valuation_yield(0.75, 13), precision: 2) %></td>
+                <td><%= number_with_precision(deal.increased_valuation(1.5, 13), precision: 0) %>k - <%= number_with_precision(deal.increased_valuation_margin(1.5, 13), precision: 0) %>k - <%= number_to_percentage(deal.valuation_yield(1.5, 13), precision: 2) %></td>
+                <td><%= number_with_precision(deal.increased_valuation(2.25, 13), precision: 0) %>k - <%= number_with_precision(deal.increased_valuation_margin(2.25, 13), precision: 0) %>k - <%= number_to_percentage(deal.valuation_yield(2.25, 13), precision: 2) %></td>
+                <td><%= number_with_precision(deal.increased_valuation(3.00, 13), precision: 0) %>k - <%= number_with_precision(deal.increased_valuation_margin(3.00, 13), precision: 0) %>k - <%= number_to_percentage(deal.valuation_yield(3.00, 13), precision: 2) %></td>
               </tr>
               <tr>
-                <th>14</th>
-                <td>229k - 89k - 3.59%</td>
-                <td>255k - 115k - 4.38%</td>
-                <td>283k - 143k - 5.16%</td>
-                <td class="success">314k - 174k - 5.94%</td>
-                <td>348k - 208k - 6.72%</td>
-                <td>386k - 246k - 7.51%</td>
+                <th class="greened" style="font-weight: normal;">14</th>
+                <td><%= number_with_precision(deal.increased_valuation(-0.75, 14), precision: 0) %>k - <%= number_with_precision(deal.increased_valuation_margin(-0.75, 14), precision: 0) %>k - <%= number_to_percentage(deal.valuation_yield(-0.75, 14), precision: 2) %></td>
+                <td><%= number_with_precision(deal.increased_valuation(0.00, 14), precision: 0) %>k - <%= number_with_precision(deal.increased_valuation_margin(0.00, 14), precision: 0) %>k - <%= number_to_percentage(deal.valuation_yield(0.00, 14), precision: 2) %></td>
+                <td><%= number_with_precision(deal.increased_valuation(0.75, 14), precision: 0) %>k - <%= number_with_precision(deal.increased_valuation_margin(0.75, 14), precision: 0) %>k - <%= number_to_percentage(deal.valuation_yield(0.75, 14), precision: 2) %></td>
+                <td><%= number_with_precision(deal.increased_valuation(1.5, 14), precision: 0) %>k - <%= number_with_precision(deal.increased_valuation_margin(1.5, 14), precision: 0) %>k - <%= number_to_percentage(deal.valuation_yield(1.5, 14), precision: 2) %></td>
+                <td><%= number_with_precision(deal.increased_valuation(2.25, 14), precision: 0) %>k - <%= number_with_precision(deal.increased_valuation_margin(2.25, 14), precision: 0) %>k - <%= number_to_percentage(deal.valuation_yield(2.25, 14), precision: 2) %></td>
+                <td><%= number_with_precision(deal.increased_valuation(3.00, 14), precision: 0) %>k - <%= number_with_precision(deal.increased_valuation_margin(3.00, 14), precision: 0) %>k - <%= number_to_percentage(deal.valuation_yield(3.00, 14), precision: 2) %></td>
               </tr>
               <tr>
-                <th>15</th>
-                <td>228k - 88k - 3.30%</td>
-                <td>255k - 115k - 4.08%</td>
-                <td>285k - 145k - 4.86%</td>
-                <td>319k - 179k - 5.64%</td>
-                <td>356k - 216k - 6.42%</td>
-                <td>397k - 257k - 7.20%</td>
+                <th class="greened" style="font-weight: normal;">15</th>
+                <td><%= number_with_precision(deal.increased_valuation(-0.75, 15), precision: 0) %>k - <%= number_with_precision(deal.increased_valuation_margin(-0.75, 15), precision: 0) %>k - <%= number_to_percentage(deal.valuation_yield(-0.75, 15), precision: 2) %></td>
+                <td><%= number_with_precision(deal.increased_valuation(0.00, 15), precision: 0) %>k - <%= number_with_precision(deal.increased_valuation_margin(0.00, 15), precision: 0) %>k - <%= number_to_percentage(deal.valuation_yield(0.00, 15), precision: 2) %></td>
+                <td><%= number_with_precision(deal.increased_valuation(0.75, 15), precision: 0) %>k - <%= number_with_precision(deal.increased_valuation_margin(0.75, 15), precision: 0) %>k - <%= number_to_percentage(deal.valuation_yield(0.75, 15), precision: 2) %></td>
+                <td><%= number_with_precision(deal.increased_valuation(1.5, 15), precision: 0) %>k - <%= number_with_precision(deal.increased_valuation_margin(1.5, 15), precision: 0) %>k - <%= number_to_percentage(deal.valuation_yield(1.5, 15), precision: 2) %></td>
+                <td><%= number_with_precision(deal.increased_valuation(2.25, 15), precision: 0) %>k - <%= number_with_precision(deal.increased_valuation_margin(2.25, 15), precision: 0) %>k - <%= number_to_percentage(deal.valuation_yield(2.25, 15), precision: 2) %></td>
+                <td><%= number_with_precision(deal.increased_valuation(3.00, 15), precision: 0) %>k - <%= number_with_precision(deal.increased_valuation_margin(3.00, 15), precision: 0) %>k - <%= number_to_percentage(deal.valuation_yield(3.00, 15), precision: 2) %></td>
               </tr>
               <tr>
-                <th>16</th>
-                <td>226k - 85k - 3.01%</td>
-                <td>255k - 114k - 3.79%</td>
-                <td>287k - 146k - 4.58%</td>
-                <td>324k - 183k - 5.36%</td>
-                <td>364k - 223k - 6.14%</td>
-                <td>409k - 268k - 6.92%</td>
+                <th class="greened" style="font-weight: normal;">16</th>
+                <td><%= number_with_precision(deal.increased_valuation(-0.75, 16), precision: 0) %>k - <%= number_with_precision(deal.increased_valuation_margin(-0.75, 16), precision: 0) %>k - <%= number_to_percentage(deal.valuation_yield(-0.75, 16), precision: 2) %></td>
+                <td><%= number_with_precision(deal.increased_valuation(0.00, 16), precision: 0) %>k - <%= number_with_precision(deal.increased_valuation_margin(0.00, 16), precision: 0) %>k - <%= number_to_percentage(deal.valuation_yield(0.00, 16), precision: 2) %></td>
+                <td><%= number_with_precision(deal.increased_valuation(0.75, 16), precision: 0) %>k - <%= number_with_precision(deal.increased_valuation_margin(0.75, 16), precision: 0) %>k - <%= number_to_percentage(deal.valuation_yield(0.75, 16), precision: 2) %></td>
+                <td><%= number_with_precision(deal.increased_valuation(1.5, 16), precision: 0) %>k - <%= number_with_precision(deal.increased_valuation_margin(1.5, 16), precision: 0) %>k - <%= number_to_percentage(deal.valuation_yield(1.5, 16), precision: 2) %></td>
+                <td><%= number_with_precision(deal.increased_valuation(2.25, 16), precision: 0) %>k - <%= number_with_precision(deal.increased_valuation_margin(2.25, 16), precision: 0) %>k - <%= number_to_percentage(deal.valuation_yield(2.25, 16), precision: 2) %></td>
+                <td><%= number_with_precision(deal.increased_valuation(3.00, 16), precision: 0) %>k - <%= number_with_precision(deal.increased_valuation_margin(3.00, 16), precision: 0) %>k - <%= number_to_percentage(deal.valuation_yield(3.00, 16), precision: 2) %></td>
               </tr>
               <tr>
-                <th>17</th>
-                <td>224k - 82k - 2.76%</td>
-                <td>255k - 113k - 3.54%</td>
-                <td>290k - 148k - 4.33%</td>
-                <td>328k - 186k - 5.11%</td>
-                <td>372k - 230k - 5.89%</td>
-                <td>421k - 280k - 6.67%</td>
+                <th class="greened" style="font-weight: normal;">17</th>
+                <td><%= number_with_precision(deal.increased_valuation(-0.75, 17), precision: 0) %>k - <%= number_with_precision(deal.increased_valuation_margin(-0.75, 17), precision: 0) %>k - <%= number_to_percentage(deal.valuation_yield(-0.75, 17), precision: 2) %></td>
+                <td><%= number_with_precision(deal.increased_valuation(0.00, 17), precision: 0) %>k - <%= number_with_precision(deal.increased_valuation_margin(0.00, 17), precision: 0) %>k - <%= number_to_percentage(deal.valuation_yield(0.00, 17), precision: 2) %></td>
+                <td><%= number_with_precision(deal.increased_valuation(0.75, 17), precision: 0) %>k - <%= number_with_precision(deal.increased_valuation_margin(0.75, 17), precision: 0) %>k - <%= number_to_percentage(deal.valuation_yield(0.75, 17), precision: 2) %></td>
+                <td><%= number_with_precision(deal.increased_valuation(1.5, 17), precision: 0) %>k - <%= number_with_precision(deal.increased_valuation_margin(1.5, 17), precision: 0) %>k - <%= number_to_percentage(deal.valuation_yield(1.5, 17), precision: 2) %></td>
+                <td><%= number_with_precision(deal.increased_valuation(2.25, 17), precision: 0) %>k - <%= number_with_precision(deal.increased_valuation_margin(2.25, 17), precision: 0) %>k - <%= number_to_percentage(deal.valuation_yield(2.25, 17), precision: 2) %></td>
+                <td><%= number_with_precision(deal.increased_valuation(3.00, 17), precision: 0) %>k - <%= number_with_precision(deal.increased_valuation_margin(3.00, 17), precision: 0) %>k - <%= number_to_percentage(deal.valuation_yield(3.00, 17), precision: 2) %></td>
               </tr>
             </tbody>
           </table>
@@ -266,20 +266,20 @@
           </form>
           </div>
 
-          <table class="table text-center opportunity-sensitivityanalysis">
+          <table class="table text-center opportunity-sensitivityanalysis" id="slider-analysis">
             <caption class="text-center">
               <strong>Montant Brut Remboursé <br><em>Performance brute*</em></strong>
-              <br>Durée d'Investissement / Performance Annuelle du Marché Immobilier
+              <br><span class="greened">Durée d'Investissement</span> / <span class="greened" style="font-weight: bold;">Performance Annuelle du Marché Immobilier</span>
             </caption>
             <thead>
               <tr >
                 <td></td>
-                <td class="text-center">-0.75%</td>
-                <td class="text-center">0.00%</td>
-                <td class="text-center">0.75%</td>
-                <td class="text-center">1.50%</td>
-                <td class="text-center">2.25%</td>
-                <td class="text-center">3.00%</td>
+                <td class="text-center greened" style="font-weight: bold;">-0.75%</td>
+                <td class="text-center greened" style="font-weight: bold;">0.00%</td>
+                <td class="text-center greened" style="font-weight: bold;">0.75%</td>
+                <td class="text-center greened" style="font-weight: bold;">1.50%</td>
+                <td class="text-center greened" style="font-weight: bold;">2.25%</td>
+                <td class="text-center greened" style="font-weight: bold;">3.00%</td>
               </tr>
             </thead>
             <tfoot>
@@ -287,65 +287,65 @@
             </tfoot>
             <tbody>
               <tr>
-                <th>12</th>
-                <td><span id="TableSimulation11"></span>&euro;<br><em>+66%</em></td>
-                <td><span id="TableSimulation12"></span>&euro;<br><em>+82%</em></td>
-                <td><span id="TableSimulation13"></span>&euro;<br><em>+99%</em></td>
-                <td><span id="TableSimulation14"></span>&euro;<br><em>+118%</em></td>
-                <td><span id="TableSimulation15"></span>&euro;<br><em>+138%</em></td>
-                <td><span id="TableSimulation16"></span>&euro;<br><em>+160%</em></td>
+                <th class="greened" style="font-weight: normal;">12</th>
+                <td><span id="TableSimulation11"></span>&euro;<br><em>+<%= number_to_percentage(deal.growth_rate(-0.75,12), precision: 0) %></em></td>
+                <td><span id="TableSimulation12"></span>&euro;<br><em>+<%= number_to_percentage(deal.growth_rate(0.00,12), precision: 0) %></em></td>
+                <td><span id="TableSimulation13"></span>&euro;<br><em>+<%= number_to_percentage(deal.growth_rate(0.75,12), precision: 0) %></em></td>
+                <td><span id="TableSimulation14"></span>&euro;<br><em>+<%= number_to_percentage(deal.growth_rate(1.5,12), precision: 0) %></em></td>
+                <td><span id="TableSimulation15"></span>&euro;<br><em>+<%= number_to_percentage(deal.growth_rate(2.25,12), precision: 0) %></em></td>
+                <td><span id="TableSimulation16"></span>&euro;<br><em>+<%= number_to_percentage(deal.growth_rate(3.00,12), precision: 0) %></em></td>
               </tr>
               <tr>
-                <th>13</th>
-                <td><span id="TableSimulation21"></span></span>&euro;<br><em>+65%</em></td>
-                <td><span id="TableSimulation22"></span></span>&euro;<br><em>+82%</em></td>
-                <td><span id="TableSimulation23"></span></span>&euro;<br><em>+101%</em></td>
-                <td><span id="TableSimulation24"></span></span>&euro;<br><em>+121%</em></td>
-                <td><span id="TableSimulation25"></span></span>&euro;<br><em>+143%</em></td>
-                <td><span id="TableSimulation26"></span></span>&euro;<br><em>+166%</em></td>
+                <th class="greened" style="font-weight: normal;">13</th>
+                <td><span id="TableSimulation21"></span></span>&euro;<br><em>+<%= number_to_percentage(deal.growth_rate(-0.75,13), precision: 0) %></em></td>
+                <td><span id="TableSimulation22"></span></span>&euro;<br><em>+<%= number_to_percentage(deal.growth_rate(0.00,13), precision: 0) %></em></td>
+                <td><span id="TableSimulation23"></span></span>&euro;<br><em>+<%= number_to_percentage(deal.growth_rate(0.75,13), precision: 0) %></em></td>
+                <td><span id="TableSimulation24"></span></span>&euro;<br><em>+<%= number_to_percentage(deal.growth_rate(1.5,13), precision: 0) %></em></td>
+                <td><span id="TableSimulation25"></span></span>&euro;<br><em>+<%= number_to_percentage(deal.growth_rate(2.25,13), precision: 0) %></em></td>
+                <td><span id="TableSimulation26"></span></span>&euro;<br><em>+<%= number_to_percentage(deal.growth_rate(3.00,13), precision: 0) %></em></td>
               </tr>
               <tr>
-                <th>14</th>
-                <td><span id="TableSimulation31"></span></span>&euro;<br><em>+64%</em></td>
-                <td><span id="TableSimulation32"></span></span>&euro;<br><em>+82%</em></td>
-                <td><span id="TableSimulation33"></span></span>&euro;<br><em>+102%</em></td>
-                <td class="success"><span id="TableSimulation34"></span>&euro;<br><em>+124%</em></span></td>
-                <td><span id="TableSimulation35"></span></span>&euro;<br><em>+149%</em></td>
-                <td><span id="TableSimulation36"></span></span>&euro;<br><em>+176%</em></td>
+                <th class="greened" style="font-weight: normal;">14</th>
+                <td><span id="TableSimulation31"></span></span>&euro;<br><em>+<%= number_to_percentage(deal.growth_rate(-0.75,14), precision: 0) %></em></td>
+                <td><span id="TableSimulation32"></span></span>&euro;<br><em>+<%= number_to_percentage(deal.growth_rate(0.00,14), precision: 0) %></em></td>
+                <td><span id="TableSimulation33"></span></span>&euro;<br><em>+<%= number_to_percentage(deal.growth_rate(0.75,14), precision: 0) %></em></td>
+                <td><span id="TableSimulation34"></span>&euro;<br><em>+<%= number_to_percentage(deal.growth_rate(1.5,14), precision: 0) %></em></span></td>
+                <td><span id="TableSimulation35"></span></span>&euro;<br><em>+<%= number_to_percentage(deal.growth_rate(2.25,14), precision: 0) %></em></td>
+                <td><span id="TableSimulation36"></span></span>&euro;<br><em>+<%= number_to_percentage(deal.growth_rate(3.00,14), precision: 0) %></em></td>
               </tr>
               <tr>
-                <th>15</th>
-                <td><span id="TableSimulation41"></span></span>&euro;<br><em>+62%</em></td>
-                <td><span id="TableSimulation42"></span></span>&euro;<br><em>+81%</em></td>
-                <td><span id="TableSimulation43"></span></span>&euro;<br><em>+103%</em></td>
-                <td><span id="TableSimulation44"></span></span>&euro;<br><em>+127%</em></td>
-                <td><span id="TableSimulation45"></span></span>&euro;<br><em>+154%</em></td>
-                <td><span id="TableSimulation46"></span></span>&euro;<br><em>+183%</em></td>
+                <th class="greened" style="font-weight: normal;">15</th>
+                <td><span id="TableSimulation41"></span></span>&euro;<br><em>+<%= number_to_percentage(deal.growth_rate(-0.75,15), precision: 0) %></em></td>
+                <td><span id="TableSimulation42"></span></span>&euro;<br><em>+<%= number_to_percentage(deal.growth_rate(0.00,15), precision: 0) %></em></td>
+                <td><span id="TableSimulation43"></span></span>&euro;<br><em>+<%= number_to_percentage(deal.growth_rate(0.75,15), precision: 0) %></em></td>
+                <td><span id="TableSimulation44"></span></span>&euro;<br><em>+<%= number_to_percentage(deal.growth_rate(1.5,15), precision: 0) %></em></td>
+                <td><span id="TableSimulation45"></span></span>&euro;<br><em>+<%= number_to_percentage(deal.growth_rate(2.25,15), precision: 0) %></em></td>
+                <td><span id="TableSimulation46"></span></span>&euro;<br><em>+<%= number_to_percentage(deal.growth_rate(3.00,15), precision: 0) %></em></td>
               </tr>
               <tr>
-                <th>16</th>
-                <td><span id="TableSimulation51"></span></span>&euro;<br><em>+60%</em></td>
-                <td><span id="TableSimulation52"></span></span>&euro;<br><em>+81%</em></td>
-                <td><span id="TableSimulation53"></span></span>&euro;<br><em>+104%</em></td>
-                <td><span id="TableSimulation54"></span></span>&euro;<br><em>+130%</em></td>
-                <td><span id="TableSimulation55"></span></span>&euro;<br><em>+159%</em></td>
-                <td><span id="TableSimulation56"></span></span>&euro;<br><em>+191%</em></td>
+                <th class="greened" style="font-weight: normal;">16</th>
+                <td><span id="TableSimulation51"></span></span>&euro;<br><em>+<%= number_to_percentage(deal.growth_rate(-0.75,16), precision: 0) %></em></td>
+                <td><span id="TableSimulation52"></span></span>&euro;<br><em>+<%= number_to_percentage(deal.growth_rate(0.00,16), precision: 0) %></em></td>
+                <td><span id="TableSimulation53"></span></span>&euro;<br><em>+<%= number_to_percentage(deal.growth_rate(0.75,16), precision: 0) %></em></td>
+                <td><span id="TableSimulation54"></span></span>&euro;<br><em>+<%= number_to_percentage(deal.growth_rate(1.5,16), precision: 0) %></em></td>
+                <td><span id="TableSimulation55"></span></span>&euro;<br><em>+<%= number_to_percentage(deal.growth_rate(2.25,16), precision: 0) %></em></td>
+                <td><span id="TableSimulation56"></span></span>&euro;<br><em>+<%= number_to_percentage(deal.growth_rate(3.00,16), precision: 0) %></em></td>
               </tr>
               <tr>
-                <th>17</th>
-                <td><span id="TableSimulation61"></span></span>&euro;<br><em>+58%</em></td>
-                <td><span id="TableSimulation62"></span></span>&euro;<br><em>+80%</em></td>
-                <td><span id="TableSimulation63"></span></span>&euro;<br><em>+105%</em></td>
-                <td><span id="TableSimulation64"></span></span>&euro;<br><em>+133%</em></td>
-                <td><span id="TableSimulation65"></span></span>&euro;<br><em>+164%</em></td>
-                <td><span id="TableSimulation66"></span></span>&euro;<br><em>+199%</em> </td>
+                <th class="greened" style="font-weight: normal;">17</th>
+                <td><span id="TableSimulation61"></span></span>&euro;<br><em>+<%= number_to_percentage(deal.growth_rate(-0.75,17), precision: 0) %></em></td>
+                <td><span id="TableSimulation62"></span></span>&euro;<br><em>+<%= number_to_percentage(deal.growth_rate(0.00,17), precision: 0) %></em></td>
+                <td><span id="TableSimulation63"></span></span>&euro;<br><em>+<%= number_to_percentage(deal.growth_rate(0.75,17), precision: 0) %></em></td>
+                <td><span id="TableSimulation64"></span></span>&euro;<br><em>+<%= number_to_percentage(deal.growth_rate(1.5,17), precision: 0) %></em></td>
+                <td><span id="TableSimulation65"></span></span>&euro;<br><em>+<%= number_to_percentage(deal.growth_rate(2.25,17), precision: 0) %></em></td>
+                <td><span id="TableSimulation66"></span></span>&euro;<br><em>+<%= number_to_percentage(deal.growth_rate(3.00,17), precision: 0) %></em> </td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
       <!-- Row3: investement ca 12col -->
-      <div class="row">
+      <div class="row margin-bottom">
         <div class="col-md-12">
           <h3>Participer au Projet</h3>
           <p>Ce projet vous intéresse et vous souhaitez y participer? Vous choisissez le nombre de parts qui vous intéresse. Prix de souscription d'une part: 1000€</p>
@@ -356,9 +356,9 @@
       </div>
     </div>
     <!--  -->
-    <div class="col-sm-12 col-md-12 ">
-      <%= render "shared/contact" %>
-    </div>
+<!--     <div class="col-sm-12 col-md-12 ">
+      <-%= render "shared/contact" %->
+    </div> -->
     <!--  -->
   </div>
 </div>
