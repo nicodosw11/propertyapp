@@ -33,14 +33,14 @@
               <div class="row">
                 <div class="form-group niagara">
                   <label>Duration</label>
-                  <%= f.text_field :duration, placeholder: "eg: 14", class: "form-control" %>
+                  <%= f.select(:duration, [['12 years', 12], ['13 years', 13], ['14 years', 14], ['15 years', 15], ['16 years', 16], ['17 years', 17]]) %>
                 </div>
               </div>
 
               <div class="row">
                 <div class="form-group niagara">
                   <label>Interest rate (assumption in %)</label>
-                  <%= f.text_field :interest_rate, placeholder: "eg: 1.5%", class: "form-control", :value => number_to_percentage(f.object.interest_rate, precision: 2) %>
+                  <%= f.select(:interest_rate, [['-0,75%', -0.75], ['+0,00%', 0.00], ['+0,75%', 0.75], ['+1,50%', 1.5], ['+2,25%', 2.25], ['+3,00%', 3.00]]) %>
                 </div>
               </div>
 
