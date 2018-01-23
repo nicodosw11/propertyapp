@@ -1,0 +1,5 @@
+$("#investmentedit_<%= @investment.id %>").modal('hide');
+$("#investment_<%= @investment.id %>").fadeOut(500, function(){
+  $(this).remove();
+  $("#container_investments").prepend('<%= j render @investment %>')
+});

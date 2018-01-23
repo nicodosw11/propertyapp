@@ -1,0 +1,47 @@
+<div class="col-md-4 investments-main box text-center" id="investment_<%= investment.id %>">
+  <div class="panel">
+    <div class="panel-heading">
+      <h3 class="panel-title">Transaction n°<%= investment.id %></h3>
+      <p>Shares: <%= investment.shares %></p>
+      <p>Total Amount Invested: <%= investment.pledge_amount %>€</p>
+    </div>
+    <div class="panel-body">
+      <div style="color: #33CCCC;"><%= investment.created_at.strftime('%d-%m-%y %H:%M') %> by <%= investment.user.email %></div>
+      <br>
+      <div class="btn-group">
+        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#investmentedit_<%= investment.id %>">Change</button>
+        <%= link_to 'Reject', admin_investment_path(investment), method: :delete, class: "btn btn-danger", remote: true %>
+      </div>
+    </div>
+  </div>
+
+  <!-- modal update -->
+  <div class="modal fade" id="investmentedit_<%= investment.id %>">
+    <%= form_for [:admin, investment], :method => :put, remote: true do |f| %>
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Change Investment</h4>
+        </div>
+        <div class="modal-body">
+          <div class="field">
+            <%= f.label :price %><br>
+            <%= f.text_field :price, :value => investment.price, :readonly => true, :class => "form-control" %>
+          </div>
+          <div class="field">
+            <%= f.label :shares %>
+            <%= f.number_field :shares, :value => investment.shares, min: 1, max: investment.deal.available_shares, step: 1, :class => "form-control" %>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="#investmentedit_<%= investment.id %>" class="btn btn-form" data-dismiss="modal">Close</button>
+          <%= submit_tag "Modify", class: 'btn btn-form' %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+  <!--  -->
+
+</div>

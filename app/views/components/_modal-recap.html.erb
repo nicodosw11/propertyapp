@@ -1,0 +1,29 @@
+<div class="modal fade" id="pledge_receipt">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Transaction Receipt</h4>
+      </div>
+      <div class="modal-body">
+        <p>Thank you for your pledge - we will now evaluate your investment demand and get back to you as soon as possible.</p>
+        <p>As a reminder - your contribution to the fund will only be taken into account when the transaction is paid after being approved by our team</p>
+        <p>The investment will then appear on your dashboard.</p>
+
+        <div class="text-center">
+          <h3>Nominal share price: <%= @investment.price %>€ </h3>
+          <h3></h3>
+          <h3>Number of shares: <%= @investment.shares %></h3>
+          <h3></h3>
+          <h3>Total pledged:</h3>
+          <h3><%= @investment.pledge_amount %>€</h3>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-form" data-dismiss="modal" id="mynewpledgeclose">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+

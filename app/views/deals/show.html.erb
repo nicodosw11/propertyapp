@@ -1,6 +1,7 @@
 <% title(@deal.city, "Deals") %>
 
 <%= render "shared/card-property", deal: @deal %>
+<%= render 'components/modal-invest', deal: @deal, investment: Investment.new %>
 <%= render 'components/modal-registration2-invest' %>
 
 

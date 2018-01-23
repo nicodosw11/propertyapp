@@ -12,7 +12,8 @@ class InvestmentPolicy < ApplicationPolicy
     # user.try(:admin?) || record.deal.roles.exists?(user_id: user)
   end
   def create?
-    user.try(:admin?) || record.deal.has_manager?(user) || record.deal.has_editor?(user)
+    # user.try(:admin?) || record.deal.has_manager?(user) || record.deal.has_editor?(user)
+    !user.nil?
   end
   def update?
     user.try(:admin?) || record.deal.has_manager?(user) || (record.deal.has_editor?(user) && record.user == user)

@@ -1,0 +1,36 @@
+<div class="modal fade" id="mynewpledge">
+  <%= form_for [deal, investment], remote: true do |f| %>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Make a pledge</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-sm-6 col-sm-offset-3">
+            <div class="form-group niagara">
+              <label>Nominal share price</label>
+              <%= f.text_field :price, :value => investment.price, :readonly => true, :class => "form-control" %>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 col-sm-offset-3">
+            <div class="form-group niagara">
+              <label>Number of Shares to buy </label>
+              <%= f.number_field :shares, min: 1, max: deal.max_shares, step: 1, :class => "form-control" %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-form" data-dismiss="modal" id="mynewpledgeclose">Close</button>
+        <%= submit_tag "Make a pledge", class: 'btn btn-form' %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+

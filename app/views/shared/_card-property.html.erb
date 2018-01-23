@@ -1,5 +1,5 @@
 <div class="container opportunity-body">
-  <div class="row" id="property-card">
+  <div class="row margin-top" id="property-card">
     <!-- Carousel here 8col-->
     <div class="col-sm-12 col-md-8 ">
       <% if @photos.length > 0 %>
@@ -85,8 +85,13 @@
           </div>
           <div class="row deal-invest">
             <div class="col-sm-12 btn-deal-invest">
-              <%= link_to "INVESTIR", new_deal_investment_path(@deal), class: "btn btn-invest btn-default" %>
-            </div>
+             <% if policy(@deal).update? %>
+             <%= link_to "MODIFIER", listing_admin_deal_path(@deal), class: "btn btn-invest btn-default" %>
+             <% else %>
+             <%= link_to "INVESTIR", '#mynewpledge', data: { toggle: 'modal'}, class: "btn btn-invest btn-default" %>
+             <div id='remote-recap'></div>
+             <% end %>
+           </div>
           </div>
         </div>
       </div>
@@ -113,7 +118,7 @@
               <td id="investment" data-investment="<%= deal.funding_goal %>"><u>Investissement total:</u> <%= number_to_currency(deal.funding_goal)%></td>
             </tr>
             <tr>
-              <td id="shares" data-shares="<%= deal.max_shares%>"><u>Nombre de Parts Disponibles:</u> <%= deal.max_shares %></td>
+              <td id="shares" data-shares="<%= deal.max_shares%>"><u>Nombre de Parts Disponibles:</u> <%= deal.available_shares %></td>
               <td><u>Prix Unitaire de Souscription par Part:</u> 1 000€</td>
             </tr>
           </table>

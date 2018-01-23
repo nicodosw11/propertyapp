@@ -16,6 +16,11 @@
           <i class="fa fa-lock"></i> <%= t(".manage-users", default: "Manage Users") %>
           <% end %>
         </li>
+        <li>
+          <%= link_to admin_investments_path do %>
+          <i class="fa fa-lock"></i> <%= t(".manage-transactions", default: "Manage Transactions") %>
+          <% end %>
+        </li>
       <% end %>
       <li>
         <%= link_to dashboard_path do %>

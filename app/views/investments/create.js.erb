@@ -1,0 +1,5 @@
+// alert("Investment created");
+$("#mynewpledge").modal('hide');
+$('#remote-recap').html('<%= j render "components/modal-recap" %>');
+$('#pledge_receipt').modal('show');
+$('#shares').html("<u>Nombre de Parts Disponibles:</u> <%= @deal.available_shares %>");

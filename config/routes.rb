@@ -19,6 +19,7 @@
         patch :archive
       end
     end
+    resources :investments, only: [:index, :edit, :update, :destroy]
   end
 
   # devise_for :users # => "/users/sign_in"
@@ -35,10 +36,10 @@
     get 'legal', to: 'pages#legal'
     get 'siteadmin/tenants', to: "tenants#all"
     get 'siteadmin/properties', to: "properties#all"
-    get 'siteadmin/tenants', to: "tenants#all"
     # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-    resources :deals, only: [:index, :show, :edit, :update] do
+    # resources :deals, only: [:index, :show, :edit, :update] do
+    resources :deals, only: [:index, :show, :edit, :update], path: 'opportunities', :path_names => { :new => 'invest', :edit => 'modify' } do
       # resources :investments, only: [:new, :create, :destroy]
       resources :investments
       scope '/siteadmin' do

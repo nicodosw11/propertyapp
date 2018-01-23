@@ -1,0 +1,44 @@
+<div class="modal fade" id="new_user">
+  <%= simple_form_for [:admin, User.new], remote: true do |f| %>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">New User</h4>
+      </div>
+      <div class="modal-body">
+        <div class="form-inputs">
+          <%= f.input :first_name %>
+          <%= f.input :last_name %>
+          <%= f.input :email %>
+          <%= f.input :password %>
+        </div>
+
+        <!-- Roles -->
+        <%= f.input :admin, label: "Is an admin?" %>
+
+        <div class="page-header">
+          <h2>Roles</h2>
+        </div>
+
+        <table class="roles">
+
+          <% Deal.all.each do |deal| %>
+          <tr>
+            <th><%= label_tag dom_id(deal), deal.street %></th>
+            <td>
+              <%= select_tag dom_id(deal), options_for_select(roles, User.new.role_on(deal)), name: "roles[#{deal.id}]", include_blank: true %>
+            </td>
+          </tr>
+          <% end %>
+        </table>
+        <!--  -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-form" data-dismiss="modal">Close</button>
+        <%= f.button :submit, class: 'btn btn-form' %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>

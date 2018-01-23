@@ -64,7 +64,7 @@ class Deal < ApplicationRecord
 
   def money_raised
     # self.investments.sum(:price)
-    investments.blank? ? 0 : investments.sum(:price)
+    investments.blank? ? 0 : investments.sum(:pledge_amount)
   end
 
   def number_of_supporters
@@ -124,6 +124,10 @@ class Deal < ApplicationRecord
 
   def max_shares
     funding_goal / 1000 if funding_goal.present?
+  end
+
+  def available_shares
+    max_shares - investments.sum(:shares) if investments
   end
 
   # #virtual attributes
