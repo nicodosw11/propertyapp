@@ -1,4 +1,17 @@
 <div class="container">
+
+  <div class='row margin-top'>
+    <div class='col-xs-2'>Select User</div>
+    <div class='col-xs-10'>
+      <%= select_tag "users",
+      options_for_select(User.external.map{ |user| [user.full_name, user.id, data: { url: snapshot_admin_user_path(user) }]}),
+      class: 'chosen-select chosen-select-users' %>
+    </div>
+  </div>
+
+  <hr>
+  <div id='user_snapshot'></div>
+
   <div class="row margin-top">
     <div class="col-xs-12">
       <!-- <h4>Listing Users</h4> -->

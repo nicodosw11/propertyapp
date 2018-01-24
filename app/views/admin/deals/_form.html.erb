@@ -63,6 +63,13 @@
       </div>
     </div>
 
+    <div class="col-md-4">
+      <div class="form-group niagara">
+        <label>Surface</label>
+        <%= f.number_field :surface, placeholder: "m²", class: "form-control", min: 10, :step => 1 %>
+      </div>
+    </div>
+
   </div>
 
   <div><%= f.submit "Créer le projet", class: "btn btn-form" %></div>

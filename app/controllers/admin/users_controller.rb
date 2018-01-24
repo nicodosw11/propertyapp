@@ -1,6 +1,6 @@
 class Admin::UsersController < Admin::ApplicationController
   before_action :set_deals, only: [:new, :create, :edit, :update]
-  before_action :set_user, only: [:show, :edit, :update, :destroy, :archive]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :archive, :snapshot]
   def index
     @users = User.excluding_archived.order(:email)
   end
@@ -81,6 +81,8 @@ class Admin::UsersController < Admin::ApplicationController
       }
       format.js
     end
+  end
+  def snapshot
   end
   private
   def set_deals

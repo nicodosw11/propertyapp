@@ -11,6 +11,7 @@
 @import "toastr";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import 'chosen';
 
 // Your CSS
 @import "admin/index";
@@ -57,4 +58,6 @@ body {
   // width: 100% !important;
 }
 
-
+.chosen-container-single .chosen-search {
+  background: none;
+}

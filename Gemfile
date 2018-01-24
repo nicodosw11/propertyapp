@@ -32,6 +32,8 @@ gem 'geocoder'
 gem 'paperclip-cloudinary'
 gem 'jquery-ui-rails', '~> 5.0'
 
+gem 'chosen-rails'
+
 group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'

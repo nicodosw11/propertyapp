@@ -2,7 +2,7 @@ class Admin::InvestmentsController < Admin::ApplicationController
   before_action :set_investment, except: [:index]
 
   def index
-    @investments = Investment.order(:id)
+    @investments = Investment.all.order(:id)
     # @investment = Investment.new
     # @deal = @investment.deal
   end

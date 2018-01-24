@@ -1,4 +1,4 @@
 // alert("Status changed to 'approved'");
-$('#current-status_<%= @investment.id %>').text("<%= @investment.updated_at.strftime('%d-%m-%y %H:%M') %> to status <%= @investment.status %>");
+$('#current-status_<%= @investment.id %>').text("status <%= @investment.status %> at <%= @investment.updated_at.strftime('%d-%m-%y %H:%M') %>");
 $('#validate-button_<%= @investment.id %>').removeClass('btn btn-form').addClass('btn btn-success');
 $('a#validate-button_<%= @investment.id %>').text('Approved');

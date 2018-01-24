@@ -12,4 +12,7 @@ class Investment < ApplicationRecord
   def pledge_amount
     self[:pledge_amount] = self.price * self.shares
   end
+  def full_details
+    "#{deal.full_address} - #{shares} shares - total #{pledge_amount}€"
+  end
 end

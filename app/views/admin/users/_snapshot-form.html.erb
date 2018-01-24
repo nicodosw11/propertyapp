@@ -1,0 +1,24 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Snapshot for <%= @user.full_name %></h3>
+  </div>
+  <div class="panel-body">
+    <div class='col-xs-6'>
+      <%= select_tag "deals",
+      options_for_select(@user.deals.uniq.map{ |deal| [deal.full_address, deal.id, data: { url: listing_admin_deal_path(deal) }]}),
+      class: 'chosen-select chosen-select-deals' %>
+    </div>
+    <div class='col-xs-6'>
+      <%= select_tag "investments",
+      options_for_select(@user.investments.map{ |investment| [investment.full_details, investment.id, data: { url: admin_investments_path }]}),
+      class: 'chosen-select chosen-select-investments' %>
+    </div>
+  </div>
+</div>
+<script>
+  $('.chosen-select').chosen({
+    allow_single_deselect: true,
+    no_results_text: 'No results matched',
+    width: '100%'
+  });
+</script>

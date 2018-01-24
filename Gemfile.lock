@@ -63,6 +63,10 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (>= 2.0, < 4.0)
+    chosen-rails (1.8.2)
+      coffee-rails (>= 3.2)
+      railties (>= 3.0)
+      sass-rails (>= 3.2)
     climate_control (0.2.0)
     cloudinary (1.8.2)
       aws_cf_signer
@@ -293,6 +297,7 @@ DEPENDENCIES
   binding_of_caller
   bootstrap-sass
   capybara
+  chosen-rails
   cloudinary
   coffee-rails
   country_select

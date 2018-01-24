@@ -16,6 +16,7 @@
     end
     resources :users do
       member do
+        get :snapshot
         patch :archive
       end
     end

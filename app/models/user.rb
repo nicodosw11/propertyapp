@@ -10,6 +10,9 @@ class User < ApplicationRecord
   has_many :roles
 
   scope :excluding_archived, lambda { where(archived_at: nil) }
+  scope :external, -> {
+    where(:admin => false)
+  }
 
   def to_s
     "#{email} (#{admin? ? "Admin" : "User"})"
