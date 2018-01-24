@@ -19,7 +19,11 @@
         patch :archive
       end
     end
-    resources :investments, only: [:index, :edit, :update, :destroy]
+    resources :investments, only: [:index, :edit, :update, :destroy] do
+      member do
+        patch :validate
+      end
+    end
   end
 
   # devise_for :users # => "/users/sign_in"

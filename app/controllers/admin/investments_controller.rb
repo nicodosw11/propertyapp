@@ -46,6 +46,11 @@ class Admin::InvestmentsController < Admin::ApplicationController
     end
   end
 
+  def validate
+    sleep 2
+    @investment.update(status: 'approved')
+  end
+
   private
 
   def set_investment

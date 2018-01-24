@@ -2,12 +2,16 @@
   <div class="panel">
     <div class="panel-heading">
       <h3 class="panel-title">Transaction n°<%= investment.id %></h3>
-      <p>Shares: <%= investment.shares %></p>
-      <p>Total Amount Invested: <%= investment.pledge_amount %>€</p>
+      <p>Shares: <%= investment.shares %> - Total: <%= investment.pledge_amount %>€</p>
+      <p><%= investment.created_at.strftime('%d-%m-%y %H:%M') %> by <%= investment.user.email %></p>
     </div>
     <div class="panel-body">
-      <div style="color: #33CCCC;"><%= investment.created_at.strftime('%d-%m-%y %H:%M') %> by <%= investment.user.email %></div>
-      <br>
+      <% if investment.status != 'approved' %>
+      <%= link_to 'Validate', validate_admin_investment_path(investment), method: :patch, class: "btn btn-form", id: "validate-button_#{investment.id}", remote: true, data: {disable_with: "Validating..."}  %>
+      <% else %>
+      <button type="button" class="btn btn-success">Approved</button>
+      <% end %>
+      <p><strong>Status: </strong><span id="current-status_<%= investment.id %>"><%= investment.status %> <%= "at #{investment.updated_at.strftime('%d-%m-%y %H:%M')}" if investment.status == 'approved' %></p>
       <div class="btn-group">
         <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#investmentedit_<%= investment.id %>">Change</button>
         <%= link_to 'Reject', admin_investment_path(investment), method: :delete, class: "btn btn-danger", remote: true %>
