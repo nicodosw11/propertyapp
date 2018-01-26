@@ -4,7 +4,7 @@ $(document).ready(function() {
     no_results_text: 'No results matched',
     width: '100%'
   });
-  $(".chosen-select-users").chosen().change(
+  $(".chosen-select-index").chosen().change(
     function(){
       var user = $('option:selected',this);
       var user_url = user.attr('data-url');

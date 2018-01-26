@@ -34,6 +34,8 @@ class Deal < ApplicationRecord
   geocoded_by :full_address
   after_validation :geocode, if: :street_changed?
 
+  scope :listed, lambda { where(active: true) }
+
   # overriding the getter for interest_rate attribute
   # def interest_rate
     # "#{self[:interest_rate]}%"

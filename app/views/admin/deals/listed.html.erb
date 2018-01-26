@@ -1,0 +1,42 @@
+<div class="container">
+
+  <div class='row margin-top'>
+    <div class='col-xs-2'>Select Deal</div>
+    <div class='col-xs-10'>
+      <%= select_tag "deals",
+      options_for_select(Deal.listed.map{ |deal| [deal.full_address, deal.id, data: { url: snapshot_admin_deal_path(deal) }]}),
+      class: 'chosen-select chosen-select-index' %>
+    </div>
+  </div>
+
+  <hr>
+  <div id='deal_snapshot'></div>
+
+  <div class="row margin-top">
+    <div class="col-xs-12">
+      <!-- <h4>Listing Deals</h4> -->
+      <table class="table table-condensed table-hover">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Full address</th>
+            <th>Funding goal</th>
+            <th>Current funding</th>
+            <th>Max shares</th>
+            <th>Available shares</th>
+            <th>Last Updated</th>
+          </tr>
+        </thead>
+
+        <tbody id='deals'>
+          <%= render @deals %>
+        </tbody>
+      </table>
+
+      <br>
+
+    </div>
+  </div>
+</div>
+
+

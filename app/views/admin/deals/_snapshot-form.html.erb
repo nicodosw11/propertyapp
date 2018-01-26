@@ -1,16 +1,16 @@
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title">Snapshot for <%= @user.full_name %></h3>
+    <h3 class="panel-title">Snapshot for <%= @deal.full_address %></h3>
   </div>
   <div class="panel-body">
     <div class='col-xs-6'>
-      <%= select_tag "deals",
-      options_for_select(@user.deals.uniq.map{ |deal| [deal.full_address, deal.id, data: { url: listing_admin_deal_path(deal) }]}),
-      class: 'chosen-select chosen-select-deals' %>
+      <%= select_tag "users",
+      options_for_select(@deal.users.uniq.map{ |user| [user.full_name, user.id, data: { url: admin_user_path(user) }]}),
+      class: 'chosen-select chosen-select-users' %>
     </div>
     <div class='col-xs-6'>
       <%= select_tag "investments",
-      options_for_select(@user.investments.map{ |investment| [investment.full_details, investment.id, data: { url: admin_investments_path }]}),
+      options_for_select(@deal.investments.map{ |investment| [investment.full_details, investment.id, data: { url: admin_investments_path }]}),
       class: 'chosen-select chosen-select-investments' %>
     </div>
   </div>

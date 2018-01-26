@@ -3,6 +3,9 @@
     root "application#index"
     resources :deals, only: [:index, :new, :create, :destroy]
     resources :deals, only: [ ] do
+      collection do
+        get 'listed'
+      end
       member do
         get 'description'
         get 'listing'
@@ -11,6 +14,7 @@
         get 'pricing'
         get 'period'
         get 'tenancy'
+        get :snapshot
       end
       resources :photos, only: [:create, :destroy]
     end
@@ -20,7 +24,7 @@
         patch :archive
       end
     end
-    resources :investments, only: [:index, :edit, :update, :destroy] do
+    resources :investments, only: [:index, :show, :edit, :update, :destroy] do
       member do
         patch :validate
       end

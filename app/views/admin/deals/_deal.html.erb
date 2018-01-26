@@ -1,0 +1,12 @@
+<tr id="<%= deal.id %>">
+  <td>
+    <%= link_to icon('pencil'), "#", remote: true %>
+    <%= link_to icon('trash'), "#", method: :delete, remote: true, data: { confirm: 'Are you sure?' } %>
+  </td>
+  <td><%= link_to deal.full_address, deal_path(deal)%></td>
+  <td><%= number_to_currency(deal.funding_goal)%></td>
+  <td><%= number_to_currency(deal.money_raised) %></td>
+  <td><%= deal.max_shares %></td>
+  <td><%= deal.available_shares %></td>
+  <td><%= deal.updated_at.strftime('%d-%m-%Y') %></td>
+</tr>

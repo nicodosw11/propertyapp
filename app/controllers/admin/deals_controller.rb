@@ -1,7 +1,12 @@
 class Admin::DealsController < Admin::ApplicationController
-  before_action :set_deal, except: [:index, :new, :create]
+  before_action :set_deal, except: [:index, :listed, :new, :create]
   def index
     @deals = Deal.all
+  end
+  def listed
+    @deals = Deal.listed.order(:id)
+  end
+  def snapshot
   end
   def new
   @deal = Deal.new

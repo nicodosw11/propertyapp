@@ -1,5 +1,46 @@
-<div class="container">
+<!-- <div class="container">
   <div class="row margin-top" id="container_investments">
-    <%= render @investments %>
+    <-%= render @investments %->
+  </div>
+</div> -->
+
+<div class="container">
+
+  <div class="row margin-top">
+    <div class="col-xs-2">Select Transaction</div>
+    <div class="col-xs-10">
+      <%= select_tag "investments",
+      options_from_collection_for_select(Investment.all, :id, :full_details), class: 'chosen-select chosen-select-investments' %>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="row margin-top">
+    <div class="col-xs-12">
+      <!-- <h4>Listing Investments</h4> -->
+      <table class="table table-condensed table-hover">
+        <thead>
+          <tr>
+            <th></th>
+            <th>n°</th>
+            <th>Deal</th>
+            <th>Shares</th>
+            <th>Total</th>
+            <th>Created</th>
+            <th>Investor</th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody id="container_investments">
+          <%= render @investments %>
+        </tbody>
+      </table>
+
+      <br>
+
+    </div>
   </div>
 </div>
+

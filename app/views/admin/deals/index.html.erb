@@ -1,12 +1,13 @@
 <div class="container" style="width: 80%;">
-  <div class="row">
+  <div class="row margin-top">
     <div class="col-md-3">
       <ul class="sidebar-list">
         <% admins_only do %>
-          <li><%= link_to "New Deal", new_admin_deal_path, class: "new" %></li>
+          <li><%= link_to "New Deal", new_admin_deal_path, class: "new btn btn-form" %></li>
         <% end %>
-        <li class="sidebar-item"><%= link_to "My deals", admin_deals_path, class: "sidebar-link active" %></li>
-        <!-- <li class="sidebar-item"><%= link_to "", admin_deals_path, class: "sidebar-link" %></li> -->
+        <li class="sidebar-item"><%= link_to "All deals", listed_admin_deals_path, class: "sidebar-link active" %></li>
+        <li class="sidebar-item"><%= link_to "All transactions", admin_investments_path, class: "sidebar-link" %></li>
+        <li class="sidebar-item"><%= link_to "All users", admin_users_path, class: "sidebar-link" %></li>
       </ul>
     </div>
     <div class="col-md-9">
