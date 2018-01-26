@@ -1,5 +1,5 @@
 class Deal < ApplicationRecord
-
+  include Friendlyable
   # when using set.pct_funded!
   # attr_accessor :pct_funded
   # or

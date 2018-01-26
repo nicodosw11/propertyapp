@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180123083009) do
+ActiveRecord::Schema.define(version: 20180125182249) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,8 @@ ActiveRecord::Schema.define(version: 20180123083009) do
     t.integer  "duration"
     t.integer  "property_value"
     t.decimal  "interest_rate",                  precision: 5, scale: 2, default: "1.5"
+    t.string   "hash_id",                                                                null: false
+    t.index ["hash_id"], name: "index_deals_on_hash_id", unique: true, using: :btree
   end
 
   create_table "investments", force: :cascade do |t|

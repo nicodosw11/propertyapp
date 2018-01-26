@@ -41,7 +41,8 @@ class DealsController < ApplicationController
 
   private
   def set_deal
-    @deal = Deal.find(params[:id])
+    # @deal = Deal.find(params[:id])
+    @deal = Deal.friendly.find(params[:id])
   rescue ActiveRecord::RecordNotFound
     flash[:alert] = "The deal you were looking for could not be found."
     redirect_to deals_path

@@ -91,7 +91,8 @@ class InvestmentsController < ApplicationController
 
   private
   def set_deal
-    @deal = Deal.find(params[:deal_id])
+    # @deal = Deal.find(params[:deal_id])
+    @deal = Deal.friendly.find(params[:deal_id])
   end
   def set_investment
     @investment = @deal.investments.find(params[:id])

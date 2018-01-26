@@ -1,5 +1,5 @@
 class Admin::DealsController < Admin::ApplicationController
-  before_action :set_deal, except: [:index, :new, :create, :destroy]
+  before_action :set_deal, except: [:index, :new, :create]
   def index
     @deals = Deal.all
   end
@@ -20,7 +20,7 @@ class Admin::DealsController < Admin::ApplicationController
     end
   end
   def destroy
-    @deal = Deal.find(params[:id])
+    # @deal = Deal.find(params[:id])
     @deal.destroy
     redirect_to deals_path, notice: 'Deal was successfully deleted'
   end
@@ -80,7 +80,8 @@ class Admin::DealsController < Admin::ApplicationController
   end
 
   def set_deal
-    @deal = Deal.find(params[:id])
+    # @deal = Deal.find(params[:id])
+    @deal = Deal.friendly.find(params[:id])
   rescue ActiveRecord::RecordNotFound
     flash[:alert] = "The deal you were looking for could not be found."
     redirect_to deals_path

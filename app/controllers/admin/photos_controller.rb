@@ -1,7 +1,8 @@
 class Admin::PhotosController < Admin::ApplicationController
 
   def create
-    @deal = Deal.find(params[:deal_id])
+    # @deal = Deal.find(params[:deal_id])
+    @deal = Deal.friendly.find(params[:deal_id])
 
     if params[:images]
       params[:images].each do |img|
