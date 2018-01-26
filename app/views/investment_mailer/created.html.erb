@@ -1,0 +1,11 @@
+<p>Dear <%= @investment.user.full_name %>,</p>
+
+<p>Thank you for your recent transaction on Livsty.</p>
+
+<p>Your recent transaction details:</p>
+
+<p>Ville: <%="#{@investment.deal.city} #{@investment.deal.postcode} - #{@investment.deal.property_type}, #{@investment.deal.occupancy}"%></p>
+<p>Shares: &times;<%= @investment.shares %></p>
+<p>Total: <%= number_to_currency(@investment.pledge_amount) %></p>
+
+<p>We'll send you a separate e-mail when your investment is approved.</p>

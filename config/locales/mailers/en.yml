@@ -5,3 +5,9 @@ en:
       welcome_html: "<b>Livsty</b> would like to say 'Welcome to you %{name}'"
       browse: "In the next click you will be able to browse our investment opportunities"
       rdv: "We'll see you at livsty.com"
+  investment_mailer:
+    created:
+      subject: "%{user}, your investment request"
+    validated:
+      subject: "%{user}, your investment approval"
+

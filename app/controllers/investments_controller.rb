@@ -36,6 +36,7 @@ class InvestmentsController < ApplicationController
 
     authorize @investment, :create?
     if @investment.save && @deal.save
+      InvestmentMailer.created(@investment).deliver_later
       respond_to do |format|
         format.html {
           flash[:notice] = "Investment has been created"

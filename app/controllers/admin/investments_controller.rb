@@ -49,6 +49,7 @@ class Admin::InvestmentsController < Admin::ApplicationController
   def validate
     sleep 2
     @investment.update(status: 'approved')
+    InvestmentMailer.validated(@investment).deliver_later
   end
 
   private
