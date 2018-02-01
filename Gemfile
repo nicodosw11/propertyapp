@@ -27,7 +27,7 @@ gem 'coffee-rails'
 gem "font-awesome-rails"
 
 gem 'toastr-rails'
-gem 'paperclip'
+gem 'paperclip', '~> 5.2.1'
 gem 'geocoder'
 gem 'paperclip-cloudinary'
 gem 'jquery-ui-rails', '~> 5.0'

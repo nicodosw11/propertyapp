@@ -5,7 +5,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :confirmable, :recoverable, :rememberable, :trackable, :validatable
 
   validate :password_complexity
-  has_many :investments, dependent: :nullify
+  # has_many :investments, dependent: :nullify
+  has_many :investments, dependent: :destroy
   has_many :deals, through: :investments
   has_many :roles
 
