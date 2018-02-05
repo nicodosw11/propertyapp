@@ -7,9 +7,11 @@
 
 /* Navbar avatar dropdown menu */
 .navbar-avatar-dropdown-menu {
-  margin-top: 15px;
+  // margin-top: 15px;
+  margin-top: 24px;
   box-shadow: 1px 1px 4px #E6E6E6;
-  border-color: #E6E6E6;
+  // border-color: #E6E6E6;
+  border-color: #F5F5F5;
   min-width: 100%;
   background-color: #D3D3D3
 }
@@ -18,7 +20,8 @@
   font-weight: lighter !important;
   // color: #999999 !important;
   // color: #F5F5F5 !important;
-  color: #777777 !important;
+  color: #F5F5F1 !important;
+  // color: #777777 !important;
   font-size: 15px !important;
   line-height: 22px !important;
   padding: 10px 20px;

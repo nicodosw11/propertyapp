@@ -1,0 +1,4 @@
+app/views/components/* linguist-vendored
+app/views/partials/* linguist-vendored
+app/views/shared/* linguist-vendored
+*.js.erb linguist-language=JavaScript
