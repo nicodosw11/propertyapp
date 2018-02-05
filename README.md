@@ -40,6 +40,13 @@ Uploading pictures
 Publishing only if everything is ready!
 
 <a href="https://imgflip.com/gif/24002k"><img src="https://i.imgflip.com/24002k.gif" title="made at imgflip.com"/></a>
+
+## Investing on the platform (data update live)
+
+<a href="https://imgflip.com/gif/24021p"><img src="https://i.imgflip.com/24021p.gif" title="made at imgflip.com"/></a>
+
+<a href="https://imgflip.com/gif/2402ab"><img src="https://i.imgflip.com/2402ab.gif" title="made at imgflip.com"/></a>
+
 ---
 
 ## License & Copyright
