@@ -43,6 +43,7 @@
     get 'seller', to: 'pages#seller'
     get 'risks', to: 'pages#risks'
     get 'legal', to: 'pages#legal'
+    get 'contact', to:'pages#contact'
     get 'siteadmin/tenants', to: "tenants#all"
     get 'siteadmin/properties', to: "properties#all"
     # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
