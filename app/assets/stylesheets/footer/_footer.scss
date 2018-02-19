@@ -1,22 +1,14 @@
-footer {
-  // height: 180px;
-  height: 25%;
-  // width:100%;
-  // font-size: 0.8em;
-  // margin: 0;
-  // padding-top: 0px;
-  // border-radius:0px;
 
-  background-color: #D3D3D3;
-  color: #777777;
+#footer{
+
+	height: 180px;
+	width:100%;
+	font-size: 0.8em;
+	margin: 0;
+	padding-top: 0px;
+	border-radius:0px;
+	background-color:$navbar-background-gray ;
 }
-
-#social-media {
+#social-media{
   padding-top: 0.5em;
 }
-
-// .spacer {
-//   margin-top: 2%;
-//   margin-bottom: 2%;
-// }
-

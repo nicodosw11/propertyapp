@@ -1,11 +1,11 @@
 /* css-deal-card specific */
 .overview-asset {
   font-size:0.9em;
-  color: #696969;
+  color: $body-color-darkgray;
 }
 
 .overview-asset * {
-  color: #696969;
+  color: $body-color-darkgray;
 //   font-variant-numeric: lining-nums;
 //   -moz-font-feature-settings: "lnum" 1;
 //   -moz-font-feature-settings: "lnum=1";
@@ -17,7 +17,7 @@
 
 a.overview-asset:hover, a.overview-asset:focus, a.overview-asset.active {
   text-decoration: none;
-  border-color: #33CCCC;
+  border-color: $navbar-color-darkblue;
 }
 .overview-asset-head {
   padding: 10px 7px;
@@ -28,12 +28,12 @@ a.overview-asset:hover, a.overview-asset:focus, a.overview-asset.active {
   padding-right: 0px;
 }
 .overview-asset .glyphicon {
-  color: #C1EFEF;
+  color: $navbar-color-lightblue;
   transition: color .2s ease-in-out;
 }
 a.overview-asset:hover .glyphicon, a.overview-asset:focus .glyphicon, a.overview-asset.active .glyphicon {
 
-  color: #33CCCC;
+  color: $navbar-color-darkblue;
 }
 
 .deal-property-type, .deal-investors, .deal-progress-deadline {
@@ -83,13 +83,13 @@ a.overview-asset:hover .glyphicon, a.overview-asset:focus .glyphicon, a.overview
   margin-bottom: 0px;
 }
 .progress-bar {
-  background-color: #C1EFEF;
+  background-color: $navbar-color-lightblue;
   -webkit-transition: background-color .2s ease-in-out;
   -o-transition: background-color .2s ease-in-out;
   transition: background-color .2s ease-in-out;
 }
 .overview-asset:hover .progress-bar {
-  background-color: #33CCCC;
+  background-color: $navbar-color-darkblue;
 }
 
 .overview-asset-data-yield {

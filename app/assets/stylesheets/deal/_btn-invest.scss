@@ -3,16 +3,16 @@
   font-size:1.1em;
   font-weight:500;
   padding: 0.7em 1em;
-  background-color: #33CCCC;
-  color:#F5F5F5;
+  background-color: $navbar-color-darkblue;
+  color:$navbar-color-lightgray;
   -webkit-transition: background-color .2s ease-in-out;
   -o-transition: background-color .2s ease-in-out;
   transition: background-color .2s ease-in-out;
 }
 .btn-invest:hover{
-  background-color: #C1EFEF;
-  color:#F5F5F5;
-  border-color:#C1EFEF;
+  background-color: $navbar-color-lightblue;
+  color:$navbar-color-lightgray;
+  border-color:$navbar-color-lightblue;
 }
 .btn-deal-invest{
   padding-bottom: 0px;
