@@ -1,15 +1,29 @@
 <div class="container">
+<script>$('body').scrollspy({target: "#FAQ-Nav"})</script>
 <a name="top"></a>
   <div class="row" id="Faq">
     <div class="col-md-3">
-      <nav class="hidden-sm hidden-xs affix" role="navigation">
+      <nav class="hidden-sm hidden-xs affix" role="navigation" id="FAQ-Nav" style="padding-top:10px">
         <ul class="nav nav-pills nav-stacked">
-          <li class="active" role="presentation"><a href="#FAQ-Concept">Individual or compiled</a></li>
-          <li class="" role="presentation"><a href="#FAQ-Bien">Data attributes</a></li>
+          <li class="" role="presentation"><a href="#FAQ-Concept">Notre mission</a></li>
+          <li class="" role="presentation"><a href="#FAQ-Opportunités">Les Types d'Opportunités</a></li>
+          <li class="" role="presentation"><a href="#FAQ-Structure">Détails d'un Projet</a></li>
         </ul>
       </nav>
       </div>
-    <div class="col-md-9">
+    <div class="col-md-9"  id="FAQ-Content" style="padding-top:10px">
+      <div class="faq-section" id="#test">
+          <h1 class="faq-section-title"></h1>
+          <p></p>
+          <div class="faq-subsection">
+              <h2 class="faq-subsection-title"></h2>
+              <p class="faq-subsection-content"></p>
+          </div>
+          <div class="faq-subsection">
+              <h2 class="faq-subsection-title"></h2>
+              <p class="faq-subsection-content"></p>
+          </div>
+      </div>
       <div class="faq-section" id="FAQ-Concept">
         <h1 class="faq-section-title">Notre mission</h1>
         <div class="faq-subsection">
@@ -20,7 +34,7 @@ Livsty permet aux Seniors de trouver des ressources supplémentaires dont ils on
 </p>
         </div>
       </div>
-      <div class="faq-section" id="FAQ-Biens">
+      <div class="faq-section" id="FAQ-Opportunités">
         <h1 class="faq-section-title">Les différents types d’opportunités</h1>
         <p>Livsty offre sur sa plateforme deux types d’opportunités pour les investisseurs : Les Nouvelles Opportunités et un marché de la revente de parts de projets existants (Marché-Secondaire).</p>
         <div class="faq-subsection">
@@ -42,7 +56,58 @@ Lorsque vous investissez pendant la période de Pré-commande vous ne manquerez 
             <p class="faq-subsection-content">Une réduction d’ordre peut être appliquée si les pré-commandes sont sur-souscrites. Lorsque le total des engagements des investisseurs dépasse l’objectif de financement pour la nouvelle opportunité, votre engagement peut être réduit au prorata. Par exemple, si l’objectif de financement est de €300 000 mais que nous recevons des pré-commandes pour un total de €600 000, vous recevrez alors la moitié de votre commande initiale.
             </p>
         </div>
+        <div class="faq-subsection">
+            <h2 class="faq-subsection-title">Opportunités de revente - Marché Secondaire</h2>
+            <p class="faq-subsection-content">Une opportunité de Revente apparait sur la plateforme lorsqu’un autre investisseur sur Livsty souhaite vendre ses parts dans un projet.
+              Le vendeur doit informer LIvsty de sa volonté de vendre ses parts et respecter les obligations prévues dans les Status et le Pacte d’Associés (Agrément, droits de préemption etc…). Le vendeur peut choisir le prix auquel il offre ses parts à la vente, mais nous fournirons des informations pour aider les acheteurs et les vendeurs potentiels à faire leur audit et à déterminer s'ils souhaitent acheter ou vendre à un prix donné. Chaque acheteur devra nécessairement avoir préalablement été informé de la valeur à laquelle sont estimées par Livsty les parts qu’il désire acquérir avant que la vente puisse être effective.
+              Cependant, la décision finale du prix au quel vendre ou acheter vous appartient exclusivement. Nos valorisations estimées ne constituent pas, et ne doivent pas être considérées comme des conseils d’investissment.
+            </p>
+        </div>
+      </div>
+      <div class="faq-section" id="FAQ-Structure">
+          <h1 class="faq-section-title">Droit de Discrétion & Exigences de Classification de LIVSTY </h1>
+          <p>Livsty se réserve le droit de ne pas lister un investissement à vendre et de refuser les projets d'investissement via sa plateforme à sa seule discrétion. De plus, tous les clients doivent être classés comme des investisseurs avertis, à valeur patrimoniale élevée ou investisseurs restreints et, tant que vous ne l'avez pas fait, rien sur notre site ne constitue une offre susceptible d'être acceptée par vous ou par nous.</p>
+          <div class="faq-subsection">
+              <h2 class="faq-subsection-title">Comment sont structurés les Investissements ?</h2>
+              <p class="faq-subsection-content">Votre investissement dans un bien sur la plateforme est fait via l’achat de parts dans une Société Civile Immobilière, établie spécifiquement pour l’achat de ce bien.
+              </p>
+          </div>
+          <div class="faq-subsection">
+              <h2 class="faq-subsection-title">Société Civile Immobilière (SCI)</h2>
+              <p class="faq-subsection-content">Afin d’organiser l’acquisition d’un bien immobilier par plusieurs investisseurs, chaque projet listé sur Livsty est détenu via une Société Civile Immobilière (« SCI »), enregistrée en France et dans laquelle chaque investisseur détient un nombre de part prorata le montant qu’il investit dans le projet. Chaque projet possède sa SCI déidiée, ainsi vous êtes certain à chaque investissement de participer uiquement au bien spécifique que vous avez choisi.</p>
+          </div>
+          <div class="faq-subsection">
+              <h2 class="faq-subsection-title">Y a-t-il un plafond pour l’achat de parts par SCI ?</h2>
+              <p class="faq-subsection-content">Chaque investisseur est limité au maximum à une détention de 20% des parts de la SCI. Ce seuile permet de s’assurer à ce qu’aucun n’investisseur détienne plus de 20% des parts afin de protéger l’ensemble des investisseurs dans le projet.</p>
+          </div>
+          <div class="faq-subsection">
+            <h2 class="faq-subsection-title">Documents d’Investissement</h2>
+            <p class="faq-subsection-content">Au moment d’investir dans un projet vous devrez accepter l’ensembe des documents d’investissement. Il s’agit de documents standards pour chaque investissement et des exemples de documents peuvent être consultés en ligne sur la plateforme.</p>
+        </div>
+        <div class="faq-subsection">
+          <h2 class="faq-subsection-title">Vérification d’Identité</h2>
+          <p class="faq-subsection-content">A chaque inscription sur Livsty, nous effectuons une vérification d'identité. C'est une partie essentielle de notre audit préalabale et est exigée par les autorités compétentes pour tous les clients.
+Dans l'éventualité où nous ne serions pas en mesure de procéder à la vérification d'identité par voie électronique, nous pourrions vous demander de fournir des documents d'identité qui pourraient également devoir être certifiés par un professionnel indépendant. De plus, certains justificatifs supplémentaires peuvent vous être demandé afin de satisfaire certaines obligations supplémentaires et vérifications pour les lois contre la fraude et le blanchiment.
+</p>
       </div>
     </div>
+    <div class="faq-section" id="FAQ-Bien">
+        <h1 class="faq-section-title">Propriétés</h1>
+        <p></p>
+        <div class="faq-subsection">
+            <h2 class="faq-subsection-title">Comment sont séléctionnées les propriétés ?</h2>
+            <p class="faq-subsection-content">Chaque propriété présentée sur Livsty a été choisie et évaluée par l’équipe Livsty et des professionnels de l’Immobilier.
+Livsty s’appui également sur son accès aux informations de partenaires tel que bases de données, …………. Nos investisseurs bénéficient via Livsty
+L’équipe s’attache à proposer des opportunités présentant des couples risque-rendement intéressants. Pour ce faire, l’équipe travaille attentivement à l’évalutaion de la valeur du droit d’occupation et la perspective de revalorisation du bien.
+            </p>
+        </div>
+        <div class="faq-subsection">
+            <h2 class="faq-subsection-title">Valeur du droit d’Occupation</h2>
+            <p class="faq-subsection-content"></p>
+        </div>
+    </div>
+
+
   </div>
+</div>
 </div>
