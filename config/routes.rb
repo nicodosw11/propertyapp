@@ -22,6 +22,7 @@
       member do
         get :snapshot
         patch :archive
+        put :avatar
       end
     end
     resources :investments, only: [:index, :show, :edit, :update, :destroy] do

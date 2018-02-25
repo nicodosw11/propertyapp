@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
  console.log('document is ready. I can sleep now');
  var reduction = $('.num').data('discount');
- console.log(reduction);
+ // console.log(reduction);
  updateDonutChart('#specificChart', reduction, true);
 });
 
