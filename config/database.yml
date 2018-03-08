@@ -26,7 +26,7 @@ development:
   host: localhost
   database: propertyapp_development
   username: postgres
-  password: 1598753264
+  password: ferrari
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
