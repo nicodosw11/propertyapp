@@ -1,9 +1,9 @@
 fr:
   shared:
     navbar-flex-bootstrap-active:
-      invest: "INVESTIR"
+      invest: "LE CONCEPT"
       sell: "VENDRE VOTRE BIEN"
-      opportunities_html: "OPPORTUNIT&EacuteS"
+      opportunities_html: "FINANCER UN PROJET"
       sign_in: "S'identifier"
       sign_up: "Inscription"
     video-banner:
@@ -22,9 +22,9 @@ fr:
         home: "Accueil"
         sign_out: "Déconnexion"
       mobile-dropdown-bootstrap:
-        invest: "Investir"
+        invest: "Le concept"
         sell: "Vendre votre bien"
-        opportunities_html: "Opportunit&eacutes"
+        opportunities_html: "Financer un projet"
         translate: "English version"
         dashboard: "Mon tableau de bord"
         profile: "Mon compte"

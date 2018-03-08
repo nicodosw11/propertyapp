@@ -2,13 +2,13 @@
   <div class="dropdown">
     <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
     <ul class="dropdown-menu dropdown-menu-right navbar-container-dropdown-menu">
-      <li><a href="#"><%= t(".invest") %></a></li>
-      <li><a href="#"><%=t(".sell") %></a></li>
-      <li><a href="#"><%= t(".opportunities_html") %></a></li>
-      <% if current_page?('/fr') || current_page?('/en') || current_page?('/') %>
+      <li><%= nav_link_to t(".invest"), root_path%></li>
+      <li><%= nav_link_to t(".sell"), seller_path%></li>
+      <li><%= nav_link_to t(".opportunities_html"), deals_path%></li>
+      <!--<% if current_page?('/fr') || current_page?('/en') || current_page?('/') %>
       <li><%= link_to t(".translate"), locale: :fr unless I18n.locale == :fr || nil %></li>
       <li><%= link_to t(".translate"), locale: :en unless I18n.locale == :en %></li>
-      <% end %>
+      <% end %>-->
       <% if user_signed_in? %>
       <li>
         <%= link_to t(".dashboard", default: "Mon tableau de bord"), dashboard_path %>
@@ -32,5 +32,3 @@
     </ul>
   </div>
 </div>
-
-

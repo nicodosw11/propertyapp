@@ -82,7 +82,7 @@ fr:
             tos: "conditions générales d'utilisation."
             aware-and-accept: "J'ai conscience et j’accepte que je peux perdre la totalité des sommes investies et que la revente de mes investissements peut être difficile"
             risks: "Détail des risques."
-            sign_up: "Créer Mon Compte >>>"
+            sign_up: "Créer mon compte >>>"
             signing_up_html: "<i class='fa fa-spinner fa-spin'></i> Signing up..."
           edit:
             my-infos: "Mes Informations"
@@ -92,10 +92,10 @@ fr:
           new:
             connexion-title: "Mes investissements Immobiliers en quelques clics !"
             my-livsty-account: "J'accède à mon compte Livsty"
-            welcome-back: "Bon retour parmi nous! C'est un plaisir de vous revoir."
+            welcome-back: "Identifiez-vous et accédez à l'ensemble de nos offres !"
             existing-user: "Utilisateur Existant"
             new-user: "Nouvel Utilisateur"
-            connexion-button: "Se Connecter"
+            connexion-button: "Se connecter"
             signing_in_html: "<i class='fa fa-spinner fa-spin'></i> Vérification..."
             forgot_your_password: "Mot de passe oublié ?"
             sign_up: "Inscrivez-vous!"

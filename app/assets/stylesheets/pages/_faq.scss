@@ -11,12 +11,16 @@
 
 .faq-section-title{
   font-size: 28px;
+  font-weight: bold;
 }
 
 .faq-subsection-title{
   font-size: 20px;
+  color: $body-color-darkgray;
 }
-
+.faq-subsection{
+  //margin-left: 10px;
+}
 #FAQ-Nav{
   padding-top:25px;
 }
@@ -33,4 +37,5 @@
 #FAQ-Nav > ul > li.active > a{
   color: $navbar-color-darkblue;
   background-color: $navbar-color-lightgray;
+  font-size: 20px;
 }

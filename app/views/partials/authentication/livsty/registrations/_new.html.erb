@@ -29,7 +29,7 @@
           <%= f.email_field :email,:class => "form-control livsty", :placeholder=>true %>
         </div>
         <div class="form-group col-md-12">
-          <%= f.country_select :country_of_residence, {only: ["FR", "GB"], include_blank: "#{t('.country_of_residence')}"},{:class => "form-control livsty"} %>
+          <%= f.country_select :country_of_residence, {only: ["FR", "GB"], include_blank: "#{t('.country_of_residence')}"},:class => "form-control livsty", :placeholder=>false %>
         </div>
         <div class="form-group col-md-12">
           <%= f.password_field :password,:class => "form-control livsty", :placeholder=>true %>
