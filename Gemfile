@@ -11,7 +11,7 @@ gem 'pundit'
 gem 'redis'
 gem 'cloudinary'
 gem 'country_select'
-#gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
+gem 'bcrypt' , git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
 
 # gem "letter_opener", group: :development
 gem "letter_opener", :group => [:development, :test]

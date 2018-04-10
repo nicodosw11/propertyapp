@@ -19,8 +19,15 @@
   color: $body-color-darkgray;
 }
 .faq-subsection{
-  //margin-left: 10px;
+
 }
+
+a.nounderline:link
+{
+  color: inherit;
+  text-decoration:none;
+}
+
 #FAQ-Nav{
   padding-top:25px;
 }
@@ -38,4 +45,17 @@
   color: $navbar-color-darkblue;
   background-color: $navbar-color-lightgray;
   font-size: 20px;
+}
+
+.faq-subsection-title .accordion-toggle:after {
+    /* symbol for "opening" panels */
+    font-family: 'Glyphicons Halflings';  /* essential for enabling glyphicon */
+    content: "\e114";    /* adjust as needed, taken from bootstrap.css */
+    float: none;        /* adjust as needed */
+    margin-left: 10px;
+    color: $body-color-darkgray;         /* adjust as needed */
+}
+.faq-subsection-title .accordion-toggle.collapsed:after {
+    /* symbol for "collapsed" panels */
+    content: "\e080";    /* adjust as needed, taken from bootstrap.css */
 }
