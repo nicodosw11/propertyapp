@@ -35,6 +35,9 @@ gem 'jquery-ui-rails', '~> 5.0'
 gem 'chosen-rails'
 gem 'friendly_id', '~> 5.1.0'
 
+gem 'forest_liana'
+gem 'rack-cors'
+
 group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'
