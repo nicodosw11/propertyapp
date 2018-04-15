@@ -38,6 +38,7 @@ fr:
             go-to-edit-profile: "Modifier mes informations"
             go-to-dashboard: "Voir mon tableau de bord"
             password_complexity: "%{minimum_password_length} caractères minimum et au moins une lettre minuscule, une lettre majuscule, et un chiffre"
+            password_complexity_html: "Au moins <strong id='password_length'>8 caractères</strong>, inclure au moins <strong id='password_capletter'>une lettre majuscule</strong>, <strong id='password_smallcapletter'>une lettre minuscule</strong> et <strong id='password_digit'>un chiffre</strong>."
             leave_blank: "Nouveau mot de passe (ne pas remplir si vous ne voulez pas le modifier)"
             leave_blank_if_you_don_t_want_to_change_it: "laissez ce champ vide pour le laisser inchangé"
             country_of_residence: "Pays de résidence"
@@ -98,4 +99,5 @@ fr:
             connexion-button: "Se Connecter"
             signing_in_html: "<i class='fa fa-spinner fa-spin'></i> Vérification..."
             forgot_your_password: "Mot de passe oublié ?"
+            resend_confirmation_instructions: "Renvoyer le mail de confirmation ?"
             sign_up: "Inscrivez-vous!"

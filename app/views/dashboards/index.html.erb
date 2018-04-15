@@ -43,8 +43,7 @@
                       </tr>
                       <tr>
                         <th class="col-sm-4">Né(e) le</th>
-                        <!-- <td class="col-sm-8">- / - / -</td> -->
-                        <td class="col-sm-8"><%= current_user.birthday.strftime('%m/%d/%Y') %></td>
+                        <td class="col-sm-8"><%= current_user.birthday.present? ? current_user.birthday.strftime('%d/%m/%Y') : "- / - / -" %></td>
                       </tr>
                       <tr>
                         <th class="col-sm-4">Résidence</th>
