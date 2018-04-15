@@ -48,7 +48,7 @@ class User < ApplicationRecord
     self.investments.each do |investment|
       arr.push(investment.deal)
     end
-    arr.uniq.count
+    arr.uniq
   end
 
   # Override Devise::Confirmable#after_confirmation

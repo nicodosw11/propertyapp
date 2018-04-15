@@ -69,6 +69,11 @@ class Deal < ApplicationRecord
     investments.blank? ? 0 : investments.sum(:pledge_amount)
   end
 
+  def money_raised_app
+    # self.investments.sum(:price)
+    investments.validated.blank? ? 0 : investments.validated.sum(:pledge_amount)
+  end
+
   def number_of_supporters
     # self.investments.pluck(:user_id).uniq.length
     investments.pluck(:user_id).uniq.length
@@ -119,6 +124,10 @@ class Deal < ApplicationRecord
   def pct_funded
     # self.pct_funded = (100 * self.money_raised.to_f / self.funding_goal).round(1)
     (100 * self.money_raised.to_f / self.funding_goal).round(1) if !money_raised.blank? && !funding_goal.blank?
+  end
+  def pct_funded_app
+    # self.pct_funded = (100 * self.money_raised.to_f / self.funding_goal).round(1)
+    (100 * self.money_raised_app.to_f / self.funding_goal).round(1) if !money_raised_app.blank? && !funding_goal.blank?
   end
   def set_pct_funded!
     self.pct_funded = (100 * self.money_raised.to_f / self.funding_goal).round(1)

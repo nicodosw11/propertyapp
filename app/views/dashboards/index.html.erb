@@ -92,7 +92,7 @@
                       </tr>
                       <tr>
                         <td class="col-sm-8">Projets en Portefeuille</td>
-                        <td class="col-sm-4"><%= current_user.backed_projects%></td>
+                        <td class="col-sm-4"><%= current_user.backed_projects.count%></td>
                       </tr>
                     </tbody>
                   </table>
@@ -175,7 +175,7 @@
                     <tr>
                       <th>Projet</th>
                       <th>Nombre de Parts</th>
-                      <th>Prix d'achat</th>
+                      <th>Total investi</th>
                       <th>Date d'achat</th>
                       <th>Horizon</th>
                       <th>Dernière Transaction</th>
@@ -183,15 +183,15 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <% if current_user.investments.any? %>
-                      <% @current_user.investments.each do |investment| %>
+                    <% if current_user.backed_projects.length > 0 %>
+                      <% @current_user.backed_projects.each do |bp| %>
                       <tr>
-                        <td><%= link_to investment.deal.street, deal_path(investment.deal) %></td>
-                        <td><%= investment.shares %>x</td>
-                        <td><%= investment.pledge_amount %>€</td>
-                        <td><%= investment.created_at.strftime('%d-%m-%y %H:%M') %></td>
-                        <td><%= investment.deal.duration %></td>
-                        <td><%= investment.status %> <%= "(#{investment.updated_at.strftime('%d-%m-%y %H:%M')})" %></td>
+                        <td><%= link_to bp.street, deal_path(bp) %></td>
+                        <td><%= bp.investments.validated.where(user: current_user).sum(:shares)%></td>
+                        <td><%= number_to_currency(bp.investments.validated.where(user: current_user).sum(:pledge_amount))%></td>
+                        <td><%= bp.investments.where(user: current_user).first.created_at.strftime('%d-%m-%y %H:%M') %></td>
+                        <td><%= bp.duration %></td>
+                        <td><%= bp.investments.where(user: current_user).last.created_at.strftime('%d-%m-%y %H:%M') %></td>
                         <td>0</td>
                       </tr>
                       <% end %>
