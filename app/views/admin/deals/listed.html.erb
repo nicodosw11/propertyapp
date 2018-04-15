@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" style="width: 90%">
 
   <div class='row margin-top'>
     <div class='col-xs-2'>Select Deal</div>
@@ -14,26 +14,36 @@
 
   <div class="row margin-top">
     <div class="col-xs-12">
-      <!-- <h4>Listing Deals</h4> -->
-      <table class="table table-condensed table-hover">
-        <thead>
-          <tr>
-            <th></th>
-            <th>Full address</th>
-            <th>Funding goal</th>
-            <th>Current funding</th>
-            <th>Max shares</th>
-            <th>Available shares</th>
-            <th>Last Updated</th>
-          </tr>
-        </thead>
 
-        <tbody id='deals'>
-          <%= render @deals %>
-        </tbody>
-      </table>
+      <div class="row"> <!-- nested columns -->
 
-      <br>
+        <%= render 'admin/shared/left-buttons' %>
+
+        <div class="col-xs-10">
+
+          <!-- <h4>Listing Deals</h4> -->
+          <table class="table table-condensed table-hover">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Full address</th>
+                <th>Funding goal</th>
+                <th>Current funding</th>
+                <th>Max shares</th>
+                <th>Available shares</th>
+                <th>Last Updated</th>
+              </tr>
+            </thead>
+
+            <tbody id='deals'>
+              <%= render @deals %>
+            </tbody>
+          </table>
+
+          <br>
+        </div>
+
+      </div> <!-- nested columns -->
 
     </div>
   </div>
