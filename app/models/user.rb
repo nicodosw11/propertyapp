@@ -39,6 +39,17 @@ class User < ApplicationRecord
     "#{first_name} #{last_name}"
   end
 
+  def total_contributions
+    self.investments.sum(:pledge_amount)
+  end
+
+  def backed_projects
+    arr = []
+    self.investments.each do |investment|
+      arr.push(investment.deal)
+    end
+    arr.uniq.count
+  end
 
   private
 

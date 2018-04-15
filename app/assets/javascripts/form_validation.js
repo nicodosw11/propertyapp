@@ -93,6 +93,6 @@ function onReady() {
 $(document).ready(function() {
 // document.addEventListneer('DOMContentLoaded', function() {
   // console.log(page.controller());
-  if (!(page.controller() === 'registrations' && page.action() === 'new')) { return; }
+  if (!(page.controller() === 'registrations' && (page.action() === 'new' || page.action() === 'edit'))) { return; }
   return onReady();
 });
