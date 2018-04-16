@@ -56,8 +56,8 @@
 
 .text-overlay h1 {
   // font-size: 4em;
-  // color: #33CCCC;
-  // color: #777777;
+  // color: $navbar-color-darkblue;
+  // color: $navbar-color-darkgray;
 
   font-weight: 300;
 
@@ -90,23 +90,24 @@ span.nowwrap {
 }
 
 .greyed{
-  color:#D3D3D3;
+  color:$navbar-background-gray;
 }
 .greened{
-  color:#33CCCC;
+  color:$navbar-color-darkblue;
 }
 
 .turquoise {
-  color: #C1EFEF;
+  color: $navbar-color-lightblue;
 }
 
 .blueback {
-  margin: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
   padding: 10px;
-  border-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
   // background: rgba(51, 51, 51, 0.3);
-  color: $navbar-color-lightblue;
+  color: white;
   font-weight: 500;
+  background-color: $navbar-color-darkgray;
 }
-
-

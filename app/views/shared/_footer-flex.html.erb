@@ -1,16 +1,17 @@
 <footer>
-  <div class="container">
+  <div class="container" id="footer">
     <div class="row">
       <div class="col-sm-4 col-sm-offset-4 text-center" id="social-media">
-        <a href="https://www.facebook.com/ContactLivsty/" title="Aller vers la Page Facebook."><i class="fa fa-facebook fa-2x" aria-hidden="true" style="color: #777777; margin-right: 0.4em;"></i></a>
-        <a href="https://www.linkedin.com/company/11408513/" title="Aller vers la Page Facebook."><i class="fa fa-linkedin fa-2x" aria-hidden="true" style="color: #777777;"></i></a>
+        <a href="https://www.facebook.com/ContactLivsty/" onclick="window.open(this.href); return false;" title="Aller vers la page Facebook"><i class="fa fa-facebook fa-2x" aria-hidden="true" style="color: #777777; margin-right: 0.4em;"></i></a>
+        <a href="https://www.linkedin.com/company/11408513/" onclick="window.open(this.href); return false;" title="Aller vers la page Linkedin"><i class="fa fa-linkedin fa-2x" aria-hidden="true" style="color: #777777;"></i></a>
+        <a href="https://twitter.com/Livsty_Immo" onclick="window.open(this.href); return false;" title="Aller vers la page Twitter"><i class="fa fa-twitter fa-2x" aria-hidden="true" style="color: #777777; margin-left: 0.4em;"></i></a>
       </div>
     </div>
     <div class="row">
       <div class="col-sm-10 col-sm-offset-1 text-center">
         <h3>AVERTISSEMENT</h3>
         <p class="text-center" style="font-size: 12px;">L’investissement dans l'immobilier sur LIVSTY présente
-          des risques parmi lesquels: la perte partielle ou totale du capital investi,
+          des risques parmi lesquels : la perte partielle ou totale du capital investi,
           l’illiquidité, l’absence de valorisation après l’investissement ainsi que
           l'incertitude sur la durée de l'investissement. Il s'agit d'un investissement
           indirect dans l'immobilier sur un horizon long-terme et que vous pouvez être
@@ -18,10 +19,9 @@
         </p>
         <%= link_to "Les détails des Risques", risks_path %>
       </div>
+	</div>
+	<div class="text-center">
+      Copyright © 2018 Livsty SAS. Tous droits réservés | <%= link_to "Mentions Légales", legal_path %>
     </div>
-    <span class="pull-left">
-      Copyright © 2017 Livsty SAS. Tous droits réservés | <%= link_to "Mentions Légales", legal_path %>
-    </span>
   </div>
 </footer>
-

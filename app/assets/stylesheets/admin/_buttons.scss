@@ -18,8 +18,8 @@
 .btn.btn-form {
   // border: 1px solid #00A699;
   // background-color: #00A699;
-  border: 1px solid #33CCCC;
-  background-color: #33CCCC;
+  border: 1px solid $navbar-color-darkblue;
+  background-color: $navbar-color-darkblue;
 }
 
 .btn.btn-form:active {
@@ -36,13 +36,13 @@
 }
 
 .btn.btn-normal {
-  border: 1px solid #33CCCC;
-  background-color: #33CCCC;
+  border: 1px solid $navbar-color-darkblue;
+  background-color: $navbar-color-darkblue;
 }
 
 .btn.btn-normal:hover {
   outline: none;
-  color: #F5F5F5;
-  border-color: #C1EFEF;
-  background-color: #C1EFEF;
+  color: $navbar-color-lightgray;
+  border-color: $navbar-color-lightblue;
+  background-color: $navbar-color-lightblue;
 }

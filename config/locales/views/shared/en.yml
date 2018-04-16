@@ -1,9 +1,9 @@
 en:
   shared:
     navbar-flex-bootstrap-active:
-      invest: "INVEST"
+      invest: "CONCEPT"
       sell: "SELL YOUR PROPERTY"
-      opportunities_html: "OPPORTUNITIES"
+      opportunities_html: "INVEST"
       sign_in: "Sign in"
       sign_up: "Sign up"
     video-banner:
@@ -22,9 +22,9 @@ en:
         home: "Home"
         sign_out: "Log out"
       mobile-dropdown-bootstrap:
-        invest: "Invest"
+        invest: "Concept"
         sell: "Sell your property"
-        opportunities_html: "Opportunities"
+        opportunities_html: "Invest"
         translate: "Switch to French"
         dashboard: "My dashboard"
         profile: "My account"
@@ -32,4 +32,3 @@ en:
         sign_out: "Log out"
         sign_in: "Sign in"
         sign_up: "Sign up"
-

@@ -1,4 +1,4 @@
-<div class="banner-homepage img-responsive" alt="Responsive image banner home" style="background-image: linear-gradient(-225deg, rgba(184,101,168,0.6) 0%, rgba(53,36,61,0.6) 50%), url('<%= image_path "ParisMontparnasse.jpg" %>');">
+<div class="banner-homepage img-responsive" alt="Responsive image banner home" style="background-image: linear-gradient(-225deg, rgba(132,87,6,0.3) 0%, rgba(53,36,61,0.6) 50%), url('<%= image_path "ParisMontparnasse.jpg" %>');">
   <div class="container no-padding text-overlay">
     <div class="row">
       <div class="col-xs-12 margin-bottom turquoise" style="text-align: left">
@@ -17,26 +17,25 @@
         <div class="col-xs-4 padded text-center"">
           <%= image_tag "lightbulbEuro128.png", class:"logo-up", alt: "Investir Innovant" %>
           <div class="greyback">
-            <h3 class="display-subtitle"><%= t('.bubble-1') %></h3>
+            <h3 class="display-subtitle">Une nouvelle façon d'investir</h3>
           </div>
         </div>
         <div class="col-xs-4 padded text-center">
           <%= image_tag "line-up128.png", class:"logo-up", alt: "Graphique Croissant" %>
           <div class="greyback">
-            <h3 class="display-subtitle"><%= t('.bubble-2_html') %></h3>
+            <h3 class="display-subtitle">Une épargne qui fructifie</h3>
           </div>
         </div>
         <div class="col-xs-4 padded text-center">
           <%= image_tag "security128.png", class:"logo-up", alt: "Protégé" %>
           <div class="greyback">
-            <h3 class="display-subtitle"><%= t('.bubble-3') %></h3>
+            <h3 class="display-subtitle">La solidité de la pierre</h3>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <%= link_to "", id: "click-to-scroll" do %>
+  <%= link_to "#overview", id: "click-to-scroll" do %>
     <i class="fa fa-angle-down floating"></i>
   <% end %>
 </div>
-

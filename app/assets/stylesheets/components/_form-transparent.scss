@@ -1,5 +1,5 @@
 .fs-subscribe {
-  background: #f5f5f5;
+  background: $navbar-color-lightgray;
   border-radius: 3px;
   border: 1px solid #e8e8e8;
   height: 4rem;
@@ -39,9 +39,9 @@
     // background-color: #c0a375;
     // border-color: #c0a375;
     // color: #ffffff;
-    border-color:#C1EFEF;
-    background-color: #33CCCC;
-    color:#F5F5F5;
+    border-color:$navbar-color-lightblue;
+    background-color: $navbar-color-darkblue;
+    color:$navbar-color-lightgray;
     box-shadow: none;
   }
 

@@ -15,7 +15,7 @@ hr {
 }
 
 .hr_gray {
-  border-color: #C1EFEF;
+  border-color: $navbar-color-lightblue;
   border-width: 1px;
 }
 
@@ -26,7 +26,8 @@ hr {
 // Expertise
 
 .bubble {
-  margin-top: 3em;
+  //margin-top: 3em;
+  //margin-bottom: 3em;
 }
 
 // Transaction
@@ -37,7 +38,7 @@ hr {
 }
 
 #footer{
-  height: 180px;
+  height: 100%;
   width: 100%;
   font-size: 0.8em;
   margin: 0;

@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
-ruby '2.3.1'
+ruby '2.3.3'
 
 gem 'rails', '5.0.0.1'
 gem 'puma'
-gem 'pg', '~> 0.18'
+gem 'pg', '0.20.0'
 gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'devise'
@@ -11,6 +11,7 @@ gem 'pundit'
 gem 'redis'
 gem 'cloudinary'
 gem 'country_select'
+gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
 
 # gem "letter_opener", group: :development
 gem "letter_opener", :group => [:development, :test]
@@ -35,6 +36,9 @@ gem 'jquery-ui-rails', '~> 5.0'
 gem 'chosen-rails'
 gem 'friendly_id', '~> 5.1.0'
 
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
 gem 'forest_liana'
 gem 'rack-cors'
 
@@ -54,7 +58,5 @@ end
 group :test do
   gem "capybara"
   gem "factory_girl_rails"
-  gem 'database_cleaner'
+  gem 'database_cleaner' , '1.6.1'
 end
-
-

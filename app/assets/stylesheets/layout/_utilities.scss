@@ -43,10 +43,10 @@
 body{
   // padding-top: 90px;
   padding-top: 76px;
-  // background-color: #F5F5F5;
+  // background-color: $navbar-color-lightgray;
   background-color: #F8F8F8;
   // font-family: "Raleway", Georgia;
-  // color: #696969;
+  // color: $body-color-darkgray;
   // position: relative;
   // height:100%;
   // font-size:16px;
@@ -81,4 +81,3 @@ iframe {
 
 
 // form { max-width: 500px; }
-

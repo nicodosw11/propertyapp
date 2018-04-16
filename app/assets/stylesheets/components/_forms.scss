@@ -1,11 +1,11 @@
 .password_compliant{
-  color:#33CCCC;
+  color:$navbar-color-darkblue;
 }
 
 .left-bar {
   padding-bottom: 70%;
   // margin-bottom: -70%;
-  background: #33CCCC;
+  background: $navbar-color-darkblue;
 }
 .left-bar-content{
   color:white;
@@ -17,18 +17,18 @@
   width:100%;
   font-weight:500;
   padding: 0.5em;
-  background-color: #33CCCC;
-  color: #F5F5F5;
+  background-color: $navbar-color-darkblue;
+  color: $navbar-color-lightgray;
   -webkit-transition: background-color .2s ease-in-out;
   -o-transition: background-color .2s ease-in-out;
   transition: background-color .2s ease-in-out;
   font-size: 14px;
 }
 .btn-standard:hover{
-  background-color: #C1EFEF;
-  // color: #F5F5F5;
-  color:#33CCCC;
-  border-color: #C1EFEF;
+  background-color: $navbar-color-lightblue;
+  // color: $navbar-color-lightgray;
+  color:$navbar-color-darkblue;
+  border-color: $navbar-color-lightblue;
 }
 
 .form-control.livsty{

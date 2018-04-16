@@ -13,8 +13,8 @@
 .opportunity-body{
 
   .table>tbody>tr.success>td, .table>tbody>tr.success>th, .table>tbody>tr>td.success, .table>tbody>tr>th.success, .table>tfoot>tr.success>td, .table>tfoot>tr.success>th, .table>tfoot>tr>td.success, .table>tfoot>tr>th.success, .table>thead>tr.success>td, .table>thead>tr.success>th, .table>thead>tr>td.success, .table>thead>tr>th.success {
-    background-color: #C1EFEF;
-    border: 2px solid #33CCCC;
+    background-color: $navbar-color-lightblue;
+    border: 2px solid $navbar-color-darkblue;
   }
 
   .table>tbody>tr>th{
@@ -40,7 +40,7 @@
       height: 16px;
       width: 16px;
       border-radius: 50%;
-      background: #33cccc;
+      background: $navbar-color-darkblue;
       margin-top: -4px;
   }
 
@@ -64,7 +64,7 @@
       height: 16px;
       width: 16px;
       border-radius: 50%;
-      background: #33cccc;
+      background: $navbar-color-darkblue;
   }
 
   /*hide the outline behind the border*/
@@ -104,6 +104,6 @@
       height: 16px;
       width: 16px;
       border-radius: 50%;
-      background: #33cccc;
+      background: $navbar-color-darkblue;
   }
 }

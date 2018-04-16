@@ -1,32 +1,32 @@
 // body{
 //   padding-top: 90px;
-//   background-color: #F5F5F5;
+//   background-color: $navbar-color-lightgray;
 //   font-family: 'Raleway', Georgia;
-//   color: #696969;
+//   color: $body-color-darkgray;
 //   position: relative;
 //   height:100%;
 //   font-size:16px;
 // }
 
 .navbar{
-  background-color: #D3D3D3;
-  color: #777777;
+  background-color: $navbar-background-gray;
+  color: $navbar-color-darkgray;
   width: 100%;
   height: 70px;
 
   .navbar-header {
     // min-height: 0px;
     .collapsed {
-      border-color:#F5F5F5;
+      border-color:$navbar-color-lightgray;
       // width: 46px;
       // height: 46px;
       // margin-top:15px;
     }
     .collapsed:hover {
-      background-color: #C1EFEF;
+      background-color: $navbar-color-lightblue;
     }
     .icon-bar {
-      background-color: #F5F5F5;
+      background-color: $navbar-color-lightgray;
     }
   }
 }
@@ -36,7 +36,7 @@
 }
 #navbar {
   // margin-top:24px;
-  // background-color: #D3D3D3;
+  // background-color: $navbar-background-gray;
   #top-menu {
   // padding-right: 15px;
   // margin-right: 15px;
@@ -52,22 +52,22 @@
 }
 
 .main-menu li a {
-  color: #777777;
+  color: $navbar-color-darkgray;
   font-weight: 500;
   font-size:14px;
-  background-color: #D3D3D3;
+  background-color: $navbar-background-gray;
   padding-top: 20px;
   // padding-bottom: 0px;
 }
 .main-menu li a:hover {
-  background-color: #D3D3D3;
-  // border-bottom: 2px solid #C1EFEF;
+  background-color: $navbar-background-gray;
+  // border-bottom: 2px solid $navbar-color-lightblue;
 }
 
 li a.btn-bar{
   font-size:14px;
-  background-color: #33CCCC;
-  color:#F5F5F5;
+  background-color: $navbar-color-darkblue;
+  color:$navbar-color-lightgray;
   margin-top: 9px;
   margin-bottom: 9px;
   padding-top: 7px;
@@ -80,30 +80,30 @@ li a.btn-bar{
 
 }
 li a.btn-bar:hover{
-  background-color: #C1EFEF;
-  color:#F5F5F5;
+  background-color: $navbar-color-lightblue;
+  color:$navbar-color-lightgray;
 }
 .dropdown-menu {
-  background-color: #D3D3D3;
-  color: #777777;
+  background-color: $navbar-background-gray;
+  color: $navbar-color-darkgray;
   text-align: center;
   font-size:12px;
-  border-color:#F5F5F5;
+  border-color:$navbar-color-lightgray;
 }
 .dropdown-menu li a {
   font-size:12px;
-  color:#F5F5F5;
+  color:$navbar-color-lightgray;
   padding: 0px;
   margin: 0px;
 
   &:hover {
-   color: #777777;
+   color: $navbar-color-darkgray;
   }
 }
 
 // .dropdown-menu li a:hover {
-//   color:#C1EFEF;
-//   border-bottom: 2px solid #D3D3D3;
+//   color:$navbar-color-lightblue;
+//   border-bottom: 2px solid $navbar-background-gray;
 //   text-decoration: underline;
 // }
 
@@ -112,7 +112,7 @@ li a.btn-bar:hover{
 // }
 
 // .active{
-//   border-bottom: 2px solid #33CCCC;
+//   border-bottom: 2px solid $navbar-color-darkblue;
 // }
 
 /* NavBar Collapsed Breakpoint */

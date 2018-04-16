@@ -1,0 +1,41 @@
+/* -------------------------------------
+ * CSS code specific to faq page
+ * (margin/padding adjustments)
+ * ------------------------------------- */
+
+#FAQ-Content{
+  font-size: 14px;
+  text-align: justify;
+  padding-top:15px;
+}
+
+.faq-section-title{
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.faq-subsection-title{
+  font-size: 20px;
+  color: $body-color-darkgray;
+}
+.faq-subsection{
+  //margin-left: 10px;
+}
+#FAQ-Nav{
+  padding-top:25px;
+}
+
+#FAQ-Nav > ul > li > a{
+  color: $body-color-darkgray;
+}
+
+#FAQ-Nav > ul > li > a:hover{
+  color: $navbar-color-lightblue;
+  background-color: $navbar-color-lightgray;
+}
+
+#FAQ-Nav > ul > li.active > a{
+  color: $navbar-color-darkblue;
+  background-color: $navbar-color-lightgray;
+  font-size: 20px;
+}
