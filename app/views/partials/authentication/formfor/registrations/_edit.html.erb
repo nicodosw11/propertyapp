@@ -24,6 +24,26 @@
             </div>
 
             <div class="form-group">
+              <%= f.date_field :birthday, autofocus: true, class: "form-control livsty margin-bottom" %>
+            </div>
+
+            <div class="form-group">
+              <%= f.text_field :phone_number, autofocus: true, placeholder: "+33 6 78 45 63 49", class: "form-control livsty margin-bottom" %>
+            </div>
+
+            <div class="form-group">
+              <%= f.text_field :address, autofocus: true, placeholder: "4 rue Magellan", class: "form-control livsty margin-bottom" %>
+            </div>
+
+            <div class="form-group">
+              <%= f.text_field :zipcode, autofocus: true, placeholder: "75015", class: "form-control livsty margin-bottom" %>
+            </div>
+
+            <div class="form-group">
+              <%= f.text_field :town, autofocus: true, placeholder: "Paris", class: "form-control livsty margin-bottom" %>
+            </div>
+
+            <div class="form-group">
               <%= f.country_select :country_of_residence, only: ["FR", "GB"], include_blank: "#{t('.country_of_residence')}", autofocus: true, class: "form-control livsty margin-bottom" %>
             </div>
 
@@ -37,11 +57,17 @@
 
             <div class="form-group">
               <%= f.password_field :password, autocomplete: "off", placeholder: "#{t('.leave_blank')}", class: "form-control livsty margin-bottom" %>
-              <em>(<%= t'.password_complexity', minimum_password_length: @minimum_password_length %>)</em>
+              <small id="passwordHelpBlock" class="form-text text-muted">
+                <%= t('.password_complexity_html') %>
+              </small>
             </div>
 
             <div class="form-group">
               <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: true, class: "form-control livsty margin-bottom" %>
+            </div>
+
+            <div class="form-group">
+              <%= f.password_field :current_password, autocomplete: "off", placeholder: true, class: "form-control livsty margin-bottom" %>
             </div>
 
             <div class="actions">

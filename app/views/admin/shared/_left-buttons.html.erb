@@ -1,0 +1,13 @@
+<div class="col-xs-2">
+  <ul class="sidebar-list">
+    <% admins_only do %>
+    <li><%= link_to "New Deal", new_admin_deal_path, class: "new btn btn-form" %></li>
+    <% end %>
+    <li class="sidebar-item"><%= link_to "All deals", listed_admin_deals_path, class: "sidebar-link #{'active' if current_page?(listed_admin_deals_path)}" %></li>
+    <li class="sidebar-item"><%= link_to "All transactions", admin_investments_path, class: "sidebar-link #{'active' if current_page?(admin_investments_path)}" %></li>
+    <li class="sidebar-item"><%= link_to "All users", admin_users_path, class: "sidebar-link #{'active' if current_page?(admin_users_path)}" %></li>
+    <li class="sidebar-item"><%= link_to "Listing", admin_deals_path, class: "sidebar-link" %></li>
+  </ul>
+</div>
+
+

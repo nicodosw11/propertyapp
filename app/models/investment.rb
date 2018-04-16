@@ -6,6 +6,11 @@ class Investment < ApplicationRecord
   validates :deal, :user, :pledge_amount, :shares, presence: true
   validates :shares, numericality: true
   validates :pledge_amount, numericality: {greater_than: 0}
+
+  scope :validated, -> {
+    where(:status => 'approved')
+  }
+
   def price
     1000
   end

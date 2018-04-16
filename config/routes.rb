@@ -1,4 +1,9 @@
   Rails.application.routes.draw do
+  # MUST be declared before the mount ForestLiana::Engine.
+  namespace :forest do
+    post '/actions/validate' => 'investments#validate'
+  end
+  mount ForestLiana::Engine => '/forest'
   namespace :admin do
     root "application#index"
     resources :deals, only: [:index, :new, :create, :destroy]
@@ -22,6 +27,7 @@
       member do
         get :snapshot
         patch :archive
+        put :avatar
       end
     end
     resources :investments, only: [:index, :show, :edit, :update, :destroy] do

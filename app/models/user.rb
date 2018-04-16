@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  after_create :send_welcome_email
+  # after_create :send_welcome_email
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :confirmable, :recoverable, :rememberable, :trackable, :validatable
@@ -39,6 +39,22 @@ class User < ApplicationRecord
     "#{first_name} #{last_name}"
   end
 
+  def total_contributions
+    self.investments.sum(:pledge_amount)
+  end
+
+  def backed_projects
+    arr = []
+    self.investments.each do |investment|
+      arr.push(investment.deal)
+    end
+    arr.uniq
+  end
+
+  # Override Devise::Confirmable#after_confirmation
+  def after_confirmation
+    send_welcome_email
+  end
 
   private
 

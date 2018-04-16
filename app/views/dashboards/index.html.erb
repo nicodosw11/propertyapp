@@ -1,21 +1,21 @@
 <div class="container" style="width: 80%;">
   <div class="row">
     <div class="col-md-3">
-      <ul class="sidebar-list">
+      <ul class="sidebar-list" style="position: fixed;">
         <li class="sidebar-item"><%= link_to t('.go-to-edit-profile'), edit_user_registration_path, class: "sidebar-link" %></li>
         <li class="sidebar-item"><%= link_to t('.go-to-dashboard'), dashboard_path, class: "sidebar-link active" %>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" href="#">Aperçu</a>
-        </li>
-        <li class="nav-item">
+        </li> -->
+        <!-- <li class="nav-item">
           <a class="nav-link" href="#">Historique</a>
-        </li>
-        <li class="nav-item">
+        </li> -->
+        <!-- <li class="nav-item">
           <a class="nav-link" href="#">Analyse</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Rapports</a>
-        </li>
+        </li> -->
       </ul>
       <br/>
     </div>
@@ -26,175 +26,237 @@
         <div class="panel-body">
           <div class="container" style="width: 90%;">
 
-        <!-- Résumé -->
-        <div class="row">
-          <h2>Résumé</h2>
-          <div class="col-md-6 ">
-            <div class="thumbnail">
-              <table class="table-sm">
-                <tbody>
-                  <tr>
-                    <th class="col-sm-4">Nom</th>
-                    <td class="col-sm-8"><%= current_user.last_name %></td>
-                  </tr>
-                  <tr>
-                    <th class="col-sm-4">Prénom</th>
-                    <td class="col-sm-8"><%= current_user.first_name %></td>
-                  </tr>
-                  <tr>
-                    <th class="col-sm-4">Né(e) le</th>
-                    <td class="col-sm-8">- / - / -</td>
-                  </tr>
-                  <tr>
-                    <th class="col-sm-4">Résidence</th>
-                    <td class="col-sm-8">France</td>
-                  </tr>
-                  <tr>
-                    <th class="col-sm-4">Adresse</th>
-                    <td class="col-sm-8"> - </td>
-                  </tr>
-                  <tr>
-                    <th class="col-sm-4">Code Postal</th>
-                    <td class="col-sm-8"> - </td>
-                  </tr>
-                  <tr>
-                    <th class="col-sm-4">Ville</th>
-                    <td class="col-sm-8"> - </td>
-                  </tr>
-                  <tr>
-                    <th class="col-sm-4">Email</th>
-                    <td class="col-sm-8"><%= current_user.email %></td>
-                  </tr>
-                  <tr>
-                    <th class="col-sm-4">Téléphone</th>
-                    <td class="col-sm-8"> - </td>
-                  </tr>
-                </tbody>
-              </table>
+            <!-- Résumé -->
+            <div class="row">
+              <h2>Résumé</h2>
+              <div class="col-md-6 ">
+                <div class="thumbnail">
+                  <table class="table-sm">
+                    <tbody>
+                      <tr>
+                        <th class="col-sm-4">Nom</th>
+                        <td class="col-sm-8"><%= current_user.last_name %></td>
+                      </tr>
+                      <tr>
+                        <th class="col-sm-4">Prénom</th>
+                        <td class="col-sm-8"><%= current_user.first_name %></td>
+                      </tr>
+                      <tr>
+                        <th class="col-sm-4">Né(e) le</th>
+                        <td class="col-sm-8"><%= current_user.birthday.present? ? current_user.birthday.strftime('%d/%m/%Y') : "- / - / -" %></td>
+                      </tr>
+                      <tr>
+                        <th class="col-sm-4">Résidence</th>
+                        <td class="col-sm-8"><%= current_user.country_of_residence %></td>
+                      </tr>
+                      <tr>
+                        <th class="col-sm-4">Adresse</th>
+                        <td class="col-sm-8"> <%= current_user.address %> </td>
+                      </tr>
+                      <tr>
+                        <th class="col-sm-4">Code Postal</th>
+                        <td class="col-sm-8"><%= current_user.zipcode %></td>
+                      </tr>
+                      <tr>
+                        <th class="col-sm-4">Ville</th>
+                        <td class="col-sm-8"> <%= current_user.town %> </td>
+                      </tr>
+                      <tr>
+                        <th class="col-sm-4">Email</th>
+                        <td class="col-sm-8"><%= current_user.email %></td>
+                      </tr>
+                      <tr>
+                        <th class="col-sm-4">Téléphone</th>
+                        <td class="col-sm-8"><%= current_user.phone_number %></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="thumbnail">
+                  <h3><u>Statut:</u> <span id:"User_Status">Investisseur</span></h3>
+                  <table class="table">
+                    <tbody>
+                      <tr>
+                        <td class="col-sm-8">Solde</td>
+                        <td class="col-sm-4">0,00 €</td>
+                      </tr>
+                      <tr>
+                        <td class="col-sm-8">Investi</td>
+                        <td class="col-sm-4"><%= number_to_currency(current_user.total_contributions) %></td>
+                      </tr>
+                      <tr>
+                        <td class="col-sm-8">Fonds Disponibles</td>
+                        <td class="col-sm-4"> 0,00 €</td>
+                      </tr>
+                      <tr>
+                        <td class="col-sm-8">Projets en Portefeuille</td>
+                        <td class="col-sm-4"><%= current_user.backed_projects.count%></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="col-md-6">
-            <div class="thumbnail">
-              <h3><u>Statut:</u> <span id:"User_Status">Investisseur</span></h3>
-              <table class="table">
-                <tbody>
-                  <tr>
-                    <td class="col-sm-8">Solde</td>
-                    <td class="col-sm-4">€ 0,00</td>
-                  </tr>
-                  <tr>
-                    <td class="col-sm-8">Investi</td>
-                    <td class="col-sm-4">€ 0,00</td>
-                  </tr>
-                  <tr>
-                    <td class="col-sm-8">Fonds Disponibles</td>
-                    <td class="col-sm-4">€ 0,00</td>
-                  </tr>
-                  <tr>
-                    <td class="col-sm-8">Projets en Portefeuille</td>
-                    <td class="col-sm-4">0</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-        <hr>
-        <!-- Aperçu -->
-        <div class="row">
-          <h2>Aperçu</h2>
-          <div class="col-sm-12 col-md-6">
-            <div class="thumbnail card text-center">
-              <div class="card-body">
-                <h4 class="card-title">€0,00</h4>
-                <a data-toggle="collapse" href="#collapseBalance" aria-expanded="false" aria-controls="collapseBalance">Balance net</a>
-                <div class="collapse" id="collapseBalance">
-                  <div class="card card-body">
-                    <br>
-                    <table class="table">
-                      <tbody>
-                        <tr>
-                          <td class="col-sm-8 text-left">Total Crédits</td>
-                          <td class="col-sm-4 text-right">€0,00</td>
-                        </tr>
-                        <tr>
-                          <td class="col-sm-8 text-left">Total Dédits</td>
-                          <td class="col-sm-4 text-right">€0,00</td>
-                        </tr>
-                        <tr>
-                          <td class="col-sm-8 text-left"></td>
-                          <td class="col-sm-4 text-right"></td>
-                        </tr>
-                      </tbody>
-                    </table>
+            <hr>
+            <!-- Aperçu -->
+            <div class="row">
+              <h2>Aperçu</h2>
+              <div class="col-sm-12 col-md-6">
+                <div class="thumbnail card text-center">
+                  <div class="card-body">
+                    <h4 class="card-title">€0,00</h4>
+                    <a data-toggle="collapse" href="#collapseBalance" aria-expanded="false" aria-controls="collapseBalance">Balance net</a>
+                    <div class="collapse" id="collapseBalance">
+                      <div class="card card-body">
+                        <br>
+                        <table class="table">
+                          <tbody>
+                            <tr>
+                              <td class="col-sm-8 text-left">Total Crédits</td>
+                              <td class="col-sm-4 text-right">€0,00</td>
+                            </tr>
+                            <tr>
+                              <td class="col-sm-8 text-left">Total Dédits</td>
+                              <td class="col-sm-4 text-right">€0,00</td>
+                            </tr>
+                            <tr>
+                              <td class="col-sm-8 text-left"></td>
+                              <td class="col-sm-4 text-right"></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-6">
+                <div class="thumbnail card text-center border-dark">
+                  <div class="card-body">
+                    <h4 class="card-title">€0,00</h4>
+                    <a data-toggle="collapse" href="#collapsePerformance" aria-expanded="false" aria-controls="collapsePerformance">Performance</a>
+                    <div class="collapse" id="collapsePerformance">
+                      <div class="card card-body">
+                        <br>
+                        <table class="table">
+                          <tbody>
+                            <tr>
+                              <td class="col-sm-8 text-left">Dernière Valorisation</td>
+                              <td class="col-sm-4 text-right">€0,00</td>
+                            </tr>
+                            <tr>
+                              <td class="col-sm-8 text-left">Gains Réalisés</td>
+                              <td class="col-sm-4 text-right">€0,00</td>
+                            </tr>
+                            <tr>
+                              <td class="col-sm-8 text-left"></td>
+                              <td class="col-sm-4 text-right"></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-sm-12 col-md-6">
-            <div class="thumbnail card text-center border-dark">
-              <div class="card-body">
-                <h4 class="card-title">€0,00</h4>
-                <a data-toggle="collapse" href="#collapsePerformance" aria-expanded="false" aria-controls="collapsePerformance">Performance</a>
-                <div class="collapse" id="collapsePerformance">
-                  <div class="card card-body">
-                    <br>
-                    <table class="table">
-                      <tbody>
-                        <tr>
-                          <td class="col-sm-8 text-left">Dernière Valorisation</td>
-                          <td class="col-sm-4 text-right">€0,00</td>
-                        </tr>
-                        <tr>
-                          <td class="col-sm-8 text-left">Gains Réalisés</td>
-                          <td class="col-sm-4 text-right">€0,00</td>
-                        </tr>
-                        <tr>
-                          <td class="col-sm-8 text-left"></td>
-                          <td class="col-sm-4 text-right"></td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
+            <!-- Portefeuille -->
+            <hr>
+            <div class="row">
+              <h2>Portefeuille</h2>
+              <p><small>
+                <strong><u>Remarque:</u></strong> Les nombres affichés peuvent indiquer des écarts mineurs en raison de l'arrondi des prix. Cela n'affecte pas l'exactitude des montants réels de vos transcations.
+              </small></p>
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Projet</th>
+                      <th>Nombre de Parts</th>
+                      <th>Total investi</th>
+                      <th>Date d'achat</th>
+                      <th>Horizon</th>
+                      <th>Dernière Transaction</th>
+                      <th>Valeur Estimée</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% if current_user.backed_projects.length > 0 %>
+                      <% @current_user.backed_projects.each do |bp| %>
+                      <tr>
+                        <td><%= link_to bp.street, deal_path(bp) %></td>
+                        <td><%= bp.investments.validated.where(user: current_user).sum(:shares)%></td>
+                        <td><%= number_to_currency(bp.investments.validated.where(user: current_user).sum(:pledge_amount))%></td>
+                        <td><%= bp.investments.where(user: current_user).first.created_at.strftime('%d-%m-%y %H:%M') %></td>
+                        <td><%= bp.duration %></td>
+                        <td><%= bp.investments.where(user: current_user).last.created_at.strftime('%d-%m-%y %H:%M') %></td>
+                        <td>0</td>
+                      </tr>
+                      <% end %>
+                    <% else %>
+                    <tr>
+                      <td colspan="7" class="text-center">Vous n'avez actuellement aucun investissement en portefeuille.</td>
+                    </tr>
+                    <% end %>
+                  </tbody>
+                </table>
               </div>
             </div>
-          </div>
-        </div>
-        <!-- Portefeuille -->
-        <hr>
-        <div class="row">
-          <h2>Portefeuille</h2>
-          <p><small>
-            <strong><u>Remarque:</u></strong> Les nombres affichés peuvent indiquer des écarts mineurs en raison de l'arrondi des prix. Cela n'affecte pas l'exactitude des montants réels de vos transcations.
-          </small></p>
-          <div class="table-responsive">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>Projet</th>
-                  <th>Nombre de Parts</th>
-                  <th>Prix d'achat</th>
-                  <th>Date d'achat</th>
-                  <th>Horizon</th>
-                  <th>Dernière Transaction</th>
-                  <th>Valeur Estimée</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td colspan="7" class="text-center">Vous n'avez actuellement aucun investissement en portefeuille.</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
+            <!-- Transactions -->
+            <hr>
+            <div class="row">
+              <h2>Transactions</h2>
+              <p><small>
+                <strong><u>Remarque:</u></strong> Les nombres affichés peuvent indiquer des écarts mineurs en raison de l'arrondi des prix. Cela n'affecte pas l'exactitude des montants réels de vos transcations.
+              </small></p>
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Projet</th>
+                      <th>Nombre de Parts</th>
+                      <th>Prix d'achat</th>
+                      <th>Date d'achat</th>
+                      <th>Horizon</th>
+                      <th colspan="2"><strong>Status:</strong></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% if current_user.investments.any? %>
+                      <% @current_user.investments.each do |investment| %>
+                      <tr>
+                        <td><%= link_to investment.deal.street, deal_path(investment.deal) %></td>
+                        <td><%= investment.shares %>x</td>
+                        <td><%= investment.pledge_amount %>€</td>
+                        <td><%= investment.created_at.strftime('%d-%m-%y %H:%M') %></td>
+                        <td><%= investment.deal.duration %></td>
+                        <td colspan="2"><%= investment.status %> <%= "(#{investment.updated_at.strftime('%d-%m-%y %H:%M')})" %></td>
+                      </tr>
+                      <% end %>
+                    <% else %>
+                    <tr>
+                      <td colspan="7" class="text-center">Vous n'avez actuellement aucun investissement en portefeuille.</td>
+                    </tr>
+                    <% end %>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+
+
   <!--     </main> -->
           </div>
         </div>
+
+
+
       </div>
 
     </div>
+
+
   </div>
 </div>

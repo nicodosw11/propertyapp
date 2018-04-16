@@ -28,7 +28,7 @@
           <div class="row overview-asset-data-investisseurs">
             <div class="col-xs-6 deal-size">
               <dl class="">
-                <dd class="deal-size-funded"><%= number_to_currency(deal.money_raised) %></dd>
+                <dd class="deal-size-funded"><%= number_to_currency(deal.money_raised_app) %></dd>
                 <dt class="deal-size-target">de <%= number_to_currency(deal.funding_goal) %></dt>
               </dl>
             </div>
@@ -41,13 +41,13 @@
           </div>
           <div class="overview-asset-data-progress">
             <div class="progress" id="deal-progress-bar">
-              <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: <%= deal.pct_funded %>%;">
+              <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: <%= deal.pct_funded_app %>%;">
 
               </div>
             </div>
             <div class="row" id="deal-progress-numbers">
               <div class="col-xs-6 deal-progress-pct">
-                Financé à <%= deal.pct_funded %>%.
+                Financé à <%= deal.pct_funded_app %>%.
               </div>
               <div class="col-xs-6 deal-progress-deadline">
                 <%= t('.remaining_days', count: deal.days_left)%>.

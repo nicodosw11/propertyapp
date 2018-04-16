@@ -38,6 +38,7 @@ en:
             go-to-edit-profile: "Edit Profile"
             go-to-dashboard: "View My Dashboard"
             password_complexity: "%{minimum_password_length} characters minimum and at least one lowercase letter, one uppercase letter, and one digit"
+            password_complexity_html: "At least <strong id='password_length'>8 characters</strong>, including at least <strong id='password_capletter'>one uppercase letter</strong>, <strong id='password_smallcapletter'>one lowercase letter</strong> and <strong id='password_digit'>one digit</strong>."
             leave_blank: "New Password (leave blank if you don't want to change it)"
             leave_blank_if_you_don_t_want_to_change_it: "leave blank if you don't want to change it"
             country_of_residence: "Country of residence"
@@ -100,4 +101,3 @@ en:
             forgot_your_password: "Forgot your password?"
             resend_confirmation_instructions: "Resend confirmation instructions?"
             sign_up: "Sign up for an account!"
-
