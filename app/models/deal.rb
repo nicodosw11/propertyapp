@@ -117,7 +117,7 @@ class Deal < ApplicationRecord
   end
 
   def days_left
-    self.end_date.nil? ? 0 : ((self.end_date - Time.zone.now)/(24 * 60 * 60) + 1).to_i
+    (self.end_date.nil? || self.end_date < Time.zone.now) ? 0 : ((self.end_date - Time.zone.now)/(24 * 60 * 60) + 1).to_i
   end
 
   #percentage funded
