@@ -1,6 +1,6 @@
 <div class="container">
   <script>
-    $('body').scrollspy({target: "#FAQ-Nav"});
+  $('body').scrollspy({target: "#FAQ-Nav"});
   </script>
   <a name="top" ></a>
   <div class="row " id="Faq">
@@ -14,18 +14,6 @@
       </nav>
     </div>
     <div class="col-md-9"  id="FAQ-Content">
-      <!--<div class="faq-section" id="#test">
-        <h1 class="faq-section-title"></h1>
-        <p></p>
-        <div class="faq-subsection">
-          <h2 class="faq-subsection-title"></h2>
-          <p class="faq-subsection-content"></p>
-        </div>
-        <div class="faq-subsection">
-          <h2 class="faq-subsection-title"></h2>
-          <p class="faq-subsection-content"></p>
-        </div>
-      </div>-->
       <div class="faq-section" id="FAQ-Concept" style="margin-top:-86px; padding-top:86px">
         <h1 class="faq-section-title">Notre mission</h1>
         <div class="faq-subsection">
@@ -68,67 +56,88 @@
       </div>
       <div class="faq-section" id="FAQ-Structure" style="margin-top:-86px; padding-top:86px">
         <h1 class="faq-section-title">Droit de Discrétion & Exigences de Classification de LIVSTY </h1>
-        <p class="faq-subsection">Livsty se réserve le droit de ne pas lister un investissement à vendre et de refuser les projets d'investissement via sa plateforme à sa seule discrétion. De plus, tous les clients doivent être classés comme des investisseurs avertis, à valeur patrimoniale élevée ou investisseurs restreints et, tant que vous ne l'avez pas fait, rien sur notre site ne constitue une offre susceptible d'être acceptée par vous ou par nous.</p>
-        <div class="faq-subsection">
-          <a class="faq-subsection-title input-group"  data-toggle="collapse" href="#structure" aria-expanded="false" aria-controls="collapseExample">
-            <h2 class="faq-subsection-title">Comment sont structurés les Investissements ?</h2>
-          </a>
-          <div class="collapse" id="structure">
-            <p class="faq-subsection-content">Votre investissement dans un bien sur la plateforme est fait via l’achat de parts dans une Société Civile Immobilière, établie spécifiquement pour l’achat de ce bien.</p>
+        <p class="faq-subsection-content">Livsty se réserve le droit de ne pas lister un investissement à vendre et de refuser les projets d'investissement via sa plateforme à sa seule discrétion. De plus, tous les clients doivent être classés comme des investisseurs avertis, à valeur patrimoniale élevée ou investisseurs restreints et, tant que vous ne l'avez pas fait, rien sur notre site ne constitue une offre susceptible d'être acceptée par vous ou par nous.</p>
+        <div class="panel-group" id="accordion">
+          <div class="faq-subsection">
+            <h2 class="faq-subsection-title">
+              <a class="faq-subsection-title accordion-toggle nounderline" data-toggle="collapse" data-parent="#accordion" href="#structure" aria-expanded="false">
+                Comment sont structurés les Investissements ?
+              </a>
+            </h2>
+            <div class="collapse" id="structure">
+              <p class="faq-subsection-content">Votre investissement dans un bien sur la plateforme est fait via l’achat de parts dans une Société Civile Immobilière, établie spécifiquement pour l’achat de ce bien.</p>
+            </div>
+          </div>
           </div>
         </div>
-        <div class="faq-subsection">
-          <a class="faq-subsection-title input-group"  data-toggle="collapse" href="#sci" aria-expanded="false" aria-controls="collapseExample">
-            <h2 class="faq-subsection-title">Société Civile Immobilière (SCI)</h2>
-          </a>
-          <div class="collapse" id="sci">
-            <p class="faq-subsection-content">Afin d’organiser l’acquisition d’un bien immobilier par plusieurs investisseurs, chaque projet listé sur Livsty est détenu via une Société Civile Immobilière (« SCI »), enregistrée en France et dans laquelle chaque investisseur détient un nombre de part prorata le montant qu’il investit dans le projet. Chaque projet possède sa SCI déidiée, ainsi vous êtes certain à chaque investissement de participer uiquement au bien spécifique que vous avez choisi.</p>
+        <div class="panel-group" id="accordion">
+          <div class="faq-subsection">
+            <h2 class="faq-subsection-title">
+              <a class="faq-subsection-title accordion-toggle nounderline" data-toggle="collapse" data-parent="#accordion" href="#sci" aria-expanded="false">
+                Société Civile Immobilière (SCI)
+              </a>
+            </h2>
+            <div class="collapse" id="sci">
+              <p class="faq-subsection-content">Afin d’organiser l’acquisition d’un bien immobilier par plusieurs investisseurs, chaque projet listé sur Livsty est détenu via une Société Civile Immobilière (« SCI »), enregistrée en France et dans laquelle chaque investisseur détient un nombre de part prorata le montant qu’il investit dans le projet. Chaque projet possède sa SCI déidiée, ainsi vous êtes certain à chaque investissement de participer uiquement au bien spécifique que vous avez choisi.</p>
+            </div>
           </div>
         </div>
-        <div class="faq-subsection">
-          <a class="faq-subsection-title input-group"  data-toggle="collapse" href="#roof" aria-expanded="false" aria-controls="collapseExample">
-            <h2 class="faq-subsection-title">Y a-t-il un plafond pour l’achat de parts par SCI ?</h2>
-          </a>
-          <div class="collapse" id="roof">
-            <p class="faq-subsection-content">Chaque investisseur est limité au maximum à une détention de 20% des parts de la SCI. Ce seuile permet de s’assurer à ce qu’aucun n’investisseur détienne plus de 20% des parts afin de protéger l’ensemble des investisseurs dans le projet.</p>
+        <div class="panel-group" id="accordion">
+          <div class="faq-subsection">
+            <h2 class="faq-subsection-title">
+              <a class="faq-subsection-title accordion-toggle nounderline" data-toggle="collapse" data-parent="#accordion" href="#roof" aria-expanded="false">
+                Y a-t-il un plafond pour l’achat de parts par SCI ?
+              </a>
+            </h2>
+            <div class="collapse" id="roof">
+              <p class="faq-subsection-content">Chaque investisseur est limité au maximum à une détention de 20% des parts de la SCI. Ce seuile permet de s’assurer à ce qu’aucun n’investisseur détienne plus de 20% des parts afin de protéger l’ensemble des investisseurs dans le projet.</p>
+            </div>
           </div>
         </div>
-        <div class="faq-subsection">
-          <a class="faq-subsection-title input-group"  data-toggle="collapse" href="#investdoc" aria-expanded="false" aria-controls="collapseExample">
-            <h2 class="faq-subsection-title">Documents d’Investissement</h2>
-          </a>
-          <div class="collapse" id="investdoc">
-            <p class="faq-subsection-content">Au moment d’investir dans un projet vous devrez accepter l’ensembe des documents d’investissement. Il s’agit de documents standards pour chaque investissement et des exemples de documents peuvent être consultés en ligne sur la plateforme.</p>
+        <div class="panel-group" id="accordion">
+          <div class="faq-subsection">
+            <h2 class="faq-subsection-title">
+              <a class="faq-subsection-title accordion-toggle nounderline" data-toggle="collapse" data-parent="#accordion" href="#investdoc" aria-expanded="false">
+                Documents d’Investissement
+              </a>
+            </h2>
+            <div class="collapse" id="investdoc">
+              <p class="faq-subsection-content">Au moment d’investir dans un projet vous devrez accepter l’ensembe des documents d’investissement. Il s’agit de documents standards pour chaque investissement et des exemples de documents peuvent être consultés en ligne sur la plateforme.</p>
+            </div>
           </div>
         </div>
-        <div class="faq-subsection">
-          <a class="faq-subsection-title input-group"  data-toggle="collapse" href="#idverif" aria-expanded="false" aria-controls="collapseExample">
-            <h2 class="faq-subsection-title">Vérification d’Identité</h2>
-          </a>
-          <div class="collapse" id="idverif">
-            <p class="faq-subsection-content">A chaque inscription sur Livsty, nous effectuons une vérification d'identité. C'est une partie essentielle de notre audit préalabale et est exigée par les autorités compétentes pour tous les clients.
-              Dans l'éventualité où nous ne serions pas en mesure de procéder à la vérification d'identité par voie électronique, nous pourrions vous demander de fournir des documents d'identité qui pourraient également devoir être certifiés par un professionnel indépendant. De plus, certains justificatifs supplémentaires peuvent vous être demandé afin de satisfaire certaines obligations supplémentaires et vérifications pour les lois contre la fraude et le blanchiment.
-            </p>
+        <div class="panel-group" id="accordion">
+          <div class="faq-subsection">
+            <h2 class="faq-subsection-title">
+              <a class="faq-subsection-title accordion-toggle nounderline" data-toggle="collapse" data-parent="#accordion" href="#idverif" aria-expanded="false">
+                Vérification d’Identité
+              </a>
+            </h2>
+            <div class="collapse" id="idverif">
+              <p class="faq-subsection-content">A chaque inscription sur Livsty, nous effectuons une vérification d'identité. C'est une partie essentielle de notre audit préalabale et est exigée par les autorités compétentes pour tous les clients.
+                Dans l'éventualité où nous ne serions pas en mesure de procéder à la vérification d'identité par voie électronique, nous pourrions vous demander de fournir des documents d'identité qui pourraient également devoir être certifiés par un professionnel indépendant. De plus, certains justificatifs supplémentaires peuvent vous être demandé afin de satisfaire certaines obligations supplémentaires et vérifications pour les lois contre la fraude et le blanchiment.
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="faq-section" id="FAQ-Bien">
-        <h1 class="faq-section-title">Propriétés</h1>
-        <p></p>
-        <div class="faq-subsection">
-          <a class="faq-subsection-title input-group"  data-toggle="collapse" href="#propertyselection" aria-expanded="false" aria-controls="collapseExample">
-            <h2 class="faq-subsection-title">Comment sont sélectionnées les propriétés ?</h2>
-          </a>
-          <div class="collapse" id="propertyselection">
-            <p class="faq-subsection-content">Chaque propriété présentée sur Livsty a été choisie et évaluée par l’équipe Livsty et des professionnels de l’Immobilier.
-              Livsty s’appui également sur son accès aux informations de partenaires tel que bases de données, …………. Nos investisseurs bénéficient via Livsty
-              L’équipe s’attache à proposer des opportunités présentant des couples risque-rendement intéressants. Pour ce faire, l’équipe travaille attentivement à l’évalutaion de la valeur du droit d’occupation et la perspective de revalorisation du bien.
-            </p>
+        <div class="faq-section" id="FAQ-Bien">
+          <h1 class="faq-section-title">Propriétés</h1>
+          <p></p>
+          <div class="panel-group" id="accordion" >
+            <div class="faq-subsection">
+              <h2 class="faq-subsection-title">
+                <a class="faq-subsection-title accordion-toggle nounderline" data-toggle="collapse" data-parent="#accordion" href="#propertyselection" aria-expanded="false">
+                  Comment sont sélectionnées les propriétés ?
+                </a>
+              </h2>
+            </div>
+            <div class="collapse" id="propertyselection">
+              <p class="faq-subsection-content">Chaque propriété présentée sur Livsty a été choisie et évaluée par l’équipe Livsty et des professionnels de l’Immobilier.
+                Livsty s’appui également sur son accès aux informations de partenaires tel que bases de données, …………. Nos investisseurs bénéficient via Livsty
+                L’équipe s’attache à proposer des opportunités présentant des couples risque-rendement intéressants. Pour ce faire, l’équipe travaille attentivement à l’évalutaion de la valeur du droit d’occupation et la perspective de revalorisation du bien.
+              </p>
+            </div>
           </div>
-        </div>
-        <div class="faq-subsection">
-          <h2 class="faq-subsection-title">Valeur du droit d’Occupation</h2>
-          <p class="faq-subsection-content"></p>
         </div>
       </div>
     </div>
