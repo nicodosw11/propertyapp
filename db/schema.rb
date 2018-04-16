@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180125182249) do
+ActiveRecord::Schema.define(version: 20180415144009) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,17 @@ ActiveRecord::Schema.define(version: 20180125182249) do
     t.string   "status"
     t.index ["deal_id"], name: "index_investments_on_deal_id", using: :btree
     t.index ["user_id"], name: "index_investments_on_user_id", using: :btree
+  end
+
+  create_table "notifications", force: :cascade do |t|
+    t.integer  "recipient_id"
+    t.integer  "actor_id"
+    t.datetime "read_at"
+    t.string   "action"
+    t.integer  "notifiable_id"
+    t.string   "notifiable_type"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "photos", force: :cascade do |t|
@@ -107,26 +118,34 @@ ActiveRecord::Schema.define(version: 20180125182249) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "",    null: false
-    t.string   "encrypted_password",     default: "",    null: false
+    t.string   "email",                             default: "",    null: false
+    t.string   "encrypted_password",                default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,     null: false
+    t.integer  "sign_in_count",                     default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
+    t.datetime "created_at",                                        null: false
+    t.datetime "updated_at",                                        null: false
     t.string   "first_name"
     t.string   "last_name"
     t.string   "country_of_residence"
-    t.boolean  "admin",                  default: false, null: false
+    t.boolean  "admin",                             default: false, null: false
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.datetime "archived_at"
+    t.string   "authentication_token",   limit: 30
+    t.string   "avatar_url"
+    t.date     "birthday"
+    t.string   "address"
+    t.string   "zipcode"
+    t.string   "town"
+    t.string   "phone_number"
+    t.index ["authentication_token"], name: "index_users_on_authentication_token", unique: true, using: :btree
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree

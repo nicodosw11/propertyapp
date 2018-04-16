@@ -1,6 +1,6 @@
 class Admin::UsersController < Admin::ApplicationController
   before_action :set_deals, only: [:new, :create, :edit, :update]
-  before_action :set_user, only: [:show, :edit, :update, :destroy, :archive, :snapshot]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :archive, :snapshot, :avatar]
   def index
     @users = User.excluding_archived.order(:email)
   end
@@ -83,6 +83,14 @@ class Admin::UsersController < Admin::ApplicationController
     end
   end
   def snapshot
+  end
+  def avatar
+    avatar = params[:image_url]
+    @user.update(avatar_url: avatar)
+    output = {
+      user: @user
+    }
+    render json: output
   end
   private
   def set_deals

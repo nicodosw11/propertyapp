@@ -31,5 +31,12 @@ module Propertyapp
     # config.i18n.default_locale = :en
     # config.i18n.available_locales = [:fr, :en]
     config.i18n.fallbacks = [ :fr ]
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins 'app.forestadmin.com'
+        resource '*', headers: :any, methods: :any,
+        expose: ['Content-Disposition']
+      end
+    end
   end
 end
