@@ -1,4 +1,5 @@
 fr:
+  Submit: "Enregistrement"
   please-fill-all-fields: "Merci de remplir tous les champs"
   partials:
     authentication:
@@ -84,7 +85,7 @@ fr:
             aware-and-accept: "J'ai conscience et j’accepte que je peux perdre la totalité des sommes investies et que la revente de mes investissements peut être difficile"
             risks: "Détail des risques."
             sign_up: "Créer mon compte >>>"
-            signing_up_html: "<i class='fa fa-spinner fa-spin'></i> Signing up..."
+            signing_up_html: "<i class='fa fa-spinner fa-spin'></i> En cours d'enregistrement..."
           edit:
             my-infos: "Mes Informations"
             save-changes: "Sauvegarder les changements"

@@ -1,0 +1,73 @@
+<div class="container" style="width: 90%">
+
+  <div class="row margin-top">
+    <div class="col-xs-2">Select Transaction</div>
+    <div class="col-xs-10">
+      <%= select_tag "deals",
+      options_for_select(Deal.listed.map{ |deal| [deal.full_address, deal.id, data: { url: snapshot_admin_deal_path(deal) }]}),
+      class: 'chosen-select chosen-select-index' %>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="row margin-top">
+    <div class="col-xs-12">
+
+      <div class="row"> <!-- nested columns -->
+
+        <%= render 'admin/shared/left-buttons' %>
+
+        <div class="col-xs-10">
+          <!-- <h4>Listing Investments</h4> -->
+          <table class="table table-condensed table-hover">
+            <thead>
+              <tr>
+                <th></th>
+                <th>n°</th>
+                <th>Deal</th>
+                <th>Shares</th>
+                <th>Total</th>
+                <th>Created</th>
+                <th>Investor</th>
+                <th></th>
+              </tr>
+            </thead>
+
+            <tbody id="container_investments">
+              <% if @deal.investments.any? %>
+                <% @deal.investments.each do |investment| %>
+                  <tr id="investment_<%= investment.id %>">
+                    <td><%= link_to investment.id, [:admin, investment] %></td>
+                    <td><%= investment.deal.street %></td>
+                    <td><%= investment.shares %>x</td>
+                    <td><%= investment.pledge_amount %>€</td>
+                    <td><%= investment.created_at.strftime('%d-%m-%y %H:%M') %></td>
+                    <td><%= investment.user.full_name %></td>
+                    <td><strong>Status: </strong><span id="current-status_<%= investment.id %>"><%= investment.status %> <%= "at #{investment.updated_at.strftime('%d-%m-%y %H:%M')}" if investment.status == 'approved' %></td>
+                    <td>
+                      <% if investment.status != 'approved' %>
+                        <%= link_to 'Validate', validate_admin_investment_path(investment), method: :patch, class: "btn btn-warning", id: "validate-button_#{investment.id}", remote: true, data: {disable_with: "Validating..."}  %>
+                      <% else %>
+                        <button type="button" class="btn btn-success">Approved</button>
+                      <% end %>
+                    </td>
+                  </tr>
+                <% end %>
+              <% else %>
+                <tr>
+                  <td colspan="7" class="text-center">Vous n'avez actuellement aucun investissement en portefeuille.</td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+
+          <br>
+        </div>
+
+    </div>
+  </div>
+</div>
+
+
+

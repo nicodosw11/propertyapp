@@ -184,7 +184,7 @@
                   </thead>
                   <tbody>
                     <% if current_user.backed_projects.length > 0 %>
-                      <% @current_user.backed_projects.each do |bp| %>
+                      <% current_user.backed_projects.each do |bp| %>
                       <tr>
                         <td><%= link_to bp.street, deal_path(bp) %></td>
                         <td><%= bp.investments.validated.where(user: current_user).sum(:shares)%></td>
@@ -225,7 +225,7 @@
                   </thead>
                   <tbody>
                     <% if current_user.investments.any? %>
-                      <% @current_user.investments.each do |investment| %>
+                      <% current_user.investments.each do |investment| %>
                       <tr>
                         <td><%= link_to investment.deal.street, deal_path(investment.deal) %></td>
                         <td><%= investment.shares %>x</td>

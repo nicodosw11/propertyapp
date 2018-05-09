@@ -61,7 +61,7 @@ function activateButton() {
       }
     });
     if (enable) {
-      button.removeAttr('disabled').html('Submit');
+      button.removeAttr('disabled').html(I18n['Submit']);
       return;
     }
   }

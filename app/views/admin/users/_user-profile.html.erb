@@ -1,0 +1,73 @@
+<div class="container user-info" style="width: 80%">
+
+  <div class="row">
+    <div class="col-md-3">
+      <div class="center">
+        <%= image_tag('user.jpg', class: "avatar-full") %>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">Identity</div>
+        <div class="panel-body">
+          <%= @user %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-9">
+      <h2><%= @user.full_name %></h2>
+
+      <div class="description row-space-3">
+        Last signed in: <%= @user.last_sign_in_at %>
+      </div>
+
+      <div class="page-header">
+        <h1><%= @user %></h1>
+
+        <ul class="actions">
+          <li>
+            <%= link_to "Edit User", [:edit, :admin, @user], class: "edit" %>
+          </li>
+          <li>
+              <%= link_to "Archive User", [:archive, :admin, @user], method: :patch,
+              data: { confirm: "Are you sure you want to archive this user?"},
+              class: "delete" %>
+          </li>
+        </ul>
+      </div>
+
+      <div class="page-header">
+        <h2>Roles</h2>
+      </div>
+
+      <% if @user.roles.any? %>
+        <ul>
+          <% @user.roles.each do |role| %>
+            <li><%= role.deal.street %>: <%= role.role.titleize %></li>
+          <% end %>
+        </ul>
+      <% else %>
+        <p>This user has no roles.</p>
+      <% end %>
+
+      <p>Here are the details of <%= @user.last_name %>'s investments:<p>
+
+      <ul>
+        <% @user.investments.each do |investment| %>
+        <li>Deal#<%= investment.deal.id %></li>
+        <li>Shares#<%= investment.shares %></li>
+        <li>Price#<%= investment.price %></li>
+        <br>
+        <% end %>
+      </ul>
+
+
+      <%= link_to "Back to Users", admin_users_path %>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+

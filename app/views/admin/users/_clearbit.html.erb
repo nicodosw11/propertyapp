@@ -1,0 +1,28 @@
+<div class="container text-center padded">
+  <h1 id="who">Who is this user?</h1>
+  <form class="form-inline" id="get-infos" action="">
+    <input type="text" class="form-control" id="email-input" placeholder="bob@gmail.com" data-api="<%= ENV['CLEARBIT_API_SECRET'] %>" data-path="<%= avatar_admin_user_path(@user) %>">
+    <input type="submit" class="btn btn-primary" value="Get infos">
+  </form>
+</div>
+
+<div class="wrapper-grey-clearbit padded">
+  <div class="container">
+
+    <div class="card text-center hidden">
+      <div class="card-header">
+        <img src="http://placehold.it/100/100" alt="" id="avatar" class="img-circle" width="100">
+        <h2 id="fullname"></h2>
+        <p><span id="company"></span>, <span id="title"></span></p>
+      </div>
+      <div class="card-body">
+        <p id="bio"></p>
+        <p id="email"></p>
+        <p id="site"></p>
+      </div>
+    </div>
+
+    <div class="card-error text-center hidden"></div>
+    <h4 class="message-alert text-center"><span id="message"></span></h4>
+  </div>
+</div>
