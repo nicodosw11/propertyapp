@@ -1,7 +1,7 @@
 <tr id="investment_<%= investment.id %>">
   <td>
-    <%= link_to icon('pencil'), edit_admin_investment_path(investment), remote: true, data: { toggle: "modal", target: "#investmentedit_#{investment.id}" } %>
-    <%= link_to icon('trash'), admin_investment_path(investment), method: :delete, remote: true, data: { confirm: 'Are you sure?' } %>
+    <%= link_to fa_icon('pencil'), edit_admin_investment_path(investment), remote: true, data: { toggle: "modal", target: "#investmentedit_#{investment.id}" } %>
+    <%= link_to fa_icon('trash'), admin_investment_path(investment), method: :delete, remote: true, data: { confirm: 'Are you sure?' } %>
   </td>
   <td><%= link_to investment.id, [:admin, investment] %></td>
   <td><%= investment.deal.street %></td>
