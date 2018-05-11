@@ -52,6 +52,10 @@ en:
         greeting: "Welcome %{recipient}!"
         instruction: "You can confirm your account email through the link below:"
         subject: "Confirmation instructions"
+      email_changed:
+        greeting: "Hello %{recipient}!"
+        message: "We're contacting you to notify you that your email is being changed to %{email}."
+        subject: "Email Changed"
       password_change:
         greeting: "Hello %{recipient}!"
         message: "We're contacting you to notify you that your password has been changed."

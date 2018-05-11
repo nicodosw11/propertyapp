@@ -44,12 +44,18 @@ fr:
       timeout: "Votre session est expirée. Veuillez vous reconnecter pour continuer."
       unauthenticated: "Vous devez vous connecter ou vous inscrire pour continuer."
       unconfirmed: "Vous devez valider votre compte pour continuer."
+      user:
+        archived: "Votre compte a été archivé."
     mailer:
       confirmation_instructions:
         action: "Confirmer mon courriel"
         greeting: "Bienvenue %{recipient}!"
         instruction: "Vous pouvez confirmer votre courriel grâce au lien ci-dessous:"
         subject: "Instructions de confirmation"
+      email_changed:
+        greeting: "Bonjour %{recipient}!"
+        message: "Nous vous contactons pour vous notifier que votre adresse de courriel a été changée en %{email}."
+        subject: "Courriel modifié"
       password_change:
         greeting: "Bonjour %{recipient}!"
         message: "Nous vous contactons pour vous notifier que votre mot de passe a été modifié."
