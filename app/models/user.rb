@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   # after_create :send_welcome_email
+  after_save :send_welcome_email, :if => proc { |l| l.confirmed_at_changed? && l.confirmed_at_was.nil? }
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :confirmable, :recoverable, :rememberable, :trackable, :validatable
@@ -51,14 +52,14 @@ class User < ApplicationRecord
     arr.uniq
   end
 
-  def first_confirmation?
-    previous_changes[:confirmed_at] && previous_changes[:confirmed_at].first.nil?
-  end
+  # def first_confirmation?
+  #   previous_changes[:confirmed_at] && previous_changes[:confirmed_at].first.nil?
+  # end
 
   # Override Devise::Confirmable#after_confirmation
-  def after_confirmation
-    send_welcome_email if first_confirmation?
-  end
+  # def after_confirmation
+  #   send_welcome_email if first_confirmation?
+  # end
 
   private
 

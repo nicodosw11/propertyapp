@@ -6,6 +6,7 @@ class MyCustomMailer < Devise::Mailer
   def confirmation_instructions(record, token, options={})
     # Use different e-mail templates for signup e-mail confirmation and for when a user changes e-mail address.
     if record.pending_reconfirmation?
+      options[:to] = record.email
       options[:subject] = I18n.t('devise.mailer.reconfirmation_instructions.subject')
       options[:template_name] = 'reconfirmation_instructions'
     else
