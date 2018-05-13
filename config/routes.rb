@@ -66,6 +66,12 @@
       end
       # resources :properties, path: '/admin'
     end
+    resources :users do
+      member do
+        post '/verify_phone_number' => 'users#verify_phone_number'
+        patch '/update_phone_number' => 'users#update_phone_number'
+      end
+    end
   get '*path', to: redirect("/#{I18n.default_locale}/%{path}")
   get '', to: redirect("/#{I18n.default_locale}")
 

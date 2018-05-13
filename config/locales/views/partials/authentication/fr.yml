@@ -39,6 +39,7 @@ fr:
             go-to-edit-profile: "Modifier mes informations"
             go-to-dashboard: "Voir mon tableau de bord"
             email-address-verified: "Adresse Email confirmée"
+            phone-number-verified: "Numéro de téléphone confirmé"
             password_complexity: "%{minimum_password_length} caractères minimum et au moins une lettre minuscule, une lettre majuscule, et un chiffre"
             password_complexity_html: "Au moins <strong id='password_length'>8 caractères</strong>, inclure au moins <strong id='password_capletter'>une lettre majuscule</strong>, <strong id='password_smallcapletter'>une lettre minuscule</strong> et <strong id='password_digit'>un chiffre</strong>."
             leave_blank: "Nouveau mot de passe (ne pas remplir si vous ne voulez pas le modifier)"

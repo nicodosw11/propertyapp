@@ -6,6 +6,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :confirmable, :recoverable, :rememberable, :trackable, :validatable
 
   validate :password_complexity
+  # validates_uniqueness_of :phone_number
+  # validates :phone_number, phone: { possible: false, allow_blank: false, types: [:mobile] }
   # has_many :investments, dependent: :nullify
   has_many :investments, dependent: :destroy
   has_many :deals, through: :investments
@@ -60,6 +62,23 @@ class User < ApplicationRecord
   # def after_confirmation
   #   send_welcome_email if first_confirmation?
   # end
+
+  def generate_pin
+    self.pin = SecureRandom.hex(2)
+    self.phone_verified = false
+    save
+  end
+  def send_pin
+    @client = Twilio::REST::Client.new
+    @client.messages.create(
+      from: '+441133203199',
+      to: self.phone_number,
+      body: "Votre code pin est #{self.pin}"
+    )
+  end
+  def verify_pin(entered_pin)
+    update(phone_verified: true) if self.pin == entered_pin
+  end
 
   private
 

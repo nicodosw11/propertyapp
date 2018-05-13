@@ -37,6 +37,8 @@ gem 'friendly_id', '~> 5.1.0'
 
 gem 'forest_liana'
 gem 'rack-cors'
+gem 'twilio-ruby', '~> 4.11.1'
+gem 'phonelib'
 
 group :development, :test do
   gem 'binding_of_caller'

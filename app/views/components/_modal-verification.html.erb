@@ -1,0 +1,23 @@
+<div id="verify-phone" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <button class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Valider le pin reçu</h4>
+      </div>
+
+      <div class="modal-body">
+        <%= form_for current_user, url: verify_phone_number_user_path(current_user), method: :post do |f| %>
+            <div class="form-group">
+              <%= f.text_field :pin, class: "form-control", placeholder: "Mon PIN", value: "" %>
+            </div>
+            <div class="text-center">
+              <%= f.submit "Vérifier", class: "btn btn-normal" %>
+            </div>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+</div>

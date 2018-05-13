@@ -1,0 +1,23 @@
+<div id="update-phone" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <button class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Mon numéro de téléphone</h4>
+      </div>
+
+      <div class="modal-body">
+        <%= form_for current_user, url: update_phone_number_user_path(current_user) do |f| %>
+            <div class="form-group">
+              <%= f.phone_field :phone_number, class: "form-control", placeholder: "Mon numéro de téléphone" %>
+            </div>
+            <div class="text-center">
+              <%= f.submit "Enregistrer", class: "btn btn-normal" %>
+            </div>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+</div>
