@@ -54,12 +54,17 @@ fr:
         subject: "Instructions de confirmation"
       email_changed:
         greeting: "Bonjour %{recipient}!"
-        message: "Nous vous contactons pour vous notifier que votre adresse de courriel a été changée en %{email}."
+        message: "Nous vous contactons pour vous notifier que quelqu'un a changé votre adresse de courriel en %{email}."
         subject: "Courriel modifié"
       password_change:
         greeting: "Bonjour %{recipient}!"
         message: "Nous vous contactons pour vous notifier que votre mot de passe a été modifié."
         subject: "Mot de passe modifié."
+      reconfirmation_instructions:
+        action: "Reconfirmer mon courriel"
+        greeting: "Bienvenue %{recipient}!"
+        instruction: "Vous pouvez reconfirmer votre courriel grâce au lien ci-dessous:"
+        subject: "Instructions de reconfirmation"
       reset_password_instructions:
         action: "Changer mon mot de passe"
         greeting: "Bonjour %{recipient}!"

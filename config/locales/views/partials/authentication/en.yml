@@ -38,13 +38,16 @@ en:
             your-infos: "Your details"
             go-to-edit-profile: "Edit Profile"
             go-to-dashboard: "View My Dashboard"
+            email-address-verified: "Email Address confirmed"
             password_complexity: "%{minimum_password_length} characters minimum and at least one lowercase letter, one uppercase letter, and one digit"
             password_complexity_html: "At least <strong id='password_length'>8 characters</strong>, including at least <strong id='password_capletter'>one uppercase letter</strong>, <strong id='password_smallcapletter'>one lowercase letter</strong> and <strong id='password_digit'>one digit</strong>."
             leave_blank: "New Password (leave blank if you don't want to change it)"
             leave_blank_if_you_don_t_want_to_change_it: "leave blank if you don't want to change it"
+            currently_waiting_confirmation_for_email: 'Currently waiting confirmation for: %{email}'
             country_of_residence: "Country of residence"
             update: "Update"
             saving_html: "<i class='fa fa-spinner fa-spin'></i> Saving changes..."
+            we_need_your_current_password_to_confirm_your_changes: "We need your current password to confirm your changes"
         sessions:
           new:
             sign_in: "Sign in"

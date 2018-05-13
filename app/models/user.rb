@@ -51,9 +51,13 @@ class User < ApplicationRecord
     arr.uniq
   end
 
+  def first_confirmation?
+    previous_changes[:confirmed_at] && previous_changes[:confirmed_at].first.nil?
+  end
+
   # Override Devise::Confirmable#after_confirmation
   def after_confirmation
-    send_welcome_email
+    send_welcome_email if first_confirmation?
   end
 
   private

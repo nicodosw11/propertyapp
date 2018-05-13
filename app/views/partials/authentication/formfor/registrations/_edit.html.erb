@@ -1,9 +1,14 @@
-<div class="container" style="width: 80%;">
+<div class="container" style="width: 90%;">
   <div class="row">
     <div class="col-md-3">
       <ul class="sidebar-list">
         <li class="sidebar-item"><%= link_to t('.go-to-edit-profile'), edit_user_registration_path, class: "sidebar-link active" %></li>
         <li class="sidebar-item"><%= link_to t('.go-to-dashboard'), dashboard_path, class: "sidebar-link" %>
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <li class="sidebar-item" style="color: red"><%= t('.currently_waiting_confirmation_for_email', email: resource.unconfirmed_email) %></li>
+        <% else %>
+        <li class="sidebar-item"><%= t('.email-address-verified') %><span class="pull-right icon-check-green"><i class="fa fa-check-circle-o"></i></span></li>
+        <% end %>
       </ul>
       <br/>
     </div>
@@ -51,10 +56,6 @@
               <%= f.email_field :email, autofocus: true, placeholder: "Email", class: "form-control livsty margin-bottom" %>
             </div>
 
-            <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-            <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-            <% end %>
-
             <div class="form-group">
               <%= f.password_field :password, autocomplete: "off", placeholder: "#{t('.leave_blank')}", class: "form-control livsty margin-bottom" %>
               <small id="passwordHelpBlock" class="form-text text-muted">
@@ -67,7 +68,7 @@
             </div>
 
             <div class="form-group">
-              <%= f.password_field :current_password, autocomplete: "off", placeholder: true, class: "form-control livsty margin-bottom" %>
+              <%= f.password_field :current_password, autocomplete: "off", placeholder: t(".we_need_your_current_password_to_confirm_your_changes"), required: true, class: "form-control livsty margin-bottom" %>
             </div>
 
             <div class="actions">

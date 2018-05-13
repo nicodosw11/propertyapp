@@ -38,13 +38,16 @@ fr:
             your-infos: "Mes informations"
             go-to-edit-profile: "Modifier mes informations"
             go-to-dashboard: "Voir mon tableau de bord"
+            email-address-verified: "Adresse Email confirmée"
             password_complexity: "%{minimum_password_length} caractères minimum et au moins une lettre minuscule, une lettre majuscule, et un chiffre"
             password_complexity_html: "Au moins <strong id='password_length'>8 caractères</strong>, inclure au moins <strong id='password_capletter'>une lettre majuscule</strong>, <strong id='password_smallcapletter'>une lettre minuscule</strong> et <strong id='password_digit'>un chiffre</strong>."
             leave_blank: "Nouveau mot de passe (ne pas remplir si vous ne voulez pas le modifier)"
             leave_blank_if_you_don_t_want_to_change_it: "laissez ce champ vide pour le laisser inchangé"
+            currently_waiting_confirmation_for_email: 'Confirmation en attente pour: %{email}'
             country_of_residence: "Pays de résidence"
             update: "Modifier"
             saving_html: "<i class='fa fa-spinner fa-spin'></i> Enregistrement des modifications..."
+            we_need_your_current_password_to_confirm_your_changes: "Nous avons besoin de votre mot de passe actuel pour valider ces modifications"
         sessions:
           new:
             sign_in: "S'identifier"
