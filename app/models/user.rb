@@ -64,9 +64,14 @@ class User < ApplicationRecord
   # end
 
   def generate_pin
+    puts "Generating pin... #{self.inspect}"
     self.pin = SecureRandom.hex(2)
     self.phone_verified = false
+    puts "About to save... #{self.inspect}"
     save
+    puts "Saved... #{self.inspect}"
+    puts self.valid?
+    puts self.errors.full_messages
   end
   def send_pin
     @client = Twilio::REST::Client.new

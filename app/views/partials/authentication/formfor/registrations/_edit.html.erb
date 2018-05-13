@@ -14,7 +14,7 @@
         <!-- Phone verification -->
         <li class="sidebar-item"><i class="fa fa-phone"></i> Numéro de téléphone:</li>
         <% if !current_user.phone_number.blank? %>
-          <li class="sidebar-item"><a style="cursor: pointer"><i style="color: #00A699" class="fa fa-pencil" data-toggle="modal" data-target="#update-phone"></i></a> <%= current_user.phone_number %></span></li>
+          <li class="sidebar-item"><a style="cursor: pointer"><i style="color: #00A699" class="fa fa-pencil" data-toggle="modal" data-target="#update-phone"></i></a> <%= current_user.phone_number %></li>
             <% if current_user.phone_verified == false %>
               <li class="sidebar-item"><button class="btn btn-normal" data-toggle="modal" data-target="#verify-phone"><i style="color: white" class="fa fa-check-square"></i> Vérifier mon numéro de téléphone</button></li>
             <% end %>
