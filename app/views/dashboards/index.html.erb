@@ -212,20 +212,20 @@
                 <strong><u>Remarque:</u></strong> Les nombres affichés peuvent indiquer des écarts mineurs en raison de l'arrondi des prix. Cela n'affecte pas l'exactitude des montants réels de vos transcations.
               </small></p>
               <div class="table-responsive">
-                <table class="table">
+                <table class="table sortable">
                   <thead>
                     <tr>
-                      <th>Projet</th>
-                      <th>Nombre de Parts</th>
-                      <th>Prix d'achat</th>
-                      <th>Date d'achat</th>
-                      <th>Horizon</th>
-                      <th colspan="2"><strong>Status:</strong></th>
+                      <th><%= link_to "Projet", :sort => 'deal_id' %></th>
+                      <th><%= link_to "Nombre de Parts", :sort => 'shares' %></th>
+                      <th><%= link_to "Prix d'achat", :sort => 'pledge_amount' %></th>
+                      <th><%= link_to "Date d'achat", :sort => 'created_at' %></th>
+                      <th><%= link_to "Horizon", :sort => 'deal_id' %></th>
+                      <th colspan="2"><strong><%= link_to "Status", :sort => 'status' %></strong></th>
                     </tr>
                   </thead>
                   <tbody>
                     <% if current_user.investments.any? %>
-                      <% current_user.investments.each do |investment| %>
+                      <% @transactions.each do |investment| %>
                       <tr>
                         <td><%= link_to investment.deal.street, deal_path(investment.deal) %></td>
                         <td><%= investment.shares %>x</td>

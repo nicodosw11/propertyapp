@@ -4,6 +4,7 @@ class DashboardsController < ApplicationController
 
   def index
     @investments = current_user.investments
+    @transactions = current_user.investments.order(params[:sort])
   end
 
 end
