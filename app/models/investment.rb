@@ -20,4 +20,11 @@ class Investment < ApplicationRecord
   def full_details
     "#{deal.full_address} - #{shares} shares - total #{pledge_amount}€"
   end
+  def self.search(search)
+    if search
+      joins(:deal).where('deals.street LIKE ?', "%#{search}%")
+    else
+      all
+    end
+  end
 end

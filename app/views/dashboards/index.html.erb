@@ -212,6 +212,12 @@
                 <strong><u>Remarque:</u></strong> Les nombres affichés peuvent indiquer des écarts mineurs en raison de l'arrondi des prix. Cela n'affecte pas l'exactitude des montants réels de vos transcations.
               </small></p>
               <div class="table-responsive">
+                <%= form_tag dashboard_path, :method => 'get', :id => "investments_search" do %>
+                <p>
+                  <%= text_field_tag :search, params[:search] %>
+                  <%= submit_tag "Filtrer par projet", :name => nil %>
+                </p>
+                <% end %>
                 <table class="table sortable">
                   <thead>
                     <tr>
