@@ -5,7 +5,7 @@ class DashboardsController < ApplicationController
 
   def index
     @investments = current_user.investments
-    @transactions = current_user.investments.order(sort_column + " " + sort_direction)
+    @transactions = current_user.investments.order(sort_column + " " + sort_direction).paginate(:per_page => 5, :page => params[:page])
   end
 
   private

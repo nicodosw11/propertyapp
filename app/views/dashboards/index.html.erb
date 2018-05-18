@@ -242,6 +242,7 @@
                     <% end %>
                   </tbody>
                 </table>
+                <%= will_paginate @transactions, :previous_label => t("previous"), :next_label => t("next") %>
               </div>
             </div>
 

@@ -39,6 +39,7 @@ gem 'forest_liana'
 gem 'rack-cors'
 gem 'twilio-ruby', '~> 4.11.1'
 gem 'phonelib'
+gem 'will_paginate'
 
 group :development, :test do
   gem 'binding_of_caller'

@@ -4,6 +4,8 @@ en:
   Male: "Male"
   Female: "Female"
   yo: "yo"
+  previous: "Previous"
+  next: "Next"
   activerecord:
     errors:
       messages:
