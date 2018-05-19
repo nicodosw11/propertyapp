@@ -22,9 +22,9 @@ class Investment < ApplicationRecord
   end
   def self.search(search)
     if search
-      joins(:deal).where('deals.street LIKE ?', "%#{search}%")
+      joins(:deal).where('LOWER(deals.street) LIKE LOWER(?)', "%#{search}%")
     else
-      all
+      where(nil)
     end
   end
 end

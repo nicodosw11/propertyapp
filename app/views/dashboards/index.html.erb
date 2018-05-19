@@ -218,37 +218,7 @@
                   <%= submit_tag "Filtrer par projet", :name => nil %>
                 </p>
                 <% end %>
-                <table class="table sortable">
-                  <thead>
-                    <tr>
-                      <th><%= sortable 'deal_id', "Projet" %></th>
-                      <th><%= sortable 'shares', "Nombre de Parts" %></th>
-                      <th><%= sortable 'pledge_amount', "Prix d'achat" %></th>
-                      <th><%= sortable 'created_at', "Date d'achat" %></th>
-                      <th><%= sortable 'deal_id', "Horizon" %></th>
-                      <th colspan="2"><strong><%= sortable "status" %></strong></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <% if current_user.investments.any? %>
-                      <% @transactions.each do |investment| %>
-                      <tr>
-                        <td><%= link_to investment.deal.street, deal_path(investment.deal) %></td>
-                        <td><%= investment.shares %>x</td>
-                        <td><%= investment.pledge_amount %>€</td>
-                        <td><%= investment.created_at.strftime('%d-%m-%y %H:%M') %></td>
-                        <td><%= investment.deal.duration %></td>
-                        <td colspan="2"><%= investment.status %> <%= "(#{investment.updated_at.strftime('%d-%m-%y %H:%M')})" %></td>
-                      </tr>
-                      <% end %>
-                    <% else %>
-                    <tr>
-                      <td colspan="7" class="text-center">Vous n'avez actuellement aucun investissement en portefeuille.</td>
-                    </tr>
-                    <% end %>
-                  </tbody>
-                </table>
-                <%= will_paginate @transactions, :previous_label => t("previous"), :next_label => t("next") %>
+                <div id="investments"><%= render 'investments' %></div>
               </div>
             </div>
 
