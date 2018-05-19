@@ -4,6 +4,8 @@ fr:
   Male: "Homme"
   Female: "Femme"
   yo: "ans"
+  previous: "Précédent"
+  next: "Suivant"
   activerecord:
     errors:
       messages:

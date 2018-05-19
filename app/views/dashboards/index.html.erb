@@ -212,36 +212,13 @@
                 <strong><u>Remarque:</u></strong> Les nombres affichés peuvent indiquer des écarts mineurs en raison de l'arrondi des prix. Cela n'affecte pas l'exactitude des montants réels de vos transcations.
               </small></p>
               <div class="table-responsive">
-                <table class="table">
-                  <thead>
-                    <tr>
-                      <th>Projet</th>
-                      <th>Nombre de Parts</th>
-                      <th>Prix d'achat</th>
-                      <th>Date d'achat</th>
-                      <th>Horizon</th>
-                      <th colspan="2"><strong>Status:</strong></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <% if current_user.investments.any? %>
-                      <% current_user.investments.each do |investment| %>
-                      <tr>
-                        <td><%= link_to investment.deal.street, deal_path(investment.deal) %></td>
-                        <td><%= investment.shares %>x</td>
-                        <td><%= investment.pledge_amount %>€</td>
-                        <td><%= investment.created_at.strftime('%d-%m-%y %H:%M') %></td>
-                        <td><%= investment.deal.duration %></td>
-                        <td colspan="2"><%= investment.status %> <%= "(#{investment.updated_at.strftime('%d-%m-%y %H:%M')})" %></td>
-                      </tr>
-                      <% end %>
-                    <% else %>
-                    <tr>
-                      <td colspan="7" class="text-center">Vous n'avez actuellement aucun investissement en portefeuille.</td>
-                    </tr>
-                    <% end %>
-                  </tbody>
-                </table>
+                <%= form_tag dashboard_path, :method => 'get', :id => "investments_search" do %>
+                <p>
+                  <%= text_field_tag :search, params[:search] %>
+                  <%= submit_tag "Filtrer par projet", :name => nil %>
+                </p>
+                <% end %>
+                <div id="investments"><%= render 'investments' %></div>
               </div>
             </div>
 
