@@ -23,8 +23,11 @@ default: &default
 
 development:
   <<: *default
+  host: localhost
 
   database: propertyapp_development
+  username: postgres
+  password: SiaPartners
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.

@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.3.1'
+ruby '2.3.3'
 
 gem 'rails', '5.0.0.1'
 gem 'puma'
@@ -11,6 +11,7 @@ gem 'pundit'
 gem 'redis'
 gem 'cloudinary'
 gem 'country_select'
+gem 'bcrypt' , git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
 
 # gem "letter_opener", group: :development
 gem "letter_opener", :group => [:development, :test]
@@ -40,6 +41,10 @@ gem 'rack-cors'
 gem 'twilio-ruby', '~> 4.11.1'
 gem 'phonelib'
 
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+
 group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'
@@ -58,3 +63,5 @@ group :test do
   gem "factory_girl_rails"
   gem 'database_cleaner' , '1.6.1'
 end
+
+gem 'wdm', '>= 0.1.0' if Gem.win_platform?
