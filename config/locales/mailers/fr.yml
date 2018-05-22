@@ -3,7 +3,7 @@ fr:
     welcome:
       subject: "%{user}, bienvenue chez Livsty!"
       welcome_html: "<b>Livsty</b> vous souhaite la bienvenue %{name}"
-      browse: "Vous pourrez dans quelques instant parcourir nos offres d'investissements!"
+      browse: "Vous pouvez dès maintenant parcourir nos offres d'investissements!"
       rdv: "Rendez-vous sur livsty.com"
   investment_mailer:
     created:
